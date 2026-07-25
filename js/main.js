@@ -42,7 +42,7 @@
         // submission — not a real failure, so it gets the same reassuring
         // message as a fresh signup instead of the generic error path.
         if (res.status === 409) {
-          testerStatus.textContent = "Email sudah terdaftar. Jika belum menerima informasi closed testing, tunggu pembaruan dari kami.";
+          testerStatus.textContent = "Email sudah terdaftar. Tunggu undangan Early Access.";
           testerStatus.className = "tester-form__status is-success";
           testerForm.reset();
           return;
@@ -50,7 +50,7 @@
 
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
 
-        testerStatus.textContent = "Terima kasih! Emailmu sudah didaftarkan untuk closed testing. Kami akan mengabari setelah akunmu ditambahkan sebagai tester.";
+        testerStatus.textContent = "Terima kasih! Kami akan mengirim undangan Early Access setelah akses tersedia.";
         testerStatus.className = "tester-form__status is-success";
         testerForm.reset();
       } catch (err) {
