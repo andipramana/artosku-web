@@ -34,7 +34,7 @@
     <div class="container container--narrow legal-doc">
       <p class="eyebrow"><span class="eyebrow__dot"></span> Kebijakan Privasi</p>
       <h1>Kebijakan Privasi Artosku</h1>
-      <p class="legal-doc__updated">Terakhir diperbarui: 21 Juli 2026</p>
+      <p class="legal-doc__updated">Terakhir diperbarui: 25 Juli 2026</p>
 
       <p>
         Artosku ("aplikasi", "kami") adalah aplikasi pencatatan keuangan pribadi yang dibuat oleh Andi Pramana.
@@ -45,31 +45,30 @@
       <h2>Data apa saja yang dikumpulkan?</h2>
       <ul>
         <li><strong>Email &amp; kata sandi</strong> — dipakai untuk membuat akun dan masuk ke aplikasi.</li>
-        <li><strong>Data keuangan yang kamu masukkan sendiri</strong> — transaksi, wallet, kategori, anggaran, aset, utang/piutang, tujuan menabung, dan transaksi berulang.</li>
-        <li><strong>Foto struk (opsional)</strong> — hanya jika kamu memilih melampirkan foto ke sebuah transaksi.</li>
+        <li><strong>Data keuangan yang kamu masukkan sendiri</strong> — transaksi, wallet, kategori, anggaran, aset, utang/piutang, tujuan menabung, dan transaksi berulang. Data ini disimpan di perangkat kamu.</li>
+        <li><strong>Foto struk (opsional)</strong> — hanya jika kamu memilih melampirkan foto ke sebuah transaksi. Foto disimpan di perangkat kamu.</li>
         <li><strong>PIN &amp; data biometrik untuk kunci aplikasi</strong> — <em>tidak pernah dikirim ke server mana pun</em>. PIN disimpan terenkripsi hanya di perangkat kamu sendiri (lewat penyimpanan aman bawaan Android/iOS), dan verifikasi biometrik (sidik jari/wajah) sepenuhnya ditangani oleh sistem operasi perangkat kamu, bukan oleh Artosku.</li>
         <li><strong>Laporan crash/error (diagnostik teknis)</strong> — lewat Firebase Crashlytics (Google), Artosku mengirim laporan otomatis saat aplikasi mengalami error, berisi info teknis seperti model perangkat, versi sistem operasi, versi aplikasi, dan jejak error (stack trace). Laporan ini <strong>tidak berisi data keuangan atau isi transaksimu</strong> — hanya dipakai untuk menemukan dan memperbaiki bug.</li>
       </ul>
       <p>
         Artosku <strong>tidak</strong> memakai SDK iklan atau pelacakan perilaku/analitik pemasaran apa pun.
         Satu-satunya layanan pihak ketiga yang dipakai adalah Firebase Crashlytics (khusus laporan crash, lihat
-        di atas) dan Supabase (tempat penyimpanan data, lihat bagian berikutnya). Tidak ada data yang
+        di atas), layanan login, dan layanan AI saat kamu memilih memakai fitur AI. Tidak ada data yang
         dikumpulkan selain yang kamu masukkan sendiri dan laporan crash teknis di atas.
       </p>
 
       <h2>Di mana data disimpan?</h2>
       <p>
-        Artosku punya dua pilihan tempat penyimpanan yang kamu pilih sendiri saat pertama kali memakai aplikasi:
+        Secara bawaan, catatan keuangan disimpan di perangkat kamu:
       </p>
       <ul>
         <li>
-          <strong>Penyimpanan Umum</strong> — server yang dikelola oleh pembuat Artosku (lewat Supabase).
-          Datamu tetap hanya bisa diakses oleh akunmu sendiri, dilindungi oleh Row Level Security (RLS) di
-          level database — bukan cuma dibatasi lewat aplikasi.
+          <strong>Data keuangan di perangkat</strong> — transaksi dan catatan keuangan utama disimpan di HP kamu.
+          Artosku tidak memakai server untuk menyimpan catatan keuangan pribadi kamu.
         </li>
         <li>
-          <strong>Penyimpanan Pribadi</strong> — server Supabase milikmu sendiri yang kamu buat dan kelola
-          sendiri. Dalam mode ini, pembuat Artosku sama sekali tidak punya akses ke datamu.
+          <strong>Backup Google Drive (opsional)</strong> — jika kamu memilih membuat backup, file backup
+          terenkripsi diunggah ke Google Drive milikmu sendiri. Kamu memegang password backup tersebut.
         </li>
       </ul>
       <p>
@@ -102,16 +101,15 @@
         <li><strong>Foto struk</strong> — buka detail transaksi yang punya lampiran foto, lalu pilih "Hapus struk".</li>
       </ul>
       <p>
-        Data yang dihapus lewat cara di atas langsung terhapus permanen dari database Artosku saat itu juga —
-        tidak ada masa penyimpanan cadangan (retention period) tambahan setelahnya. Data lain di akunmu yang
-        tidak kamu hapus tetap tersimpan seperti biasa.
+        Data yang dihapus lewat cara di atas langsung terhapus dari perangkat. Backup yang sudah ada di Google
+        Drive tetap berada di akun Google kamu sampai kamu menghapusnya sendiri.
       </p>
 
       <h2>Keamanan</h2>
       <p>
-        Semua komunikasi antara aplikasi dan server memakai HTTPS. Data disimpan dengan Row Level Security
-        sehingga setiap baris data hanya bisa diakses oleh pemiliknya. PIN aplikasi disimpan terenkripsi di
-        perangkat, tidak pernah dikirim ke server.
+        PIN aplikasi disimpan terenkripsi di perangkat dan tidak pernah dikirim ke server. Backup Google Drive
+        dilindungi dengan password backup sebelum diunggah. Fitur AI hanya mengirim teks yang kamu masukkan
+        untuk diproses; catatan keuangan utama tetap tersimpan di perangkat.
       </p>
 
       <h2>Anak-anak</h2>
