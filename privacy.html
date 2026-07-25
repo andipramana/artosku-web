@@ -4,151 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Kebijakan Privasi — Artosku</title>
-<meta name="description" content="Kebijakan privasi Artosku: data apa yang dikumpulkan, bagaimana disimpan, dan cara menghapus akun & data kamu." />
+<meta name="description" content="Kebijakan privasi Artosku: penyimpanan lokal, backup Google Drive opsional, dan layanan yang dipakai saat fitur tertentu dipilih." />
 <meta name="theme-color" content="#0E8B4F" />
 <link rel="icon" href="assets/logo-mark.png" type="image/png" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
-
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-
-<header class="navbar is-scrolled" id="navbar">
-  <div class="container navbar__inner">
-    <a href="index.html" class="brand">
-      <img src="assets/logo-mark.png" alt="" width="36" height="36" class="brand__mark" />
-      <span class="brand__word">Artosku</span>
-    </a>
-    <a href="index.html" class="btn btn--ghost btn--sm">
-      <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 12H5m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Kembali ke Beranda</span>
-    </a>
-  </div>
-</header>
-
-<main id="main">
-  <section class="section legal" style="padding-top: clamp(7rem, 12vw, 9rem);">
-    <div class="container container--narrow legal-doc">
-      <p class="eyebrow"><span class="eyebrow__dot"></span> Kebijakan Privasi</p>
-      <h1>Kebijakan Privasi Artosku</h1>
-      <p class="legal-doc__updated">Terakhir diperbarui: 25 Juli 2026</p>
-
-      <p>
-        Artosku ("aplikasi", "kami") adalah aplikasi pencatatan keuangan pribadi yang dibuat oleh Andi Pramana.
-        Halaman ini menjelaskan data apa yang dikumpulkan Artosku, bagaimana data itu disimpan dan digunakan, dan
-        bagaimana cara kamu menghapusnya kapan pun.
-      </p>
-
-      <h2>Data apa saja yang dikumpulkan?</h2>
-      <ul>
-        <li><strong>Email &amp; kata sandi</strong> — dipakai untuk membuat akun dan masuk ke aplikasi.</li>
-        <li><strong>Data keuangan yang kamu masukkan sendiri</strong> — transaksi, wallet, kategori, anggaran, aset, utang/piutang, tujuan menabung, dan transaksi berulang. Data ini disimpan di perangkat kamu.</li>
-        <li><strong>Foto struk (opsional)</strong> — hanya jika kamu memilih melampirkan foto ke sebuah transaksi. Foto disimpan di perangkat kamu.</li>
-        <li><strong>PIN &amp; data biometrik untuk kunci aplikasi</strong> — <em>tidak pernah dikirim ke server mana pun</em>. PIN disimpan terenkripsi hanya di perangkat kamu sendiri (lewat penyimpanan aman bawaan Android/iOS), dan verifikasi biometrik (sidik jari/wajah) sepenuhnya ditangani oleh sistem operasi perangkat kamu, bukan oleh Artosku.</li>
-        <li><strong>Laporan crash/error (diagnostik teknis)</strong> — lewat Firebase Crashlytics (Google), Artosku mengirim laporan otomatis saat aplikasi mengalami error, berisi info teknis seperti model perangkat, versi sistem operasi, versi aplikasi, dan jejak error (stack trace). Laporan ini <strong>tidak berisi data keuangan atau isi transaksimu</strong> — hanya dipakai untuk menemukan dan memperbaiki bug.</li>
-      </ul>
-      <p>
-        Artosku <strong>tidak</strong> memakai SDK iklan atau pelacakan perilaku/analitik pemasaran apa pun.
-        Satu-satunya layanan pihak ketiga yang dipakai adalah Firebase Crashlytics (khusus laporan crash, lihat
-        di atas), layanan login, dan layanan AI saat kamu memilih memakai fitur AI. Tidak ada data yang
-        dikumpulkan selain yang kamu masukkan sendiri dan laporan crash teknis di atas.
-      </p>
-
-      <h2>Di mana data disimpan?</h2>
-      <p>
-        Secara bawaan, catatan keuangan disimpan di perangkat kamu:
-      </p>
-      <ul>
-        <li>
-          <strong>Data keuangan di perangkat</strong> — transaksi dan catatan keuangan utama disimpan di HP kamu.
-          Artosku tidak memakai server untuk menyimpan catatan keuangan pribadi kamu.
-        </li>
-        <li>
-          <strong>Backup Google Drive (opsional)</strong> — jika kamu memilih membuat backup, file backup
-          terenkripsi diunggah ke Google Drive milikmu sendiri. Kamu memegang password backup tersebut.
-        </li>
-      </ul>
-      <p>
-        Dalam kedua mode, Artosku hanya pernah memakai kunci akses publik terbatas (Publishable Key) dari
-        sisi aplikasi — tidak pernah kunci admin (service role) yang bisa melihat data lintas-akun.
-      </p>
-
-      <h2>Apakah data dibagikan ke pihak lain?</h2>
-      <p>
-        Tidak. Artosku tidak menjual, menyewakan, atau membagikan data keuanganmu ke pihak ketiga mana pun untuk
-        tujuan iklan atau komersial apa pun.
-      </p>
-
-      <h2 id="hapus-akun">Hapus akun &amp; data</h2>
-      <p>Kamu bisa menghapus akun dan seluruh datamu secara permanen kapan saja, dengan dua cara:</p>
-      <ul>
-        <li><strong>Lewat aplikasi</strong> — buka <em>Lainnya → Hapus Akun</em>, ketik konfirmasi yang diminta, lalu akun beserta seluruh data (transaksi, wallet, kategori, foto struk, dan lainnya) akan dihapus permanen seketika.</li>
-        <li><strong>Lewat email</strong> — kalau kamu tidak bisa membuka aplikasi (misalnya lupa kata sandi), kirim email ke <a href="mailto:contact.artosku@gmail.com?subject=Permintaan%20Hapus%20Akun%20Artosku">contact.artosku@gmail.com</a> dari alamat email yang terdaftar di akun Artosku-mu, dan permintaan hapus akun akan diproses secara manual.</li>
-      </ul>
-      <p>Penghapusan akun bersifat permanen dan tidak bisa dibatalkan setelah dikonfirmasi.</p>
-
-      <h2 id="hapus-sebagian-data">Hapus sebagian data (tanpa hapus akun)</h2>
-      <p>
-        Kamu tidak perlu menghapus seluruh akun hanya untuk membuang sebagian data. Di aplikasi Artosku, kamu bisa
-        menghapus data secara satuan kapan saja, langsung dari layarnya masing-masing:
-      </p>
-      <ul>
-        <li><strong>Transaksi</strong> — buka detail transaksi yang ingin dihapus, ketuk ikon hapus, lalu konfirmasi.</li>
-        <li><strong>Wallet, kategori, anggaran, aset, utang/piutang, tujuan menabung, transaksi berulang</strong> — masing-masing punya opsi "Hapus" sendiri di layarnya (biasanya lewat ikon tempat sampah atau menu titik tiga pada item terkait).</li>
-        <li><strong>Foto struk</strong> — buka detail transaksi yang punya lampiran foto, lalu pilih "Hapus struk".</li>
-      </ul>
-      <p>
-        Data yang dihapus lewat cara di atas langsung terhapus dari perangkat. Backup yang sudah ada di Google
-        Drive tetap berada di akun Google kamu sampai kamu menghapusnya sendiri.
-      </p>
-
-      <h2>Keamanan</h2>
-      <p>
-        PIN aplikasi disimpan terenkripsi di perangkat dan tidak pernah dikirim ke server. Backup Google Drive
-        dilindungi dengan password backup sebelum diunggah. Fitur AI hanya mengirim teks yang kamu masukkan
-        untuk diproses; catatan keuangan utama tetap tersimpan di perangkat.
-      </p>
-
-      <h2>Anak-anak</h2>
-      <p>
-        Artosku tidak ditujukan untuk anak-anak di bawah 13 tahun, dan tidak dirancang khusus untuk menarik
-        perhatian anak-anak.
-      </p>
-
-      <h2>Perubahan kebijakan ini</h2>
-      <p>
-        Kebijakan privasi ini bisa diperbarui dari waktu ke waktu — tanggal di bagian atas halaman ini
-        menunjukkan pembaruan terakhir. Perubahan berarti akan diumumkan lewat halaman ini.
-      </p>
-
-      <h2>Kontak</h2>
-      <p>
-        Ada pertanyaan soal privasi atau data kamu? Kirim email ke
-        <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a>, atau lewat
-        <a href="index.html#kontak">form kontak</a> di halaman utama.
-      </p>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="index.html" class="brand brand--footer">
-      <img src="assets/logo-mark.png" alt="" width="28" height="28" />
-      <span>Artosku</span>
-    </a>
-    <nav class="footer__links" aria-label="Navigasi footer">
-      <a href="index.html#fitur">Fitur</a>
-      <a href="index.html#kontak">Kontak</a>
-      <a href="privacy.html">Kebijakan Privasi</a>
-    </nav>
-    <p class="footer__copy">&copy; <span id="year"></span> Artosku. Dibuat oleh Andi Pramana.</p>
-  </div>
-</footer>
-
+<header class="navbar is-scrolled" id="navbar"><div class="container navbar__inner"><a href="index.html" class="brand"><img src="assets/logo-mark.png" alt="" width="36" height="36" class="brand__mark" /><span class="brand__word">Artosku</span></a><a href="index.html" class="btn btn--ghost btn--sm">Kembali ke Beranda</a></div></header>
+<main id="main"><section class="section legal" style="padding-top: clamp(7rem, 12vw, 9rem);"><div class="container container--narrow legal-doc">
+<p class="eyebrow"><span class="eyebrow__dot"></span> Kebijakan Privasi</p><h1>Kebijakan Privasi Artosku</h1><p class="legal-doc__updated">Terakhir diperbarui: 26 Juli 2026</p>
+<p>Artosku adalah aplikasi pencatatan keuangan pribadi. Kebijakan ini menjelaskan data yang tersimpan di perangkat, data yang dikirim saat kamu memilih fitur tertentu, serta pilihan penghapusan yang tersedia.</p>
+<h2>Ringkasnya</h2><p>Catatan keuangan utama dan foto struk disimpan di ruang aplikasi pada perangkatmu secara bawaan. Artosku tidak menyimpan salinan rutin catatan tersebut di server aplikasi. Beberapa fitur opsional—seperti backup Google Drive dan pencatatan AI—memerlukan pengiriman data yang dijelaskan di bawah.</p>
+<h2>Data akun dan autentikasi</h2><p>Jika kamu mendaftar dengan email, Supabase Auth memproses alamat email dan kata sandi untuk membuat serta mengamankan akun. Artosku tidak dapat membaca kata sandi dalam bentuk teks biasa. Jika kamu memilih Masuk dengan Google, Google dan Supabase memproses informasi akun yang diperlukan untuk autentikasi, seperti email dan pengenal akun.</p>
+<h2>Data yang disimpan di perangkat</h2><ul><li><strong>Catatan keuangan</strong> — transaksi, wallet, kategori, anggaran, aset, utang/piutang, tujuan tabungan, transaksi berulang, dan data terkait disimpan di database lokal aplikasi.</li><li><strong>Foto struk</strong> — bila kamu memilih melampirkannya, foto disimpan di ruang penyimpanan aplikasi pada perangkat.</li><li><strong>PIN dan biometrik</strong> — PIN asli tidak disimpan atau dikirim ke server; aplikasi menyimpan hash PIN beserta salt di penyimpanan aman perangkat. Sidik jari atau wajah diproses oleh sistem operasi; Artosku hanya menerima hasil berhasil atau gagal.</li></ul>
+<p>Data lokal dapat dipakai untuk pencatatan setelah sesi akun tersedia. Perlindungan tambahan terhadap perangkat yang hilang atau diakses orang lain juga bergantung pada keamanan perangkatmu.</p>
+<h2>Backup Google Drive (opsional)</h2><p>Jika kamu memilih menghubungkan Google Drive dan membuat backup, Artosku meminta akses terbatas ke folder data aplikasi Artosku di akun Google kamu. Backup dapat memuat catatan lokal dan foto struk. Sebelum diunggah, backup dienkripsi di perangkat dengan password backup; Google menerima file terenkripsi, bukan password tersebut. Backup baru menggantikan file backup Artosku sebelumnya.</p><p>Jika backup otomatis diaktifkan, password backup dapat disimpan di penyimpanan aman perangkat agar proses background dapat berjalan. Menghapus akun Artosku tidak otomatis menghapus backup di Google Drive. Kamu perlu menonaktifkan backup otomatis dan menghapus data aplikasi Artosku dari pengaturan Google Drive secara terpisah.</p>
+<h2>Fitur pencatatan AI (opsional)</h2><p>Saat kamu secara sadar menjalankan pencatatan AI, Artosku mengirim kalimat transaksi, nominal yang terdeteksi, nama wallet, serta nama dan tipe kategori yang tersedia ke backend Supabase Artosku. Backend meneruskan informasi yang diperlukan ke DeepSeek untuk membuat saran transaksi. Untuk pembatasan pemakaian, pengenal akun, pengenal instalasi, jumlah penggunaan, dan waktu periode dapat diproses/disimpan. Catatan keuangan lokal tidak diunggah seluruhnya; jangan masukkan informasi yang tidak ingin kamu kirim ke layanan tersebut.</p>
+<h2>Laporan crash dan data teknis</h2><p>Pada versi aplikasi non-debug, Firebase Crashlytics dapat menerima laporan crash/error, stack trace, versi aplikasi, informasi perangkat dan sistem operasi, serta konteks teknis. Artosku tidak secara sengaja menambahkan isi database transaksi sebagai atribut Crashlytics, tetapi pesan error dapat memuat informasi insidental. Data ini digunakan untuk mendiagnosis dan memperbaiki aplikasi.</p>
+<h2>Website dan closed testing</h2><p>Jika kamu mengirim email melalui formulir closed testing, email tersebut dikirim ke dan disimpan di Supabase untuk mengelola daftar tester Google Play. Gunakan email akun Google yang kamu pakai di Play Store. Kamu dapat meminta penghapusannya melalui <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a>. Website memuat Google Fonts; Google dapat menerima data permintaan teknis seperti alamat IP dan informasi browser saat halaman dimuat.</p>
+<h2>Penyedia layanan dan pembagian data</h2><p>Artosku tidak menjual atau menyewakan data kamu dan tidak menggunakan SDK iklan atau Firebase Analytics. Data hanya dikirim kepada penyedia layanan sejauh diperlukan untuk fitur yang kamu pilih: <strong>Supabase</strong> untuk autentikasi, daftar tester, backend AI, dan layanan bersama; <strong>DeepSeek</strong> untuk permintaan AI; serta <strong>Google</strong> untuk Google Sign-In, Google Drive, Google Fonts, dan Firebase Crashlytics. Penyedia tersebut dapat memproses data teknis seperti alamat IP, user-agent, waktu permintaan, dan pengenal layanan menurut kebijakan mereka.</p>
+<h2>Hapus akun dan data</h2><p>Lewat aplikasi, buka <em>Lainnya → Hapus Akun</em> lalu ikuti konfirmasi. Artosku menghapus catatan lokal dan foto struk akun aktif dari perangkat, kemudian meminta Supabase menghapus akun autentikasi; tahap server memerlukan koneksi internet. Bila tahap server gagal, akun server mungkin masih ada meski data lokal telah lebih dahulu dihapus.</p><p>Penghapusan ini tidak otomatis menghapus backup Google Drive, PIN/pengaturan lokal, atau catatan penggunaan AI yang diperlukan untuk pembatasan layanan. Data lokal lain dapat dihapus melalui pengaturan aplikasi/perangkat. Jika tidak dapat membuka aplikasi, kirim permintaan dari email akun terdaftar ke <a href="mailto:contact.artosku@gmail.com?subject=Permintaan%20Hapus%20Akun%20Artosku">contact.artosku@gmail.com</a>; kami dapat menghapus akun layanan, tetapi tidak dapat menghapus data yang hanya ada di perangkat atau Google Drive milikmu.</p>
+<h2>Hapus sebagian data</h2><p>Kamu dapat menghapus transaksi, wallet, kategori, aset, anggaran, serta foto struk dari layar terkait. Penghapusan lokal tidak mengubah backup yang sudah dibuat secara retroaktif; backup berikutnya akan menggantikan backup lama dengan keadaan data lokal terbaru.</p>
+<h2>Perubahan dan kontak</h2><p>Kebijakan ini dapat diperbarui bila fitur atau pemrosesan data berubah. Pertanyaan privasi dapat dikirim ke <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a>.</p>
+</div></section></main>
+<footer class="footer"><div class="container footer__inner"><a href="index.html" class="brand brand--footer"><img src="assets/logo-mark.png" alt="" width="28" height="28" /><span>Artosku</span></a><nav class="footer__links" aria-label="Navigasi footer"><a href="index.html#fitur">Fitur</a><a href="index.html#kontak">Kontak</a><a href="privacy.html">Kebijakan Privasi</a></nav><p class="footer__copy">&copy; <span id="year"></span> Artosku. Dibuat oleh Andi Pramana.</p></div></footer>
 <script src="js/main.js"></script>
-</body>
-</html>
+</body></html>
