@@ -142,7 +142,7 @@ svg { display: block; }
 .btn:active { --btn-y: -1px; }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  background: var(--primary);
   color: #fff;
   box-shadow: var(--shadow-glow);
 }
