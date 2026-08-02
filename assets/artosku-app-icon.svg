@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1024" height="1024" viewBox="0 0 1024 1024"
+     fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">App Icon Artosku</title>
+  <desc id="desc">Logo aplikasi Artosku dengan background hijau dan simbol putih.</desc>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="220" fill="#538248"/>
+
+  <!-- Symbol centered -->
+  <g transform="translate(184.32 288.00) scale(0.85303)">
+    <g transform="translate(-272.361387 -77)">
+      <path
+        d="M452 77
+           H769
+           C781 77 789 88 786 100
+           L613 590
+           C611 598 606 602 598 602
+           H288
+           C278 602 270 593 273 582
+           L438 89
+           C440 82 445 77 452 77
+           Z"
+        fill="#FFFFFF"/>
+
+      <path
+        d="M807 140
+           C813 139 818 143 821 149
+           L1039 581
+           C1044 591 1037 602 1027 602
+           H747
+           L679 487
+           L796 154
+           C798 146 802 141 807 140
+           Z"
+        fill="#FFFFFF"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="2600" height="832" viewBox="0 0 2600 832"
+     fill="none" role="img" aria-labelledby="title desc"
+     shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <title id="title">Logo Primer Artosku</title>
+  <desc id="desc">Logo primer Artosku dengan logomark di kiri dan wordmark di kanan.</desc>
+
+  <!-- Logomark -->
+  <path
+    d="M452 77
+       H769
+       C781 77 789 88 786 100
+       L613 590
+       C611 598 606 602 598 602
+       H288
+       C278 602 270 593 273 582
+       L438 89
+       C440 82 445 77 452 77
+       Z"
+    fill="#538248"/>
+
+  <path
+    d="M807 140
+       C813 139 818 143 821 149
+       L1039 581
+       C1044 591 1037 602 1027 602
+       H747
+       L679 487
+       L796 154
+       C798 146 802 141 807 140
+       Z"
+    fill="#86B77A"/>
+
+  <!-- Wordmark -->
+  <text
+    x="1139.1"
+    y="339.5"
+    fill="#101713"
+    font-family="Inter Display, Inter, system-ui, sans-serif"
+    font-size="304.5"
+    font-weight="600"
+    font-style="normal"
+    letter-spacing="-0.02em"
+    dominant-baseline="middle">
+    Artosku
+  </text>
+</svg>
