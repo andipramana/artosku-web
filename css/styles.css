@@ -769,34 +769,6 @@ svg { display: block; }
 .download__badge { display: inline-block; line-height: 0; border-radius: 8px; transition: transform 0.2s ease, opacity 0.2s ease; }
 .download__badge:hover { transform: translateY(-2px); opacity: 0.92; }
 .download__badge img { display: block; height: 60px; width: auto; }
-.download__badge[hidden] { display: none; }
-
-/* Trigger for the Play Store badge, hidden until clicked (see
-   .already-invited JS in main.js) — sized/colored to actually read as an
-   interactive prompt rather than blend in as fine print. */
-.already-invited {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-soft);
-  cursor: pointer;
-}
-.already-invited__cta {
-  font-weight: 800;
-  color: var(--primary);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.already-invited:hover .already-invited__cta,
-.already-invited:focus-visible .already-invited__cta { color: var(--primary-dark); }
-.already-invited[hidden] { display: none; }
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -808,23 +780,6 @@ svg { display: block; }
   white-space: nowrap;
   border: 0;
 }
-
-.tester-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1.6rem;
-  align-items: flex-start;
-}
-.tester-form .form-field { flex: 1 1 260px; }
-.tester-form__status {
-  margin-top: 0.7rem;
-  font-size: 0.85rem;
-  min-height: 1.2em;
-}
-.tester-form__status.is-success { color: var(--primary); }
-.tester-form__status.is-error { color: var(--action-dark); }
-
 
 .download__howto { margin-top: 1.6rem; }
 .download__howto summary {
@@ -904,7 +859,6 @@ body.page-early-access .footer { flex-shrink: 0; padding-block: 0.75rem; }
 }
 #daftar .download__copy h1 { font-size: clamp(1.25rem, 4vw, 1.8rem); }
 #daftar .download__copy > p { font-size: 0.92rem; margin-top: 0.5rem; }
-#daftar .tester-form { margin-top: 0.9rem; }
 
 /* .phone's own chrome (notch, border-radius, padding) and the mockscreen
    content (chips, donut, tx list) are fixed px, tuned for the ~280-360px
