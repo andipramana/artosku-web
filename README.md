@@ -20,7 +20,7 @@ css/styles.css     # semua styling, token warna/tipografi di :root
 js/main.js         # parallax, scroll reveal, navbar glass, tilt 3D, menu mobile, form kontak
 assets/            # gambar (layer parallax, logo, og-cover)
 downloads/artosku.apk  # file APK yang didownload dari tombol "Download Artosku"
-CNAME              # domain custom: artosku.andipramana.com
+CNAME              # domain custom: artosku.my.id
 ```
 
 ## Mengaktifkan GitHub Pages
@@ -29,7 +29,7 @@ Repo ini sudah berisi `index.html` di root, jadi tinggal:
 
 1. Buka **Settings → Pages** di repo GitHub.
 2. Source: **Deploy from a branch**, branch **main**, folder **/ (root)**.
-3. Simpan — halaman tersedia di `https://artosku.andipramana.com` (domain custom, lihat file `CNAME`).
+3. Simpan — halaman tersedia di `https://artosku.my.id` (domain custom, lihat file `CNAME`).
 
 ## Update tombol "Download APK"
 
