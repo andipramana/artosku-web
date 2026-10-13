@@ -1081,3 +1081,60 @@ body.page-early-access .footer { flex-shrink: 0; padding-block: 0.75rem; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { justify-content: center; }
 }
+
+/* ---------- Paket (Free, Pro, Max) ---------- */
+.plans { align-items: stretch; margin-top: 2.2rem; }
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.7rem 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(83, 130, 72, 0.18);
+  border-radius: 24px;
+}
+.plan-card--best { border: 2px solid var(--primary); box-shadow: var(--shadow-md); }
+.plan-card h3 { font-size: 1.5rem; font-weight: 800; }
+.plan-card__note { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
+.plan-card__badge {
+  position: absolute;
+  top: -13px;
+  right: 22px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #ffd66b;
+  color: #6b4a00;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+.plan-card ul { list-style: none; margin: 0.4rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+.plan-card li {
+  position: relative;
+  padding-left: 1.7rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.plan-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: var(--primary);
+}
+.plan-card li::after {
+  content: "";
+  position: absolute;
+  left: 0.36rem;
+  top: 0.5em;
+  width: 0.32rem;
+  height: 0.6rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.plans__foot { margin-top: 1.6rem; text-align: center; font-size: 0.9rem; color: var(--ink-soft); }
