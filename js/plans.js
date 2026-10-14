@@ -37,7 +37,7 @@
         (promo > 0 ? ' (ditambah ' + promo + ' selama masa promo)' : ''));
       // "more than Free" counts from Free's base, not the promo on top of it
       set('pro-ai', 'Pencatatan AI ' + pro + ' per hari, ' + times(pro / base) + ' lebih banyak dari Free');
-      set('max-ai', 'Pencatatan AI ' + max + ' per hari, ' + times(max / pro) + ' lebih banyak dari Pro');
+      set('max-ai', 'Pencatatan AI ' + max + ' per hari, ' + times(max / base) + ' lebih banyak dari Free');
       if (v.scan_daily_limit_free > 0) set('free-scan', 'Scan struk dan mutasi ' + v.scan_daily_limit_free + ' per hari');
       if (v.scan_daily_limit_pro > 0) set('pro-scan', 'Scan struk dan mutasi ' + v.scan_daily_limit_pro + ' per hari');
       if (v.scan_daily_limit_max > 0) set('max-scan', 'Scan struk dan mutasi ' + v.scan_daily_limit_max + ' per hari');
