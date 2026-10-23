@@ -81,6 +81,18 @@
   // carry the native `required` attribute, so the browser blocks the submit
   // event (and shows its own validation UI) until they're filled in — no
   // extra validation logic needed here.
+  const LANG = document.documentElement.lang === "en" ? "en" : "id";
+  const TEXTS = {
+    id: {
+      subject: (type, name) => `[Artosku] ${type} — dari ${name}`,
+      body: (name, type, message) => `Nama: ${name}\nJenis: ${type}\n\nPesan:\n${message}`,
+    },
+    en: {
+      subject: (type, name) => `[Artosku] ${type} — from ${name}`,
+      body: (name, type, message) => `Name: ${name}\nType: ${type}\n\nMessage:\n${message}`,
+    },
+  };
+  const t = TEXTS[LANG];
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -90,8 +102,8 @@
       const type = contactForm.elements.type.value;
       const message = contactForm.elements.message.value.trim();
 
-      const subject = `[Artosku] ${type} — dari ${name}`;
-      const body = `Nama: ${name}\nJenis: ${type}\n\nPesan:\n${message}`;
+      const subject = t.subject(type, name);
+      const body = t.body(name, type, message);
 
       const mailto =
         "mailto:contact.artosku@gmail.com" +
