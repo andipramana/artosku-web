@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<script>
+(function () {
+  var t = null;
+  try { t = localStorage.getItem("tut-theme"); } catch (e) {}
+  if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+})();
+</script>
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}" />
+<meta name="theme-color" content="#538248" />
+<link rel="canonical" href="{{CANONICAL}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{TITLE}}" />
+<meta property="og:description" content="{{OG_DESC}}" />
+<meta property="og:image" content="https://artosku.my.id/assets/artosku-app-icon.png" />
+<link rel="icon" href="{{ROOT}}assets/artosku-app-icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="{{ROOT}}assets/artosku-app-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{{ROOT}}css/styles.css" />
+<link rel="stylesheet" href="{{ROOT}}css/tutorial.css" />
+<link rel="alternate" hreflang="id" href="https://artosku.my.id/tutorial/" />
+<link rel="alternate" hreflang="en" href="https://artosku.my.id/en/tutorial/" />
+<link rel="alternate" hreflang="x-default" href="https://artosku.my.id/tutorial/" />
+</head>
+<body class="page-tutorial">
+<a class="skip-link" href="#main">{{SKIP_LINK_TEXT}}</a>
+
+<header class="navbar is-scrolled" id="navbar">
+  <div class="container navbar__inner">
+    <a href="{{ROOT}}" class="brand">
+      <img src="{{ROOT}}assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo brand__logo--light" />
+      <img src="{{ROOT}}assets/artosku-logo-dark.svg" alt="" width="118" height="49" class="brand__logo brand__logo--dark" aria-hidden="true" />
+    </a>
+    <nav class="nav-links" aria-label="{{NAV_MAIN_LABEL}}">
+{{NAV_LINKS_HTML}}
+    </nav>
+    <div class="navbar__actions">
+      <a href="{{OTHER_HREF}}" class="btn btn--ghost btn--sm" hreflang="{{OTHER_LANG}}" lang="{{OTHER_LANG}}">{{OTHER_NAME}}</a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="{{THEME_TOGGLE_LABEL}}">
+        <svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary btn--sm"><span>{{DOWNLOAD_LABEL}}</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="{{MENU_TOGGLE_LABEL}}" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="{{NAV_MOBILE_LABEL}}">
+{{NAV_LINKS_MOBILE_HTML}}
+    <a href="{{OTHER_HREF}}" class="btn btn--ghost" hreflang="{{OTHER_LANG}}" lang="{{OTHER_LANG}}">{{OTHER_NAME}}</a>
+    <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary">{{DOWNLOAD_LABEL}}</a>
+  </nav>
+</div>
+
+<main id="main" class="tut">
+  <div class="tut-wrap">
+
+    <header class="tut-hero">
+      <h1>{{HERO_H1}}</h1>
+      <p>{{HERO_P}}</p>
+      <div class="tut-search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="tutQ" type="search" inputmode="search" autocomplete="off" placeholder="{{SEARCH_PLACEHOLDER}}" aria-label="{{SEARCH_LABEL}}" />
+      </div>
+      <p class="tut-status" id="tutStatus" role="status" aria-live="polite"></p>
+      <nav class="tut-toc" id="tutToc" aria-label="{{TOC_LABEL}}">
+{{TOC_LINKS_HTML}}
+      </nav>
+    </header>
+
+{{START_SECTION_HTML}}
+
+{{GROUPS_HTML}}
+
+    <p class="tut-empty" id="tutEmpty">{{EMPTY_SEARCH_HTML}}</p>
+
+    <section class="tut-cta">
+      <h2>{{CTA_H2}}</h2>
+      <p>{{CTA_P}}</p>
+      <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">{{CTA_BTN}}</a>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="{{ROOT}}" class="brand brand--footer">
+      <img src="{{ROOT}}assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo brand__logo--light" />
+      <img src="{{ROOT}}assets/artosku-logo-dark.svg" alt="" width="102" height="42" class="brand__logo brand__logo--dark" aria-hidden="true" />
+    </a>
+    <nav class="footer__links" aria-label="{{NAV_FOOTER_LABEL}}">
+{{FOOTER_LINKS_HTML}}
+      <a href="{{PRIVACY_HREF}}">{{PRIVACY_TEXT}}</a>
+      <a href="{{TERMS_HREF}}">{{TERMS_TEXT}}</a>
+      <a href="{{OTHER_HREF}}" hreflang="{{OTHER_LANG}}" lang="{{OTHER_LANG}}">{{OTHER_NAME}}</a>
+    </nav>
+    <p class="footer__copy">&copy; <span id="year"></span> Artosku. {{MADE_BY}}</p>
+  </div>
+</footer>
+<script src="{{ROOT}}js/main.js"></script>
+<script src="{{ROOT}}js/tutorial.js"></script>
+</body>
+</html>

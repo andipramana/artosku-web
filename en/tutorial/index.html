@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<script>
+(function () {
+  var t = null;
+  try { t = localStorage.getItem("tut-theme"); } catch (e) {}
+  if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+})();
+</script>
+<title>Artosku Guide — How to Track Your Money on Your Phone</title>
+<meta name="description" content="How to track your money on your phone with Artosku: set up a wallet, record transactions with AI, set a daily allowance and budgets. Short steps, plain words." />
+<meta name="theme-color" content="#538248" />
+<link rel="canonical" href="https://artosku.my.id/en/tutorial/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Artosku Guide — How to Track Your Money on Your Phone" />
+<meta property="og:description" content="Short steps for using Artosku, from your first wallet to a Google Drive backup." />
+<meta property="og:image" content="https://artosku.my.id/assets/artosku-app-icon.png" />
+<link rel="icon" href="../../assets/artosku-app-icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../assets/artosku-app-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/styles.css" />
+<link rel="stylesheet" href="../../css/tutorial.css" />
+<link rel="alternate" hreflang="id" href="https://artosku.my.id/tutorial/" />
+<link rel="alternate" hreflang="en" href="https://artosku.my.id/en/tutorial/" />
+<link rel="alternate" hreflang="x-default" href="https://artosku.my.id/tutorial/" />
+</head>
+<body class="page-tutorial">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="navbar is-scrolled" id="navbar">
+  <div class="container navbar__inner">
+    <a href="../../" class="brand">
+      <img src="../../assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo brand__logo--light" />
+      <img src="../../assets/artosku-logo-dark.svg" alt="" width="118" height="49" class="brand__logo brand__logo--dark" aria-hidden="true" />
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../../en/#fitur">Features</a>
+      <a href="../../en/#paket">Plans</a>
+      <a href="./" aria-current="page">Guide</a>
+      <a href="../../en/#faq">FAQ</a>
+      <a href="../../en/#kontak">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="../../tutorial/" class="btn btn--ghost btn--sm" hreflang="id" lang="id">Bahasa Indonesia</a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch light or dark theme">
+        <svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary btn--sm"><span>Download Artosku</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Mobile navigation">
+    <a href="../../en/#fitur">Features</a>
+    <a href="../../en/#paket">Plans</a>
+    <a href="./">Guide</a>
+    <a href="../../en/#faq">FAQ</a>
+    <a href="../../en/#kontak">Contact</a>
+    <a href="../../tutorial/" class="btn btn--ghost" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary">Download Artosku</a>
+  </nav>
+</div>
+
+<main id="main" class="tut">
+  <div class="tut-wrap">
+
+    <header class="tut-hero">
+      <h1>Artosku Guide</h1>
+      <p>Short steps for using Artosku. Your data stays on your own phone.</p>
+      <div class="tut-search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="tutQ" type="search" inputmode="search" autocomplete="off" placeholder="Search, e.g. budget, receipt, backup" aria-label="Search the guide" />
+      </div>
+      <p class="tut-status" id="tutStatus" role="status" aria-live="polite"></p>
+      <nav class="tut-toc" id="tutToc" aria-label="Contents">
+        <a href="#mulai">Start here</a>
+        <a href="#g-catat">Recording money</a>
+        <a href="#g-wallet">Wallets, categories &amp; merchants</a>
+        <a href="#g-anggaran">Budgets &amp; allowance</a>
+        <a href="#g-utang">Debts &amp; installments</a>
+        <a href="#g-tabungan">Savings, assets &amp; shopping</a>
+        <a href="#g-laporan">Reports</a>
+        <a href="#g-bersama">Sharing with others</a>
+        <a href="#g-backup">Backup &amp; restore</a>
+        <a href="#g-ai">AI Chat &amp; AI</a>
+        <a href="#g-maskot">Streak &amp; mascot</a>
+        <a href="#g-pengaturan">Settings &amp; account</a>
+        <a href="#g-tujuan">Quick how-tos for common goals</a>
+        <a href="#g-bisnis">Business Mode</a>
+      </nav>
+    </header>
+
+    <section class="tut-start" id="mulai" aria-labelledby="mulai-h">
+      <h2 id="mulai-h">Start here</h2>
+      <p class="tut-lead">Four steps, about five minutes.</p>
+      <ol class="tut-steps">
+        <li>
+          <h3>Set up a wallet</h3>
+          <p>A wallet is where your money lives: cash, a bank account or an e-wallet. On Home, if you have no wallet yet, tap <b>Create Samples</b>. Cash, Bank and E-Wallet wallets are made at once, and you can edit or delete them later. Want to make your own? Tap <b>Create Your Own</b>.</p>
+          <figure class="tut-shot"><img src="../../assets/tutorial/tutorial_step1_wallet.png" alt="Empty Home screen with Create Samples button highlighted" width="360" height="577" loading="lazy" /></figure>
+        </li>
+        <li>
+          <h3>Record your first transaction</h3>
+          <p><b>With AI:</b> tap the <b>+</b> button at the bottom middle, then <b>Record with AI</b>. Say or type, e.g. "lunch 25k". Check the result, then save.</p><p><b>By hand:</b> tap <b>+</b>, pick Expense, Income or Transfer. Fill in the Amount, pick the Wallet and the Category, then tap <b>Save</b>.</p>
+        </li>
+        <li>
+          <h3>See the result on Home</h3>
+          <p>Go back to Home. Your total balance has changed. The daily allowance shows up here once you have made one (see the next step).</p>
+        </li>
+        <li>
+          <h3>What next</h3>
+          <p>Try <a href="#jatah_harian">Daily allowance</a> (how much you can spend per day until payday), <a href="#anggaran">Budgets</a> (a limit per category) and <a href="#backup_drive">Backup to Google Drive</a> (a copy of your data in your own Drive).</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="tut-group" id="g-catat" aria-labelledby="h-g-catat">
+      <h2 id="h-g-catat">Recording money</h2>
+      <article class="tut-card" id="catat_transaksi" data-title="Record transactions" data-keywords="catat transaksi pemasukan pengeluaran tambah input record add expense income jajan">
+        <h3>Record transactions</h3>
+        <p class="tut-intro">Record money in and out with the + button in the middle. Pick the wallet, category and merchant.</p>
+        <ol>
+          <li>Tap the + button at the bottom middle, then pick Expense, Income or Transfer.</li>
+          <li>Fill in the Amount, pick the Wallet and the Category (the merchant can stay empty).</li>
+          <li>Tap Save.</li>
+        </ol>
+        <figure class="tut-shot"><img src="../../assets/tutorial/tutorial_step2_transaction.png" alt="Transaction form with Save button highlighted" width="360" height="760" loading="lazy" /></figure>
+      </article>
+      <article class="tut-card" id="catat_ai_suara" data-title="Record with AI" data-keywords="suara ucap bicara ketik bebas ai catat voice speak quick add otomatis ucapkan">
+        <h3>Record with AI</h3>
+        <p class="tut-intro">Say or type &quot;lunch 25k&quot; and the AI prepares the transaction for you to check first.</p>
+        <ol>
+          <li>Tap the + button › Record with AI.</li>
+          <li>Say or type the transaction, e.g. &quot;lunch 25k with gopay&quot;. Several at once is fine.</li>
+          <li>Check the result (amount, wallet, category) and tap Edit if something is off.</li>
+          <li>Save.</li>
+        </ol>
+        <figure class="tut-shot"><img src="../../assets/tutorial/tutorial_step3_ai.png" alt="Record with AI screen with results and Save All button highlighted" width="360" height="412" loading="lazy" /></figure>
+      </article>
+      <article class="tut-card" id="scan_struk" data-title="Scan receipts" data-keywords="struk scan foto nota kuitansi receipt photo ocr belanja online shopee">
+        <h3>Scan receipts</h3>
+        <p class="tut-intro">Photograph a receipt and the items and total fill in. Shipping, fees and discounts are read too.</p>
+        <ol>
+          <li>Tap the + button › Scan receipt.</li>
+          <li>Pick the wallet, then Take Photo or Gallery (several receipts are fine).</li>
+          <li>Tap Process N Receipts and wait until the draft is ready.</li>
+          <li>Check the items and categories, then save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="tambah_banyak" data-title="Add many transactions at once" data-keywords="banyak sekaligus beberapa multi batch many bulk pecah struk banyak sekaligus input massal tambah banyak multi add">
+        <h3>Add many transactions at once</h3>
+        <p class="tut-intro">Enter several transactions on one screen, or split one receipt over several categories.</p>
+        <ol>
+          <li>Tap the + button › Add many.</li>
+          <li>Pick the Expense, Income or Transfer tab.</li>
+          <li>Fill in row by row (date, wallet, amount, category). For one like an earlier one use Copy old transaction.</li>
+          <li>Tap Save All.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="impor_mutasi" data-title="Import a statement from PDF" data-keywords="mutasi pdf rekening koran bank impor import statement rekening csv impor mutasi upload mutasi import statement mutasi bank mutasi pdf">
+        <h3>Import a statement from PDF</h3>
+        <p class="tut-intro">Read a bank statement PDF into a list of transactions you can check and save.</p>
+        <ol>
+          <li>Open Transactions, tap the ⋮ menu › Import statement.</li>
+          <li>Pick the wallet the statement belongs to.</li>
+          <li>Pick the PDF or CSV statement file from the bank, then tap Process File.</li>
+          <li>Check the list on the Statement Review page (category, date, amount), then Save All.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="catat_notif" data-title="Capture from notifications" data-keywords="notif notifikasi otomatis bank dompet digital gopay ovo dana notification capture notif bank catat otomatis dari notifikasi baca notifikasi bank notification auto record aplikasi dipantau watched apps pilih aplikasi hubungkan wallet izin notifikasi draf notifikasi">
+        <h3>Capture from notifications</h3>
+        <p class="tut-intro">Bank and e-wallet notifications on your phone become draft transactions to approve. Android only.</p>
+        <ol>
+          <li>Open More › Catat Notif, tap Allow notification access and turn it on for Artosku.</li>
+          <li>Tap Choose bank and wallet apps and pick the apps to watch.</li>
+          <li>Tap Connect to a wallet so drafts go to the right wallet.</li>
+          <li>When a bank or e-wallet notification comes in, a draft appears on the Catat Notif page. Check it, then Record all.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="catat_notif_setelan" data-title="Watched bank apps and clearing notification drafts" data-keywords="aplikasi dipantau pilih aplikasi hapus draf hapus data notifikasi izin notifikasi akses notifikasi tidak masuk draf tidak muncul watched apps clear drafts notification access">
+        <h3>Watched bank apps and clearing notification drafts</h3>
+        <p class="tut-intro">Choose the bank apps that are watched, connect wallets, turn on new draft alerts, and delete drafts or notification data.</p>
+        <ol>
+          <li>Open More › Capture notifications, then tap Settings (the icon at the top right).</li>
+          <li>Under Monitored apps tap Manage to pick the bank and wallet apps. Turn on Tell me about new drafts for an alert.</li>
+          <li>Drafts not showing? Tap Not coming in? then Allow again for notification access.</li>
+          <li>To clean up, tap Delete all drafts or Delete all notification data.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="biaya_transfer" data-title="Transfer fee" data-keywords="biaya admin biaya admin fee transfer fee antar bank bi-fast biaya transfer admin transfer fee transfer biaya antar bank admin bank">
+        <h3>Transfer fee</h3>
+        <p class="tut-intro">Record the bank admin fee together with the transfer: one card, and the source wallet balance is right.</p>
+        <ol>
+          <li>Tap the + button › Transfer (or edit an existing transfer).</li>
+          <li>Fill in the Amount, From wallet and To wallet.</li>
+          <li>Fill in Transfer fee (optional), or tap 2,500 or 6,500. Empty or 0 means no fee.</li>
+          <li>Pick the Fee category, then Save. The fee is recorded as an expense and shows on one card with its transfer.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="salin_transaksi" data-title="Copy an old transaction" data-keywords="salin copy duplikat ulang sama seperti kemarin duplicate kopi copy transaksi transaksi berulang manual kopi transaksi ulang transaksi">
+        <h3>Copy an old transaction</h3>
+        <p class="tut-intro">Record a similar transaction again in one tap, without typing it from scratch.</p>
+        <ol>
+          <li>Open an old transaction in the Transactions tab, then tap the Copy icon.</li>
+          <li>Or in Add many, tap Copy old transaction and pick it (you can search and filter).</li>
+          <li>Change what you need (the date is today by default), then save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="struk_gabungan" data-title="Combined receipt (many categories)" data-keywords="struk gabungan digabung banyak kategori beberapa kategori rincian item combined split digabung jadi 1 struk bagi kategori split kategori rincian item combined receipt satu struk banyak kategori">
+        <h3>Combined receipt (many categories)</h3>
+        <p class="tut-intro">One shopping receipt becomes one transaction with its items and each item&#x27;s category.</p>
+        <ol>
+          <li>Tap the + button › Scan receipt, then photograph the receipt. In the result pick Combine into 1 receipt so it becomes one transaction with the item details.</li>
+          <li>Or enter it yourself: in the transaction form turn on Split across several categories, then fill in each row. The rows must add up to the total.</li>
+          <li>Save. The item details are kept inside the transaction.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-wallet" aria-labelledby="h-g-wallet">
+      <h2 id="h-g-wallet">Wallets, categories &amp; merchants</h2>
+      <article class="tut-card" id="wallet" data-title="Wallets" data-keywords="wallet dompet saldo rekening bank ewallet e-wallet kas transfer balance account akun bank tambah rekening limit kurs saldo awal arsip urutkan kartu kredit">
+        <h3>Wallets</h3>
+        <p class="tut-intro">Manage cash, bank accounts and e-wallets and their balances. Move money between wallets.</p>
+        <ol>
+          <li>Open More › Wallet, then tap Add Wallet.</li>
+          <li>Pick the type (bank, e-wallet, cash) or Add Manually.</li>
+          <li>Fill in the Wallet name and the Opening balance, then Save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pocket" data-title="Pockets" data-keywords="pocket kantong amplop sub wallet dana darurat liburan alokasi envelope bagi saldo alokasi dana target pocket alokasi awal atur dana tambah dana kurangi dana">
+        <h3>Pockets</h3>
+        <p class="tut-intro">Split the balance of one wallet into several pockets, e.g. Emergency fund or Holiday.</p>
+        <ol>
+          <li>Open More › Wallet and tap the wallet.</li>
+          <li>Under Pocket tap Add Pocket (New Pocket). Fill in the Pocket name and the Initial allocation, then Create Pocket.</li>
+          <li>Change what is in it any time with the pocket&#x27;s ⋮ menu › Manage funds: Add, Reduce or Transfer to another pocket.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pindah_pocket" data-title="Move money between pockets" data-keywords="pindah transfer pocket antar pocket pindah dana geser dana move pindah pocket pindah antar pocket move between pockets">
+        <h3>Move money between pockets</h3>
+        <p class="tut-intro">Move money from one pocket to another pocket or wallet, recorded neatly.</p>
+        <ol>
+          <li>Open More › Wallet, tap the wallet, then open Pocket.</li>
+          <li>Tap Pocket transfer (or Manage funds › Transfer).</li>
+          <li>Pick From and To (a pocket or a wallet), enter the Amount, then tap Transfer.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="mata_uang" data-title="Currency" data-keywords="mata uang kurs dolar usd euro currency exchange rupiah valas ganti mata uang mata uang utama exchange rate">
+        <h3>Currency</h3>
+        <p class="tut-intro">Pick your main currency and record wallets or transactions in another one, rates update daily.</p>
+        <ol>
+          <li>Open More › Currency.</li>
+          <li>Tap Main currency, then pick the new currency (Change the main currency).</li>
+          <li>Every total, budget and report then uses it. Rates update automatically each day.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kategori" data-title="Categories" data-keywords="kategori subkategori kelompok category categories label">
+        <h3>Categories</h3>
+        <p class="tut-intro">Organise income and expense categories, down to subcategories.</p>
+        <ol>
+          <li>Open More › Categories.</li>
+          <li>Tap add for a new category (pick Expense or Income, a name, an icon).</li>
+          <li>Tap a category to edit it, or hold and drag to reorder.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="belajar_kategori" data-title="Category learning" data-keywords="belajar pembelajaran ingat otomatis kategori learning remember mapping pemetaan">
+        <h3>Category learning</h3>
+        <p class="tut-intro">Artosku remembers the category you chose for a description, and you can change it.</p>
+        <ol>
+          <li>Open More › Category Learning.</li>
+          <li>See the keywords Artosku has learned from your habits.</li>
+          <li>Edit or delete the ones that are off, so the next transactions land in the right category.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="merchant" data-title="Merchants" data-keywords="merchant toko tempat warung langganan store shop vendor">
+        <h3>Merchants</h3>
+        <p class="tut-intro">See where money goes and comes from, with a default category for each place.</p>
+        <ol>
+          <li>Open More › Merchants.</li>
+          <li>Tap add, enter the place name and its usual category.</li>
+          <li>When recording, pick that merchant and the category fills itself in.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-anggaran" aria-labelledby="h-g-anggaran">
+      <h2 id="h-g-anggaran">Budgets &amp; allowance</h2>
+      <article class="tut-card" id="anggaran" data-title="Budgets" data-keywords="anggaran budget batas limit jatah hemat boros sisa periode peringatan batas bulanan limit bulanan warning bandingkan anggaran budget bulanan monthly budget">
+        <h3>Budgets</h3>
+        <p class="tut-intro">Set a spending limit per category each month and see what is left.</p>
+        <ol>
+          <li>Open More › Budget.</li>
+          <li>Tap add, pick a category, pick the Period (Daily, Weekly or Monthly) and enter the limit.</li>
+          <li>Artosku tells you when spending gets close to or passes the limit.</li>
+          <li>Want to change the period (e.g. monthly to weekly)? Tap the budget, pick Daily, Weekly or Monthly while editing, then Save and Change. The old budget is replaced; other months or weeks are not touched.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="anggaran_harian" data-title="Daily budget (a limit per category each day)" data-keywords="anggaran harian batas harian batas per hari batas pengeluaran harian budget harian limit harian batas jajan harian batas jajan per hari aturan khusus per hari hari jumat akhir pekan tanggal khusus per tanggal tanpa batas daily budget daily limit limit per day spending limit per day weekend limit special date no limit">
+        <h3>Daily budget (a limit per category each day)</h3>
+        <p class="tut-intro">A spending limit per category for each day, with special rules for certain days (e.g. Friday or the weekend) or one date. Different from the Daily allowance, which is worked out for you from all your money.</p>
+        <ol>
+          <li>Open More › Budget, then tap the + button in the header.</li>
+          <li>Pick the Category (e.g. Snacks), then Period: Daily. Fill in Limit per day (general, all days).</li>
+          <li>For certain days tap + By day: pick the days (e.g. Sat and Sun), fill in the limit or turn on No limit, then Save. For one date tap + By date.</li>
+          <li>What is used: date &gt; day &gt; general. Save. See it in the Daily tab (the ‹ › arrows move the day, up to 30 days ahead) or on the Today&#x27;s budget card on Home.</li>
+          <li>Different from the Daily allowance: the allowance is worked out for you from all your money until payday, the daily budget is a limit per category that you set yourself. You are reminded once when the limit of that day is passed.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="jatah_harian" data-title="Daily allowance" data-keywords="jatah harian per hari jajan uang saku daily allowance uang harian boleh jajan sisa uang sampai gajian daily budget jatah jajan perhitungan atur perhitungan uang yang dihitung tagihan sebelum gajian">
+        <h3>Daily allowance</h3>
+        <p class="tut-intro">Work out how much you can spend per day until payday, with your mascot.</p>
+        <ol>
+          <li>Open More › Daily Allowance, then tap Create daily allowance.</li>
+          <li>Enter the Allowance name (e.g. Snack allowance) and create it.</li>
+          <li>Tap Set up calculation to choose which money counts: wallets or pockets, recurring bills, due debts, savings deposits, regular income.</li>
+          <li>The result (how much you can spend per day until payday) shows on Home. Turn off Show on home if you do not want it.</li>
+          <li>Want a limit per category each day that you set yourself? That is the Daily budget: More › Budget › the Daily tab.</li>
+        </ol>
+        <figure class="tut-shot"><img src="../../assets/tutorial/tutorial_step4_allowance.png" alt="Empty Daily Allowance screen with Create daily allowance button highlighted" width="360" height="521" loading="lazy" /></figure>
+      </article>
+      <article class="tut-card" id="jatah_dikecualikan" data-title="Leave a transaction out of the allowance" data-keywords="kecualikan transaksi dikecualikan dari jatah kecualikan dari jatah jangan dihitung jatah tidak dihitung jatah jangan dihitung di jatah abaikan transaksi abaikan dari jatah transaksi dikecualikan belanja besar jatah dibagi rata diabaikan lepaskan pengecualian batalkan pengecualian exclude transaction exclude from allowance leave out of allowance do not count in allowance ignore transaction allowance excluded transactions spread evenly">
+        <h3>Leave a transaction out of the allowance</h3>
+        <p class="tut-intro">A big purchase or money held for someone else does not use up the daily and weekly allowance. Choose per transaction: spread over the days that are left, or ignored completely. It can be undone at any time.</p>
+        <ol>
+          <li>One transaction: tap it (on Home or in History), then tap Leave out of allowance. If you have more than one allowance, pick the allowance first.</li>
+          <li>Pick How to count: Spread over the days left (today&#x27;s allowance is not used up at once, the allowance of the next days goes down a little) or Ignore completely (as if the transaction never happened, careful: the allowance can be bigger than the money you have). Then tap Leave out. An income that is left out is always Not counted: it adds nothing to the allowance.</li>
+          <li>Many at once: More › Daily Allowance › pick your allowance › Excluded transactions › + Add transaction. Search note, category, merchant or amount, set 30 days / This month / Pick dates, tick the ones to leave out, tap Save · {n} selected, then pick How to count.</li>
+          <li>Want to undo? In the transaction detail tap Undo exclusion. Or in the Excluded transactions list: tap the row then Release, swipe the row, or open + Add transaction, untick it and Save.</li>
+          <li>It applies to both the Daily and the Weekly view. The number shows in the allowance formula as &quot;{n} transactions left out&quot;.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="berulang" data-title="Recurring transactions" data-keywords="berulang rutin tagihan langganan bulanan otomatis recurring subscription bill sewa harian mingguan tahunan weekly monthly yearly daily frekuensi tiap minggu tiap bulan tiap tahun setiap bulan tagihan rutin bayar rutin pengingat tagihan">
+        <h3>Recurring transactions</h3>
+        <p class="tut-intro">Regular bills and subscriptions are recorded on their date, with reminders.</p>
+        <ol>
+          <li>Open More › Recurring Transactions, then tap Add recurring transaction.</li>
+          <li>Pick Expense or Income (a transfer type is not available here), fill in the Amount, the wallet (down to its pocket), the Category and the Note.</li>
+          <li>Pick the Frequency: Daily, Weekly, Monthly or Yearly, then Start from the date and Remind how many days before.</li>
+          <li>Save. Artosku records it automatically around 00:00 each time it falls due, or when you open Artosku, and reminds you. The note is dated the day it was due.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="periode_laporan" data-title="Report period (payday)" data-keywords="periode gajian tanggal cutoff awal bulan payday period bulan ini tanggal gajian report period">
+        <h3>Report period (payday)</h3>
+        <p class="tut-intro">Choose when &quot;this month&quot; starts, for example on payday.</p>
+        <ol>
+          <li>Open More › Report Period.</li>
+          <li>Turn on Custom period start date, then fill in Start date with your payday (a number 1-28, e.g. 25).</li>
+          <li>&quot;This month&quot; in Transactions, Reports and Home then runs from that day. The date range shows under the field.</li>
+          <li>Turn the switch off to go back to the normal calendar (the 1st to the end of the month).</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-utang" aria-labelledby="h-g-utang">
+      <h2 id="h-g-utang">Debts &amp; installments</h2>
+      <article class="tut-card" id="utang_piutang" data-title="Debts &amp; receivables" data-keywords="utang hutang piutang pinjam pinjaman tagih cicil debt loan lend borrow owe kasbon">
+        <h3>Debts &amp; receivables</h3>
+        <p class="tut-intro">Record who borrowed, how much and when it is due. Due-date reminders, and it can be paid in parts.</p>
+        <ol>
+          <li>Open More › Debts &amp; Receivables.</li>
+          <li>Tap add, then choose whether you owe or someone owes you.</li>
+          <li>Fill in the name, the amount, the Date (the day the money changed hands, it can be in the past but not the future) and the due date.</li>
+          <li>Save. To pay, tap Paid off (receivable) or Pay (debt) in the same list and set the Payment date if it was not today.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="cicilan" data-title="Installments &amp; Paylater" data-keywords="cicilan kredit paylater kartu kredit angsuran installment credit credit card kredivo bayar bulanan kredit motor cicil bunga denda denda telat interest late fee tenor">
+        <h3>Installments &amp; Paylater</h3>
+        <p class="tut-intro">Record installments, credit and paylater bills so you know what is left and when it is due.</p>
+        <ol>
+          <li>Open More › Installments, then tap Add installment.</li>
+          <li>Fill in the Installment name (e.g. Motorbike, Phone), Total, How many payments, the Installment payment period and the First installment date.</li>
+          <li>Pick Taken from wallet and a Category, then Save. Installments are recorded automatically on each due date.</li>
+          <li>Pay early or see what is left with the Pay button on the installment card.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="arisan" data-title="Arisan (rotating savings)" data-keywords="arisan kocokan giliran setoran pot iuran rotating savings club setoran arisan pot arisan iuran arisan arisan rt rotating savings ngocok">
+        <h3>Arisan (rotating savings)</h3>
+        <p class="tut-intro">Record your arisan: dues run automatically each period and the pot you receive is recorded on your turn.</p>
+        <ol>
+          <li>Open More › Installments, then tap Add installment.</li>
+          <li>Enter the Installment name (e.g. Neighborhood arisan), then turn on This is an arisan.</li>
+          <li>Fill in the Number of members (how many payments), Dues each period, the Installment payment period and the First installment date.</li>
+          <li>Fill in Your turn to receive the pot (which payment), then pick Taken from wallet and the Category of the dues.</li>
+          <li>Save. The dues are recorded automatically on each due date, and the pot you receive is recorded as income on the date of your turn.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="paylater" data-title="Paylater (buy now, pay later)" data-keywords="paylater bayar nanti kredit belanja kartu kredit limit tagihan pay later credit card bnpl spaylater cicilan belanja buy now pay later limit paylater tagihan paylater kredivo">
+        <h3>Paylater (buy now, pay later)</h3>
+        <p class="tut-intro">A purchase on a paylater wallet becomes an installment automatically, and the bill is paid from another wallet.</p>
+        <ol>
+          <li>Open More › Wallet, tap Add Wallet, pick the type (or Add Manually), then turn on Paylater wallet. Fill in the Paylater limit (optional).</li>
+          <li>Record the purchase as usual with that paylater wallet. Under Installment details you can pick the number of installments and the wallet that pays the bill.</li>
+          <li>The purchase becomes an installment automatically, following its term. See it in More › Installments.</li>
+          <li>Pay the bill: in Installments tap Pay this month&#x27;s bill, then pick Pay from wallet. The money moves from that wallet to the paylater wallet.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-tabungan" aria-labelledby="h-g-tabungan">
+      <h2 id="h-g-tabungan">Savings, assets &amp; shopping</h2>
+      <article class="tut-card" id="tabungan" data-title="Savings goals" data-keywords="nabung tabungan target tujuan impian saving savings goal pocket kantong target menabung tujuan nabung celengan savings goal target tanggal sisihkan tabung di jalur on track">
+        <h3>Savings goals</h3>
+        <p class="tut-intro">Set a savings target, put money aside bit by bit and watch the progress.</p>
+        <ol>
+          <li>Open More › Savings Goals, then tap add (New Savings Goal).</li>
+          <li>Fill in the Goal name, the Target amount and the Target date (optional).</li>
+          <li>Link a pocket so the money in it counts as your savings (More › Wallet › pick a wallet › Pocket).</li>
+          <li>Follow the progress on the same page.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="aset" data-title="Assets" data-keywords="aset investasi emas saham properti kendaraan harta asset investment gold stock">
+        <h3>Assets</h3>
+        <p class="tut-intro">Record valuables or investments and follow their value over time.</p>
+        <ol>
+          <li>Open More › Assets.</li>
+          <li>Tap add, enter the asset name and its value now.</li>
+          <li>Update the value any time so your net worth stays right.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="daftar_belanja" data-title="Shopping list" data-keywords="daftar belanja belanja shopping list grocery catatan belanja beli shopping list groceries list belanja belanjaan">
+        <h3>Shopping list</h3>
+        <p class="tut-intro">Write a shopping list, tick what you bought, then record it as a transaction.</p>
+        <ol>
+          <li>Open More › Shopping List, then tap + and pick New list (enter the List name).</li>
+          <li>Tap Add item… and fill in the items. You can enter prices for an estimated total.</li>
+          <li>Tick the items that are in the basket while you shop.</li>
+          <li>Tap Finish shopping, then choose Record as 1 transaction or Scan receipt.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pemakaian_barang" data-title="Item usage" data-keywords="pemakaian habis terbuang stok rumah usage used up waste pantry barang habis item usage dibuang mubazir habis dipakai">
+        <h3>Item usage</h3>
+        <p class="tut-intro">Record items used up or thrown away to see how fast your shopping is used.</p>
+        <ol>
+          <li>Open More › Item usage.</li>
+          <li>Search or add an item, then tap it to record Used up. Pick Wasted or Given away when it was not used up.</li>
+          <li>See Summary for which items run out fast and how much was wasted this month.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-laporan" aria-labelledby="h-g-laporan">
+      <h2 id="h-g-laporan">Reports</h2>
+      <article class="tut-card" id="laporan" data-title="Reports" data-keywords="laporan grafik ringkasan statistik bulanan report chart summary analisis">
+        <h3>Reports</h3>
+        <p class="tut-intro">See money in and out by category and month, with charts and comparisons.</p>
+        <ol>
+          <li>Open the Reports tab.</li>
+          <li>Pick the period (month, year, all, or custom).</li>
+          <li>Tap a category or wallet to see its transactions, or export the report.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-bersama" aria-labelledby="h-g-bersama">
+      <h2 id="h-g-bersama">Sharing with others</h2>
+      <article class="tut-card" id="split" data-title="Split a bill" data-keywords="bagi patungan split bill bareng teman tagihan makan bareng urunan split bill bagi tagihan iuran bareng bayar bareng bagi rata bill split share bill with friends sama teman">
+        <h3>Split a bill</h3>
+        <p class="tut-intro">Split a shared bill between friends, work out each share and record yours.</p>
+        <ol>
+          <li>Open More › Split Bill.</li>
+          <li>Enter the name (e.g. Dinner), the Bill total, the wallet that paid and the category.</li>
+          <li>Tap Add person for each friend, then pick Split equally or fill in each share. Turn on I am part of the split if you ate too.</li>
+          <li>Save. Your share is recorded as an expense, your friends&#x27; shares become receivables under Debts &amp; Receivables.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="wallet_bersama" data-title="Shared wallets" data-keywords="bersama berdua keluarga pasangan shared together family couple patungan wallet wallet bersama dompet bersama shared wallet keuangan keluarga family wallet undang anggota">
+        <h3>Shared wallets</h3>
+        <p class="tut-intro">One wallet shared by two people or a family, every member can record.</p>
+        <ol>
+          <li>Open More › Shared Wallet, then tap Create Shared Wallet.</li>
+          <li>Pick the wallet to share and name it, then Make Shared Wallet.</li>
+          <li>Invite your contacts from the wallet page. Members see the balance and transactions, the notes stay on each phone.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="undang_anggota" data-title="Invite people to a Shared Wallet" data-keywords="undang ajak anggota gabung invite member join keluarga undang anggota undang teman gabung wallet bersama ajak anggota">
+        <h3>Invite people to a Shared Wallet</h3>
+        <p class="tut-intro">Bring friends or family into one shared wallet with an invitation.</p>
+        <ol>
+          <li>Connect your friend&#x27;s account first in More › Contacts.</li>
+          <li>Open More › Shared Wallet › the wallet, then invite your contact.</li>
+          <li>Your friend opens Shared Wallet, sees Invitation for you, and taps Join.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kontak" data-title="Contacts" data-keywords="kontak teman orang contact friend people">
+        <h3>Contacts</h3>
+        <p class="tut-intro">Keep friends you often send to or bill, so they are quick to pick.</p>
+        <ol>
+          <li>Open More › Contacts.</li>
+          <li>Tap add and send an invitation to your friend, or accept one that came in.</li>
+          <li>Once connected you can send money to each other and make a Shared Wallet.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="saling_kirim" data-title="Send transactions to each other" data-keywords="kirim saling kirim teman terima transfer share send friend bagikan kirim uang minta uang transfer ke teman send money request money kirim ke teman">
+        <h3>Send transactions to each other</h3>
+        <p class="tut-intro">Send transaction records to a friend who also uses Artosku, and receive theirs.</p>
+        <ol>
+          <li>Connect your friend&#x27;s account first in More › Contacts.</li>
+          <li>Open More › Send Money, then tap Send Money or Request Money.</li>
+          <li>Pick the contact, enter the amount and (to send) pick the source wallet and the category.</li>
+          <li>Tap Send. The money only arrives when your friend accepts, and comes back if declined.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-backup" aria-labelledby="h-g-backup">
+      <h2 id="h-g-backup">Backup &amp; restore</h2>
+      <article class="tut-card" id="backup_drive" data-title="Google Drive backup" data-keywords="backup cadangan google drive drive pulihkan restore ganti hp data aman sync simpan data pindah hp">
+        <h3>Google Drive backup</h3>
+        <p class="tut-intro">Your data stays on your phone and can be backed up to Google Drive for a new phone.</p>
+        <ol>
+          <li>Open More › Google Drive Backup, then tap Connect and pick the Google account. The link is remembered: signing out and back in to the same account does not need connecting again.</li>
+          <li>Tap Back up now (or turn on Automatic backup) and pick the slot. Every profile is included: Personal and business. The Backup button on Home is always for backing up, never for restoring.</li>
+          <li>To restore, tap Restore data (the screen is red), pick the backup, read the comparison of the backup and the data on the phone (including how many transactions would be lost), then tap Continue restoring. Want a backup first? Tap Back up first.</li>
+          <li>Last confirmation: type PULIHKAN, leave Save a copy of the current data first ticked, then tap Restore now. The data on the phone is replaced completely, not merged. After Connect, a restore is only offered right away on a phone that is still empty (a new phone).</li>
+          <li>Restored by mistake? On Home there is a Data restored card: tap Undo restore then Revert (it is also in More › Google Drive Backup). It works for up to 7 days. Transactions recorded after the restore are lost too.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="backup_otomatis" data-title="Automatic backup to Google Drive" data-keywords="backup otomatis auto backup automatic backup hubungkan drive putuskan drive ganti akun drive akun google drive restore pulihkan data batalkan pemulihan kembalikan data lama undo restore slot backup backup sekarang ganti hp pindah hp hp baru new phone restore backup restore my backup restore on a new phone disconnect drive connect drive">
+        <h3>Automatic backup to Google Drive</h3>
+        <p class="tut-intro">Turn on Automatic backup, connect or disconnect the Google Drive account, and restore from an old backup.</p>
+        <ol>
+          <li>Open More › Google Drive backup, then tap Connect and pick the Google account.</li>
+          <li>Turn on Automatic backup. Tap Back up now any time for a manual backup.</li>
+          <li>To restore, tap Restore data and pick the backup (Automatic backup or a Slot). You see the backup and the data on the phone side by side, how many transactions would be lost, then you have to type PULIHKAN.</li>
+          <li>Restored by mistake? Tap Undo restore (the card on Home or on this screen), then Revert. The copy of the data from before the restore is kept for 7 days.</li>
+          <li>Tap Switch account to use another Drive account, or Disconnect to cut Google Drive off (the backup files on Drive are not deleted).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="excel" data-title="Excel export &amp; import" data-keywords="excel xlsx ekspor export impor import csv file unduh download backup excel spreadsheet">
+        <h3>Excel export &amp; import</h3>
+        <p class="tut-intro">Save transactions to an Excel file, or bring them in from Excel.</p>
+        <ol>
+          <li>Open More › Excel Export &amp; Import.</li>
+          <li>Tap Back up now to make the Excel file. It holds only the profile in use (Personal or one business).</li>
+          <li>To restore, tap Restore and pick the file. You are told how many transactions would be lost, then you have to type PULIHKAN. Only the data of the profile in use is replaced, and a copy of the data before is kept for 7 days (Undo restore on Home).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="backup_excel_otomatis" data-title="Automatic Excel backup to the Download folder" data-keywords="backup excel otomatis excel otomatis folder download simpan excel excel harian excel mingguan excel bulanan auto excel excel backup schedule download folder backup excel otomatis ke folder download excel ke folder download simpan excel ke folder download otomatis ke folder download">
+        <h3>Automatic Excel backup to the Download folder</h3>
+        <p class="tut-intro">Save an Excel backup by itself to the phone Download folder, daily, weekly or monthly.</p>
+        <ol>
+          <li>Open More › Export &amp; Import Excel.</li>
+          <li>Turn on Save Excel to Download folder.</li>
+          <li>Turn on Automatic Excel backup and pick Manual, Daily, Weekly or Monthly. The file lands in the phone Download folder.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="impor_excel_lama" data-title="Import an older Excel file or restore from Excel" data-keywords="impor excel import excel excel lama excel versi lama pulihkan dari excel restore excel tambahkan data masukkan excel upload excel restore from excel">
+        <h3>Import an older Excel file or restore from Excel</h3>
+        <p class="tut-intro">Restore everything from an Excel backup file, or add data from an older Excel file.</p>
+        <ol>
+          <li>Open More › Export &amp; Import Excel.</li>
+          <li>Tap Restore and pick the Excel backup file: the data of the active profile is replaced. You are told how many transactions would be lost, then type PULIHKAN. A copy of the data before is kept for 7 days (Undo restore on Home).</li>
+          <li>For an older Excel file, pick it and tap Add Data: the data is added and what is there stays.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-ai" aria-labelledby="h-g-ai">
+      <h2 id="h-g-ai">AI Chat &amp; AI</h2>
+      <article class="tut-card" id="ai_chat" data-title="Ask Artosku AI" data-keywords="ai chat tanya asisten bot kuai assistant ask">
+        <h3>Ask Artosku AI</h3>
+        <p class="tut-intro">Ask about your money or how to use Artosku. The AI can also prepare transactions for you to approve.</p>
+        <ol>
+          <li>Tap the floating AI button.</li>
+          <li>Type or say your question, e.g. &quot;how much did I spend this month?&quot; or &quot;how do I make an arisan&quot;.</li>
+          <li>The AI answers from your data or explains a feature, and can prepare a transaction for you to approve first.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pemakaian_ai" data-title="AI usage &amp; vouchers" data-keywords="kuota voucher sisa limit ai pemakaian ai quota usage tambahan">
+        <h3>AI usage &amp; vouchers</h3>
+        <p class="tut-intro">See how much AI quota is left today and your extra vouchers.</p>
+        <ol>
+          <li>Open More › AI Usage.</li>
+          <li>See how much of today&#x27;s AI allowance is left and when it resets.</li>
+          <li>Have a voucher? Enter its code on the same page.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="persetujuan_ai" data-title="AI consent (allow or withdraw)" data-keywords="persetujuan ai izin ai izinkan fitur ai cabut izin matikan ai nonaktifkan ai ai consent turn off ai disable ai withdraw consent data ke deepseek privasi ai">
+        <h3>AI consent (allow or withdraw)</h3>
+        <p class="tut-intro">Allow or withdraw the AI features. When withdrawn, the AI features stop until you allow them again; the rest is not affected.</p>
+        <ol>
+          <li>Open More › AI consent.</li>
+          <li>Turn Allow AI features on or off (AI recording, AI chat, receipt scan, statement upload, category icon suggestions).</li>
+          <li>When off, the AI features stop until you allow them again. The rest is not affected.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-maskot" aria-labelledby="h-g-maskot">
+      <h2 id="h-g-maskot">Streak &amp; mascot</h2>
+      <article class="tut-card" id="streak_maskot" data-title="Streak &amp; your mascot" data-keywords="streak maskot minyam ayam hadiah koin rumah mascot chicken game gift coin hadiah harian gamifikasi api streak kotak hadiah freeze streak freeze beku bolos melewatkan hari streak putus freeze kedaluwarsa freeze hilang skip a day missed a day">
+        <h3>Streak &amp; your mascot</h3>
+        <p class="tut-intro">Record every day to keep your streak, open gift boxes and look after your mascot&#x27;s home.</p>
+        <ol>
+          <li>Record at least one transaction each day to keep your streak.</li>
+          <li>Open More › Streak to see your streak, gift boxes and your mascot&#x27;s home.</li>
+          <li>Collect coins and spend them in the Shop.</li>
+          <li>Freezes: every 7 days in a row you get +1 freeze, good for 14 days from the day you get it (an unused one is gone). If you miss a day, one freeze is used automatically (the one that runs out first) and the streak keeps going. With no active freeze, the streak breaks.</li>
+          <li>See your active freezes and how long each one lasts in More › Streak, the Freeze section.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="toko_maskot" data-title="Mascot item shop" data-keywords="toko item koin topi aksesori dekorasi beli shop coins hat accessory beli item topi maskot">
+        <h3>Mascot item shop</h3>
+        <p class="tut-intro">Trade streak coins for hats, accessories and decorations for your mascot.</p>
+        <ol>
+          <li>Open More › Streak › Shop.</li>
+          <li>Pick an item (hat, accessory, decoration) and trade it for streak coins.</li>
+          <li>Dress your mascot with it from Collection.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="koleksi_maskot" data-title="Mascot collection" data-keywords="koleksi punya pakai item collection wear dress inventory">
+        <h3>Mascot collection</h3>
+        <p class="tut-intro">See every item you own and dress your mascot with it.</p>
+        <ol>
+          <li>Open More › Streak › Collection.</li>
+          <li>See every item you own.</li>
+          <li>Tap an item to dress your mascot with it.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-pengaturan" aria-labelledby="h-g-pengaturan">
+      <h2 id="h-g-pengaturan">Settings &amp; account</h2>
+      <article class="tut-card" id="kunci_pin" data-title="App lock (PIN &amp; biometrics)" data-keywords="pin kunci biometrik sidik jari wajah aman privasi lock fingerprint face security password kunci aplikasi app lock keamanan ubah pin ganti pin lupa pin">
+        <h3>App lock (PIN &amp; biometrics)</h3>
+        <p class="tut-intro">Lock Artosku with a PIN, fingerprint or face so nobody else opens your records.</p>
+        <ol>
+          <li>Open More › App Lock (PIN).</li>
+          <li>Tap Set PIN, create a new PIN, then confirm it.</li>
+          <li>Turn on Unlock with Biometrics to use your fingerprint or face.</li>
+          <li>To change the PIN tap App Lock (PIN) again. To switch it off, tap Turn off PIN.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="tampilan" data-title="Appearance, language &amp; theme" data-keywords="tampilan bahasa tema gelap terang dark light english inggris ukuran teks font language theme dark mode mode gelap warna mode terang light mode tema warna ganti warna warna aplikasi ukuran huruf tulisan kecil tulisan besar text size font size bigger text ganti bahasa change language ikut sistem">
+        <h3>Appearance, language &amp; theme</h3>
+        <p class="tut-intro">Switch between Indonesian and English, text size, and dark or light mode.</p>
+        <ol>
+          <li>Open More › Appearance.</li>
+          <li>Pick the Display Mode (System, Light or Dark) and the Colour Theme.</li>
+          <li>Drag Text Size to make the text bigger or smaller.</li>
+          <li>Pick the language (Indonesian or English) under Language. The Arrange Home row on this page opens the Home settings.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="atur_beranda" data-title="Arrange Home" data-keywords="beranda atur urutan tampil sembunyikan home dashboard arrange layout">
+        <h3>Arrange Home</h3>
+        <p class="tut-intro">Choose which parts of Home show and put them in your order.</p>
+        <ol>
+          <li>Open More › Arrange Home.</li>
+          <li>Hold and drag the Home sections to reorder them.</li>
+          <li>Turn off the sections you do not want to see. Tap Restore defaults to bring back the original order.</li>
+          <li>You can also open it from More › Appearance › Arrange Home. Each profile (Personal or a business) has its own arrangement.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="widget_hp" data-title="Phone home-screen widget" data-keywords="widget layar utama home screen pintasan shortcut">
+        <h3>Phone home-screen widget</h3>
+        <p class="tut-intro">Put an Artosku widget on your phone screen to see a summary and record fast.</p>
+        <ol>
+          <li>Hold your phone&#x27;s home screen and pick Widgets.</li>
+          <li>Find Artosku and pick the widget you want.</li>
+          <li>Place it on the home screen. Tap it to record straight away or open Artosku.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="langganan" data-title="Pro &amp; Max plans" data-keywords="langganan paket pro max premium berlangganan bayar subscription plan upgrade harga price">
+        <h3>Pro &amp; Max plans</h3>
+        <p class="tut-intro">A bigger AI quota and Business Mode. Pick the plan that suits you.</p>
+        <ol>
+          <li>Open More › Subscription.</li>
+          <li>Compare the Pro and Max plans, then pick one.</li>
+          <li>Complete the payment through Google Play.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pengumuman" data-title="Announcements" data-keywords="pengumuman info kabar gangguan berita announcement news update">
+        <h3>Announcements</h3>
+        <p class="tut-intro">News and outage notices from the Artosku team.</p>
+        <ol>
+          <li>Open More › Announcements.</li>
+          <li>Read the latest news from Artosku.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="panduan" data-title="Guide center" data-keywords="panduan cara pakai bantuan petunjuk guide help how to tour">
+        <h3>Guide center</h3>
+        <p class="tut-intro">Short guides for each menu that you can replay any time.</p>
+        <ol>
+          <li>Open More › Guide Center.</li>
+          <li>Pick the menu you want to learn and follow the guide.</li>
+          <li>Many screens also have a ? icon for that screen&#x27;s guide.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="dukung" data-title="Treat us a matcha" data-keywords="traktir matcha donasi dukung tip donate support">
+        <h3>Treat us a matcha</h3>
+        <p class="tut-intro">If Artosku is useful, you can treat the team to a matcha.</p>
+        <ol>
+          <li>Open More › Buy us a Matcha.</li>
+          <li>Pick an amount and pay through Google Play.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ganti_akun" data-title="Switch account" data-keywords="ganti akun pindah akun tambah akun akun lain banyak akun switch account multi account another account multi akun">
+        <h3>Switch account</h3>
+        <p class="tut-intro">Switch between the accounts saved on this phone without signing in again.</p>
+        <ol>
+          <li>Open More › Switch profile.</li>
+          <li>Tap Switch account and pick a saved account, or add another one.</li>
+          <li>Each account has its own data on this phone.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="privasi_syarat" data-title="Privacy policy &amp; terms" data-keywords="privasi kebijakan syarat ketentuan data aman privacy terms policy persetujuan consent">
+        <h3>Privacy policy &amp; terms</h3>
+        <p class="tut-intro">Read how your data is protected and the rules of using Artosku.</p>
+        <ol>
+          <li>Open More › Privacy Policy to read how your data is protected.</li>
+          <li>The Terms and Conditions are in the same menu, under Help &amp; Info.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="biometrik" data-title="Unlock with fingerprint or face" data-keywords="biometrik sidik jari fingerprint wajah face id face unlock kunci sidik jari biometric unlock">
+        <h3>Unlock with fingerprint or face</h3>
+        <p class="tut-intro">Once a PIN is set, open Artosku with just your fingerprint or face.</p>
+        <ol>
+          <li>Set a PIN first under More › App Lock (PIN) › Set PIN.</li>
+          <li>Once the PIN is on, the Unlock with Biometrics switch appears under it. Turn it on.</li>
+          <li>The switch only appears when your phone has a fingerprint or face unlock.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="nonaktifkan_pin" data-title="Turn off the PIN or app lock" data-keywords="nonaktifkan pin matikan pin hapus pin hilangkan pin matikan kunci tanpa pin turn off pin remove pin disable pin disable lock ubah pin ganti pin">
+        <h3>Turn off the PIN or app lock</h3>
+        <p class="tut-intro">Remove the PIN so Artosku opens without a lock again.</p>
+        <ol>
+          <li>Open More. The red Turn off PIN button is under App Lock (PIN), only while a PIN is on.</li>
+          <li>Tap Turn off PIN. Artosku opens without a lock again.</li>
+          <li>To change the PIN, tap App Lock (PIN) and make a new one.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kata_sandi" data-title="Account password (change or add)" data-keywords="kata sandi password ganti password ubah kata sandi tambah kata sandi sandi akun ganti sandi lupa password change password add password masuk pakai email login email">
+        <h3>Account password (change or add)</h3>
+        <p class="tut-intro">Change your account password, or add one if you signed in with Google so you can sign in with email too.</p>
+        <ol>
+          <li>Open More, then tap Change Password. If you signed in with Google and have none yet, the row is called Add Password.</li>
+          <li>Fill in the New password (at least 6 characters) and Confirm password.</li>
+          <li>Tap Save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ubah_nama" data-title="Change your name and profile photo" data-keywords="ubah nama ganti nama nama panggilan edit profil foto profil ganti foto avatar sembunyikan nama sembunyikan email lihat profil change name profile photo edit profile hide name">
+        <h3>Change your name and profile photo</h3>
+        <p class="tut-intro">Change your nickname, pick a profile photo, or hide the name and email on the profile card.</p>
+        <ol>
+          <li>Open More. On the profile card at the top tap the pencil icon (Rename), or Add Name if there is none.</li>
+          <li>Write your Nickname and tap Save.</li>
+          <li>For the photo, tap it and pick a picture. Tap Hide to hide the name and email (View profile to show them again).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="keluar_akun" data-title="Sign out" data-keywords="keluar logout log out sign out keluar akun keluar dari akun tutup akun di hp ganti akun google">
+        <h3>Sign out</h3>
+        <p class="tut-intro">Sign out of your Artosku account on this phone.</p>
+        <ol>
+          <li>Open More, scroll down, then tap Sign out.</li>
+          <li>Your transactions stay on this phone. To switch to another account without signing out, use Switch account.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="reset_akun" data-title="Start over (delete all data, keep the account)" data-keywords="reset akun reset hapus semua data mulai dari awal kosongkan data bersihkan data reset account start over wipe data clear all data">
+        <h3>Start over (delete all data, keep the account)</h3>
+        <p class="tut-intro">Delete all transactions and financial data in this account and start from empty. The account stays.</p>
+        <ol>
+          <li>Open More, scroll down, then tap Reset Account and press and hold Hold to Reset Account until it finishes (Keep holding...).</li>
+          <li>All transactions, wallets, categories, budgets, assets and debts in this account are deleted for good. The account stays.</li>
+          <li>If unsure, make a Google Drive backup first.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="hapus_akun" data-title="Delete account" data-keywords="hapus akun delete account tutup akun hapus data akun berhenti pakai remove account close account hapus permanen">
+        <h3>Delete account</h3>
+        <p class="tut-intro">Delete your account and all its data from this phone for good.</p>
+        <ol>
+          <li>Open More, scroll down, then tap Delete Account.</li>
+          <li>Type HAPUS to confirm, then tap Delete Account.</li>
+          <li>The local data of this account is deleted too and cannot be brought back. To only empty the data, use Reset Account.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="cari_menu" data-title="Search the menu in More" data-keywords="cari menu cari fitur search menu search menu tidak ketemu di mana menu find a menu mencari">
+        <h3>Search the menu in More</h3>
+        <p class="tut-intro">Find a menu by typing its name. If nothing is found, a button asks Artosku AI instead.</p>
+        <ol>
+          <li>In More tap the magnifier icon at the top right.</li>
+          <li>Type the name of the menu, e.g. pin or payday. The list narrows as you type.</li>
+          <li>If nothing is found, tap Ask Artosku AI.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kelola_langganan" data-title="Manage, cancel or restore a subscription" data-keywords="kelola langganan batalkan langganan berhenti langganan cancel subscription pulihkan pembelian restore purchase langganan di play store bulanan tahunan paket saat ini naik paket manage subscription monthly yearly">
+        <h3>Manage, cancel or restore a subscription</h3>
+        <p class="tut-intro">See your plan, switch between monthly and yearly, manage it in the Play Store, and restore purchases.</p>
+        <ol>
+          <li>Open More › Subscription. Current plan shows your plan.</li>
+          <li>Pick Monthly or Yearly, then tap the plan to move up.</li>
+          <li>Tap Manage subscription to cancel or change it in the Play Store. After cancelling the plan stays active until it runs out.</li>
+          <li>New phone or purchase not read? Tap Restore purchases.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="syarat_ketentuan" data-title="Terms and Conditions" data-keywords="syarat dan ketentuan syarat ketentuan terms terms and conditions aturan pakai tos ketentuan layanan terms of service">
+        <h3>Terms and Conditions</h3>
+        <p class="tut-intro">Read the rules for using Artosku.</p>
+        <ol>
+          <li>Open More › Terms and Conditions.</li>
+          <li>Read the rules for using Artosku. The Privacy Policy is the menu next to it.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ulangi_panduan" data-title="Replay the guides or turn off automatic guides" data-keywords="ulangi panduan panduan otomatis matikan panduan panduan muncul terus tutorial muncul replay guide turn off guides sudah dilihat">
+        <h3>Replay the guides or turn off automatic guides</h3>
+        <p class="tut-intro">Replay all guides, or turn off the guides that appear by themselves when a menu opens.</p>
+        <ol>
+          <li>Open More › Guide Center.</li>
+          <li>Turn off Show guides automatically if guides pop up too often.</li>
+          <li>Tap Repeat all guides: every guide shows again when its menu opens. Guides you saw are marked Seen.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="buku_panduan" data-title="Handbook (full tutorials)" data-keywords="buku panduan tutorial panduan lengkap handbook manual user guide full guide tutorial lengkap dokumentasi website panduan cari tutorial">
+        <h3>Handbook (full tutorials)</h3>
+        <p class="tut-intro">Full tutorials for every feature on the website, with a search box. Opens in the browser.</p>
+        <ol>
+          <li>Open More › Handbook. The website opens in the browser.</li>
+          <li>Look up the feature you want to learn in the search box, or pick from the Start here list.</li>
+          <li>Want a short guide played right on a menu screen? That is the Guide center, or the ? button of that menu.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ikuti_artosku" data-title="Follow Artosku on social media" data-keywords="ikuti artosku instagram tiktok threads youtube media sosial sosmed follow social media akun resmi">
+        <h3>Follow Artosku on social media</h3>
+        <p class="tut-intro">@artosku on Instagram, TikTok, Threads and YouTube.</p>
+        <ol>
+          <li>Open More › Follow Artosku.</li>
+          <li>Pick Instagram, TikTok, Threads or YouTube (@artosku).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kritik_saran" data-title="Feedback and suggestions" data-keywords="kritik dan saran kritik saran masukan lapor bug laporkan masalah hubungi kontak admin feedback report a bug contact suggestion request fitur">
+        <h3>Feedback and suggestions</h3>
+        <p class="tut-intro">Send feedback to the Artosku team by email.</p>
+        <ol>
+          <li>Open More › Feedback.</li>
+          <li>Your email app opens with the address and subject filled in. Write your feedback and send.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="catatan_pembaruan" data-title="What is new in this version (update notes)" data-keywords="pembaruan yang baru apa yang baru update notes whats new release notes changelog fitur baru versi baru">
+        <h3>What is new in this version (update notes)</h3>
+        <p class="tut-intro">See what is new in the version of Artosku you use.</p>
+        <ol>
+          <li>Open More › Update notes.</li>
+          <li>Read the list of what is new in this version.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="beri_ulasan" data-title="Rate Artosku on Google Play" data-keywords="beri ulasan ulasan review rating bintang nilai aplikasi play store rate rate app beri bintang">
+        <h3>Rate Artosku on Google Play</h3>
+        <p class="tut-intro">Tell others about your experience with Artosku on Google Play.</p>
+        <ol>
+          <li>Open More › Leave a review.</li>
+          <li>Google Play opens. Give stars and write your experience.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="cek_pembaruan" data-title="Check for an app update" data-keywords="cek pembaruan update aplikasi versi terbaru perbarui aplikasi ada update versi baru check update app update latest version update app upgrade app">
+        <h3>Check for an app update</h3>
+        <p class="tut-intro">See whether a newer version of Artosku is available, then update.</p>
+        <ol>
+          <li>Open More › Check for updates.</li>
+          <li>When there is a new version, it says Version ... is available and a red dot sits on the row. Tap it to update through Google Play.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-tujuan" aria-labelledby="h-g-tujuan">
+      <h2 id="h-g-tujuan">Quick how-tos for common goals</h2>
+      <article class="tut-card" id="jatah_mingguan" data-title="A weekly allowance" data-keywords="jatah mingguan jatah per minggu jatah seminggu uang jajan mingguan uang jajan seminggu uang jajan per minggu uang jajan tiap minggu jajan tiap minggu jajan seminggu uang saku mingguan uang saku tiap minggu weekly allowance weekly pocket money allowance per week allowance every week">
+        <h3>A weekly allowance</h3>
+        <ol>
+          <li>On the Home, on the Allowance card, tap Weekly beside &quot;Allowance per day&quot; (or the Daily allowance ▾ tab › Show per week).</li>
+          <li>This week&#x27;s allowance is the money available divided by the days left to payday, for the days of that week (Monday to Sunday). The last week before payday counts only the days that are left.</li>
+          <li>The card shows Left this week, Spent, and Safe per day. Tap Daily to go back; the choice is kept for each allowance.</li>
+          <li>Want a weekly limit per category (e.g. snacks)? More › Budget › the Weekly tab.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="anggaran_mingguan" data-title="A weekly budget for one category" data-keywords="anggaran mingguan budget mingguan weekly budget anggaran per minggu batas mingguan batas jajan mingguan anggaran jajan seminggu budget jajan mingguan anggaran kategori mingguan weekly category budget budget per week weekly limit for a category weekly spending limit">
+        <h3>A weekly budget for one category</h3>
+        <ol>
+          <li>Open More › Budget, then tap the + button in the header.</li>
+          <li>Pick the Category, then Period: Weekly. Fill in Limit per week (a week counts Monday to Sunday) and Save.</li>
+          <li>See it in the Weekly tab; the › arrow goes to next week (up to 8 weeks). Copy last week is the copy icon in the title.</li>
+          <li>A category can have a monthly AND a weekly limit; they stand apart and are never added. You are reminded at 90% and when it is passed.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="batasi_jajan_harian" data-title="Limit snacks per day, different on the weekend" data-keywords="batasi jajan per hari batasi jajan tiap hari batas jajan per hari batas jajan harian batasi jajan harian jajan beda di akhir pekan jajan akhir pekan beda batas jajan akhir pekan batasi makan per hari batas makan per hari anggaran harian beda akhir pekan batas harian beda akhir pekan batas beda hari jumat batas pengeluaran beda tiap hari limit snacks per day daily snack limit different limit on the weekend weekend spending limit limit per day weekend daily limit different on weekends">
+        <h3>Limit snacks per day, different on the weekend</h3>
+        <ol>
+          <li>Open More › Budget, then tap the + button in the header.</li>
+          <li>Pick the Category (e.g. Snacks), then Period: Daily. Fill in Limit per day (general, all days), e.g. 20,000.</li>
+          <li>Tap + By day, pick Sat and Sun, fill in the weekend limit (or turn on No limit), then Save. Just one date? + By date.</li>
+          <li>Tap Save in the form. What is used: date &gt; day &gt; general. See it in the Daily tab or on the Today&#x27;s budget card on Home; you are reminded once when the limit of that day is passed.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="belanja_besar_jatah" data-title="A big purchase should not use up today&#x27;s allowance" data-keywords="belanja besar jangan bikin jatah habis belanja besar bikin jatah habis belanja besar jatah hari ini habis jatah hari ini habis karena belanja besar jatah habis gara-gara belanja besar beli barang mahal jatah habis jatah minus karena beli barang mahal kecualikan belanja besar dari jatah belanja besar jangan dihitung jatah transaksi besar jangan dihitung jatah big purchase uses up my allowance big purchase allowance gone exclude a big purchase from the allowance do not count a big purchase in the allowance expensive purchase allowance negative">
+        <h3>A big purchase should not use up today&#x27;s allowance</h3>
+        <ol>
+          <li>Record the purchase as usual first, so your wallet balance stays right.</li>
+          <li>Tap the transaction (on Home or in History), then tap Leave out of allowance.</li>
+          <li>Pick How to count: Spread over the days left (the default, good for a big purchase now and then) then tap Leave out.</li>
+          <li>Today&#x27;s allowance is not used up at once. Your balance did go down, so the allowance of the days until payday goes down a little. Want it as if it never happened? Pick Ignore completely, but the allowance can then be bigger than the money you have.</li>
+          <li>Changed your mind? In the transaction detail tap Undo exclusion.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="uang_saku_bulanan" data-title="Monthly pocket money for a child or partner" data-keywords="uang saku anak uang saku bulanan uang bulanan anak uang bulanan pasangan uang bulanan istri uang bulanan suami kirim uang bulanan uang jajan anak monthly allowance pocket money monthly pocket money allowance for my kid allowance for my child">
+        <h3>Monthly pocket money for a child or partner</h3>
+        <ol>
+          <li>Open More › Recurring Transactions, then tap Add recurring transaction.</li>
+          <li>Pick Expense, fill in the Amount, the source wallet and a Category (e.g. Pocket money). Add a Note, e.g. &quot;Pocket money for Rani&quot;.</li>
+          <li>Pick Frequency Monthly (or Weekly), set Start from to the day you usually give it, and Remind how many days before.</li>
+          <li>Save. Artosku records it automatically on each due date and reminds you. You still hand over the money yourself.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="nabung_otomatis" data-title="Saving every payday" data-keywords="nabung otomatis nabung tiap gajian nabung tiap bulan nabung rutin tabung otomatis tabungan otomatis sisihkan tiap gajian sisihkan tiap bulan auto saving automatic savings save every month save every payday recurring savings">
+        <h3>Saving every payday</h3>
+        <ol>
+          <li>Make the goal: More › Savings Goals, tap add (New Savings Goal). Fill in the Goal name, the Target amount and the Target date. Artosku works out &quot;Set aside ≈ … per month&quot;.</li>
+          <li>Set a fixed reminder: More › Recurring Transactions › add, an Expense of that amount with a savings Category, Frequency Monthly, Start from your payday.</li>
+          <li>When the reminder comes, move the money to your savings account or pocket, then tap Save in Savings Goals.</li>
+          <li>Note: Artosku cannot move money between wallets by itself yet; only the recording and the reminder are automatic.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bayar_kos" data-title="Paying rent every month" data-keywords="bayar kos tiap bulan bayar kos tiap tanggal bayar kos tanggal bayar kos otomatis catat kos tiap bulan bayar sewa tiap bulan bayar sewa otomatis sewa bulanan kos bulanan kontrakan tiap bulan bayar kontrakan pay rent every month monthly rent rent every month recurring rent tagihan tiap bulan tagihan bulanan bayar listrik tiap bulan catat tagihan rutin">
+        <h3>Paying rent every month</h3>
+        <ol>
+          <li>Open More › Recurring Transactions, then tap Add recurring transaction.</li>
+          <li>Pick Expense, fill in the Amount, the wallet that pays and a Category (e.g. Rent). Add a Note, e.g. &quot;Room rent&quot;.</li>
+          <li>Pick Frequency Monthly and set Start from to the payment day (e.g. the 1st). Slide Remind how many days before.</li>
+          <li>Save. Each month the payment is recorded automatically on that day, and you are reminded beforehand.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="gaji_otomatis" data-title="Recording your salary automatically" data-keywords="catat gaji otomatis gaji otomatis gaji tiap bulan catat gaji tiap bulan pemasukan rutin pemasukan otomatis income otomatis record salary automatically automatic salary monthly salary recurring income salary every month">
+        <h3>Recording your salary automatically</h3>
+        <ol>
+          <li>Open More › Recurring Transactions, then tap Add recurring transaction.</li>
+          <li>Pick Income, fill in your salary Amount, the wallet that receives it and the Salary Category.</li>
+          <li>Pick Frequency Monthly and set Start from to your payday. Save.</li>
+          <li>Each month the salary is recorded automatically on that day. If your salary changes, change the amount with Edit.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="budget_makan" data-title="A monthly food budget with a warning" data-keywords="budget makan anggaran makan batas makan batas pengeluaran makan budget jajan batasi pengeluaran peringatan anggaran peringatan budget diingatkan kalau boros food budget budget warning spending limit limit spending limit my spending">
+        <h3>A monthly food budget with a warning</h3>
+        <ol>
+          <li>Open More › Budget, then tap add (Set Budget).</li>
+          <li>Pick the category (e.g. Food) and fill in the Limit per month.</li>
+          <li>Save. Follow what is used on the Budget page; Artosku tells you once when spending reaches 90% of the limit.</li>
+          <li>Note: this is a monthly limit. Want a weekly one? Pick Period: Weekly in the same form.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="dana_darurat" data-title="An emergency fund" data-keywords="dana darurat tabungan darurat dana cadangan emergency fund emergency savings rainy day fund">
+        <h3>An emergency fund</h3>
+        <ol>
+          <li>Open More › Savings Goals, tap add (New Savings Goal).</li>
+          <li>Fill in the Goal name (e.g. Emergency Fund), the Target amount (usually 3 to 6 times your monthly spending) and a Target date if you have one.</li>
+          <li>Each time you set money aside, tap Save on the goal card. Artosku shows &quot;Set aside ≈ … per month&quot; and whether you are On track.</li>
+          <li>Want the money apart from your normal balance? Make an Emergency Fund pocket in your wallet (More › Wallet › the wallet › Add Pocket) and link it to this goal.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="uang_belanja_rt" data-title="Keeping household shopping money apart" data-keywords="uang belanja rumah tangga uang belanja rumah uang belanja dapur uang dapur pisahkan uang belanja pisah uang belanja pisahkan uang dapur household budget household money grocery money separate grocery money keep grocery money apart">
+        <h3>Keeping household shopping money apart</h3>
+        <ol>
+          <li>Open More › Wallet, tap the wallet that holds your shopping money, and under Pocket tap Add Pocket.</li>
+          <li>Fill in the Pocket name (e.g. Household shopping) and an Initial allocation of the month&#x27;s shopping money, then Create Pocket.</li>
+          <li>Each time you shop, record the expense and pick that pocket under the wallet. What is left shows on the pocket.</li>
+          <li>Shopping with a list: More › Shopping List, then Finish shopping › Record as 1 transaction.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="cicilan_hp_motor" data-title="An installment for a phone or motorbike" data-keywords="cicilan hp cicilan motor cicilan mobil cicilan laptop kredit hp kredit motor kredit mobil catat cicilan bayar cicilan tiap bulan phone installment motorbike installment car installment installment plan pay in installments">
+        <h3>An installment for a phone or motorbike</h3>
+        <ol>
+          <li>Open More › Installments, then tap Add installment.</li>
+          <li>Fill in the Installment name (e.g. Phone or Motorbike), the Total, How many payments, the Installment payment period and the First installment date.</li>
+          <li>Pick Taken from wallet and a Category. Open Advanced details if there is Interest or a Late fee. Save.</li>
+          <li>Each due date the installment is recorded automatically; see what is left on the card and pay early with the Pay button.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="langganan_bulanan" data-title="Recording a monthly subscription" data-keywords="catat langganan langganan bulanan bayar langganan langganan streaming langganan netflix langganan spotify langganan tiap bulan catat subscription monthly subscription record a subscription streaming subscription track subscriptions subscription every month">
+        <h3>Recording a monthly subscription</h3>
+        <ol>
+          <li>Open More › Recurring Transactions, then tap Add recurring transaction.</li>
+          <li>Pick Expense, fill in the Amount, the wallet or card that is charged and a Category (e.g. Subscriptions). Put its name in the Note (e.g. &quot;Movie streaming&quot;).</li>
+          <li>Pick Frequency Monthly (or Yearly) and Start from the bill date. Remind 1 or 2 days before.</li>
+          <li>Save. Each bill is recorded automatically; delete or edit it from the list when you stop subscribing.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="patungan_makan" data-title="Splitting a meal with friends" data-keywords="patungan makan teman bagi tagihan makan teman split dinner split the bill with friends split a meal urunan makan teman">
+        <h3>Splitting a meal with friends</h3>
+        <ol>
+          <li>Open More › Split Bill.</li>
+          <li>Enter the name (e.g. Dinner), the Bill total, the wallet that paid and the category.</li>
+          <li>Tap Add person for each friend, then pick Split equally. Turn on I am part of the split if you ate too.</li>
+          <li>Save. Your share becomes an expense, your friends&#x27; shares become receivables under Debts &amp; Receivables that you can collect through WhatsApp.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="utang_teman" data-title="Recording a debt with a friend and being reminded" data-keywords="catat utang teman utang ke teman utang teman teman pinjam uang teman utang pinjam uang teman ingatkan utang diingatkan utang ingatkan teman bayar tagih teman friend owes me record a loan to a friend remind a friend remind someone to pay someone owes me">
+        <h3>Recording a debt with a friend and being reminded</h3>
+        <ol>
+          <li>Open More › Debts &amp; Receivables, then tap Add debt/receivable.</li>
+          <li>Pick Receivable (your friend owes you) or Debt (you owe). Fill in the name, Amount and Due date.</li>
+          <li>Fill in the WhatsApp number (optional) to send a bill reminder. Pick a wallet if the money just moved, leave it empty if this is only a note.</li>
+          <li>Save. Artosku reminds you near the due date, and on the card tap Remind to send a WhatsApp message. When it is paid, tap Pay.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="belanja_bulanan" data-title="Monthly shopping with a shopping list" data-keywords="belanja bulanan catat belanja bulanan belanja bulanan pakai daftar daftar belanja bulanan belanja mingguan pakai daftar monthly groceries monthly shopping grocery list shopping list for groceries">
+        <h3>Monthly shopping with a shopping list</h3>
+        <ol>
+          <li>Open More › Shopping List, tap + and pick New list (enter the List name). An old list can be used again with Repeat.</li>
+          <li>Tap Add item… and fill in the items, with prices if you know them for an estimated total.</li>
+          <li>While shopping, tick the items that are in the basket.</li>
+          <li>Tap Finish shopping, then Record as 1 transaction (or Scan receipt) so the spending goes into your wallet.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="barang_cepat_habis" data-title="Tracking what runs out fast" data-keywords="barang cepat habis pantau barang habis barang yang cepat habis seberapa cepat habis stok rumah pantau stok rumah barang paling cepat habis items that run out fast track what runs out household stock what runs out quickly">
+        <h3>Tracking what runs out fast</h3>
+        <ol>
+          <li>Open More › Item usage.</li>
+          <li>Whenever something runs out, search for it and tap it to record Used up (pick Wasted or Given away if it was not used up).</li>
+          <li>Open Summary and look at How fast it runs out: how many days each item lasts, and Wasted for what was thrown away.</li>
+          <li>Use it to plan your next Shopping List.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pengeluaran_terbesar" data-title="Seeing your biggest spending this month" data-keywords="pengeluaran terbesar pengeluaran paling besar paling boros uang habis buat apa uang kemana kemana uangku kategori terbesar biggest expense biggest spending where does my money go where did my money go top spending">
+        <h3>Seeing your biggest spending this month</h3>
+        <ol>
+          <li>Open the Reports tab and pick the period (this month).</li>
+          <li>See spending per category; tap a category to see its transactions one by one.</li>
+          <li>Want a direct answer? Ask KuAI with the AI button: &quot;what was my biggest spending this month?&quot;.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ekspor_excel" data-title="Exporting your data to Excel" data-keywords="ekspor ke excel ekspor excel export excel export to excel unduh excel download excel simpan ke excel laporan ke excel file excel">
+        <h3>Exporting your data to Excel</h3>
+        <ol>
+          <li>Open More › Excel Export &amp; Import.</li>
+          <li>Tap Back up now. The Excel file is made and saved to the Download folder (turn on Save Excel to the Download folder) or you pick where it goes.</li>
+          <li>It holds only the profile in use (Personal or one business). Want every profile? Use Google Drive Backup.</li>
+          <li>For a report that is easy to read, open the Transactions or Reports tab.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pindah_hp" data-title="Moving your data to a new phone" data-keywords="pindah hp ganti hp hp baru pindahkan data ke hp baru data ke hp baru pindah ke hp baru restore di hp baru pindah data hp new phone move to a new phone move my data to a new phone switch phones transfer data to new phone">
+        <h3>Moving your data to a new phone</h3>
+        <ol>
+          <li>On the old phone: More › Google Drive Backup, tap Connect then Back up now. Every profile is included (Personal and business).</li>
+          <li>On the new phone: install Artosku and sign in with the same account.</li>
+          <li>Open More › Google Drive Backup, tap Connect with the same Google account. On a phone that is still empty you are offered a restore right away: pick the backup then tap Restore.</li>
+          <li>Receipt and product photos come along with Google Drive Backup, not with Excel.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="batalkan_pemulihan" data-title="Restored the wrong data, putting it back" data-keywords="batalkan pemulihan salah pulihkan salah restore kembalikan data lama data hilang setelah restore data hilang setelah pulihkan data saya hilang setelah restore undo restore restored by mistake restore by mistake restored the wrong backup my data is gone after restore put my old data back">
+        <h3>Restored the wrong data, putting it back</h3>
+        <ol>
+          <li>On Home tap Undo restore on the Data restored card. Closed the card? Open More › Google Drive Backup, the card is there.</li>
+          <li>Read the comparison of Old data and Now, and how many transactions recorded after the restore would be lost. Then tap Revert.</li>
+          <li>The data from before the restore is put back completely (nothing is merged). The copy is kept for 7 days from the restore; after that it cannot be undone any more.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="dua_mata_uang" data-title="Using two currencies (a USD wallet)" data-keywords="wallet usd wallet dolar dompet dolar dua mata uang mata uang asing uang dolar tabungan dolar saldo dolar catat uang dolar two currencies foreign currency usd wallet dollar wallet multi currency multiple currencies wallet in another currency">
+        <h3>Using two currencies (a USD wallet)</h3>
+        <ol>
+          <li>Open More › Wallet, tap Add Wallet, pick the type (or Add Manually).</li>
+          <li>Fill in the Wallet name, change its currency to USD and fill in the Opening balance. The rate to your main currency fills in by itself and you can still change it.</li>
+          <li>Record transactions in that wallet as usual; totals are worked out in your main currency. Changing the main currency is in More › Currency.</li>
+          <li>Moving between currencies: transfer from a rupiah wallet to the USD wallet, then fill in Amount received.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="tut-group" id="g-bisnis" aria-labelledby="h-g-bisnis">
+      <h2 id="h-g-bisnis">Business Mode</h2>
+      <article class="tut-card" id="mode_bisnis" data-title="Business Mode" data-keywords="bisnis usaha jualan toko warung umkm kasir dagang business shop sell store cashier kecil-kecilan ganti profil">
+        <h3>Business Mode <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">A cashier, ingredient purchases, receipts over WhatsApp, buyers who have not paid and profit-and-loss reports. Business money stays apart from personal money.</p>
+        <ol>
+          <li>Open More › Switch profile.</li>
+          <li>Pick your business, or create a new one if you have none.</li>
+          <li>Home, Sales, Reports and the More menu become the business&#x27;s. Business money stays apart from personal money.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kasir" data-title="Cashier (Sell)" data-keywords="kasir jual penjualan jualan barcode pos sell sale cashier checkout catat penjualan bikin nota">
+        <h3>Cashier (Sell) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Pick products, take cash, QRIS, transfer or pay later, then send a receipt. Barcode scanning works.</p>
+        <ol>
+          <li>On the Business Home tap Sell.</li>
+          <li>Tap a product to add it to the basket (or Custom item, Scan barcode, or Sell by voice or typing).</li>
+          <li>Tap Pay, pick Cash, Transfer, QRIS or Not paid yet, then save.</li>
+          <li>On the Sale saved screen: Invoice, WA to send it to the buyer, or Sell again.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="nota_wa" data-title="Receipts &amp; WhatsApp sending" data-keywords="nota invoice kwitansi wa whatsapp kirim nota pdf receipt faktur struk pembeli kirim wa">
+        <h3>Receipts &amp; WhatsApp sending <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Make a neat receipt with your business details and send it to the buyer over WhatsApp or as a PDF.</p>
+        <ol>
+          <li>Finish the sale in Sell, then tap Save sale.</li>
+          <li>On the done screen, tap WA.</li>
+          <li>No buyer number yet? Enter it and tap Send, or choose &quot;Pick in WA&quot; to pick the contact in WhatsApp.</li>
+          <li>An older receipt: Sales › pick a receipt › WA.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="belanja_bisnis" data-title="Purchases: ingredients, stock &amp; costs" data-keywords="belanja bahan stok pemasok supplier biaya beli purchase ingredient cost ongkir modal belanja bahan belanja stok beli bahan biaya usaha bon pemasok beli stok">
+        <h3>Purchases: ingredients, stock &amp; costs <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Record ingredient purchases, stock for sale and business costs. Scan online-shop receipts including shipping and discounts.</p>
+        <ol>
+          <li>Open Purchases on the Business Home and pick Ingredients or Stock for sale.</li>
+          <li>Add the items and their prices.</li>
+          <li>Tap Pay, then choose On credit (pay later).</li>
+          <li>Enter the supplier and the due date, then Save. The debt is recorded under Debts.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="produk_stok" data-title="Products &amp; stock" data-keywords="produk barang stok harga persediaan inventori product inventory stock item">
+        <h3>Products &amp; stock <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">A product list with prices, stock and stock value. Low-stock warnings included.</p>
+        <ol>
+          <li>Open Products in the shortcut row of the Business Home (or the ⋮ menu in Sell › Product list, or More › Products and Stock), then tap Add product.</li>
+          <li>Fill in the name, selling price, cost price and stock (if you want the stock tracked).</li>
+          <li>Stock goes down by itself on a sale and up on a stock purchase.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kontak_usaha" data-title="Buyers, suppliers &amp; business bills" data-keywords="pembeli pelanggan pemasok karyawan bon piutang usaha customer supplier employee tagih">
+        <h3>Buyers, suppliers &amp; business bills <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Keep buyers, suppliers and staff, see who has not paid, and remind them over WhatsApp.</p>
+        <ol>
+          <li>Open More › Business contacts.</li>
+          <li>Pick the Buyers, Suppliers, Places to pay or Employees tab.</li>
+          <li>Tap add for a new contact. Buyers are also saved automatically when their name is typed at the till.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="laba_rugi" data-title="Profit &amp; loss and business reports" data-keywords="laba rugi untung arus kas neraca terlaris jam ramai profit loss cash flow balance sheet omzet laporan usaha kas usaha">
+        <h3>Profit &amp; loss and business reports <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">See profit and loss, cash flow, the balance sheet, best sellers and busy hours.</p>
+        <ol>
+          <li>Open the Reports tab in Business Mode.</li>
+          <li>Pick the tab you want (profit and loss, cash, products and so on) and the period.</li>
+          <li>Tap Export to share the report.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="uang_pemilik" data-title="Owner money (draws &amp; capital)" data-keywords="prive modal setor ambil uang pemilik owner capital draw withdraw ambil uang usaha setor modal modal sendiri uang pribadi usaha owner draw ambil uang buat pribadi tarik uang usaha">
+        <h3>Owner money (draws &amp; capital) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Record taking money out for yourself, putting capital in, or moving money to another business.</p>
+        <ol>
+          <li>Open More › Owner&#x27;s Money.</li>
+          <li>Pick To personal to take money out of the business (draw), or From personal for capital or a loan.</li>
+          <li>Pick the business wallet and the personal wallet, enter the amount, then save. It is recorded in the business and in Personal at once.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pinjamkan_uang" data-title="Lend money" data-keywords="pinjamkan pinjam kasih pinjam piutang keluar lend loan out pinjam karyawan kasbon karyawan pinjaman karyawan">
+        <h3>Lend money <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Record business money you lend out and when it comes back.</p>
+        <ol>
+          <li>Open More › Business Settings › Lend money.</li>
+          <li>Fill in From business (wallet), To (the employee or other party), the amount and when it is returned.</li>
+          <li>Tap Lend. The money becomes a receivable, not a cost and not turnover.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="tutup_kas" data-title="Close the drawer &amp; cashier recap" data-keywords="tutup kas laci rekap selisih tutup toko drawer close recap cash count selisih kas hitung laci cash drawer close till">
+        <h3>Close the drawer &amp; cashier recap <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Count the cash in the drawer, match it to your records and see the day&#x27;s sales recap.</p>
+        <ol>
+          <li>Open More › Business Settings › Cashier recap, then tap Close the till under the recap.</li>
+          <li>See what should be in the drawer (today&#x27;s cash sales), then count the money in it (by denomination if you like).</li>
+          <li>If there is a Difference, tap Book as a difference. If it is Exact, you are done.</li>
+          <li>Business with several cashiers: use Cashier recap to send sales from the cashier&#x27;s phone to the owner.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pajak_usaha" data-title="Business tax helper" data-keywords="pajak pph omzet lapor pajak tax turnover umkm pajak final peredaran bruto">
+        <h3>Business tax helper <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">An estimate of the tax on your turnover so reporting holds no surprise.</p>
+        <ol>
+          <li>Open More › Business Settings › Business tax helper.</li>
+          <li>See your gross turnover against the tax-free limit and the final SME rate limit.</li>
+          <li>This is an estimate to help, not a replacement for the official calculation.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pengaturan_bisnis" data-title="Business settings" data-keywords="pengaturan target data nota logo pengingat settings setup kasir">
+        <h3>Business settings <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Receipt details, monthly target, wallets, categories, cashier and business reminders.</p>
+        <ol>
+          <li>Open More › Business Settings.</li>
+          <li>Set up the invoice details (name, address, number), the Monthly target, wallets, categories, cashiers and reminders.</li>
+          <li>From here you also find Lend money and Cashier recap (Close the till is there).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="tagih_piutang_usaha" data-title="Collect what is not paid yet" data-keywords="tagih belum bayar belum lunas piutang nagih utang pelanggan collect unpaid receivable tagihan pelanggan piutang usaha yang belum bayar">
+        <h3>Collect what is not paid yet <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">See the unpaid invoices, collect through WhatsApp, and record the payment when the money comes in.</p>
+        <ol>
+          <li>Open the Sales tab and pick Not fully paid, or open More › Receivables &amp; Debts.</li>
+          <li>Tap the invoice or the receivable, then collect through WhatsApp.</li>
+          <li>When the money arrives, tap receive payment: fill in Received now or Pay in full, pick Goes into the wallet, then save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bon_pemasok" data-title="Supplier credit (buy now, pay later)" data-keywords="bon utang pemasok bayar nanti kredit pemasok supplier credit tempo bon pemasok bayar nanti pemasok supplier credit utang usaha">
+        <h3>Supplier credit (buy now, pay later) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Buy ingredients or stock now and pay later: the debt is recorded with its due date.</p>
+        <ol>
+          <li>Open Purchases on the Business Home and add the items.</li>
+          <li>Tap Pay, pick On credit (pay later).</li>
+          <li>Fill in Bought at (required for credit) and Due date (3 days, 1 week or end of month).</li>
+          <li>Tap Save · credit. The debt to the supplier is recorded; when you settle it, pay from that debt list.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="nota_usaha" data-title="Invoices &amp; business details on them" data-keywords="nota invoice struk cetak daftar nota">
+        <h3>Invoices &amp; business details on them <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">See every sales invoice and set the business details printed on them.</p>
+        <ol>
+          <li>All invoices are in the Sales tab; tap one, then Receipt, to view and share it.</li>
+          <li>The printed name, address, number and logo are set under More › Business Settings › Business profile; ways to pay, signature and receipt size under Receipt &amp; ways to pay.</li>
+          <li>Invoices are made automatically when you record a sale; none yet? on the Business Home tap Sell.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="rekap_kasir" data-title="Sales recap from employees" data-keywords="rekap karyawan banyak orang kirim penjualan recap employee tim">
+        <h3>Sales recap from employees <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">A cashier sends the sales on their phone to the owner as a file, with no server.</p>
+        <ol>
+          <li>Open More › Business Settings › Cashier recap.</li>
+          <li>On the cashier&#x27;s phone pick I am the cashier then Send recap, and share the file with the owner.</li>
+          <li>On the owner&#x27;s phone pick I am the owner then Receive recap, open the file, check it, then record those invoices.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="target_bisnis" data-title="Monthly turnover target" data-keywords="target omzet target bulanan target jualan goal turnover target omzet target usaha monthly target turnover target">
+        <h3>Monthly turnover target <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Set a turnover target per month and follow its progress each day on the Business Home.</p>
+        <ol>
+          <li>Open More › Business Settings › Monthly target.</li>
+          <li>Fill in the Turnover target per month (the daily target is worked out for you).</li>
+          <li>Turn on Show on Home to see the progress each day.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bisnis_profil" data-title="Business profile (name, logo, address, number)" data-keywords="profil usaha nama usaha nama toko logo logo nota alamat alamat toko nomor wa nomor telepon no hp usaha jenis usaha warna usaha business profile address phone number">
+        <h3>Business profile (name, logo, address, number) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Business name, logo, WhatsApp number, address, kind of business and colour. Used on the receipt and reports.</p>
+        <ol>
+          <li>Open More › Business Settings › Business profile.</li>
+          <li>Tap the logo circle at the top to pick a logo picture from the gallery.</li>
+          <li>Fill in Business name, Business WhatsApp number and Address, then pick the Kind of business and the Business colour.</li>
+          <li>Tap Save. The name, address, number and logo are printed on the receipt.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="nota_data" data-title="Receipt &amp; ways to pay" data-keywords="data nota atur nota pengaturan nota cara bayar info rekening nota invoice settings receipt settings payment details">
+        <h3>Receipt &amp; ways to pay <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Set the ways to pay on the receipt (bank, e-wallet, QRIS), the note under the receipt, slogan, signature and receipt size.</p>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
+          <li>Under Ways to pay tap Add for a bank, e-wallet or QRIS.</li>
+          <li>Write the Note under the receipt. The slogan, signature and receipt size are in the row Slogan &amp; signature › Set.</li>
+          <li>Tap Save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="cara_bayar_nota" data-title="Bank account and e-wallet on the receipt" data-keywords="rekening no rek nomor rekening bank bca bri mandiri bni bsi gopay ovo dana shopeepay linkaja e-wallet transfer ke mana atas nama bank account account number ewallet">
+        <h3>Bank account and e-wallet on the receipt <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Show your account or e-wallet number on the receipt so buyers know where to transfer.</p>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
+          <li>Under Ways to pay tap Add, then pick the type (bank or e-wallet).</li>
+          <li>Pick the bank from the buttons (or Other for your own name), then fill in Account number and Account holder.</li>
+          <li>Tap Add, then Save on the Receipt &amp; ways to pay screen. To change one tap its row, or Delete to remove it.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="qris_nota" data-title="QRIS on the receipt (set, change, remove the picture)" data-keywords="qris kode qr qr qr code gambar qris ganti qris hapus qris tambah qris qris nota barcode bayar change qris add qris remove qris">
+        <h3>QRIS on the receipt (set, change, remove the picture) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Put the picture of your shop QRIS on the receipt. You can change or remove it any time.</p>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
+          <li>Under Ways to pay tap Add, pick QRIS, then tap Pick QRIS picture and choose it from the gallery.</li>
+          <li>To change the picture: tap the QRIS row (it says &quot;QR picture set · tap to change&quot;), then Change picture.</li>
+          <li>To remove the picture: tap the QRIS row then Remove picture. Deleting the QRIS way to pay also lets go of the picture.</li>
+          <li>Tap Save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ttd_nota" data-title="Signature on the receipt" data-keywords="tanda tangan ttd tandatangan paraf gambar tanda tangan signature sign draw signature">
+        <h3>Signature on the receipt <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Put a signature on the receipt: draw it with your finger or pick its photo.</p>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay › Slogan &amp; signature › Set.</li>
+          <li>Under Signature tap Draw, sign the white box with your finger, then Save (Redraw to start again). Or tap Choose photo.</li>
+          <li>To remove the signature tap the X button beside it.</li>
+          <li>Tap Done, then Save on the Receipt &amp; ways to pay screen.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="slogan_catatan_nota" data-title="Slogan and the note under the receipt" data-keywords="slogan tagline catatan nota catatan di bawah nota terima kasih nota kalimat penutup footer nota receipt note footer">
+        <h3>Slogan and the note under the receipt <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Write your slogan and a closing line, e.g. &quot;Thanks for your order&quot;.</p>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
+          <li>Write the closing line in the Note under the receipt.</li>
+          <li>For a slogan tap Slogan &amp; signature › Set, fill in Slogan (optional) and tap Done.</li>
+          <li>Tap Save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ukuran_nota" data-title="Receipt size (A5 or 58 mm roll)" data-keywords="ukuran nota a5 kertas a5 struk kecil struk 58 58 mm printer printer thermal thermal cetak struk receipt size thermal printer paper size">
+        <h3>Receipt size (A5 or 58 mm roll) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Pick an A5 paper receipt or a small 58 mm roll receipt for a thermal printer.</p>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay › Slogan &amp; signature › Set.</li>
+          <li>Under Receipt size pick A5 paper or 58 mm roll.</li>
+          <li>Tap Done, then Save. In the receipt preview, Print always uses the 58 mm roll for a printer app.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kirim_nota_foto_pdf" data-title="Print, PDF, Photo or WA for a receipt" data-keywords="kirim nota jadi foto nota jadi foto nota jadi gambar kirim foto nota cetak nota print nota pdf nota foto nota gambar nota share nota bagikan nota print receipt receipt photo receipt pdf">
+        <h3>Print, PDF, Photo or WA for a receipt <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">A receipt can be printed, sent as a PDF, as a photo (image), or as text to the buyer on WhatsApp.</p>
+        <ol>
+          <li>Open the Sales tab, tap the receipt, then tap Receipt.</li>
+          <li>The preview has four buttons: Print (58 mm roll for a printer app), PDF, Photo (a PNG image) and WA (text to the buyer).</li>
+          <li>The photo of a long receipt is one whole picture. The payment QR in it is big enough to scan.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="wallet_usaha" data-title="Business wallets" data-keywords="wallet usaha wallet bisnis kas usaha rekening usaha laci saldo usaha business wallet">
+        <h3>Business wallets <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Cash, bank and e-wallet accounts just for the business, apart from your personal wallets.</p>
+        <ol>
+          <li>Open More › Business Settings › Business wallets.</li>
+          <li>Add a business wallet (cash, bank, e-wallet) or tap a wallet to change it.</li>
+          <li>Business wallets are separate from your personal wallets.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kanal_jual" data-title="Sales channels and platform fees" data-keywords="kanal kanal jual channel shopee gofood grabfood tokopedia marketplace potongan potongan platform fee platform komisi online sales channel platform fee">
+        <h3>Sales channels and platform fees <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Record sales through Shopee, GoFood and others, with the platform fee and the wallet the money goes to.</p>
+        <ol>
+          <li>Open More › Business Settings › Sales channels.</li>
+          <li>Tap Add channel, fill in the Channel name (e.g. Shopee, GoFood), Fee (%) and, if you like, the wallet the money goes into. Tap Save.</li>
+          <li>When selling, in Pay pick that channel under Sell through. The platform fee is filled from its percentage and can be changed per sale.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kategori_bahan" data-title="Business categories, cost of goods (COGS) and materials" data-keywords="kategori usaha kategori bisnis hpp harga pokok cogs paket kategori bahan bahan saya daftar bahan bahan baku operasional jenis usaha business category materials ingredients">
+        <h3>Business categories, cost of goods (COGS) and materials <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Set income, cost-of-goods and operating categories, and the list of materials you buy.</p>
+        <ol>
+          <li>Open More › Business Settings › Categories &amp; materials.</li>
+          <li>In Business categories, tap the label of a category to move it between cost of goods (COGS) and operating. Swipe left to delete.</li>
+          <li>Pick your Kind of business in Business profile so categories and materials fill in by themselves; names that already exist are not made twice.</li>
+          <li>The list of materials is under My materials: tap Material to add a new one.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="pengingat_bisnis" data-title="Business reminders and their time" data-keywords="pengingat pengingat bisnis notifikasi bisnis reminder jam pengingat ingatkan piutang jatuh tempo stok tipis ringkasan mingguan ringkasan senin business reminders notification time">
+        <h3>Business reminders and their time <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Reminders for due receivables, supplier bills, low stock, regular bills and the weekly summary, with one time for all.</p>
+        <ol>
+          <li>Open More › Business Settings › Reminders.</li>
+          <li>Turn on the ones you want: Receivables due (morning of the day), Supplier bills (1 day before), Low stock, Regular bills (3 days before), Weekly summary (Monday morning).</li>
+          <li>Pick one Reminder time for all of them. Changes are saved at once.</li>
+          <li>The Pre-order row at the bottom opens Pre-order settings (order reminders, daily limit, default deposit).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="widget_bisnis" data-title="Business widget on the home screen" data-keywords="widget bisnis widget usaha widget layar utama widget toko business widget home screen widget">
+        <h3>Business widget on the home screen <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Put a business widget on your phone home screen.</p>
+        <ol>
+          <li>Open More › Business Settings › Home screen widget.</li>
+          <li>Follow your phone prompt to place the widget on the home screen.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="preorder" data-title="Pre-order (orders picked up later, deposit, calendar)" data-keywords="pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup">
+        <h3>Pre-order (orders picked up later, deposit, calendar) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Take orders for a certain date with a deposit, see them on a calendar, see what has to be made, then finish them into a receipt.</p>
+        <ol>
+          <li>On the Business Home tap Sell, pick the products, then tap Pay.</li>
+          <li>Tap Order picked up later (pre-order). Fill in the date and time, Pickup or Delivery, the deposit (None yet, 50%, Paid in full, or Set), the Buyer name and the Order note, then tap Save order.</li>
+          <li>See all orders under More › Pre-order: the Calendar tab (the number is how many orders, tap a date; Recap to make for what has to be made) or the List (Upcoming, No DP, Done, Cancelled).</li>
+          <li>Tap an order: tap the steps Making then Ready, Google Calendar to add it to your calendar, Order proof (PDF, Photo or Text) for the buyer, Remind on WA to the buyer. Done · receive the rest makes the receipt on the pickup day; the deposit becomes part of it.</li>
+          <li>Cancel: the ⋮ menu › Cancel, then pick what happens to the deposit: Refunded, Forfeited (becomes Other income), or Partly. Move date is in ⋮ too.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="atur_preorder" data-title="Pre-order settings (reminders, daily limit, default deposit)" data-keywords="atur pre-order ingatkan dp dp belum dibayar batas pesanan per hari pesanan penuh dp bawaan otomatis google kalender tombol di notifikasi pre-order settings pre-order reminders daily order limit default deposit">
+        <h3>Pre-order settings (reminders, daily limit, default deposit) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Order reminders (the day before, 2 hours before pickup, deposit not paid), a daily order limit, a default deposit and adding to Google Calendar automatically.</p>
+        <ol>
+          <li>Open More › Pre-order, then tap the Settings icon at the top right. You can also use Business Settings › Reminders › Pre-order.</li>
+          <li>Turn on Remind the day before (at 19:00, with the list of what to make), Remind before pickup (2 hours before), Remind about an unpaid deposit (3 days before the pickup date), and Add to Google Calendar automatically.</li>
+          <li>Pick Most orders per day (Off, 3, 5, 8, 10, 15): a full day is marked on the calendar. Pick the Default deposit (30%, 50%, 70%, 100%) for new orders.</li>
+          <li>Each reminder has buttons in its notification: Lihat, Yang dibuat, Google Kalender, Ingatkan WA or Tagih WA. Changes are saved at once.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="catatan_bisnis" data-title="Notes (money in or out you record yourself)" data-keywords="catatan catat tombol catat catatan bisnis lihat catatan catatan pengeluaran catatan pemasukan di mana catatan masuk laporan sebagai tidak dihitung laba non-laba business notes recorded notes where did my note go">
+        <h3>Notes (money in or out you record yourself) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Money in or out recorded with the Catat button shows under Sales › Notes, with a label for where it goes in the report.</p>
+        <ol>
+          <li>Tap the Catat button under the + button to record ordinary money in or out, then save.</li>
+          <li>After saving you are taken to Sales › Notes. Open the Sales tab and pick Notes any time.</li>
+          <li>Each note has a small label for where it goes in the report: Revenue, COGS, Cost or Non-profit (not counted as profit, e.g. Owner draw).</li>
+          <li>Tap a note to change or delete it.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="laporan_bisnis" data-title="Business reports (their tabs)" data-keywords="laporan bisnis laporan usaha tab laporan ringkasan arus kas neraca modal prive produk terlaris pembeli jam ramai setahun kanal business report cash flow balance sheet best seller">
+        <h3>Business reports (their tabs) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Summary, Finance, Profit &amp; loss, Cash flow, Balance sheet, Capital &amp; draw, Products, Buyers, Busy hours, Materials &amp; purchases, Receivables, Channels, Year and Tax.</p>
+        <ol>
+          <li>Open the Reports tab in Business Mode.</li>
+          <li>Pick a tab: Summary, Finance, Profit &amp; loss, Cash flow, Balance sheet, Capital &amp; draw, Products, Buyers, Busy hours, Materials &amp; purchases, Receivables, Channels, Year or Tax.</li>
+          <li>Set the period, then tap Export or PDF and CSV to share.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="arti_kartu_keuangan" data-title="What the Finance cards mean (margin, break-even, cash lasts for)" data-keywords="margin margin kotor margin bersih titik impas impas kas cukup untuk uang usaha sekarang biaya omzet kesehatan keuangan apa artinya artinya break even gross margin net margin runway what does it mean">
+        <h3>What the Finance cards mean (margin, break-even, cash lasts for) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">What Business cash now, Cash lasts for, Gross margin, Net margin, Break-even and Cost / sales mean.</p>
+        <ol>
+          <li>Open Reports › Finance and tap a card; its explanation shows, tap Got it to close.</li>
+          <li>Business cash now: the sum of the balances of all your business wallets (paylater wallets are not counted).</li>
+          <li>Cash lasts for: business cash divided by the average monthly cost of the 3 months before, i.e. how many months it lasts with no sales at all.</li>
+          <li>Gross margin: of each Rp100 of sales, what is left after the cost of goods. Net margin: how much becomes profit after all costs.</li>
+          <li>Break-even: the least sales in a month so you do not lose. Cost / sales: what share of sales goes on cost of goods and costs.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="omzet_beda_uang_masuk" data-title="Why sales differ from money received" data-keywords="kenapa omzet beda omzet beda omzet tidak sama uang masuk beda laba tidak cocok selisih laporan kenapa laba beda dengan saldo cash basis why sales differ profit does not match mismatch">
+        <h3>Why sales differ from money received <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Reports count money that really came in and went out. Unpaid receipts, owner draws and capital deposits are left out.</p>
+        <ol>
+          <li>Reports are counted from money that has come in and gone out, not from receipts alone.</li>
+          <li>An unpaid receipt is counted only when its payment is received; the rest sits under Receivables.</li>
+          <li>Owner draws, capital deposits, opening balances and moves between businesses are not counted as income or cost.</li>
+          <li>Check Reports › Profit &amp; loss: Gross sales, Platform fees and &quot;Other income and receivable payments&quot; explain the difference.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="scan_barcode_kasir" data-title="Barcode scan at the till and its sound" data-keywords="scan scan barcode barcode bunyi scan suara scan bunyi tit matikan suara scan scanner barcode sound beep scan sound">
+        <h3>Barcode scan at the till and its sound <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Scan a product barcode to add it to the basket. A &quot;tit&quot; sounds on success and another when it is not registered; you can turn it off.</p>
+        <ol>
+          <li>On the Business Home tap Sell, then tap the Scan barcode icon.</li>
+          <li>Point the camera at a product barcode; each one read goes into the basket and shows +1.</li>
+          <li>A &quot;tit&quot; means success, a falling &quot;tu-tut&quot; means not registered yet (tap + Add product).</li>
+          <li>Tap the speaker icon at the top (Scan sound) to turn the sound off or on. Tap Done scanning when finished.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="jual_suara_ketik" data-title="Sell by voice or typing" data-keywords="jual suara jual pakai suara jual ketik catat jualan cepat quick sale ucapkan voice sale sell by voice dictate">
+        <h3>Sell by voice or typing <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Say or type &quot;2 coffee 1 bread&quot; and the basket fills itself.</p>
+        <ol>
+          <li>On the Business Home tap Sell.</li>
+          <li>Tap the Sell by voice or typing icon, then say or type the order, e.g. &quot;2 coffee 1 bread&quot;.</li>
+          <li>Check the basket that filled in, then tap Pay.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="lacak_stok" data-title="Track product stock (and negative stock)" data-keywords="lacak stok stok stok minus stok negatif stok habis stok tidak berkurang jasa titipan track stock negative stock out of stock">
+        <h3>Track product stock (and negative stock) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Turn on Track stock on a product so stock drops on each sale. Turn it off for services or consignment.</p>
+        <ol>
+          <li>Open More › Products, then tap the product or add a new one.</li>
+          <li>Under Unit, turn on Track stock so stock drops on each sale. Turn it off for services or consignment.</li>
+          <li>Stock can go below zero when you sell more than you hold; add stock through Stock purchases or change the stock on the product.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="transfer_antar_bisnis" data-title="Move money between business wallets or to another business" data-keywords="pindah uang usaha transfer antar bisnis tarik saldo shopee pindah wallet usaha ke bisnis lain antar bisnis pindah saldo tarik saldo marketplace transfer antar wallet usaha move business money transfer between businesses withdraw marketplace balance">
+        <h3>Move money between business wallets or to another business <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">Move money between business wallets (e.g. withdraw Shopee balance) or to your other business. It is not counted as sales.</p>
+        <ol>
+          <li>Open More › Move business money (in Business Mode).</li>
+          <li>Pick Between business wallets or To another business, then the source wallet and the target wallet (or your other business).</li>
+          <li>The admin fee, if any, is recorded as a cost. The move is not counted as sales.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ringkasan_gabungan" data-title="Combined summary (Personal + all businesses)" data-keywords="ringkasan gabungan gabungan semua bisnis pribadi dan bisnis total semua combined summary all businesses">
+        <h3>Combined summary (Personal + all businesses) <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">See your personal money and all your businesses side by side.</p>
+        <ol>
+          <li>Open More › Combined summary.</li>
+          <li>See your Personal money and all your businesses side by side; it is only for looking.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bisnis_baru_ganti" data-title="Create a new business and switch profile" data-keywords="bisnis baru buat bisnis tambah usaha usaha kedua ganti profil ganti bisnis hapus bisnis ubah nama bisnis multi bisnis new business switch profile second business">
+        <h3>Create a new business and switch profile <span class="tut-badge">Pro</span></h3>
+        <p class="tut-intro">More than one business? Create a new one and switch between Personal and your businesses.</p>
+        <ol>
+          <li>Tap the profile pill at the top of the Home (or More › Switch profile).</li>
+          <li>Pick Personal, Combined, or one of your businesses. Tap New business to create another one.</li>
+          <li>To rename or delete a business, use Rename or Delete business in that list.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="mulai_jualan" data-title="Making your first sale" data-keywords="mulai jualan jualan pertama penjualan pertama pertama kali jualan mulai usaha baru mulai usaha catat jualan pertama first sale start selling start my business record my first sale getting started with sales">
+        <h3>Making your first sale <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>Open More › Switch profile, then create a new business (or pick yours) and follow the setup.</li>
+          <li>Add products: More › Products and Stock › Add product (name, selling price, cost, stock if tracked).</li>
+          <li>On the Business Home tap Sell, tap the product (or Custom item), then Pay and pick Cash, Transfer or QRIS.</li>
+          <li>On the Sale saved screen: Invoice, WA to send it to the buyer, or Sell again.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bon_pelanggan" data-title="Recording customer credit and collecting it" data-keywords="catat bon pelanggan bon pelanggan pelanggan ngutang pelanggan utang pelanggan bayar nanti jual bayar nanti tagih pelanggan nagih pelanggan customer credit customer owes me sell on credit collect from customers unpaid customers">
+        <h3>Recording customer credit and collecting it <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>In Sell, fill the basket then tap Pay and pick Pay later. Fill in the customer name (required for unpaid sales).</li>
+          <li>Save. The sale becomes a receivable. See them all in the Sales tab › Not fully paid.</li>
+          <li>To collect, tap the invoice and send it through WhatsApp.</li>
+          <li>When the money arrives, receive the payment: fill in Received now or Pay in full, pick Goes into the wallet, then save.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="tutup_kasir_harian" data-title="Closing the till every day" data-keywords="tutup kasir harian tutup kasir tiap hari tutup kasir tiap malam tutup toko hitung laci tiap hari cek laci kasir rekap harian close the till daily daily closing end of day closing count the drawer close the register">
+        <h3>Closing the till every day <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>Open More › Business Settings › Cashier recap, then tap Close the till under the recap.</li>
+          <li>See what should be in the drawer (today&#x27;s cash sales), then count the money in it (by denomination if you like).</li>
+          <li>If there is a Difference, tap Book as a difference. If it is Exact, you are done.</li>
+          <li>See today&#x27;s result in the Sales tab and the Business Home.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="gaji_karyawan" data-title="Recording employee pay" data-keywords="gaji karyawan bayar karyawan bayar gaji karyawan gaji pegawai upah karyawan catat gaji karyawan gajian karyawan employee pay pay my employees employee salary payroll staff salary pay staff">
+        <h3>Recording employee pay <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>A fixed monthly cost: More › Recurring Transactions › add, Expense, the salary Amount, the business wallet, Category Employee Pay, Frequency Monthly, Start from payday.</li>
+          <li>Or record it once: Business Home › Purchases, pick Costs, fill in the pay, then Pay.</li>
+          <li>To lend money to an employee: More › Business Settings › Lend money.</li>
+          <li>See the effect on profit in the Reports tab › profit and loss.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="ambil_uang_usaha" data-title="Taking business money for yourself" data-keywords="ambil uang usaha ambil uang usaha buat pribadi ambil uang toko tarik uang usaha prive uang usaha ke pribadi ambil laba owner draw take money out of the business withdraw from business take money from my business">
+        <h3>Taking business money for yourself <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>Open More › Owner&#x27;s Money.</li>
+          <li>Pick To personal, then the source business wallet and the personal wallet it goes to.</li>
+          <li>Enter the amount (Artosku shows this month&#x27;s profit and what stays in the business), then save.</li>
+          <li>It is recorded as a draw in the business and as income in Personal at once, not as a cost.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="untung_bulan_ini" data-title="Checking this month&#x27;s profit" data-keywords="untung bulan ini laba bulan ini cek untung cek laba untung usaha bulan ini berapa untung bulan ini laba rugi bulan ini profit this month this month&#x27;s profit how much profit check my profit profit and loss this month">
+        <h3>Checking this month&#x27;s profit <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>Open the Reports tab in Business Mode.</li>
+          <li>Pick the profit and loss tab and the period (this month).</li>
+          <li>See turnover, costs and profit. Tap Export to share the report.</li>
+          <li>Quickly without opening the report: the Business Home shows today&#x27;s profit, and More › Business Settings › Monthly target helps follow turnover.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="kirim_nota_qris" data-title="Sending a receipt with your QRIS on it" data-keywords="kirim nota pakai qris nota ada qris nota dengan qris pasang qris di nota qris di nota nota ada kode qr send receipt with qris receipt with qris qris on the receipt put qris on the receipt">
+        <h3>Sending a receipt with your QRIS on it <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>Open More › Business Settings › Receipt &amp; ways to pay. Under Ways to pay tap Add, pick QRIS, then Pick QRIS picture from the gallery. Tap Save.</li>
+          <li>Make the sale from the Business Home › Sell.</li>
+          <li>Open the Sales tab, tap the receipt, then tap Receipt.</li>
+          <li>Send it as PDF, Photo (a PNG image, its QR is big enough to scan) or WA (text). To change the QRIS picture: tap the QRIS row in Receipt &amp; ways to pay › Change picture.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="belanja_bahan_hpp" data-title="Recording ingredient purchases and seeing the COGS" data-keywords="catat belanja bahan dan lihat hpp lihat hpp hitung hpp hpp bulan ini harga pokok bulan ini berapa hpp cek hpp see the cogs cost of goods this month work out cogs check cogs">
+        <h3>Recording ingredient purchases and seeing the COGS <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>On the Business Home open Purchases, pick Ingredients or Stock for sale, add the items and their prices, then Pay and Save.</li>
+          <li>Ingredient and stock purchases go in the report as Cost of goods (COGS). Which categories count as COGS is set under More › Business Settings › Categories &amp; materials (tap a category label to move it between cost of goods and operating).</li>
+          <li>See the COGS in Reports › Profit &amp; loss (the Cost of goods row; tap it to see its categories, tap a category to see its notes).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="terima_pesanan_dp" data-title="Taking an order for a certain date with a deposit" data-keywords="terima pesanan kue terima pesanan dengan dp pesanan kue ulang tahun pesanan untuk tanggal pesanan katering pesanan hampers pre order kue catat dp pesanan terima dp take an order with a deposit order for a date cake order catering order take a pre-order">
+        <h3>Taking an order for a certain date with a deposit <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>On the Business Home tap Sell, pick the products, tap Pay, then Order picked up later (pre-order).</li>
+          <li>Fill in the pickup date and time, Pickup or Delivery, the deposit (e.g. 50%), the Buyer name and the Order note (e.g. what is written on the cake). Tap Save order · deposit.</li>
+          <li>See the date under More › Pre-order › Calendar; Recap to make shows what has to be made.</li>
+          <li>At pickup open the order and tap Done · receive the rest. The receipt is made on the pickup day and the deposit becomes part of it.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="catat_biaya_usaha" data-title="Recording a business cost and seeing where it goes" data-keywords="catat biaya usaha catat biaya operasional catat pengeluaran usaha catat listrik usaha bayar biaya usaha catat gaji karyawan usaha record a business cost record an operating cost record business expense">
+        <h3>Recording a business cost and seeing where it goes <span class="tut-badge">Pro</span></h3>
+        <ol>
+          <li>Tap the Catat button under the + button (or + › Pay a cost), pick Expense, fill in the amount and category, then save.</li>
+          <li>Under the category a line says &quot;Goes in the report as ...&quot; (COGS, Operating cost, or Not counted in profit).</li>
+          <li>After saving you are taken to Sales › Notes. Tap the note to change or delete it.</li>
+        </ol>
+      </article>
+    </section>
+
+    <p class="tut-empty" id="tutEmpty">Nothing found. Try another word, or go back to <a href="#mulai" id="tutReset">Start here</a>.</p>
+
+    <section class="tut-cta">
+      <h2>Ready to try it?</h2>
+      <p>Free on Google Play.</p>
+      <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download on Google Play</a>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="../../" class="brand brand--footer">
+      <img src="../../assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo brand__logo--light" />
+      <img src="../../assets/artosku-logo-dark.svg" alt="" width="102" height="42" class="brand__logo brand__logo--dark" aria-hidden="true" />
+    </a>
+    <nav class="footer__links" aria-label="Footer navigation">
+      <a href="../../en/#fitur">Features</a>
+      <a href="../../en/#paket">Plans</a>
+      <a href="./">Guide</a>
+      <a href="../../en/#faq">FAQ</a>
+      <a href="../../en/#kontak">Contact</a>
+      <a href="../../privacy.html">Privacy Policy</a>
+      <a href="../../terms.html">Terms and Conditions</a>
+      <a href="../../tutorial/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    </nav>
+    <p class="footer__copy">&copy; <span id="year"></span> Artosku. Made by Andi Pramana.</p>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+<script src="../../js/tutorial.js"></script>
+</body>
+</html>
