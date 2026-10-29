@@ -1,0 +1,90 @@
+/* Buku Panduan (/tutorial). Memakai token warna dari styles.css (:root). Mobile first, gutter 16px. */
+
+body.page-tutorial { background: var(--bg-soft); }
+.tut { padding-top: 5.5rem; padding-bottom: 3rem; }
+.tut .container { padding-inline: 16px; }
+@media (min-width: 720px) { .tut .container { padding-inline: 2rem; } }
+
+/* ---- hero kecil + cari ---- */
+.tut-hero { padding-block: 1.25rem 1.5rem; }
+.tut-hero h1 { font-size: clamp(1.7rem, 6vw, 2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+.tut-hero p { margin-top: 0.6rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; max-width: 38rem; }
+.tut-search { position: relative; margin-top: 1.1rem; max-width: 38rem; }
+.tut-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); pointer-events: none; }
+.tut-search input {
+  width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+  padding: 0.9rem 1rem 0.9rem 2.7rem;
+  background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+.tut-search input::placeholder { color: var(--ink-faint); }
+.tut-search input:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.tut-status { margin-top: 0.7rem; font-size: 0.9rem; color: var(--ink-soft); min-height: 1.3em; }
+
+/* ---- Mulai dari sini ---- */
+.tut-start {
+  background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); padding: 1.25rem 1rem;
+}
+.tut-start h2 { font-size: 1.35rem; font-weight: 800; }
+.tut-start__lead { margin-top: 0.3rem; color: var(--ink-soft); font-size: 0.95rem; }
+.tut-steps { counter-reset: s; margin-top: 1rem; display: grid; gap: 0.9rem; }
+.tut-step { display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; align-items: start; }
+.tut-step::before {
+  counter-increment: s; content: counter(s);
+  width: 2rem; height: 2rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--primary); color: #fff; font-weight: 700; font-size: 0.9rem;
+}
+.tut-step h3 { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
+.tut-step p, .tut-step li { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; margin-top: 0.25rem; }
+.tut-step ul { margin: 0.25rem 0 0; padding-left: 1.1rem; list-style: disc; }
+.tut-step b { color: var(--ink); font-weight: 700; }
+
+/* ---- grup + artikel ---- */
+.tut-group { margin-top: 2rem; }
+.tut-group > h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.75rem; }
+.tut-list { display: grid; gap: 0.75rem; }
+.tut-card {
+  background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); padding: 1.1rem 1rem;
+  scroll-margin-top: 5rem;
+}
+.tut-card h3 { display: flex; gap: 0.5rem; align-items: center; font-size: 1.1rem; font-weight: 800; line-height: 1.3; }
+.tut-card__emoji { font-size: 1.3rem; }
+.tut-card__benefit { margin-top: 0.4rem; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; }
+.tut-card__where {
+  display: inline-block; margin-top: 0.6rem; font-size: 0.8rem; font-weight: 600;
+  color: var(--primary-dark); background: var(--accent-soft); border-radius: var(--radius-pill); padding: 0.25rem 0.7rem;
+}
+.tut-card ol { margin: 0.8rem 0 0; padding-left: 1.3rem; display: grid; gap: 0.5rem; }
+.tut-card li { color: var(--ink); font-size: 0.95rem; line-height: 1.6; padding-left: 0.2rem; }
+.tut-card li::marker { color: var(--primary); font-weight: 700; }
+.tut-note { margin-top: 0.8rem; font-size: 0.9rem; color: var(--ink-soft); border-left: 3px solid var(--primary-light); padding-left: 0.75rem; line-height: 1.55; }
+.tut-card__foot { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.tut-card .btn { white-space: normal; text-align: center; }
+.tut-plan { font-size: 0.78rem; font-weight: 600; color: var(--action-dark); }
+
+.tut-empty { display: none; margin-top: 1.5rem; padding: 1.2rem 1rem; background: #fff; border: 1px dashed var(--card-border); border-radius: var(--radius-md); color: var(--ink-soft); }
+.tut-empty.is-on { display: block; }
+[hidden] { display: none !important; }
+mark.tut-hit { background: #fff3b8; color: inherit; border-radius: 3px; padding-inline: 1px; }
+
+/* ---- ajakan unduh di bawah ---- */
+.tut-cta { margin-top: 2.5rem; text-align: center; padding: 1.5rem 1rem; background: var(--accent-soft); border-radius: var(--radius-md); border: 1px solid var(--card-border); }
+.tut-cta h2 { font-size: 1.2rem; font-weight: 800; }
+.tut-cta p { margin: 0.4rem 0 1rem; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---- gelap (halaman ini saja; situs lain belum punya tema gelap) ---- */
+@media (prefers-color-scheme: dark) {
+  body.page-tutorial { --bg: #141d12; --bg-soft: #101710; --ink: #E9F1E7; --ink-soft: #AFC3AB; --ink-faint: #6F836B; --card-border: rgba(134, 183, 122, 0.2); --accent-soft: #1d2b1a; background: var(--bg-soft); color: var(--ink); }
+  body.page-tutorial .navbar.is-scrolled { background: rgba(20, 29, 18, 0.8); }
+  body.page-tutorial .tut-search input,
+  body.page-tutorial .tut-start,
+  body.page-tutorial .tut-card,
+  body.page-tutorial .tut-empty { background: #1a2618; }
+  body.page-tutorial .eyebrow, body.page-tutorial .tut-card__where { color: var(--accent); }
+  body.page-tutorial .btn--ghost { color: var(--ink); }
+  body.page-tutorial .mobile-menu { background: linear-gradient(160deg, #141d12 0%, #101710 100%); }
+  body.page-tutorial mark.tut-hit { background: #5b4d10; color: #fff; }
+}
