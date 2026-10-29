@@ -1,10 +1,20 @@
 (() => {
   "use strict";
+  // ---- tombol tema: awal mengikuti sistem (skrip di <head>), pilihan user disimpan ----
+  const tt = document.getElementById("themeToggle");
+  if (tt) tt.addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("tut-theme", next); } catch (e) {}
+  });
+})();
+(() => {
+  "use strict";
   // Pencarian Buku Panduan (rancangan: menyaring kartu di halaman; versi final memakai data JSON dari generator).
   const input = document.getElementById("tutQ");
   const status = document.getElementById("tutStatus");
   const empty = document.getElementById("tutEmpty");
-  const start = document.getElementById("mulai");
+  const start = document.getElementById("mulai"), toc = document.getElementById("tutToc");
   if (!input) return;
   const cards = [...document.querySelectorAll(".tut-card")];
   const groups = [...document.querySelectorAll(".tut-group")];
@@ -46,7 +56,7 @@
     if (!terms.length) {
       cards.forEach((c) => { c.hidden = false; c.style.order = ""; });
       groups.forEach((g) => (g.hidden = false));
-      if (start) start.hidden = false;
+      if (start) start.hidden = false; if (toc) toc.hidden = false;
       empty.classList.remove("is-on");
       status.textContent = "";
       return;
@@ -59,7 +69,7 @@
       if (s) shown++;
     });
     groups.forEach((g) => (g.hidden = ![...g.querySelectorAll(".tut-card")].some((c) => !c.hidden)));
-    if (start) start.hidden = true;
+    if (start) start.hidden = true; if (toc) toc.hidden = true;
     empty.classList.toggle("is-on", shown === 0);
     status.textContent = shown
       ? (isEn ? shown + " guide(s) found" : shown + " panduan ditemukan")
