@@ -79,5 +79,14 @@
   const params = new URLSearchParams(location.search);
   if (params.get("q")) input.value = params.get("q");
   input.addEventListener("input", run);
+
+  const tutReset = document.getElementById("tutReset");
+  if (tutReset) {
+    tutReset.addEventListener("click", () => {
+      input.value = "";
+      run();
+    });
+  }
+
   run();
 })();
