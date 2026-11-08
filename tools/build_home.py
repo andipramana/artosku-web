@@ -103,7 +103,7 @@ ID = dict(
     biz_shop='Proud Chicken', biz_pay='Cara bayar', biz_total='Total', biz_make='Buat nota', biz_new='Transaksi baru',
     biz_note='Contoh di browser. Di aplikasi, stok ikut berkurang dan nota bisa dikirim.',
     biz_empty='Ketuk produk, pilih cara bayar, lalu buat nota.', biz_cart_empty='Belum ada yang dipilih.',
-    biz_thanks='Terima kasih', biz_paid='Bayar', biz_date_label='Hari ini',
+    biz_thanks='Terima kasih', biz_qr_label='Pindai untuk unduh Artosku', biz_paid='Bayar', biz_date_label='Hari ini',
     biz_pays=['Tunai', 'QRIS', 'Transfer'],
     biz_products=[('Ayam geprek', 18000), ('Es teh', 5000), ('Nasi', 5000), ('Tahu goreng', 3000), ('Sambal ekstra', 2000)],
     bt_kasir='Kasir dan nota', bt_stok='Stok dan bahan', bt_po='Pre-order', bt_piutang='Pembeli dan piutang', bt_laporan='Laba rugi', bt_tutup='Tutup kas',
@@ -214,7 +214,7 @@ EN = dict(
     biz_shop='Proud Chicken', biz_pay='Payment', biz_total='Total', biz_make='Make receipt', biz_new='New sale',
     biz_note='A sample in your browser. In the app, stock goes down too and the receipt can be sent.',
     biz_empty='Tap a product, pick a payment, then make the receipt.', biz_cart_empty='Nothing picked yet.',
-    biz_thanks='Thank you', biz_paid='Paid by', biz_date_label='Today',
+    biz_thanks='Thank you', biz_qr_label='Scan to get Artosku', biz_paid='Paid by', biz_date_label='Today',
     biz_pays=['Cash', 'QRIS', 'Transfer'],
     biz_products=[('Smashed chicken', 18000), ('Iced tea', 5000), ('Rice', 5000), ('Fried tofu', 3000), ('Extra sambal', 2000)],
     bt_kasir='Cashier and receipts', bt_stok='Stock and supplies', bt_po='Pre-orders', bt_piutang='Customers and debts', bt_laporan='Profit and loss', bt_tutup='Close the till',
@@ -236,9 +236,10 @@ EN = dict(
 )
 
 TEMPLATE = r'''<!doctype html>
-<html lang="{{lang}}">
+<html lang="{{lang}}" data-theme="light">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){var t="light";try{var s=localStorage.getItem("artosku-theme");if(s==="dark"||s==="light")t=s}catch(e){}document.documentElement.setAttribute("data-theme",t);if(t==="dark"){document.addEventListener("DOMContentLoaded",function(){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#131B11")})}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>{{title}}</title>
 <meta name="description" content="{{desc}}" />
@@ -269,12 +270,13 @@ TEMPLATE = r'''<!doctype html>
 
 <header class="nav">
   <div class="wrap nav__in">
-    <a class="nav__brand" href="#top" aria-label="Artosku"><img src="{{asset}}assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
+    <a class="nav__brand" href="#top" aria-label="Artosku"><img class="logo--light" src="{{asset}}assets/logo-primer.svg" alt="Artosku" width="110" height="30" /><img class="logo--dark" src="{{asset}}assets/logo-primer-inverted.svg" alt="" width="110" height="30" aria-hidden="true" /></a>
     <nav class="nav__links" aria-label="Menu">
       <a href="#coba">{{nav_try}}</a><a href="#cara">{{nav_how}}</a><a href="#data">{{nav_data}}</a><a href="#fitur">{{nav_features}}</a><a href="#bisnis">{{nav_biz}}</a><a href="#minyam">{{nav_minyam}}</a><a href="#paket">{{nav_plans}}</a><a href="#faq">{{nav_faq}}</a>
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="{{other_href}}" hreflang="{{other_lang}}" lang="{{other_lang}}">{{other_label}}</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Theme" aria-pressed="false"><i class="ph ph-moon" aria-hidden="true"></i><i class="ph ph-sun" aria-hidden="true"></i></button>
       <a class="btn btn--small" href="#unduh">{{nav_dl}}</a>
     </div>
   </div>
@@ -294,9 +296,10 @@ TEMPLATE = r'''<!doctype html>
     </div>
     <div class="hero__stage">
       <div class="bubble" id="heroBubble" aria-live="polite">{{bubble_start}}</div>
-      <button class="mascot mascot--hero" id="heroMascot" type="button" aria-label="{{hero_stage_label}}">
+      <button class="mascot mascot--hero" id="heroMascot" type="button" data-minyam-tap aria-label="{{hero_stage_label}}">
         <img id="heroMascotImg" src="{{asset}}assets/minyam/idle.webp" alt="" width="400" height="400" fetchpriority="high" />
       </button>
+      <button class="sound-toggle" type="button" data-minyam-mute aria-pressed="false" aria-label="Sound"><i class="ph ph-speaker-high" aria-hidden="true"></i><i class="ph ph-speaker-slash" aria-hidden="true"></i></button>
     </div>
   </div>
 </section>
@@ -492,7 +495,7 @@ TEMPLATE = r'''<!doctype html>
 <section class="sec sec--tint" id="minyam">
   <div class="wrap minyam">
     <div class="minyam__stage" aria-label="{{min_stage}}">
-      <img id="wearImg" src="{{asset}}assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+      <img id="wearImg" data-minyam-tap src="{{asset}}assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
     </div>
     <div class="minyam__copy">
       <h2>{{min_h}}</h2>
@@ -546,6 +549,8 @@ TEMPLATE = r'''<!doctype html>
   </div>
 </footer>
 
+<script src="{{asset}}js/theme.js" defer></script>
+<script src="{{asset}}js/minyam-sound.js" defer></script>
 <script src="{{asset}}js/home.js" defer></script>
 </body>
 </html>
@@ -625,7 +630,7 @@ def build(t):
         f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t['faqs'])
 
     fill_all(t)
-    t['biz_json'] = json.dumps({k: t[k] for k in ('biz_shop', 'biz_total', 'biz_empty', 'biz_cart_empty', 'biz_thanks', 'biz_paid', 'biz_new', 'biz_make', 'biz_pays', 'biz_products', 'biz_date_label')}, ensure_ascii=False).replace("'", '&#39;')
+    t['biz_json'] = json.dumps({k: t[k] for k in ('biz_shop', 'biz_total', 'biz_empty', 'biz_cart_empty', 'biz_thanks', 'biz_qr_label', 'biz_paid', 'biz_new', 'biz_make', 'biz_pays', 'biz_products', 'biz_date_label')}, ensure_ascii=False).replace("'", '&#39;')
 
     def sub(m):
         return t[m.group(1)]

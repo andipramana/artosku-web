@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="{{LANG}}">
+<html lang="{{LANG}}" data-theme="light">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){var t="light";try{var s=localStorage.getItem("artosku-theme");if(s==="dark"||s==="light")t=s}catch(e){}document.documentElement.setAttribute("data-theme",t);if(t==="dark"){document.addEventListener("DOMContentLoaded",function(){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#131B11")})}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>{{TITLE}}</title>
 <meta name="description" content="{{DESC}}" />
@@ -23,17 +24,18 @@
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/tutorial/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/tutorial/" />
 </head>
-<body class="page-tutorial">
+<body class="page-tutorial" data-asset="{{ROOT}}">
 <a class="skip" href="#main">{{SKIP_LINK_TEXT}}</a>
 
 <header class="nav">
   <div class="wrap nav__in">
-    <a class="nav__brand" href="{{ROOT}}" aria-label="Artosku"><img src="{{ROOT}}assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span><img class="nav__minyam" src="{{ROOT}}assets/minyam/idle.webp" alt="" width="34" height="34" /></a>
+    <a class="nav__brand" href="{{ROOT}}" aria-label="Artosku"><img class="logo--light" src="{{ROOT}}assets/logo-primer.svg" alt="Artosku" width="110" height="30" /><img class="logo--dark" src="{{ROOT}}assets/logo-primer-inverted.svg" alt="" width="110" height="30" aria-hidden="true" /><img class="nav__minyam" src="{{ROOT}}assets/minyam/idle.webp" alt="" width="34" height="34" /></a>
     <nav class="nav__links" aria-label="{{NAV_MAIN_LABEL}}">
 {{NAV_LINKS_HTML}}
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="{{OTHER_HREF}}" hreflang="{{OTHER_LANG}}" lang="{{OTHER_LANG}}">{{OTHER_NAME}}</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Theme" aria-pressed="false"><i class="ph ph-moon" aria-hidden="true"></i><i class="ph ph-sun" aria-hidden="true"></i></button>
       <a class="btn btn--small" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">{{DOWNLOAD_LABEL}}</a>
     </div>
   </div>
@@ -81,6 +83,8 @@
     </nav>
   </div>
 </footer>
+<script src="{{ROOT}}js/theme.js"></script>
+<script src="{{ROOT}}js/minyam-sound.js"></script>
 <script src="{{ROOT}}js/tutorial.js"></script>
 </body>
 </html>

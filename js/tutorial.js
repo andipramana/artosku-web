@@ -5,7 +5,7 @@
   if (tt) tt.addEventListener("click", () => {
     const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    try { localStorage.setItem("tut-theme", next); } catch (e) {}
+    try { localStorage.setItem("artosku-theme", next); } catch (e) {}
   });
 })();
 (() => {

@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){var t="light";try{var s=localStorage.getItem("artosku-theme");if(s==="dark"||s==="light")t=s}catch(e){}document.documentElement.setAttribute("data-theme",t);if(t==="dark"){document.addEventListener("DOMContentLoaded",function(){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#131B11")})}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Artosku | Catat keuangan, datanya di HP-mu</title>
 <meta name="description" content="Catat pengeluaran dengan mengetik, bicara, atau foto struk. Catatan tersimpan di HP-mu. Ada Minyam yang menemani. Gratis di Google Play." />
@@ -27,17 +28,18 @@
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/" />
 </head>
-<body data-lang="id" data-asset="" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Ketuk produk, pilih cara bayar, lalu buat nota.", "biz_cart_empty": "Belum ada yang dipilih.", "biz_thanks": "Terima kasih", "biz_paid": "Bayar", "biz_new": "Transaksi baru", "biz_make": "Buat nota", "biz_pays": ["Tunai", "QRIS", "Transfer"], "biz_products": [["Ayam geprek", 18000], ["Es teh", 5000], ["Nasi", 5000], ["Tahu goreng", 3000], ["Sambal ekstra", 2000]], "biz_date_label": "Hari ini"}'>
+<body data-lang="id" data-asset="" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Ketuk produk, pilih cara bayar, lalu buat nota.", "biz_cart_empty": "Belum ada yang dipilih.", "biz_thanks": "Terima kasih", "biz_qr_label": "Pindai untuk unduh Artosku", "biz_paid": "Bayar", "biz_new": "Transaksi baru", "biz_make": "Buat nota", "biz_pays": ["Tunai", "QRIS", "Transfer"], "biz_products": [["Ayam geprek", 18000], ["Es teh", 5000], ["Nasi", 5000], ["Tahu goreng", 3000], ["Sambal ekstra", 2000]], "biz_date_label": "Hari ini"}'>
 <a class="skip" href="#main">Langsung ke konten</a>
 
 <header class="nav">
   <div class="wrap nav__in">
-    <a class="nav__brand" href="#top" aria-label="Artosku"><img src="assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
+    <a class="nav__brand" href="#top" aria-label="Artosku"><img class="logo--light" src="assets/logo-primer.svg" alt="Artosku" width="110" height="30" /><img class="logo--dark" src="assets/logo-primer-inverted.svg" alt="" width="110" height="30" aria-hidden="true" /></a>
     <nav class="nav__links" aria-label="Menu">
       <a href="#coba">Satu kalimat</a><a href="#cara">Cara mencatat</a><a href="#data">Datamu</a><a href="#fitur">Fitur</a><a href="#bisnis">Bisnis</a><a href="#minyam">Minyam</a><a href="#paket">Paket</a><a href="#faq">FAQ</a>
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="en/" hreflang="en" lang="en">English</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Theme" aria-pressed="false"><i class="ph ph-moon" aria-hidden="true"></i><i class="ph ph-sun" aria-hidden="true"></i></button>
       <a class="btn btn--small" href="#unduh">Unduh</a>
     </div>
   </div>
@@ -57,9 +59,10 @@
     </div>
     <div class="hero__stage">
       <div class="bubble" id="heroBubble" aria-live="polite">Hai, Minyam di sini. Ketuk Minyam ya.</div>
-      <button class="mascot mascot--hero" id="heroMascot" type="button" aria-label="Minyam, maskot Artosku. Ketuk untuk menyapa.">
+      <button class="mascot mascot--hero" id="heroMascot" type="button" data-minyam-tap aria-label="Minyam, maskot Artosku. Ketuk untuk menyapa.">
         <img id="heroMascotImg" src="assets/minyam/idle.webp" alt="" width="400" height="400" fetchpriority="high" />
       </button>
+      <button class="sound-toggle" type="button" data-minyam-mute aria-pressed="false" aria-label="Sound"><i class="ph ph-speaker-high" aria-hidden="true"></i><i class="ph ph-speaker-slash" aria-hidden="true"></i></button>
     </div>
   </div>
 </section>
@@ -255,7 +258,7 @@
 <section class="sec sec--tint" id="minyam">
   <div class="wrap minyam">
     <div class="minyam__stage" aria-label="Minyam yang sedang dipakaikan item">
-      <img id="wearImg" src="assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+      <img id="wearImg" data-minyam-tap src="assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
     </div>
     <div class="minyam__copy">
       <h2>Minyam ikut mencatat</h2>
@@ -309,6 +312,8 @@
   </div>
 </footer>
 
+<script src="js/theme.js" defer></script>
+<script src="js/minyam-sound.js" defer></script>
 <script src="js/home.js" defer></script>
 </body>
 </html>
