@@ -40,6 +40,11 @@ STEP_FILES = [
 ]
 RECIPE_FILE = "feature_recipes.dart"
 
+BIZ_NOTE = {
+    "id": "Mode Bisnis ada di paket Max. Demo Proud Chicken di aplikasi terbuka untuk semua pengguna.",
+    "en": "Business Mode is in the Max plan. The Proud Chicken demo in the app is open to everyone.",
+}
+
 FEATURE_SHOTS = {
     "catat_transaksi": {
         "file": "tutorial_step2_transaction.png",
@@ -420,7 +425,8 @@ def render_card(item, lang, root):
     steps = item["stepsId"] if lang == "id" else item["stepsEn"]
     kw_str = html.escape(" ".join(item["allKeywords"]))
 
-    badge = ' <span class="tut-badge">Pro</span>' if item.get("plan") in ("pro", "max") else ""
+    plan = "max" if item.get("mode") == "business" else item.get("plan")
+    badge = f' <span class="tut-badge">{plan.capitalize()}</span>' if plan in ("pro", "max") else ""
 
     lines = [
         f'      <article class="tut-card" id="{item["id"]}" data-title="{title}" data-keywords="{kw_str}">',
@@ -524,6 +530,8 @@ def render_page(groups, lang, template_str):
             f'    <section class="tut-group" id="g-{gid}" aria-labelledby="h-g-{gid}">',
             f'      <h2 id="h-g-{gid}">{gname}</h2>',
         ]
+        if gid == "bisnis":
+            lines.append(f'      <p class="tut-lead">{html.escape(BIZ_NOTE[lang])}</p>')
         for item in g["items"]:
             lines.append(render_card(item, lang, root))
         lines.append('    </section>')

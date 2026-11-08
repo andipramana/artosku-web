@@ -3,72 +3,45 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<script>
-(function () {
-  var t = null;
-  try { t = localStorage.getItem("tut-theme"); } catch (e) {}
-  if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", t);
-})();
-</script>
 <title>Artosku Guide — How to Track Your Money on Your Phone</title>
 <meta name="description" content="How to track your money on your phone with Artosku: set up a wallet, record transactions with AI, set a daily allowance and budgets. Short steps, plain words." />
-<meta name="theme-color" content="#538248" />
+<meta name="theme-color" content="#F6FAF3" />
 <link rel="canonical" href="https://artosku.my.id/en/tutorial/" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Artosku Guide — How to Track Your Money on Your Phone" />
 <meta property="og:description" content="Short steps for using Artosku, from your first wallet to a Google Drive backup." />
-<meta property="og:image" content="https://artosku.my.id/assets/artosku-app-icon.png" />
+<meta property="og:image" content="https://artosku.my.id/assets/og-cover.png" />
 <link rel="icon" href="../../assets/artosku-app-icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="../../assets/artosku-app-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../../css/styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="../../css/home.css" />
 <link rel="stylesheet" href="../../css/tutorial.css" />
 <link rel="alternate" hreflang="id" href="https://artosku.my.id/tutorial/" />
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/tutorial/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/tutorial/" />
 </head>
 <body class="page-tutorial">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="navbar is-scrolled" id="navbar">
-  <div class="container navbar__inner">
-    <a href="../../" class="brand">
-      <img src="../../assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo brand__logo--light" />
-      <img src="../../assets/artosku-logo-dark.svg" alt="" width="118" height="49" class="brand__logo brand__logo--dark" aria-hidden="true" />
-    </a>
-    <nav class="nav-links" aria-label="Main navigation">
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__brand" href="../../" aria-label="Artosku"><img src="../../assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span><img class="nav__minyam" src="../../assets/minyam/idle.webp" alt="" width="34" height="34" /></a>
+    <nav class="nav__links" aria-label="Main navigation">
       <a href="../../en/#fitur">Features</a>
       <a href="../../en/#paket">Plans</a>
       <a href="./" aria-current="page">Guide</a>
       <a href="../../en/#faq">FAQ</a>
       <a href="../../en/#kontak">Contact</a>
     </nav>
-    <div class="navbar__actions">
-      <a href="../../tutorial/" class="btn btn--ghost btn--sm" hreflang="id" lang="id">Bahasa Indonesia</a>
-      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch light or dark theme">
-        <svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        <svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-      <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary btn--sm"><span>Download Artosku</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    <div class="nav__end">
+      <a class="nav__lang" href="../../tutorial/" hreflang="id" lang="id">Bahasa Indonesia</a>
+      <a class="btn btn--small" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download Artosku</a>
     </div>
   </div>
 </header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <nav aria-label="Mobile navigation">
-    <a href="../../en/#fitur">Features</a>
-    <a href="../../en/#paket">Plans</a>
-    <a href="./">Guide</a>
-    <a href="../../en/#faq">FAQ</a>
-    <a href="../../en/#kontak">Contact</a>
-    <a href="../../tutorial/" class="btn btn--ghost" hreflang="id" lang="id">Bahasa Indonesia</a>
-    <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary">Download Artosku</a>
-  </nav>
-</div>
 
 <main id="main" class="tut">
   <div class="tut-wrap">
@@ -171,7 +144,7 @@
         <p class="tut-intro">Read a bank statement PDF into a list of transactions you can check and save.</p>
         <ol>
           <li>Open Transactions, tap the ⋮ menu › Import statement.</li>
-          <li>Pick the wallet the statement belongs to.</li>
+          <li>Pick the wallet the statement belongs to (every active wallet is listed, not only banks). For a shared wallet, also pick the member.</li>
           <li>Pick the PDF or CSV statement file from the bank, then tap Process File.</li>
           <li>Check the list on the Statement Review page (category, date, amount), then Save All.</li>
         </ol>
@@ -300,7 +273,7 @@
         <p class="tut-intro">Set a spending limit per category each month and see what is left.</p>
         <ol>
           <li>Open More › Budget.</li>
-          <li>Tap add, pick a category, pick the Period (Daily, Weekly or Monthly) and enter the limit.</li>
+          <li>Tap add, optionally fill in Budget name, pick one category or more, pick the Period (Daily, Weekly or Monthly) and enter the limit.</li>
           <li>Artosku tells you when spending gets close to or passes the limit.</li>
           <li>Want to change the period (e.g. monthly to weekly)? Tap the budget, pick Daily, Weekly or Monthly while editing, then Save and Change. The old budget is replaced; other months or weeks are not touched.</li>
         </ol>
@@ -721,6 +694,38 @@
           <li>The Terms and Conditions are in the same menu, under Help &amp; Info.</li>
         </ol>
       </article>
+      <article class="tut-card" id="anggaran_ganti_nama" data-title="Rename a budget" data-keywords="ganti nama anggaran rename anggaran ubah nama anggaran nama anggaran nama sendiri anggaran kasih nama anggaran beri nama anggaran anggaran tanpa nama kategori nama kartu anggaran rename budget rename a budget budget name name a budget change budget name custom budget name">
+        <h3>Rename a budget</h3>
+        <p class="tut-intro">Give a budget a name of your own (e.g. &quot;Food for the month&quot;). The card, the summary on Home, the warnings, the Compare table and the AI chat use that name. Left empty, it goes back to the name of its category.</p>
+        <ol>
+          <li>Open More › Budget, then find the budget card (in the Monthly or Weekly tab).</li>
+          <li>Tap the ⋮ button on the card (next to Edit and Delete), then pick Rename.</li>
+          <li>Fill in Budget name (e.g. Food for the month), then tap Save. Clear it and Save to use the name of its category again.</li>
+          <li>That name is used on the card, the summary on Home, the budget warnings, the Compare table and the AI chat answers. You can also fill it in when making a new budget (the Budget name field).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="anggaran_banyak_kategori" data-title="One budget for several categories" data-keywords="gabung anggaran gabungkan anggaran anggaran grup anggaran gabungan gabung kategori anggaran beberapa kategori satu anggaran satu anggaran banyak kategori banyak kategori satu anggaran anggaran beberapa kategori kategori mana saja anggaran ubah kategori anggaran combine budgets group budget merge budgets several categories one budget multiple categories budget one budget for many categories change budget categories">
+        <h3>One budget for several categories</h3>
+        <p class="tut-intro">Put several categories (e.g. Eating out and Groceries) in one budget with one limit and one name. A category can be in only one budget per period, so nothing is ever counted twice.</p>
+        <ol>
+          <li>Open More › Budget, then tap the + button in the header. For a budget that already exists: tap ⋮ on its card, then Change categories.</li>
+          <li>Fill in Budget name if you like (it can stay empty), then tap Category and tick all the categories to put together, then tap Done.</li>
+          <li>A category that is in another budget of that month or week is grey and says &quot;already in budget …&quot;: a category can be in only one budget per period, so nothing is ever counted twice.</li>
+          <li>A category chip can be removed with the × sign; at least one stays. Fill in the limit and Save.</li>
+          <li>The card writes the list of its categories under the name (&quot;Food, Snacks +2&quot;). Tap the card to see the transactions of all those categories.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="anggaran_subkategori" data-title="Count subcategories in a budget" data-keywords="subkategori anggaran hitung subkategori hitung juga subkategori kategori anak anggaran kategori anak anggaran kategori induk anggaran induk semua turunan kategori turunan kategori anggaran subkategori ikut anggaran subkategori tidak terhitung count subcategories include subcategories subcategory budget child categories budget parent category budget subcategories not counted">
+        <h3>Count subcategories in a budget</h3>
+        <p class="tut-intro">For a parent category (one with subcategories), turn on &quot;Also count its subcategories&quot; so spending in all its subcategories counts toward the budget. It starts off. A subcategory that has a budget of its own is not counted in the parent budget.</p>
+        <ol>
+          <li>Open More › Budget, tap the + button in the header (or Edit on the card of a budget that exists).</li>
+          <li>Pick the parent category, one that has subcategories (e.g. Food).</li>
+          <li>Turn on Also count its subcategories. It starts off, and this switch only shows when a chosen category has subcategories. Then fill in the limit and Save.</li>
+          <li>Spending in all its subcategories (every level) counts. A subcategory that has a budget of its own is not counted in the parent budget, and the parent card writes &quot;Without …: has its own budget&quot;.</li>
+          <li>The daily budget has the same switch (the Daily tab), without a name and without several categories.</li>
+        </ol>
+      </article>
       <article class="tut-card" id="biometrik" data-title="Unlock with fingerprint or face" data-keywords="biometrik sidik jari fingerprint wajah face id face unlock kunci sidik jari biometric unlock">
         <h3>Unlock with fingerprint or face</h3>
         <p class="tut-intro">Once a PIN is set, open Artosku with just your fingerprint or face.</p>
@@ -792,6 +797,16 @@
           <li>If nothing is found, tap Ask Artosku AI.</li>
         </ol>
       </article>
+      <article class="tut-card" id="urutan_wallet" data-title="Set the wallet order" data-keywords="urutan wallet susun wallet wallet paling sering wallet paling sering dipakai urutan dompet urutan sendiri wallet order sort wallets most used wallet">
+        <h3>Set the wallet order</h3>
+        <p class="tut-intro">Choose the wallet order in every picker: most used first, or the same as on Home.</p>
+        <ol>
+          <li>Open More › Wallets. At the top is the Wallet order in pickers card.</li>
+          <li>Pick Most used: your own wallets that you record most come first, then shared wallets of others.</li>
+          <li>Turn on Count all members too to count what other members record.</li>
+          <li>Or pick Own order: the same as the wallet order on Home.</li>
+        </ol>
+      </article>
       <article class="tut-card" id="kelola_langganan" data-title="Manage, cancel or restore a subscription" data-keywords="kelola langganan batalkan langganan berhenti langganan cancel subscription pulihkan pembelian restore purchase langganan di play store bulanan tahunan paket saat ini naik paket manage subscription monthly yearly">
         <h3>Manage, cancel or restore a subscription</h3>
         <p class="tut-intro">See your plan, switch between monthly and yearly, manage it in the Play Store, and restore purchases.</p>
@@ -826,6 +841,27 @@
           <li>Open More › Handbook. The website opens in the browser.</li>
           <li>Look up the feature you want to learn in the search box, or pick from the Start here list.</li>
           <li>Want a short guide played right on a menu screen? That is the Guide center, or the ? button of that menu.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="demo_mode_bisnis" data-title="See the Business Mode demo (Proud Chicken)" data-keywords="demo bisnis demo mode bisnis coba mode bisnis contoh bisnis lihat fitur bisnis lihat fitur bisnis sebelum langganan proud chicken mode bisnis isinya apa isi mode bisnis lihat dulu mode bisnis beli kucing dalam karung business demo business mode demo try business mode sample business see business features before subscribing what is in business mode preview business mode">
+        <h3>See the Business Mode demo (Proud Chicken)</h3>
+        <p class="tut-intro">A sample business, &quot;Proud Chicken&quot;, with 2 months of data in every Business Mode feature (sales, receipts, stock, pre-orders, reports). For looking only: nothing can be recorded. It opens without Max, to look before subscribing.</p>
+        <ol>
+          <li>Tap the profile button at the top (it says Personal) to open the profile list.</li>
+          <li>Pick Proud Chicken (it says &quot;Tap to see the Business Mode features&quot;). It is open to Free accounts, no Max needed.</li>
+          <li>Look around every feature: sales, receipts, stock, pre-orders, reports. 2 months of data up to today. Everything is for looking only: tapping Save shows the This is a demo card.</li>
+          <li>Want to leave? Tap Leave demo in the strip at the top of Home. Demo data is not in backups or exports.</li>
+          <li>Demo hidden? Open More › Business Mode and tap See the Business Mode demo. To hide it: tap ⋮ on the Proud Chicken row and pick Hide demo.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="video_tutorial" data-title="Videos: how to start in Personal Mode and the Business Mode demo" data-keywords="video video tutorial tutorial youtube cara pakai cara mulai video cara mulai video demo video demo mode bisnis demo bisnis video bisnis contoh mode bisnis tonton video tutorial video how to start watch video demo video business demo video getting started video">
+        <h3>Videos: how to start in Personal Mode and the Business Mode demo</h3>
+        <p class="tut-intro">Two short YouTube videos: how to start with Artosku in Personal Mode, and a demo of the Business Mode features. The buttons only show when the videos are available.</p>
+        <ol>
+          <li>Open More › Videos. There are How to start in Personal Mode and the Business Mode demo video; tap one and the video opens in the YouTube app.</li>
+          <li>New account: the starter card on Home has a Watch the how-to-start video link.</li>
+          <li>Want the Business Mode demo: tap ⋮ on the Proud Chicken row in the profile list, or the Watch the Business Mode demo video link in step 1 of New business.</li>
+          <li>The video buttons only show when the videos are available.</li>
         </ol>
       </article>
       <article class="tut-card" id="ikuti_artosku" data-title="Follow Artosku on social media" data-keywords="ikuti artosku instagram tiktok threads youtube media sosial sosmed follow social media akun resmi">
@@ -888,6 +924,31 @@
           <li>Pick the Category, then Period: Weekly. Fill in Limit per week (a week counts Monday to Sunday) and Save.</li>
           <li>See it in the Weekly tab; the › arrow goes to next week (up to 8 weeks). Copy last week is the copy icon in the title.</li>
           <li>A category can have a monthly AND a weekly limit; they stand apart and are never added. You are reminded at 90% and when it is passed.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="gabung_kategori_anggaran" data-title="One budget for several categories" data-keywords="satu anggaran untuk beberapa kategori gabung anggaran makan di luar dan belanja dapur gabungkan kategori jadi satu anggaran anggaran gabungan beberapa kategori batas gabungan beberapa kategori satu batas untuk dua kategori satu anggaran untuk makanan dan jajan anggaran makan gabung belanja dapur kategori mana saja masuk anggaran anggaran induk dan subkategorinya one budget for several categories combine categories into one budget one budget for eating out and groceries group several categories in a budget one limit for two categories budget for a parent category and its subcategories">
+        <h3>One budget for several categories</h3>
+        <ol>
+          <li>Open More › Budget, then tap the + button in the header (a budget that exists: tap ⋮ on its card, then Change categories).</li>
+          <li>Fill in Budget name (e.g. Food for the month), then tap Category, tick all the categories to put together, and tap Done. A grey one is in another budget of that period already.</li>
+          <li>If a chosen category is a parent (has subcategories), turn on Also count its subcategories so all its subcategories count too. It starts off.</li>
+          <li>Fill in the limit and Save. Every expense is counted once; a subcategory that has a budget of its own is not counted in the parent budget.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="lihat_isi_mode_bisnis" data-title="What is in Business Mode? Look before you subscribe" data-keywords="mode bisnis isinya apa isi mode bisnis apa saja mau lihat mode bisnis dulu bisa coba mode bisnis dulu lihat fitur bisnis sebelum langganan mau lihat contoh mode bisnis demo mode bisnis coba mode bisnis gratis contoh bisnis di artosku what is in business mode can i try business mode first see business mode before subscribing business mode demo show me business mode try business mode for free sample business in artosku">
+        <h3>What is in Business Mode? Look before you subscribe</h3>
+        <ol>
+          <li>Tap the profile button at the top (it says Personal), then pick Proud Chicken. It works for Free accounts, no subscription.</li>
+          <li>It is a sample business with 2 months of data: sales, receipts, stock, pre-orders, reports. For looking only: tapping Save shows the This is a demo card.</li>
+          <li>Like it? Tap See plans on that card to subscribe to Max, then make your own business. Leave the demo with the Leave demo button at the top of Home.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bisnis_tidak_bisa_dicatat" data-title="Why can I not record in my business?" data-keywords="kenapa bisnis saya tidak bisa dicatat kenapa bisnisku tidak bisa dicatat bisnis hanya lihat bisnis tidak bisa mencatat mode bisnis tidak bisa dipakai mode bisnis hanya bisa dilihat mode bisnis khusus max kenapa mode bisnis terkunci pro tidak bisa mode bisnis bisnis saya baca saja why can i not record in my business business is view only business mode is read only cannot add sale in business business mode max only why is business mode locked pro cannot use business mode">
+        <h3>Why can I not record in my business?</h3>
+        <ol>
+          <li>From 1 December 2026 Business Mode is for the Max plan only. A Pro that used Business Mode before that date can still record until the end of its subscription period.</li>
+          <li>After that your business can only be viewed and exported. Its data is not deleted.</li>
+          <li>Open More › Subscription and pick the Max plan to record again.</li>
         </ol>
       </article>
       <article class="tut-card" id="batasi_jajan_harian" data-title="Limit snacks per day, different on the weekend" data-keywords="batasi jajan per hari batasi jajan tiap hari batas jajan per hari batas jajan harian batasi jajan harian jajan beda di akhir pekan jajan akhir pekan beda batas jajan akhir pekan batasi makan per hari batas makan per hari anggaran harian beda akhir pekan batas harian beda akhir pekan batas beda hari jumat batas pengeluaran beda tiap hari limit snacks per day daily snack limit different limit on the weekend weekend spending limit limit per day weekend daily limit different on weekends">
@@ -1073,8 +1134,9 @@
 
     <section class="tut-group" id="g-bisnis" aria-labelledby="h-g-bisnis">
       <h2 id="h-g-bisnis">Business Mode</h2>
+      <p class="tut-lead">Business Mode is in the Max plan. The Proud Chicken demo in the app is open to everyone.</p>
       <article class="tut-card" id="mode_bisnis" data-title="Business Mode" data-keywords="bisnis usaha jualan toko warung umkm kasir dagang business shop sell store cashier kecil-kecilan ganti profil">
-        <h3>Business Mode <span class="tut-badge">Pro</span></h3>
+        <h3>Business Mode <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">A cashier, ingredient purchases, receipts over WhatsApp, buyers who have not paid and profit-and-loss reports. Business money stays apart from personal money.</p>
         <ol>
           <li>Open More › Switch profile.</li>
@@ -1083,7 +1145,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kasir" data-title="Cashier (Sell)" data-keywords="kasir jual penjualan jualan barcode pos sell sale cashier checkout catat penjualan bikin nota">
-        <h3>Cashier (Sell) <span class="tut-badge">Pro</span></h3>
+        <h3>Cashier (Sell) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pick products, take cash, QRIS, transfer or pay later, then send a receipt. Barcode scanning works.</p>
         <ol>
           <li>On the Business Home tap Sell.</li>
@@ -1093,7 +1155,7 @@
         </ol>
       </article>
       <article class="tut-card" id="nota_wa" data-title="Receipts &amp; WhatsApp sending" data-keywords="nota invoice kwitansi wa whatsapp kirim nota pdf receipt faktur struk pembeli kirim wa">
-        <h3>Receipts &amp; WhatsApp sending <span class="tut-badge">Pro</span></h3>
+        <h3>Receipts &amp; WhatsApp sending <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Make a neat receipt with your business details and send it to the buyer over WhatsApp or as a PDF.</p>
         <ol>
           <li>Finish the sale in Sell, then tap Save sale.</li>
@@ -1103,7 +1165,7 @@
         </ol>
       </article>
       <article class="tut-card" id="belanja_bisnis" data-title="Purchases: ingredients, stock &amp; costs" data-keywords="belanja bahan stok pemasok supplier biaya beli purchase ingredient cost ongkir modal belanja bahan belanja stok beli bahan biaya usaha bon pemasok beli stok">
-        <h3>Purchases: ingredients, stock &amp; costs <span class="tut-badge">Pro</span></h3>
+        <h3>Purchases: ingredients, stock &amp; costs <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Record ingredient purchases, stock for sale and business costs. Scan online-shop receipts including shipping and discounts.</p>
         <ol>
           <li>Open Purchases on the Business Home and pick Ingredients or Stock for sale.</li>
@@ -1113,7 +1175,7 @@
         </ol>
       </article>
       <article class="tut-card" id="produk_stok" data-title="Products &amp; stock" data-keywords="produk barang stok harga persediaan inventori product inventory stock item">
-        <h3>Products &amp; stock <span class="tut-badge">Pro</span></h3>
+        <h3>Products &amp; stock <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">A product list with prices, stock and stock value. Low-stock warnings included.</p>
         <ol>
           <li>Open Products in the shortcut row of the Business Home (or the ⋮ menu in Sell › Product list, or More › Products and Stock), then tap Add product.</li>
@@ -1122,7 +1184,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kontak_usaha" data-title="Buyers, suppliers &amp; business bills" data-keywords="pembeli pelanggan pemasok karyawan bon piutang usaha customer supplier employee tagih">
-        <h3>Buyers, suppliers &amp; business bills <span class="tut-badge">Pro</span></h3>
+        <h3>Buyers, suppliers &amp; business bills <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Keep buyers, suppliers and staff, see who has not paid, and remind them over WhatsApp.</p>
         <ol>
           <li>Open More › Business contacts.</li>
@@ -1131,7 +1193,7 @@
         </ol>
       </article>
       <article class="tut-card" id="laba_rugi" data-title="Profit &amp; loss and business reports" data-keywords="laba rugi untung arus kas neraca terlaris jam ramai profit loss cash flow balance sheet omzet laporan usaha kas usaha">
-        <h3>Profit &amp; loss and business reports <span class="tut-badge">Pro</span></h3>
+        <h3>Profit &amp; loss and business reports <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">See profit and loss, cash flow, the balance sheet, best sellers and busy hours.</p>
         <ol>
           <li>Open the Reports tab in Business Mode.</li>
@@ -1140,7 +1202,7 @@
         </ol>
       </article>
       <article class="tut-card" id="uang_pemilik" data-title="Owner money (draws &amp; capital)" data-keywords="prive modal setor ambil uang pemilik owner capital draw withdraw ambil uang usaha setor modal modal sendiri uang pribadi usaha owner draw ambil uang buat pribadi tarik uang usaha">
-        <h3>Owner money (draws &amp; capital) <span class="tut-badge">Pro</span></h3>
+        <h3>Owner money (draws &amp; capital) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Record taking money out for yourself, putting capital in, or moving money to another business.</p>
         <ol>
           <li>Open More › Owner&#x27;s Money.</li>
@@ -1149,7 +1211,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pinjamkan_uang" data-title="Lend money" data-keywords="pinjamkan pinjam kasih pinjam piutang keluar lend loan out pinjam karyawan kasbon karyawan pinjaman karyawan">
-        <h3>Lend money <span class="tut-badge">Pro</span></h3>
+        <h3>Lend money <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Record business money you lend out and when it comes back.</p>
         <ol>
           <li>Open More › Business Settings › Lend money.</li>
@@ -1158,7 +1220,7 @@
         </ol>
       </article>
       <article class="tut-card" id="tutup_kas" data-title="Close the drawer &amp; cashier recap" data-keywords="tutup kas laci rekap selisih tutup toko drawer close recap cash count selisih kas hitung laci cash drawer close till">
-        <h3>Close the drawer &amp; cashier recap <span class="tut-badge">Pro</span></h3>
+        <h3>Close the drawer &amp; cashier recap <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Count the cash in the drawer, match it to your records and see the day&#x27;s sales recap.</p>
         <ol>
           <li>Open More › Business Settings › Cashier recap, then tap Close the till under the recap.</li>
@@ -1168,7 +1230,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pajak_usaha" data-title="Business tax helper" data-keywords="pajak pph omzet lapor pajak tax turnover umkm pajak final peredaran bruto">
-        <h3>Business tax helper <span class="tut-badge">Pro</span></h3>
+        <h3>Business tax helper <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">An estimate of the tax on your turnover so reporting holds no surprise.</p>
         <ol>
           <li>Open More › Business Settings › Business tax helper.</li>
@@ -1177,7 +1239,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pengaturan_bisnis" data-title="Business settings" data-keywords="pengaturan target data nota logo pengingat settings setup kasir">
-        <h3>Business settings <span class="tut-badge">Pro</span></h3>
+        <h3>Business settings <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Receipt details, monthly target, wallets, categories, cashier and business reminders.</p>
         <ol>
           <li>Open More › Business Settings.</li>
@@ -1186,7 +1248,7 @@
         </ol>
       </article>
       <article class="tut-card" id="tagih_piutang_usaha" data-title="Collect what is not paid yet" data-keywords="tagih belum bayar belum lunas piutang nagih utang pelanggan collect unpaid receivable tagihan pelanggan piutang usaha yang belum bayar">
-        <h3>Collect what is not paid yet <span class="tut-badge">Pro</span></h3>
+        <h3>Collect what is not paid yet <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">See the unpaid invoices, collect through WhatsApp, and record the payment when the money comes in.</p>
         <ol>
           <li>Open the Sales tab and pick Not fully paid, or open More › Receivables &amp; Debts.</li>
@@ -1195,7 +1257,7 @@
         </ol>
       </article>
       <article class="tut-card" id="bon_pemasok" data-title="Supplier credit (buy now, pay later)" data-keywords="bon utang pemasok bayar nanti kredit pemasok supplier credit tempo bon pemasok bayar nanti pemasok supplier credit utang usaha">
-        <h3>Supplier credit (buy now, pay later) <span class="tut-badge">Pro</span></h3>
+        <h3>Supplier credit (buy now, pay later) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Buy ingredients or stock now and pay later: the debt is recorded with its due date.</p>
         <ol>
           <li>Open Purchases on the Business Home and add the items.</li>
@@ -1205,7 +1267,7 @@
         </ol>
       </article>
       <article class="tut-card" id="nota_usaha" data-title="Invoices &amp; business details on them" data-keywords="nota invoice struk cetak daftar nota">
-        <h3>Invoices &amp; business details on them <span class="tut-badge">Pro</span></h3>
+        <h3>Invoices &amp; business details on them <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">See every sales invoice and set the business details printed on them.</p>
         <ol>
           <li>All invoices are in the Sales tab; tap one, then Receipt, to view and share it.</li>
@@ -1214,7 +1276,7 @@
         </ol>
       </article>
       <article class="tut-card" id="rekap_kasir" data-title="Sales recap from employees" data-keywords="rekap karyawan banyak orang kirim penjualan recap employee tim">
-        <h3>Sales recap from employees <span class="tut-badge">Pro</span></h3>
+        <h3>Sales recap from employees <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">A cashier sends the sales on their phone to the owner as a file, with no server.</p>
         <ol>
           <li>Open More › Business Settings › Cashier recap.</li>
@@ -1223,7 +1285,7 @@
         </ol>
       </article>
       <article class="tut-card" id="target_bisnis" data-title="Monthly turnover target" data-keywords="target omzet target bulanan target jualan goal turnover target omzet target usaha monthly target turnover target">
-        <h3>Monthly turnover target <span class="tut-badge">Pro</span></h3>
+        <h3>Monthly turnover target <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Set a turnover target per month and follow its progress each day on the Business Home.</p>
         <ol>
           <li>Open More › Business Settings › Monthly target.</li>
@@ -1232,7 +1294,7 @@
         </ol>
       </article>
       <article class="tut-card" id="bisnis_profil" data-title="Business profile (name, logo, address, number)" data-keywords="profil usaha nama usaha nama toko logo logo nota alamat alamat toko nomor wa nomor telepon no hp usaha jenis usaha warna usaha business profile address phone number">
-        <h3>Business profile (name, logo, address, number) <span class="tut-badge">Pro</span></h3>
+        <h3>Business profile (name, logo, address, number) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Business name, logo, WhatsApp number, address, kind of business and colour. Used on the receipt and reports.</p>
         <ol>
           <li>Open More › Business Settings › Business profile.</li>
@@ -1242,7 +1304,7 @@
         </ol>
       </article>
       <article class="tut-card" id="nota_data" data-title="Receipt &amp; ways to pay" data-keywords="data nota atur nota pengaturan nota cara bayar info rekening nota invoice settings receipt settings payment details">
-        <h3>Receipt &amp; ways to pay <span class="tut-badge">Pro</span></h3>
+        <h3>Receipt &amp; ways to pay <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Set the ways to pay on the receipt (bank, e-wallet, QRIS), the note under the receipt, slogan, signature and receipt size.</p>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
@@ -1252,7 +1314,7 @@
         </ol>
       </article>
       <article class="tut-card" id="cara_bayar_nota" data-title="Bank account and e-wallet on the receipt" data-keywords="rekening no rek nomor rekening bank bca bri mandiri bni bsi gopay ovo dana shopeepay linkaja e-wallet transfer ke mana atas nama bank account account number ewallet">
-        <h3>Bank account and e-wallet on the receipt <span class="tut-badge">Pro</span></h3>
+        <h3>Bank account and e-wallet on the receipt <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Show your account or e-wallet number on the receipt so buyers know where to transfer.</p>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
@@ -1262,7 +1324,7 @@
         </ol>
       </article>
       <article class="tut-card" id="qris_nota" data-title="QRIS on the receipt (set, change, remove the picture)" data-keywords="qris kode qr qr qr code gambar qris ganti qris hapus qris tambah qris qris nota barcode bayar change qris add qris remove qris">
-        <h3>QRIS on the receipt (set, change, remove the picture) <span class="tut-badge">Pro</span></h3>
+        <h3>QRIS on the receipt (set, change, remove the picture) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Put the picture of your shop QRIS on the receipt. You can change or remove it any time.</p>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
@@ -1273,7 +1335,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ttd_nota" data-title="Signature on the receipt" data-keywords="tanda tangan ttd tandatangan paraf gambar tanda tangan signature sign draw signature">
-        <h3>Signature on the receipt <span class="tut-badge">Pro</span></h3>
+        <h3>Signature on the receipt <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Put a signature on the receipt: draw it with your finger or pick its photo.</p>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay › Slogan &amp; signature › Set.</li>
@@ -1283,7 +1345,7 @@
         </ol>
       </article>
       <article class="tut-card" id="slogan_catatan_nota" data-title="Slogan and the note under the receipt" data-keywords="slogan tagline catatan nota catatan di bawah nota terima kasih nota kalimat penutup footer nota receipt note footer">
-        <h3>Slogan and the note under the receipt <span class="tut-badge">Pro</span></h3>
+        <h3>Slogan and the note under the receipt <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Write your slogan and a closing line, e.g. &quot;Thanks for your order&quot;.</p>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay.</li>
@@ -1293,7 +1355,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ukuran_nota" data-title="Receipt size (A5 or 58 mm roll)" data-keywords="ukuran nota a5 kertas a5 struk kecil struk 58 58 mm printer printer thermal thermal cetak struk receipt size thermal printer paper size">
-        <h3>Receipt size (A5 or 58 mm roll) <span class="tut-badge">Pro</span></h3>
+        <h3>Receipt size (A5 or 58 mm roll) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pick an A5 paper receipt or a small 58 mm roll receipt for a thermal printer.</p>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay › Slogan &amp; signature › Set.</li>
@@ -1302,7 +1364,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kirim_nota_foto_pdf" data-title="Print, PDF, Photo or WA for a receipt" data-keywords="kirim nota jadi foto nota jadi foto nota jadi gambar kirim foto nota cetak nota print nota pdf nota foto nota gambar nota share nota bagikan nota print receipt receipt photo receipt pdf">
-        <h3>Print, PDF, Photo or WA for a receipt <span class="tut-badge">Pro</span></h3>
+        <h3>Print, PDF, Photo or WA for a receipt <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">A receipt can be printed, sent as a PDF, as a photo (image), or as text to the buyer on WhatsApp.</p>
         <ol>
           <li>Open the Sales tab, tap the receipt, then tap Receipt.</li>
@@ -1311,7 +1373,7 @@
         </ol>
       </article>
       <article class="tut-card" id="wallet_usaha" data-title="Business wallets" data-keywords="wallet usaha wallet bisnis kas usaha rekening usaha laci saldo usaha business wallet">
-        <h3>Business wallets <span class="tut-badge">Pro</span></h3>
+        <h3>Business wallets <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Cash, bank and e-wallet accounts just for the business, apart from your personal wallets.</p>
         <ol>
           <li>Open More › Business Settings › Business wallets.</li>
@@ -1320,7 +1382,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kanal_jual" data-title="Sales channels and platform fees" data-keywords="kanal kanal jual channel shopee gofood grabfood tokopedia marketplace potongan potongan platform fee platform komisi online sales channel platform fee">
-        <h3>Sales channels and platform fees <span class="tut-badge">Pro</span></h3>
+        <h3>Sales channels and platform fees <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Record sales through Shopee, GoFood and others, with the platform fee and the wallet the money goes to.</p>
         <ol>
           <li>Open More › Business Settings › Sales channels.</li>
@@ -1329,7 +1391,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kategori_bahan" data-title="Business categories, cost of goods (COGS) and materials" data-keywords="kategori usaha kategori bisnis hpp harga pokok cogs paket kategori bahan bahan saya daftar bahan bahan baku operasional jenis usaha business category materials ingredients">
-        <h3>Business categories, cost of goods (COGS) and materials <span class="tut-badge">Pro</span></h3>
+        <h3>Business categories, cost of goods (COGS) and materials <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Set income, cost-of-goods and operating categories, and the list of materials you buy.</p>
         <ol>
           <li>Open More › Business Settings › Categories &amp; materials.</li>
@@ -1339,7 +1401,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pengingat_bisnis" data-title="Business reminders and their time" data-keywords="pengingat pengingat bisnis notifikasi bisnis reminder jam pengingat ingatkan piutang jatuh tempo stok tipis ringkasan mingguan ringkasan senin business reminders notification time">
-        <h3>Business reminders and their time <span class="tut-badge">Pro</span></h3>
+        <h3>Business reminders and their time <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Reminders for due receivables, supplier bills, low stock, regular bills and the weekly summary, with one time for all.</p>
         <ol>
           <li>Open More › Business Settings › Reminders.</li>
@@ -1349,26 +1411,26 @@
         </ol>
       </article>
       <article class="tut-card" id="widget_bisnis" data-title="Business widget on the home screen" data-keywords="widget bisnis widget usaha widget layar utama widget toko business widget home screen widget">
-        <h3>Business widget on the home screen <span class="tut-badge">Pro</span></h3>
+        <h3>Business widget on the home screen <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Put a business widget on your phone home screen.</p>
         <ol>
           <li>Open More › Business Settings › Home screen widget.</li>
           <li>Follow your phone prompt to place the widget on the home screen.</li>
         </ol>
       </article>
-      <article class="tut-card" id="preorder" data-title="Pre-order (orders picked up later, deposit, calendar)" data-keywords="pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup">
-        <h3>Pre-order (orders picked up later, deposit, calendar) <span class="tut-badge">Pro</span></h3>
+      <article class="tut-card" id="preorder" data-title="Pre-order (orders picked up later, deposit, calendar)" data-keywords="ubah pre-order revisi pesanan tambah barang pesanan ganti jumlah pesanan ubah pesanan edit pre-order change pre-order change order items pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup">
+        <h3>Pre-order (orders picked up later, deposit, calendar) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Take orders for a certain date with a deposit, see them on a calendar, see what has to be made, then finish them into a receipt.</p>
         <ol>
-          <li>On the Business Home tap Sell, pick the products, then tap Pay.</li>
-          <li>Tap Order picked up later (pre-order). Fill in the date and time, Pickup or Delivery, the deposit (None yet, 50%, Paid in full, or Set), the Buyer name and the Order note, then tap Save order.</li>
+          <li>On the Business Home tap Sell, pick the products. If there is a discount or a delivery charge, tap Discount or Delivery in the cart, then tap Pay.</li>
+          <li>Tap Order picked up later (pre-order). The total, the deposit and what is left already use the discount and the delivery (the order detail shows Discount and Delivery lines). Fill in Fill in the date and time, Pickup or Delivery, the deposit (None yet, 50%, Paid in full, or Set), the Buyer name and the Order note, then tap Save order.</li>
           <li>See all orders under More › Pre-order: the Calendar tab (the number is how many orders, tap a date; Recap to make for what has to be made) or the List (Upcoming, No DP, Done, Cancelled).</li>
-          <li>Tap an order: tap the steps Making then Ready, Google Calendar to add it to your calendar, Order proof (PDF, Photo or Text) for the buyer, Remind on WA to the buyer. Done · receive the rest makes the receipt on the pickup day; the deposit becomes part of it.</li>
+          <li>Tap an order: tap the steps Making then Ready, ⋮ › Change items to revise what is ordered (items, quantities, prices, Discount, Delivery; then Save changes, the deposit stays, and if the total gets lower than the deposit the difference can go back to the buyer), Google Calendar to add it to your calendar, Order proof (PDF, Photo or Text) for the buyer, Remind on WA to the buyer. Done · receive the rest makes the receipt on the pickup day; the deposit becomes part of it.</li>
           <li>Cancel: the ⋮ menu › Cancel, then pick what happens to the deposit: Refunded, Forfeited (becomes Other income), or Partly. Move date is in ⋮ too.</li>
         </ol>
       </article>
       <article class="tut-card" id="atur_preorder" data-title="Pre-order settings (reminders, daily limit, default deposit)" data-keywords="atur pre-order ingatkan dp dp belum dibayar batas pesanan per hari pesanan penuh dp bawaan otomatis google kalender tombol di notifikasi pre-order settings pre-order reminders daily order limit default deposit">
-        <h3>Pre-order settings (reminders, daily limit, default deposit) <span class="tut-badge">Pro</span></h3>
+        <h3>Pre-order settings (reminders, daily limit, default deposit) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Order reminders (the day before, 2 hours before pickup, deposit not paid), a daily order limit, a default deposit and adding to Google Calendar automatically.</p>
         <ol>
           <li>Open More › Pre-order, then tap the Settings icon at the top right. You can also use Business Settings › Reminders › Pre-order.</li>
@@ -1378,7 +1440,7 @@
         </ol>
       </article>
       <article class="tut-card" id="catatan_bisnis" data-title="Notes (money in or out you record yourself)" data-keywords="catatan catat tombol catat catatan bisnis lihat catatan catatan pengeluaran catatan pemasukan di mana catatan masuk laporan sebagai tidak dihitung laba non-laba business notes recorded notes where did my note go">
-        <h3>Notes (money in or out you record yourself) <span class="tut-badge">Pro</span></h3>
+        <h3>Notes (money in or out you record yourself) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Money in or out recorded with the Catat button shows under Sales › Notes, with a label for where it goes in the report.</p>
         <ol>
           <li>Tap the Catat button under the + button to record ordinary money in or out, then save.</li>
@@ -1388,7 +1450,7 @@
         </ol>
       </article>
       <article class="tut-card" id="laporan_bisnis" data-title="Business reports (their tabs)" data-keywords="laporan bisnis laporan usaha tab laporan ringkasan arus kas neraca modal prive produk terlaris pembeli jam ramai setahun kanal business report cash flow balance sheet best seller">
-        <h3>Business reports (their tabs) <span class="tut-badge">Pro</span></h3>
+        <h3>Business reports (their tabs) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Summary, Finance, Profit &amp; loss, Cash flow, Balance sheet, Capital &amp; draw, Products, Buyers, Busy hours, Materials &amp; purchases, Receivables, Channels, Year and Tax.</p>
         <ol>
           <li>Open the Reports tab in Business Mode.</li>
@@ -1397,7 +1459,7 @@
         </ol>
       </article>
       <article class="tut-card" id="arti_kartu_keuangan" data-title="What the Finance cards mean (margin, break-even, cash lasts for)" data-keywords="margin margin kotor margin bersih titik impas impas kas cukup untuk uang usaha sekarang biaya omzet kesehatan keuangan apa artinya artinya break even gross margin net margin runway what does it mean">
-        <h3>What the Finance cards mean (margin, break-even, cash lasts for) <span class="tut-badge">Pro</span></h3>
+        <h3>What the Finance cards mean (margin, break-even, cash lasts for) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">What Business cash now, Cash lasts for, Gross margin, Net margin, Break-even and Cost / sales mean.</p>
         <ol>
           <li>Open Reports › Finance and tap a card; its explanation shows, tap Got it to close.</li>
@@ -1408,7 +1470,7 @@
         </ol>
       </article>
       <article class="tut-card" id="omzet_beda_uang_masuk" data-title="Why sales differ from money received" data-keywords="kenapa omzet beda omzet beda omzet tidak sama uang masuk beda laba tidak cocok selisih laporan kenapa laba beda dengan saldo cash basis why sales differ profit does not match mismatch">
-        <h3>Why sales differ from money received <span class="tut-badge">Pro</span></h3>
+        <h3>Why sales differ from money received <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Reports count money that really came in and went out. Unpaid receipts, owner draws and capital deposits are left out.</p>
         <ol>
           <li>Reports are counted from money that has come in and gone out, not from receipts alone.</li>
@@ -1418,7 +1480,7 @@
         </ol>
       </article>
       <article class="tut-card" id="scan_barcode_kasir" data-title="Barcode scan at the till and its sound" data-keywords="scan scan barcode barcode bunyi scan suara scan bunyi tit matikan suara scan scanner barcode sound beep scan sound">
-        <h3>Barcode scan at the till and its sound <span class="tut-badge">Pro</span></h3>
+        <h3>Barcode scan at the till and its sound <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Scan a product barcode to add it to the basket. A &quot;tit&quot; sounds on success and another when it is not registered; you can turn it off.</p>
         <ol>
           <li>On the Business Home tap Sell, then tap the Scan barcode icon.</li>
@@ -1428,7 +1490,7 @@
         </ol>
       </article>
       <article class="tut-card" id="jual_suara_ketik" data-title="Sell by voice or typing" data-keywords="jual suara jual pakai suara jual ketik catat jualan cepat quick sale ucapkan voice sale sell by voice dictate">
-        <h3>Sell by voice or typing <span class="tut-badge">Pro</span></h3>
+        <h3>Sell by voice or typing <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Say or type &quot;2 coffee 1 bread&quot; and the basket fills itself.</p>
         <ol>
           <li>On the Business Home tap Sell.</li>
@@ -1437,7 +1499,7 @@
         </ol>
       </article>
       <article class="tut-card" id="lacak_stok" data-title="Track product stock (and negative stock)" data-keywords="lacak stok stok stok minus stok negatif stok habis stok tidak berkurang jasa titipan track stock negative stock out of stock">
-        <h3>Track product stock (and negative stock) <span class="tut-badge">Pro</span></h3>
+        <h3>Track product stock (and negative stock) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Turn on Track stock on a product so stock drops on each sale. Turn it off for services or consignment.</p>
         <ol>
           <li>Open More › Products, then tap the product or add a new one.</li>
@@ -1446,7 +1508,7 @@
         </ol>
       </article>
       <article class="tut-card" id="transfer_antar_bisnis" data-title="Move money between business wallets or to another business" data-keywords="pindah uang usaha transfer antar bisnis tarik saldo shopee pindah wallet usaha ke bisnis lain antar bisnis pindah saldo tarik saldo marketplace transfer antar wallet usaha move business money transfer between businesses withdraw marketplace balance">
-        <h3>Move money between business wallets or to another business <span class="tut-badge">Pro</span></h3>
+        <h3>Move money between business wallets or to another business <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Move money between business wallets (e.g. withdraw Shopee balance) or to your other business. It is not counted as sales.</p>
         <ol>
           <li>Open More › Move business money (in Business Mode).</li>
@@ -1455,7 +1517,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ringkasan_gabungan" data-title="Combined summary (Personal + all businesses)" data-keywords="ringkasan gabungan gabungan semua bisnis pribadi dan bisnis total semua combined summary all businesses">
-        <h3>Combined summary (Personal + all businesses) <span class="tut-badge">Pro</span></h3>
+        <h3>Combined summary (Personal + all businesses) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">See your personal money and all your businesses side by side.</p>
         <ol>
           <li>Open More › Combined summary.</li>
@@ -1463,7 +1525,7 @@
         </ol>
       </article>
       <article class="tut-card" id="bisnis_baru_ganti" data-title="Create a new business and switch profile" data-keywords="bisnis baru buat bisnis tambah usaha usaha kedua ganti profil ganti bisnis hapus bisnis ubah nama bisnis multi bisnis new business switch profile second business">
-        <h3>Create a new business and switch profile <span class="tut-badge">Pro</span></h3>
+        <h3>Create a new business and switch profile <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">More than one business? Create a new one and switch between Personal and your businesses.</p>
         <ol>
           <li>Tap the profile pill at the top of the Home (or More › Switch profile).</li>
@@ -1472,16 +1534,16 @@
         </ol>
       </article>
       <article class="tut-card" id="mulai_jualan" data-title="Making your first sale" data-keywords="mulai jualan jualan pertama penjualan pertama pertama kali jualan mulai usaha baru mulai usaha catat jualan pertama first sale start selling start my business record my first sale getting started with sales">
-        <h3>Making your first sale <span class="tut-badge">Pro</span></h3>
+        <h3>Making your first sale <span class="tut-badge">Max</span></h3>
         <ol>
-          <li>Open More › Switch profile, then create a new business (or pick yours) and follow the setup.</li>
+          <li>Open More › Switch profile, then tap New business (or pick yours). Step 1: name and kind of business. Step 2: tick where the sales money goes; fill in Starting capital if any, then pick From (personal wallet) and Goes to (a ticked business wallet). Step 3: pick a colour, then Open shop. The kind and colour are chosen once and never asked again.</li>
           <li>Add products: More › Products and Stock › Add product (name, selling price, cost, stock if tracked).</li>
           <li>On the Business Home tap Sell, tap the product (or Custom item), then Pay and pick Cash, Transfer or QRIS.</li>
           <li>On the Sale saved screen: Invoice, WA to send it to the buyer, or Sell again.</li>
         </ol>
       </article>
       <article class="tut-card" id="bon_pelanggan" data-title="Recording customer credit and collecting it" data-keywords="catat bon pelanggan bon pelanggan pelanggan ngutang pelanggan utang pelanggan bayar nanti jual bayar nanti tagih pelanggan nagih pelanggan customer credit customer owes me sell on credit collect from customers unpaid customers">
-        <h3>Recording customer credit and collecting it <span class="tut-badge">Pro</span></h3>
+        <h3>Recording customer credit and collecting it <span class="tut-badge">Max</span></h3>
         <ol>
           <li>In Sell, fill the basket then tap Pay and pick Pay later. Fill in the customer name (required for unpaid sales).</li>
           <li>Save. The sale becomes a receivable. See them all in the Sales tab › Not fully paid.</li>
@@ -1490,7 +1552,7 @@
         </ol>
       </article>
       <article class="tut-card" id="tutup_kasir_harian" data-title="Closing the till every day" data-keywords="tutup kasir harian tutup kasir tiap hari tutup kasir tiap malam tutup toko hitung laci tiap hari cek laci kasir rekap harian close the till daily daily closing end of day closing count the drawer close the register">
-        <h3>Closing the till every day <span class="tut-badge">Pro</span></h3>
+        <h3>Closing the till every day <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Open More › Business Settings › Cashier recap, then tap Close the till under the recap.</li>
           <li>See what should be in the drawer (today&#x27;s cash sales), then count the money in it (by denomination if you like).</li>
@@ -1499,7 +1561,7 @@
         </ol>
       </article>
       <article class="tut-card" id="gaji_karyawan" data-title="Recording employee pay" data-keywords="gaji karyawan bayar karyawan bayar gaji karyawan gaji pegawai upah karyawan catat gaji karyawan gajian karyawan employee pay pay my employees employee salary payroll staff salary pay staff">
-        <h3>Recording employee pay <span class="tut-badge">Pro</span></h3>
+        <h3>Recording employee pay <span class="tut-badge">Max</span></h3>
         <ol>
           <li>A fixed monthly cost: More › Recurring Transactions › add, Expense, the salary Amount, the business wallet, Category Employee Pay, Frequency Monthly, Start from payday.</li>
           <li>Or record it once: Business Home › Purchases, pick Costs, fill in the pay, then Pay.</li>
@@ -1508,7 +1570,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ambil_uang_usaha" data-title="Taking business money for yourself" data-keywords="ambil uang usaha ambil uang usaha buat pribadi ambil uang toko tarik uang usaha prive uang usaha ke pribadi ambil laba owner draw take money out of the business withdraw from business take money from my business">
-        <h3>Taking business money for yourself <span class="tut-badge">Pro</span></h3>
+        <h3>Taking business money for yourself <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Open More › Owner&#x27;s Money.</li>
           <li>Pick To personal, then the source business wallet and the personal wallet it goes to.</li>
@@ -1517,7 +1579,7 @@
         </ol>
       </article>
       <article class="tut-card" id="untung_bulan_ini" data-title="Checking this month&#x27;s profit" data-keywords="untung bulan ini laba bulan ini cek untung cek laba untung usaha bulan ini berapa untung bulan ini laba rugi bulan ini profit this month this month&#x27;s profit how much profit check my profit profit and loss this month">
-        <h3>Checking this month&#x27;s profit <span class="tut-badge">Pro</span></h3>
+        <h3>Checking this month&#x27;s profit <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Open the Reports tab in Business Mode.</li>
           <li>Pick the profit and loss tab and the period (this month).</li>
@@ -1526,7 +1588,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kirim_nota_qris" data-title="Sending a receipt with your QRIS on it" data-keywords="kirim nota pakai qris nota ada qris nota dengan qris pasang qris di nota qris di nota nota ada kode qr send receipt with qris receipt with qris qris on the receipt put qris on the receipt">
-        <h3>Sending a receipt with your QRIS on it <span class="tut-badge">Pro</span></h3>
+        <h3>Sending a receipt with your QRIS on it <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Open More › Business Settings › Receipt &amp; ways to pay. Under Ways to pay tap Add, pick QRIS, then Pick QRIS picture from the gallery. Tap Save.</li>
           <li>Make the sale from the Business Home › Sell.</li>
@@ -1535,7 +1597,7 @@
         </ol>
       </article>
       <article class="tut-card" id="belanja_bahan_hpp" data-title="Recording ingredient purchases and seeing the COGS" data-keywords="catat belanja bahan dan lihat hpp lihat hpp hitung hpp hpp bulan ini harga pokok bulan ini berapa hpp cek hpp see the cogs cost of goods this month work out cogs check cogs">
-        <h3>Recording ingredient purchases and seeing the COGS <span class="tut-badge">Pro</span></h3>
+        <h3>Recording ingredient purchases and seeing the COGS <span class="tut-badge">Max</span></h3>
         <ol>
           <li>On the Business Home open Purchases, pick Ingredients or Stock for sale, add the items and their prices, then Pay and Save.</li>
           <li>Ingredient and stock purchases go in the report as Cost of goods (COGS). Which categories count as COGS is set under More › Business Settings › Categories &amp; materials (tap a category label to move it between cost of goods and operating).</li>
@@ -1543,16 +1605,16 @@
         </ol>
       </article>
       <article class="tut-card" id="terima_pesanan_dp" data-title="Taking an order for a certain date with a deposit" data-keywords="terima pesanan kue terima pesanan dengan dp pesanan kue ulang tahun pesanan untuk tanggal pesanan katering pesanan hampers pre order kue catat dp pesanan terima dp take an order with a deposit order for a date cake order catering order take a pre-order">
-        <h3>Taking an order for a certain date with a deposit <span class="tut-badge">Pro</span></h3>
+        <h3>Taking an order for a certain date with a deposit <span class="tut-badge">Max</span></h3>
         <ol>
-          <li>On the Business Home tap Sell, pick the products, tap Pay, then Order picked up later (pre-order).</li>
+          <li>On the Business Home tap Sell, pick the products, tap Discount or Delivery in the cart if needed, tap Pay, then Order picked up later (pre-order).</li>
           <li>Fill in the pickup date and time, Pickup or Delivery, the deposit (e.g. 50%), the Buyer name and the Order note (e.g. what is written on the cake). Tap Save order · deposit.</li>
           <li>See the date under More › Pre-order › Calendar; Recap to make shows what has to be made.</li>
           <li>At pickup open the order and tap Done · receive the rest. The receipt is made on the pickup day and the deposit becomes part of it.</li>
         </ol>
       </article>
       <article class="tut-card" id="catat_biaya_usaha" data-title="Recording a business cost and seeing where it goes" data-keywords="catat biaya usaha catat biaya operasional catat pengeluaran usaha catat listrik usaha bayar biaya usaha catat gaji karyawan usaha record a business cost record an operating cost record business expense">
-        <h3>Recording a business cost and seeing where it goes <span class="tut-badge">Pro</span></h3>
+        <h3>Recording a business cost and seeing where it goes <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Tap the Catat button under the + button (or + › Pay a cost), pick Expense, fill in the amount and category, then save.</li>
           <li>Under the category a line says &quot;Goes in the report as ...&quot; (COGS, Operating cost, or Not counted in profit).</li>
@@ -1566,19 +1628,16 @@
     <section class="tut-cta">
       <h2>Ready to try it?</h2>
       <p>Free on Google Play.</p>
-      <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download on Google Play</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download on Google Play</a>
     </section>
 
   </div>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="../../" class="brand brand--footer">
-      <img src="../../assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo brand__logo--light" />
-      <img src="../../assets/artosku-logo-dark.svg" alt="" width="102" height="42" class="brand__logo brand__logo--dark" aria-hidden="true" />
-    </a>
-    <nav class="footer__links" aria-label="Footer navigation">
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>&copy; Artosku. Made by Andi Pramana.</span>
+    <nav aria-label="Footer navigation">
       <a href="../../en/#fitur">Features</a>
       <a href="../../en/#paket">Plans</a>
       <a href="./">Guide</a>
@@ -1588,10 +1647,8 @@
       <a href="../../terms.html">Terms and Conditions</a>
       <a href="../../tutorial/" hreflang="id" lang="id">Bahasa Indonesia</a>
     </nav>
-    <p class="footer__copy">&copy; <span id="year"></span> Artosku. Made by Andi Pramana.</p>
   </div>
 </footer>
-<script src="../../js/main.js"></script>
 <script src="../../js/tutorial.js"></script>
 </body>
 </html>

@@ -3,72 +3,45 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<script>
-(function () {
-  var t = null;
-  try { t = localStorage.getItem("tut-theme"); } catch (e) {}
-  if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", t);
-})();
-</script>
 <title>Buku Panduan Artosku — Cara Catat Keuangan di HP</title>
 <meta name="description" content="Cara catat keuangan di HP dengan Artosku: siapkan wallet, catat transaksi pakai AI, atur jatah harian dan anggaran. Langkah singkat, bahasa santai." />
-<meta name="theme-color" content="#538248" />
+<meta name="theme-color" content="#F6FAF3" />
 <link rel="canonical" href="https://artosku.my.id/tutorial/" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Buku Panduan Artosku — Cara Catat Keuangan di HP" />
 <meta property="og:description" content="Langkah singkat memakai Artosku, dari wallet pertama sampai backup ke Google Drive." />
-<meta property="og:image" content="https://artosku.my.id/assets/artosku-app-icon.png" />
+<meta property="og:image" content="https://artosku.my.id/assets/og-cover.png" />
 <link rel="icon" href="../assets/artosku-app-icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="../assets/artosku-app-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="../css/home.css" />
 <link rel="stylesheet" href="../css/tutorial.css" />
 <link rel="alternate" hreflang="id" href="https://artosku.my.id/tutorial/" />
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/tutorial/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/tutorial/" />
 </head>
 <body class="page-tutorial">
-<a class="skip-link" href="#main">Langsung ke konten</a>
+<a class="skip" href="#main">Langsung ke konten</a>
 
-<header class="navbar is-scrolled" id="navbar">
-  <div class="container navbar__inner">
-    <a href="../" class="brand">
-      <img src="../assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo brand__logo--light" />
-      <img src="../assets/artosku-logo-dark.svg" alt="" width="118" height="49" class="brand__logo brand__logo--dark" aria-hidden="true" />
-    </a>
-    <nav class="nav-links" aria-label="Navigasi utama">
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__brand" href="../" aria-label="Artosku"><img src="../assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span><img class="nav__minyam" src="../assets/minyam/idle.webp" alt="" width="34" height="34" /></a>
+    <nav class="nav__links" aria-label="Navigasi utama">
       <a href="../#fitur">Fitur</a>
       <a href="../#paket">Paket</a>
       <a href="./" aria-current="page">Panduan</a>
       <a href="../#faq">FAQ</a>
       <a href="../#kontak">Kontak</a>
     </nav>
-    <div class="navbar__actions">
-      <a href="../en/tutorial/" class="btn btn--ghost btn--sm" hreflang="en" lang="en">English</a>
-      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti tema terang atau gelap">
-        <svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        <svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-      <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary btn--sm"><span>Download Artosku</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    <div class="nav__end">
+      <a class="nav__lang" href="../en/tutorial/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--small" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download Artosku</a>
     </div>
   </div>
 </header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <nav aria-label="Navigasi mobile">
-    <a href="../#fitur">Fitur</a>
-    <a href="../#paket">Paket</a>
-    <a href="./">Panduan</a>
-    <a href="../#faq">FAQ</a>
-    <a href="../#kontak">Kontak</a>
-    <a href="../en/tutorial/" class="btn btn--ghost" hreflang="en" lang="en">English</a>
-    <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="btn btn--primary">Download Artosku</a>
-  </nav>
-</div>
 
 <main id="main" class="tut">
   <div class="tut-wrap">
@@ -171,7 +144,7 @@
         <p class="tut-intro">Baca PDF rekening koran bank jadi daftar transaksi yang bisa dicek lalu disimpan.</p>
         <ol>
           <li>Buka Transaksi, ketuk menu ⋮ › Impor mutasi.</li>
-          <li>Pilih wallet tujuan mutasinya.</li>
+          <li>Pilih wallet tujuan mutasinya (semua wallet aktif tampil, tidak hanya bank). Untuk wallet bersama, pilih juga membernya.</li>
           <li>Pilih file PDF atau CSV mutasi dari banknya (maks. beberapa file), lalu ketuk Proses File.</li>
           <li>Periksa daftar hasilnya di halaman Review Mutasi (kategori, tanggal, jumlah), lalu Simpan Semua.</li>
         </ol>
@@ -300,7 +273,7 @@
         <p class="tut-intro">Pasang batas pengeluaran per kategori tiap bulan dan lihat sisanya.</p>
         <ol>
           <li>Buka Lainnya › Anggaran.</li>
-          <li>Ketuk tambah, pilih kategori, pilih Periode (Harian, Mingguan, atau Bulanan) dan isi batasnya.</li>
+          <li>Ketuk tambah, boleh isi Nama anggaran, pilih satu kategori atau lebih, pilih Periode (Harian, Mingguan, atau Bulanan) dan isi batasnya.</li>
           <li>Artosku memberi tahu saat pengeluaran mendekati atau melewati batas.</li>
           <li>Mau ganti periodenya (mis. bulanan jadi mingguan)? Ketuk anggarannya, pilih Harian, Mingguan, atau Bulanan di Ubah, lalu Simpan dan Ubah. Anggaran lama diganti, bulan atau minggu lain tidak disentuh.</li>
         </ol>
@@ -721,6 +694,38 @@
           <li>Syarat dan Ketentuan ada di menu yang sama, di bagian Bantuan &amp; Info.</li>
         </ol>
       </article>
+      <article class="tut-card" id="anggaran_ganti_nama" data-title="Ganti nama anggaran" data-keywords="ganti nama anggaran rename anggaran ubah nama anggaran nama anggaran nama sendiri anggaran kasih nama anggaran beri nama anggaran anggaran tanpa nama kategori nama kartu anggaran rename budget rename a budget budget name name a budget change budget name custom budget name">
+        <h3>Ganti nama anggaran</h3>
+        <p class="tut-intro">Beri anggaran namamu sendiri (mis. &quot;Makan sebulan&quot;). Kartu, ringkasan di Beranda, peringatan, tabel Bandingkan, dan AI Chat memakai nama itu. Dikosongkan, kembali ke nama kategorinya.</p>
+        <ol>
+          <li>Buka Lainnya › Anggaran, lalu cari kartu anggarannya (di tab Bulanan atau Mingguan).</li>
+          <li>Ketuk tombol ⋮ di kartu (di sebelah Ubah dan Hapus), lalu pilih Ganti nama.</li>
+          <li>Isi Nama anggaran (mis. Makan sebulan), lalu ketuk Simpan. Kosongkan lalu Simpan kalau mau memakai nama kategorinya lagi.</li>
+          <li>Nama itu dipakai di kartu, ringkasan di Beranda, peringatan anggaran, tabel Bandingkan, dan jawaban AI Chat. Nama juga bisa diisi saat membuat anggaran baru (kolom Nama anggaran).</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="anggaran_banyak_kategori" data-title="Satu anggaran untuk beberapa kategori" data-keywords="gabung anggaran gabungkan anggaran anggaran grup anggaran gabungan gabung kategori anggaran beberapa kategori satu anggaran satu anggaran banyak kategori banyak kategori satu anggaran anggaran beberapa kategori kategori mana saja anggaran ubah kategori anggaran combine budgets group budget merge budgets several categories one budget multiple categories budget one budget for many categories change budget categories">
+        <h3>Satu anggaran untuk beberapa kategori</h3>
+        <p class="tut-intro">Gabungkan beberapa kategori (mis. Makan di luar dan Belanja dapur) dalam satu anggaran dengan satu batas dan satu nama. Satu kategori hanya boleh ada di satu anggaran per periode, jadi tidak pernah terhitung dua kali.</p>
+        <ol>
+          <li>Buka Lainnya › Anggaran, lalu ketuk tombol + di header. Untuk anggaran yang sudah ada: ketuk ⋮ di kartunya, lalu Ubah kategori.</li>
+          <li>Isi Nama anggaran kalau mau (boleh kosong), lalu ketuk Kategori dan centang semua kategori yang mau digabung, lalu ketuk Selesai.</li>
+          <li>Kategori yang sudah ada di anggaran lain pada bulan atau minggu itu berwarna abu-abu dan tertulis &quot;sudah di anggaran …&quot;: satu kategori hanya boleh di satu anggaran per periode, jadi tidak pernah terhitung dua kali.</li>
+          <li>Chip kategori bisa dihapus dengan tanda ×, minimal satu tetap ada. Isi batasnya lalu Simpan.</li>
+          <li>Kartu menulis daftar kategorinya di bawah nama (&quot;Makanan, Jajan +2&quot;). Ketuk kartunya untuk melihat transaksi semua kategori itu.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="anggaran_subkategori" data-title="Hitung subkategori di anggaran" data-keywords="subkategori anggaran hitung subkategori hitung juga subkategori kategori anak anggaran kategori anak anggaran kategori induk anggaran induk semua turunan kategori turunan kategori anggaran subkategori ikut anggaran subkategori tidak terhitung count subcategories include subcategories subcategory budget child categories budget parent category budget subcategories not counted">
+        <h3>Hitung subkategori di anggaran</h3>
+        <p class="tut-intro">Untuk kategori induk (yang punya subkategori), nyalakan &quot;Hitung juga subkategorinya&quot; supaya pengeluaran semua subkategori ikut masuk anggaran. Awalnya mati. Subkategori yang punya anggaran sendiri tidak dihitung di anggaran induk.</p>
+        <ol>
+          <li>Buka Lainnya › Anggaran, ketuk tombol + di header (atau Ubah di kartu anggaran yang sudah ada).</li>
+          <li>Pilih kategori induk, yaitu yang punya subkategori (mis. Makanan).</li>
+          <li>Nyalakan Hitung juga subkategorinya. Awalnya mati, dan saklar ini hanya muncul kalau kategori yang dipilih punya subkategori. Lalu isi batas dan Simpan.</li>
+          <li>Pengeluaran semua subkategori (semua tingkat) ikut masuk. Subkategori yang punya anggaran sendiri tidak ikut dihitung di anggaran induk, dan kartu induk menulis &quot;Tanpa …: punya anggaran sendiri&quot;.</li>
+          <li>Anggaran harian punya saklar yang sama (tab Harian), tanpa nama dan tanpa banyak kategori.</li>
+        </ol>
+      </article>
       <article class="tut-card" id="biometrik" data-title="Sidik jari atau wajah sebagai kunci" data-keywords="biometrik sidik jari fingerprint wajah face id face unlock kunci sidik jari biometric unlock">
         <h3>Sidik jari atau wajah sebagai kunci</h3>
         <p class="tut-intro">Setelah PIN dibuat, buka Artosku cukup dengan sidik jari atau wajah.</p>
@@ -792,6 +797,16 @@
           <li>Kalau tidak ketemu, ketuk Tanya Artosku AI.</li>
         </ol>
       </article>
+      <article class="tut-card" id="urutan_wallet" data-title="Atur urutan wallet" data-keywords="urutan wallet susun wallet wallet paling sering wallet paling sering dipakai urutan dompet urutan sendiri wallet order sort wallets most used wallet">
+        <h3>Atur urutan wallet</h3>
+        <p class="tut-intro">Pilih urutan wallet di semua pilihan: yang paling sering dipakai di depan, atau sama dengan urutan di Beranda.</p>
+        <ol>
+          <li>Buka Lainnya › Wallet. Di atas ada kartu Urutan wallet di pilihan.</li>
+          <li>Pilih Paling sering dipakai: wallet milikmu yang paling sering kamu catat ada di depan, lalu wallet bersama milik orang lain.</li>
+          <li>Nyalakan Hitung juga pemakaian semua member kalau catatan member lain ikut dihitung.</li>
+          <li>Atau pilih Urutan sendiri: sama dengan urutan wallet di Beranda.</li>
+        </ol>
+      </article>
       <article class="tut-card" id="kelola_langganan" data-title="Kelola, batalkan, atau pulihkan langganan" data-keywords="kelola langganan batalkan langganan berhenti langganan cancel subscription pulihkan pembelian restore purchase langganan di play store bulanan tahunan paket saat ini naik paket manage subscription monthly yearly">
         <h3>Kelola, batalkan, atau pulihkan langganan</h3>
         <p class="tut-intro">Lihat paketmu, ganti bulanan atau tahunan, kelola di Play Store, dan pulihkan pembelian.</p>
@@ -826,6 +841,27 @@
           <li>Buka Lainnya › Buku Panduan. Websitenya terbuka di browser.</li>
           <li>Cari fitur yang mau dipelajari di kolom pencarian, atau pilih dari daftar Mulai dari sini.</li>
           <li>Mau panduan singkat yang diputar langsung di layar menu? Itu Pusat Panduan, atau ketuk tombol ? di menunya.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="demo_mode_bisnis" data-title="Lihat demo Mode Bisnis (Proud Chicken)" data-keywords="demo bisnis demo mode bisnis coba mode bisnis contoh bisnis lihat fitur bisnis lihat fitur bisnis sebelum langganan proud chicken mode bisnis isinya apa isi mode bisnis lihat dulu mode bisnis beli kucing dalam karung business demo business mode demo try business mode sample business see business features before subscribing what is in business mode preview business mode">
+        <h3>Lihat demo Mode Bisnis (Proud Chicken)</h3>
+        <p class="tut-intro">Bisnis contoh &quot;Proud Chicken&quot; dengan data 2 bulan di semua fitur Mode Bisnis (penjualan, nota, stok, pre-order, laporan). Cuma untuk dilihat: tidak bisa mencatat. Bisa dibuka tanpa Max, untuk melihat dulu sebelum berlangganan.</p>
+        <ol>
+          <li>Ketuk tombol profil di bagian atas (tertulis Pribadi) untuk membuka daftar profil.</li>
+          <li>Pilih Proud Chicken (ada tulisan &quot;Klik untuk lihat fitur Mode Bisnis&quot;). Boleh untuk akun Free, tanpa Max.</li>
+          <li>Lihat-lihat semua fiturnya: penjualan, nota, stok, pre-order, laporan. Data 2 bulan sampai hari ini. Semua hanya untuk dilihat: kalau ketuk Simpan, muncul kartu Ini Demo.</li>
+          <li>Mau keluar? Ketuk Keluar demo di strip atas Beranda. Data demo tidak ikut backup atau ekspor.</li>
+          <li>Demo disembunyikan? Buka Lainnya › Mode Bisnis dan ketuk Lihat demo Mode Bisnis. Untuk menyembunyikannya: ketuk ⋮ di baris Proud Chicken, pilih Sembunyikan demo.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="video_tutorial" data-title="Video: cara mulai Mode Pribadi dan demo Mode Bisnis" data-keywords="video video tutorial tutorial youtube cara pakai cara mulai video cara mulai video demo video demo mode bisnis demo bisnis video bisnis contoh mode bisnis tonton video tutorial video how to start watch video demo video business demo video getting started video">
+        <h3>Video: cara mulai Mode Pribadi dan demo Mode Bisnis</h3>
+        <p class="tut-intro">Dua video singkat di YouTube: cara mulai memakai Artosku di Mode Pribadi, dan demo fitur-fitur Mode Bisnis. Tombolnya hanya tampil kalau videonya sudah ada.</p>
+        <ol>
+          <li>Buka Lainnya › Video. Ada Cara mulai Mode Pribadi dan Video demo Mode Bisnis; ketuk salah satunya, video terbuka di aplikasi YouTube.</li>
+          <li>Akun baru: di kartu awal Beranda ada tautan Lihat video cara mulai.</li>
+          <li>Mau lihat demo Mode Bisnis: ketuk ⋮ di baris Proud Chicken pada daftar profil, atau tautan Lihat video demo Mode Bisnis di langkah 1 Bisnis baru.</li>
+          <li>Tombol video hanya tampil kalau videonya sudah tersedia.</li>
         </ol>
       </article>
       <article class="tut-card" id="ikuti_artosku" data-title="Ikuti Artosku di media sosial" data-keywords="ikuti artosku instagram tiktok threads youtube media sosial sosmed follow social media akun resmi">
@@ -888,6 +924,31 @@
           <li>Pilih Kategori, lalu Periode: Mingguan. Isi Batas per minggu (minggu dihitung Senin sampai Minggu) dan Simpan.</li>
           <li>Lihat di tab Mingguan; panah › bisa ke minggu depan (sampai 8 minggu). Salin minggu lalu ada di ikon salin di judul.</li>
           <li>Satu kategori boleh punya batas bulanan DAN mingguan; keduanya berdiri sendiri dan tidak dijumlah. Kamu diingatkan di 90% dan saat lewat.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="gabung_kategori_anggaran" data-title="Satu anggaran untuk beberapa kategori" data-keywords="satu anggaran untuk beberapa kategori gabung anggaran makan di luar dan belanja dapur gabungkan kategori jadi satu anggaran anggaran gabungan beberapa kategori batas gabungan beberapa kategori satu batas untuk dua kategori satu anggaran untuk makanan dan jajan anggaran makan gabung belanja dapur kategori mana saja masuk anggaran anggaran induk dan subkategorinya one budget for several categories combine categories into one budget one budget for eating out and groceries group several categories in a budget one limit for two categories budget for a parent category and its subcategories">
+        <h3>Satu anggaran untuk beberapa kategori</h3>
+        <ol>
+          <li>Buka Lainnya › Anggaran, lalu ketuk tombol + di header (anggaran yang sudah ada: ketuk ⋮ di kartunya, lalu Ubah kategori).</li>
+          <li>Isi Nama anggaran (mis. Makan sebulan), lalu ketuk Kategori, centang semua kategori yang mau digabung, dan ketuk Selesai. Yang berwarna abu-abu sudah ada di anggaran lain di periode itu.</li>
+          <li>Kalau kategori yang dipilih adalah induk (punya subkategori), nyalakan Hitung juga subkategorinya supaya semua subkategorinya ikut. Awalnya mati.</li>
+          <li>Isi batasnya lalu Simpan. Setiap pengeluaran dihitung sekali; subkategori yang punya anggaran sendiri tidak ikut dihitung di anggaran induk.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="lihat_isi_mode_bisnis" data-title="Mode Bisnis isinya apa? Lihat dulu sebelum langganan" data-keywords="mode bisnis isinya apa isi mode bisnis apa saja mau lihat mode bisnis dulu bisa coba mode bisnis dulu lihat fitur bisnis sebelum langganan mau lihat contoh mode bisnis demo mode bisnis coba mode bisnis gratis contoh bisnis di artosku what is in business mode can i try business mode first see business mode before subscribing business mode demo show me business mode try business mode for free sample business in artosku">
+        <h3>Mode Bisnis isinya apa? Lihat dulu sebelum langganan</h3>
+        <ol>
+          <li>Ketuk tombol profil di bagian atas (tertulis Pribadi), lalu pilih Proud Chicken. Bisa untuk akun Free, tanpa langganan.</li>
+          <li>Itu bisnis contoh dengan data 2 bulan: penjualan, nota, stok, pre-order, laporan. Cuma untuk dilihat, ketuk Simpan akan memunculkan kartu Ini Demo.</li>
+          <li>Suka? Ketuk Lihat paket di kartu itu untuk langganan Max, lalu buat bisnismu sendiri. Keluar demo lewat tombol Keluar demo di atas Beranda.</li>
+        </ol>
+      </article>
+      <article class="tut-card" id="bisnis_tidak_bisa_dicatat" data-title="Kenapa bisnisku tidak bisa dicatat?" data-keywords="kenapa bisnis saya tidak bisa dicatat kenapa bisnisku tidak bisa dicatat bisnis hanya lihat bisnis tidak bisa mencatat mode bisnis tidak bisa dipakai mode bisnis hanya bisa dilihat mode bisnis khusus max kenapa mode bisnis terkunci pro tidak bisa mode bisnis bisnis saya baca saja why can i not record in my business business is view only business mode is read only cannot add sale in business business mode max only why is business mode locked pro cannot use business mode">
+        <h3>Kenapa bisnisku tidak bisa dicatat?</h3>
+        <ol>
+          <li>Mulai 1 Desember 2026 Mode Bisnis khusus paket Max. Pro yang sudah memakai Mode Bisnis sebelum tanggal itu tetap bisa mencatat sampai akhir periode langganannya.</li>
+          <li>Setelah itu bisnismu hanya bisa dilihat dan diekspor. Datanya tidak dihapus.</li>
+          <li>Buka Lainnya › Langganan, lalu pilih paket Max untuk mencatat lagi.</li>
         </ol>
       </article>
       <article class="tut-card" id="batasi_jajan_harian" data-title="Batasi jajan per hari, beda di akhir pekan" data-keywords="batasi jajan per hari batasi jajan tiap hari batas jajan per hari batas jajan harian batasi jajan harian jajan beda di akhir pekan jajan akhir pekan beda batas jajan akhir pekan batasi makan per hari batas makan per hari anggaran harian beda akhir pekan batas harian beda akhir pekan batas beda hari jumat batas pengeluaran beda tiap hari limit snacks per day daily snack limit different limit on the weekend weekend spending limit limit per day weekend daily limit different on weekends">
@@ -1073,8 +1134,9 @@
 
     <section class="tut-group" id="g-bisnis" aria-labelledby="h-g-bisnis">
       <h2 id="h-g-bisnis">Mode Bisnis</h2>
+      <p class="tut-lead">Mode Bisnis ada di paket Max. Demo Proud Chicken di aplikasi terbuka untuk semua pengguna.</p>
       <article class="tut-card" id="mode_bisnis" data-title="Mode Bisnis" data-keywords="bisnis usaha jualan toko warung umkm kasir dagang business shop sell store cashier kecil-kecilan ganti profil">
-        <h3>Mode Bisnis <span class="tut-badge">Pro</span></h3>
+        <h3>Mode Bisnis <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Kasir, catat belanja bahan, nota lewat WA, pembeli yang belum bayar, dan laporan laba rugi. Uang usaha terpisah dari uang pribadi.</p>
         <ol>
           <li>Buka Lainnya › Ganti profil.</li>
@@ -1083,7 +1145,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kasir" data-title="Kasir (Jual)" data-keywords="kasir jual penjualan jualan barcode pos sell sale cashier checkout catat penjualan bikin nota">
-        <h3>Kasir (Jual) <span class="tut-badge">Pro</span></h3>
+        <h3>Kasir (Jual) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pilih produk, bayar tunai, QRIS, transfer, atau bayar nanti, lalu kirim nota. Bisa scan barcode.</p>
         <ol>
           <li>Di Beranda Bisnis ketuk Jual.</li>
@@ -1093,7 +1155,7 @@
         </ol>
       </article>
       <article class="tut-card" id="nota_wa" data-title="Nota &amp; kirim lewat WA" data-keywords="nota invoice kwitansi wa whatsapp kirim nota pdf receipt faktur struk pembeli kirim wa">
-        <h3>Nota &amp; kirim lewat WA <span class="tut-badge">Pro</span></h3>
+        <h3>Nota &amp; kirim lewat WA <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Buat nota rapi dengan data usahamu dan kirim ke pembeli lewat WhatsApp atau PDF.</p>
         <ol>
           <li>Selesaikan penjualan di Jual, lalu ketuk Simpan penjualan.</li>
@@ -1103,7 +1165,7 @@
         </ol>
       </article>
       <article class="tut-card" id="belanja_bisnis" data-title="Belanja bahan, stok &amp; biaya" data-keywords="belanja bahan stok pemasok supplier biaya beli purchase ingredient cost ongkir modal belanja bahan belanja stok beli bahan biaya usaha bon pemasok beli stok">
-        <h3>Belanja bahan, stok &amp; biaya <span class="tut-badge">Pro</span></h3>
+        <h3>Belanja bahan, stok &amp; biaya <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Catat belanja bahan, stok jual, dan biaya usaha. Scan struk belanja online sampai ongkir dan diskon.</p>
         <ol>
           <li>Buka Belanja di Beranda Bisnis, pilih Bahan atau Stok jual.</li>
@@ -1113,7 +1175,7 @@
         </ol>
       </article>
       <article class="tut-card" id="produk_stok" data-title="Produk &amp; stok" data-keywords="produk barang stok harga persediaan inventori product inventory stock item">
-        <h3>Produk &amp; stok <span class="tut-badge">Pro</span></h3>
+        <h3>Produk &amp; stok <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Daftar produk dengan harga, stok, dan nilai persediaan. Ada peringatan stok tipis.</p>
         <ol>
           <li>Buka Produk di baris pintasan Beranda Bisnis (atau menu ⋮ di Jual › Daftar produk, atau Lainnya › Produk dan Stok), lalu ketuk Tambah produk.</li>
@@ -1122,7 +1184,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kontak_usaha" data-title="Pembeli, pemasok &amp; tagihan usaha" data-keywords="pembeli pelanggan pemasok karyawan bon piutang usaha customer supplier employee tagih">
-        <h3>Pembeli, pemasok &amp; tagihan usaha <span class="tut-badge">Pro</span></h3>
+        <h3>Pembeli, pemasok &amp; tagihan usaha <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Simpan pembeli, pemasok, dan karyawan, lihat siapa yang belum bayar, dan tagih lewat WhatsApp.</p>
         <ol>
           <li>Buka Lainnya › Kontak usaha.</li>
@@ -1131,7 +1193,7 @@
         </ol>
       </article>
       <article class="tut-card" id="laba_rugi" data-title="Laba rugi &amp; laporan usaha" data-keywords="laba rugi untung arus kas neraca terlaris jam ramai profit loss cash flow balance sheet omzet laporan usaha kas usaha">
-        <h3>Laba rugi &amp; laporan usaha <span class="tut-badge">Pro</span></h3>
+        <h3>Laba rugi &amp; laporan usaha <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Lihat untung rugi, arus kas, neraca, produk terlaris, dan jam ramai.</p>
         <ol>
           <li>Buka tab Laporan di Mode Bisnis.</li>
@@ -1140,7 +1202,7 @@
         </ol>
       </article>
       <article class="tut-card" id="uang_pemilik" data-title="Uang pemilik (prive &amp; modal)" data-keywords="prive modal setor ambil uang pemilik owner capital draw withdraw ambil uang usaha setor modal modal sendiri uang pribadi usaha owner draw ambil uang buat pribadi tarik uang usaha">
-        <h3>Uang pemilik (prive &amp; modal) <span class="tut-badge">Pro</span></h3>
+        <h3>Uang pemilik (prive &amp; modal) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Catat ambil uang usaha untuk pribadi, setor modal, atau pindah uang ke bisnis lain.</p>
         <ol>
           <li>Buka Lainnya › Uang Pemilik.</li>
@@ -1149,7 +1211,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pinjamkan_uang" data-title="Pinjamkan uang" data-keywords="pinjamkan pinjam kasih pinjam piutang keluar lend loan out pinjam karyawan kasbon karyawan pinjaman karyawan">
-        <h3>Pinjamkan uang <span class="tut-badge">Pro</span></h3>
+        <h3>Pinjamkan uang <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Catat uang usaha yang dipinjamkan ke orang lain dan kapan dikembalikan.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Pinjamkan uang.</li>
@@ -1158,7 +1220,7 @@
         </ol>
       </article>
       <article class="tut-card" id="tutup_kas" data-title="Tutup kas &amp; rekap kasir" data-keywords="tutup kas laci rekap selisih tutup toko drawer close recap cash count selisih kas hitung laci cash drawer close till">
-        <h3>Tutup kas &amp; rekap kasir <span class="tut-badge">Pro</span></h3>
+        <h3>Tutup kas &amp; rekap kasir <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Hitung uang di laci, cocokkan dengan catatan, dan lihat rekap penjualan hari itu.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Rekap kasir, lalu ketuk Tutup kasir di bawah rekap.</li>
@@ -1168,7 +1230,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pajak_usaha" data-title="Bantu hitung pajak usaha" data-keywords="pajak pph omzet lapor pajak tax turnover umkm pajak final peredaran bruto">
-        <h3>Bantu hitung pajak usaha <span class="tut-badge">Pro</span></h3>
+        <h3>Bantu hitung pajak usaha <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Perkiraan pajak dari omzetmu supaya tidak kaget saat melapor.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Bantu hitung pajak usaha.</li>
@@ -1177,7 +1239,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pengaturan_bisnis" data-title="Pengaturan bisnis" data-keywords="pengaturan target data nota logo pengingat settings setup kasir">
-        <h3>Pengaturan bisnis <span class="tut-badge">Pro</span></h3>
+        <h3>Pengaturan bisnis <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Data nota, target bulanan, wallet, kategori, kasir, dan pengingat usaha.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis.</li>
@@ -1186,7 +1248,7 @@
         </ol>
       </article>
       <article class="tut-card" id="tagih_piutang_usaha" data-title="Tagih yang belum bayar" data-keywords="tagih belum bayar belum lunas piutang nagih utang pelanggan collect unpaid receivable tagihan pelanggan piutang usaha yang belum bayar">
-        <h3>Tagih yang belum bayar <span class="tut-badge">Pro</span></h3>
+        <h3>Tagih yang belum bayar <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Lihat nota yang belum lunas, tagih lewat WhatsApp, dan catat pembayarannya saat uang masuk.</p>
         <ol>
           <li>Buka tab Penjualan dan pilih Belum lunas, atau buka Lainnya › Utang &amp; Piutang.</li>
@@ -1195,7 +1257,7 @@
         </ol>
       </article>
       <article class="tut-card" id="bon_pemasok" data-title="Bon pemasok (belanja bayar nanti)" data-keywords="bon utang pemasok bayar nanti kredit pemasok supplier credit tempo bon pemasok bayar nanti pemasok supplier credit utang usaha">
-        <h3>Bon pemasok (belanja bayar nanti) <span class="tut-badge">Pro</span></h3>
+        <h3>Bon pemasok (belanja bayar nanti) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Belanja bahan atau stok sekarang, bayar nanti: utangnya tercatat lengkap dengan jatuh tempo.</p>
         <ol>
           <li>Buka Belanja di Beranda Bisnis dan tambah barangnya.</li>
@@ -1205,7 +1267,7 @@
         </ol>
       </article>
       <article class="tut-card" id="nota_usaha" data-title="Nota &amp; data bisnis di nota" data-keywords="nota invoice struk cetak daftar nota">
-        <h3>Nota &amp; data bisnis di nota <span class="tut-badge">Pro</span></h3>
+        <h3>Nota &amp; data bisnis di nota <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Lihat semua nota penjualan dan atur data usaha yang tercetak di nota.</p>
         <ol>
           <li>Semua nota ada di tab Penjualan; ketuk sebuah nota lalu Nota untuk melihat dan membagikannya.</li>
@@ -1214,7 +1276,7 @@
         </ol>
       </article>
       <article class="tut-card" id="rekap_kasir" data-title="Rekap penjualan dari karyawan" data-keywords="rekap karyawan banyak orang kirim penjualan recap employee tim">
-        <h3>Rekap penjualan dari karyawan <span class="tut-badge">Pro</span></h3>
+        <h3>Rekap penjualan dari karyawan <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Kasir mengirim penjualan di HP-nya ke pemilik lewat file, tanpa server.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Rekap kasir.</li>
@@ -1223,7 +1285,7 @@
         </ol>
       </article>
       <article class="tut-card" id="target_bisnis" data-title="Target omzet bulanan" data-keywords="target omzet target bulanan target jualan goal turnover target omzet target usaha monthly target turnover target">
-        <h3>Target omzet bulanan <span class="tut-badge">Pro</span></h3>
+        <h3>Target omzet bulanan <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Tetapkan target omzet per bulan dan lihat kemajuannya tiap hari di Beranda Bisnis.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Target bulanan.</li>
@@ -1232,7 +1294,7 @@
         </ol>
       </article>
       <article class="tut-card" id="bisnis_profil" data-title="Profil usaha (nama, logo, alamat, nomor)" data-keywords="profil usaha nama usaha nama toko logo logo nota alamat alamat toko nomor wa nomor telepon no hp usaha jenis usaha warna usaha business profile address phone number">
-        <h3>Profil usaha (nama, logo, alamat, nomor) <span class="tut-badge">Pro</span></h3>
+        <h3>Profil usaha (nama, logo, alamat, nomor) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Nama usaha, logo, nomor WhatsApp, alamat, jenis usaha dan warna. Dipakai di nota dan laporan.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Profil usaha.</li>
@@ -1242,7 +1304,7 @@
         </ol>
       </article>
       <article class="tut-card" id="nota_data" data-title="Nota &amp; cara bayar" data-keywords="data nota atur nota pengaturan nota cara bayar info rekening nota invoice settings receipt settings payment details">
-        <h3>Nota &amp; cara bayar <span class="tut-badge">Pro</span></h3>
+        <h3>Nota &amp; cara bayar <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Atur cara bayar di nota (bank, e-wallet, QRIS), catatan di bawah nota, slogan, tanda tangan dan ukuran nota.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar.</li>
@@ -1252,7 +1314,7 @@
         </ol>
       </article>
       <article class="tut-card" id="cara_bayar_nota" data-title="Rekening bank dan e-wallet di nota" data-keywords="rekening no rek nomor rekening bank bca bri mandiri bni bsi gopay ovo dana shopeepay linkaja e-wallet transfer ke mana atas nama bank account account number ewallet">
-        <h3>Rekening bank dan e-wallet di nota <span class="tut-badge">Pro</span></h3>
+        <h3>Rekening bank dan e-wallet di nota <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Tampilkan nomor rekening atau e-wallet di nota supaya pembeli tahu ke mana transfer.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar.</li>
@@ -1262,7 +1324,7 @@
         </ol>
       </article>
       <article class="tut-card" id="qris_nota" data-title="QRIS di nota (pasang, ganti, hapus gambar)" data-keywords="qris kode qr qr qr code gambar qris ganti qris hapus qris tambah qris qris nota barcode bayar change qris add qris remove qris">
-        <h3>QRIS di nota (pasang, ganti, hapus gambar) <span class="tut-badge">Pro</span></h3>
+        <h3>QRIS di nota (pasang, ganti, hapus gambar) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pasang gambar kode QRIS tokomu di nota. Bisa diganti atau dihapus kapan saja.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar.</li>
@@ -1273,7 +1335,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ttd_nota" data-title="Tanda tangan di nota" data-keywords="tanda tangan ttd tandatangan paraf gambar tanda tangan signature sign draw signature">
-        <h3>Tanda tangan di nota <span class="tut-badge">Pro</span></h3>
+        <h3>Tanda tangan di nota <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pasang tanda tangan di nota: gambar dengan jari atau pilih fotonya.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar › Slogan &amp; tanda tangan › Atur.</li>
@@ -1283,7 +1345,7 @@
         </ol>
       </article>
       <article class="tut-card" id="slogan_catatan_nota" data-title="Slogan dan catatan di bawah nota" data-keywords="slogan tagline catatan nota catatan di bawah nota terima kasih nota kalimat penutup footer nota receipt note footer">
-        <h3>Slogan dan catatan di bawah nota <span class="tut-badge">Pro</span></h3>
+        <h3>Slogan dan catatan di bawah nota <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Tulis slogan usaha dan kalimat penutup, mis. &quot;Terima kasih sudah order&quot;.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar.</li>
@@ -1293,7 +1355,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ukuran_nota" data-title="Ukuran nota (A5 atau struk 58 mm)" data-keywords="ukuran nota a5 kertas a5 struk kecil struk 58 58 mm printer printer thermal thermal cetak struk receipt size thermal printer paper size">
-        <h3>Ukuran nota (A5 atau struk 58 mm) <span class="tut-badge">Pro</span></h3>
+        <h3>Ukuran nota (A5 atau struk 58 mm) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pilih nota kertas A5 atau struk kecil 58 mm untuk printer thermal.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar › Slogan &amp; tanda tangan › Atur.</li>
@@ -1302,7 +1364,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kirim_nota_foto_pdf" data-title="Cetak, PDF, Foto atau WA untuk nota" data-keywords="kirim nota jadi foto nota jadi foto nota jadi gambar kirim foto nota cetak nota print nota pdf nota foto nota gambar nota share nota bagikan nota print receipt receipt photo receipt pdf">
-        <h3>Cetak, PDF, Foto atau WA untuk nota <span class="tut-badge">Pro</span></h3>
+        <h3>Cetak, PDF, Foto atau WA untuk nota <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Nota bisa dicetak, dikirim sebagai PDF, sebagai foto (gambar), atau teks ke WhatsApp pembeli.</p>
         <ol>
           <li>Buka tab Penjualan, ketuk notanya, lalu ketuk Nota.</li>
@@ -1311,7 +1373,7 @@
         </ol>
       </article>
       <article class="tut-card" id="wallet_usaha" data-title="Wallet usaha" data-keywords="wallet usaha wallet bisnis kas usaha rekening usaha laci saldo usaha business wallet">
-        <h3>Wallet usaha <span class="tut-badge">Pro</span></h3>
+        <h3>Wallet usaha <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Kas, rekening, dan e-wallet khusus usaha, terpisah dari wallet pribadi.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Wallet usaha.</li>
@@ -1320,7 +1382,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kanal_jual" data-title="Kanal jual dan potongan platform" data-keywords="kanal kanal jual channel shopee gofood grabfood tokopedia marketplace potongan potongan platform fee platform komisi online sales channel platform fee">
-        <h3>Kanal jual dan potongan platform <span class="tut-badge">Pro</span></h3>
+        <h3>Kanal jual dan potongan platform <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Catat jualan lewat Shopee, GoFood, dan lainnya, lengkap dengan potongan platform dan wallet tujuannya.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Kanal jual.</li>
@@ -1329,7 +1391,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kategori_bahan" data-title="Kategori usaha, harga pokok (HPP) dan bahan" data-keywords="kategori usaha kategori bisnis hpp harga pokok cogs paket kategori bahan bahan saya daftar bahan bahan baku operasional jenis usaha business category materials ingredients">
-        <h3>Kategori usaha, harga pokok (HPP) dan bahan <span class="tut-badge">Pro</span></h3>
+        <h3>Kategori usaha, harga pokok (HPP) dan bahan <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Atur kategori pendapatan, harga pokok dan biaya operasional, dan daftar bahan yang kamu beli.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Kategori &amp; bahan.</li>
@@ -1339,7 +1401,7 @@
         </ol>
       </article>
       <article class="tut-card" id="pengingat_bisnis" data-title="Pengingat bisnis dan jamnya" data-keywords="pengingat pengingat bisnis notifikasi bisnis reminder jam pengingat ingatkan piutang jatuh tempo stok tipis ringkasan mingguan ringkasan senin business reminders notification time">
-        <h3>Pengingat bisnis dan jamnya <span class="tut-badge">Pro</span></h3>
+        <h3>Pengingat bisnis dan jamnya <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pengingat piutang jatuh tempo, bon pemasok, stok tipis, tagihan rutin dan ringkasan mingguan, dengan satu jam untuk semua.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Pengingat.</li>
@@ -1349,26 +1411,26 @@
         </ol>
       </article>
       <article class="tut-card" id="widget_bisnis" data-title="Widget bisnis di layar utama" data-keywords="widget bisnis widget usaha widget layar utama widget toko business widget home screen widget">
-        <h3>Widget bisnis di layar utama <span class="tut-badge">Pro</span></h3>
+        <h3>Widget bisnis di layar utama <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pasang widget usaha di layar utama HP.</p>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Widget layar utama.</li>
           <li>Ikuti petunjuk HP untuk menaruh widgetnya di layar utama.</li>
         </ol>
       </article>
-      <article class="tut-card" id="preorder" data-title="Pre-order (pesanan diambil nanti, DP, kalender)" data-keywords="pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup">
-        <h3>Pre-order (pesanan diambil nanti, DP, kalender) <span class="tut-badge">Pro</span></h3>
+      <article class="tut-card" id="preorder" data-title="Pre-order (pesanan diambil nanti, DP, kalender)" data-keywords="ubah pre-order revisi pesanan tambah barang pesanan ganti jumlah pesanan ubah pesanan edit pre-order change pre-order change order items pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup">
+        <h3>Pre-order (pesanan diambil nanti, DP, kalender) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Terima pesanan untuk tanggal tertentu dengan DP, lihat kalendernya, rekap yang harus dibuat, lalu selesaikan jadi nota.</p>
         <ol>
-          <li>Di Beranda Bisnis ketuk Jual, pilih produknya, lalu ketuk Bayar.</li>
-          <li>Ketuk Pesanan diambil nanti (pre-order). Isi tanggal dan jam, Diambil atau Dikirim, DP (Belum, 50%, Lunas, atau Atur), Nama pembeli, dan Catatan pesanan, lalu ketuk Simpan pesanan.</li>
+          <li>Di Beranda Bisnis ketuk Jual, pilih produknya. Kalau ada potongan harga atau ongkos kirim, ketuk Diskon atau Ongkir di keranjang, lalu ketuk Bayar.</li>
+          <li>Ketuk Pesanan diambil nanti (pre-order). Total, DP, dan sisa bayar sudah memakai diskon dan ongkirnya (detail pesanan menulis baris Diskon dan Ongkir). Isi Isi tanggal dan jam, Diambil atau Dikirim, DP (Belum, 50%, Lunas, atau Atur), Nama pembeli, dan Catatan pesanan, lalu ketuk Simpan pesanan.</li>
           <li>Lihat semua pesanan di Lainnya › Pre-order: tab Kalender (angka = jumlah pesanan, ketuk tanggal; Rekap buat untuk yang harus dibuat) atau Daftar (Mendatang, Belum DP, Selesai, Batal).</li>
-          <li>Ketuk sebuah pesanan: ketuk langkah Dibuat lalu Siap, Google Kalender untuk menambah ke kalender, Bukti pesanan (PDF, Foto atau Teks) untuk pembeli, Ingatkan WA ke pembeli. Selesai · terima sisa membuat nota di tanggal ambil; DP ikut jadi bagian nota.</li>
+          <li>Ketuk sebuah pesanan: ketuk langkah Dibuat lalu Siap, ⋮ › Ubah barang untuk merevisi isinya (barang, jumlah, harga, Diskon, Ongkir; lalu Simpan perubahan, DP tetap, kalau total jadi lebih kecil dari DP selisihnya bisa dikembalikan ke pembeli), Google Kalender untuk menambah ke kalender, Bukti pesanan (PDF, Foto atau Teks) untuk pembeli, Ingatkan WA ke pembeli. Selesai · terima sisa membuat nota di tanggal ambil; DP ikut jadi bagian nota.</li>
           <li>Batal: menu ⋮ › Batalkan, lalu pilih uang DP Dikembalikan, Hangus (jadi Pendapatan lain), atau Sebagian. Pindah tanggal juga ada di ⋮.</li>
         </ol>
       </article>
       <article class="tut-card" id="atur_preorder" data-title="Atur pre-order (batas per hari, DP bawaan, notifikasi)" data-keywords="atur pre-order ingatkan dp dp belum dibayar batas pesanan per hari pesanan penuh dp bawaan otomatis google kalender tombol di notifikasi pre-order settings pre-order reminders daily order limit default deposit">
-        <h3>Atur pre-order (batas per hari, DP bawaan, notifikasi) <span class="tut-badge">Pro</span></h3>
+        <h3>Atur pre-order (batas per hari, DP bawaan, notifikasi) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Notifikasi pesanan (sehari sebelumnya, 2 jam sebelum diambil, DP belum dibayar), batas pesanan per hari, DP bawaan, dan tambah otomatis ke Google Kalender.</p>
         <ol>
           <li>Buka Lainnya › Pre-order, lalu ketuk ikon Atur di kanan atas. Bisa juga dari Pengaturan Bisnis › Pengingat › Pre-order.</li>
@@ -1378,7 +1440,7 @@
         </ol>
       </article>
       <article class="tut-card" id="catatan_bisnis" data-title="Catatan (uang masuk atau keluar yang dicatat sendiri)" data-keywords="catatan catat tombol catat catatan bisnis lihat catatan catatan pengeluaran catatan pemasukan di mana catatan masuk laporan sebagai tidak dihitung laba non-laba business notes recorded notes where did my note go">
-        <h3>Catatan (uang masuk atau keluar yang dicatat sendiri) <span class="tut-badge">Pro</span></h3>
+        <h3>Catatan (uang masuk atau keluar yang dicatat sendiri) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Uang masuk atau keluar yang kamu catat dengan tombol Catat tampil di Penjualan › Catatan, dengan label masuk ke laporan sebagai apa.</p>
         <ol>
           <li>Ketuk tombol Catat di bawah tombol + untuk mencatat uang masuk atau keluar biasa, lalu simpan.</li>
@@ -1388,7 +1450,7 @@
         </ol>
       </article>
       <article class="tut-card" id="laporan_bisnis" data-title="Laporan bisnis (tab-tabnya)" data-keywords="laporan bisnis laporan usaha tab laporan ringkasan arus kas neraca modal prive produk terlaris pembeli jam ramai setahun kanal business report cash flow balance sheet best seller">
-        <h3>Laporan bisnis (tab-tabnya) <span class="tut-badge">Pro</span></h3>
+        <h3>Laporan bisnis (tab-tabnya) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Ringkasan, Keuangan, Laba rugi, Arus kas, Neraca, Modal &amp; prive, Produk, Pembeli, Jam ramai, Bahan &amp; belanja, Piutang, Kanal, Setahun dan Pajak.</p>
         <ol>
           <li>Buka tab Laporan di Mode Bisnis.</li>
@@ -1397,7 +1459,7 @@
         </ol>
       </article>
       <article class="tut-card" id="arti_kartu_keuangan" data-title="Arti kartu di tab Keuangan (margin, titik impas, kas cukup untuk)" data-keywords="margin margin kotor margin bersih titik impas impas kas cukup untuk uang usaha sekarang biaya omzet kesehatan keuangan apa artinya artinya break even gross margin net margin runway what does it mean">
-        <h3>Arti kartu di tab Keuangan (margin, titik impas, kas cukup untuk) <span class="tut-badge">Pro</span></h3>
+        <h3>Arti kartu di tab Keuangan (margin, titik impas, kas cukup untuk) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Penjelasan Uang usaha sekarang, Kas cukup untuk, Margin kotor, Margin bersih, Titik impas dan Biaya / omzet.</p>
         <ol>
           <li>Buka Laporan › Keuangan dan ketuk kartunya; muncul penjelasannya, ketuk Mengerti untuk menutup.</li>
@@ -1408,7 +1470,7 @@
         </ol>
       </article>
       <article class="tut-card" id="omzet_beda_uang_masuk" data-title="Kenapa omzet beda dengan uang masuk" data-keywords="kenapa omzet beda omzet beda omzet tidak sama uang masuk beda laba tidak cocok selisih laporan kenapa laba beda dengan saldo cash basis why sales differ profit does not match mismatch">
-        <h3>Kenapa omzet beda dengan uang masuk <span class="tut-badge">Pro</span></h3>
+        <h3>Kenapa omzet beda dengan uang masuk <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Laporan dihitung dari uang yang benar-benar masuk dan keluar. Nota yang belum lunas, prive dan setoran modal tidak ikut.</p>
         <ol>
           <li>Laporan dihitung dari uang yang sudah masuk dan keluar, bukan dari nota saja.</li>
@@ -1418,7 +1480,7 @@
         </ol>
       </article>
       <article class="tut-card" id="scan_barcode_kasir" data-title="Scan barcode saat jual dan bunyinya" data-keywords="scan scan barcode barcode bunyi scan suara scan bunyi tit matikan suara scan scanner barcode sound beep scan sound">
-        <h3>Scan barcode saat jual dan bunyinya <span class="tut-badge">Pro</span></h3>
+        <h3>Scan barcode saat jual dan bunyinya <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Scan barcode produk untuk menambah ke keranjang. Ada bunyi &quot;tit&quot; saat berhasil dan bunyi lain bila belum terdaftar, bisa dimatikan.</p>
         <ol>
           <li>Di Beranda Bisnis ketuk Jual, lalu ketuk ikon Scan barcode.</li>
@@ -1428,7 +1490,7 @@
         </ol>
       </article>
       <article class="tut-card" id="jual_suara_ketik" data-title="Jual pakai suara atau ketik" data-keywords="jual suara jual pakai suara jual ketik catat jualan cepat quick sale ucapkan voice sale sell by voice dictate">
-        <h3>Jual pakai suara atau ketik <span class="tut-badge">Pro</span></h3>
+        <h3>Jual pakai suara atau ketik <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Sebut atau ketik &quot;2 kopi 1 roti&quot; dan keranjang terisi sendiri.</p>
         <ol>
           <li>Di Beranda Bisnis ketuk Jual.</li>
@@ -1437,7 +1499,7 @@
         </ol>
       </article>
       <article class="tut-card" id="lacak_stok" data-title="Lacak stok produk (dan stok minus)" data-keywords="lacak stok stok stok minus stok negatif stok habis stok tidak berkurang jasa titipan track stock negative stock out of stock">
-        <h3>Lacak stok produk (dan stok minus) <span class="tut-badge">Pro</span></h3>
+        <h3>Lacak stok produk (dan stok minus) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Nyalakan Lacak stok di produk agar stok berkurang tiap jual. Matikan untuk jasa atau titipan.</p>
         <ol>
           <li>Buka Lainnya › Produk, lalu ketuk produknya atau tambah produk baru.</li>
@@ -1446,7 +1508,7 @@
         </ol>
       </article>
       <article class="tut-card" id="transfer_antar_bisnis" data-title="Pindah uang antar wallet usaha atau ke bisnis lain" data-keywords="pindah uang usaha transfer antar bisnis tarik saldo shopee pindah wallet usaha ke bisnis lain antar bisnis pindah saldo tarik saldo marketplace transfer antar wallet usaha move business money transfer between businesses withdraw marketplace balance">
-        <h3>Pindah uang antar wallet usaha atau ke bisnis lain <span class="tut-badge">Pro</span></h3>
+        <h3>Pindah uang antar wallet usaha atau ke bisnis lain <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Pindahkan uang antar wallet usaha (mis. tarik saldo Shopee) atau ke bisnismu yang lain. Tidak dihitung sebagai omzet.</p>
         <ol>
           <li>Buka Lainnya › Pindah uang usaha (di Mode Bisnis).</li>
@@ -1455,7 +1517,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ringkasan_gabungan" data-title="Ringkasan Gabungan (Pribadi + semua bisnis)" data-keywords="ringkasan gabungan gabungan semua bisnis pribadi dan bisnis total semua combined summary all businesses">
-        <h3>Ringkasan Gabungan (Pribadi + semua bisnis) <span class="tut-badge">Pro</span></h3>
+        <h3>Ringkasan Gabungan (Pribadi + semua bisnis) <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Lihat uang pribadi dan semua bisnismu berdampingan.</p>
         <ol>
           <li>Buka Lainnya › Ringkasan Gabungan.</li>
@@ -1463,7 +1525,7 @@
         </ol>
       </article>
       <article class="tut-card" id="bisnis_baru_ganti" data-title="Buat bisnis baru dan ganti profil" data-keywords="bisnis baru buat bisnis tambah usaha usaha kedua ganti profil ganti bisnis hapus bisnis ubah nama bisnis multi bisnis new business switch profile second business">
-        <h3>Buat bisnis baru dan ganti profil <span class="tut-badge">Pro</span></h3>
+        <h3>Buat bisnis baru dan ganti profil <span class="tut-badge">Max</span></h3>
         <p class="tut-intro">Punya lebih dari satu usaha? Buat bisnis baru dan pindah antara Pribadi dan bisnis-bisnismu.</p>
         <ol>
           <li>Ketuk pill profil di atas Beranda (atau Lainnya › Ganti profil).</li>
@@ -1472,16 +1534,16 @@
         </ol>
       </article>
       <article class="tut-card" id="mulai_jualan" data-title="Mulai jualan untuk pertama kali" data-keywords="mulai jualan jualan pertama penjualan pertama pertama kali jualan mulai usaha baru mulai usaha catat jualan pertama first sale start selling start my business record my first sale getting started with sales">
-        <h3>Mulai jualan untuk pertama kali <span class="tut-badge">Pro</span></h3>
+        <h3>Mulai jualan untuk pertama kali <span class="tut-badge">Max</span></h3>
         <ol>
-          <li>Buka Lainnya › Ganti profil, lalu buat bisnis baru (atau pilih bisnismu) dan ikuti langkah pembuatannya.</li>
+          <li>Buka Lainnya › Ganti profil, lalu ketuk Bisnis baru (atau pilih bisnismu). Langkah 1: nama dan jenis usaha. Langkah 2: centang tempat uang jualan masuk; isi Modal awal bila ada, lalu pilih Dari (wallet pribadi) dan Masuk ke (wallet usaha yang dicentang). Langkah 3: pilih warna, lalu Buka toko. Jenis dan warna dipilih sekali, tidak ditanya lagi.</li>
           <li>Tambah produk: Lainnya › Produk dan Stok › Tambah produk (nama, harga jual, modal, stok bila dipantau).</li>
           <li>Di Beranda Bisnis ketuk Jual, ketuk produknya (atau Item bebas), lalu Bayar dan pilih Tunai, Transfer, atau QRIS.</li>
           <li>Di layar Penjualan tersimpan: Nota, WA untuk mengirim ke pembeli, atau Jual lagi.</li>
         </ol>
       </article>
       <article class="tut-card" id="bon_pelanggan" data-title="Catat bon pelanggan dan menagihnya" data-keywords="catat bon pelanggan bon pelanggan pelanggan ngutang pelanggan utang pelanggan bayar nanti jual bayar nanti tagih pelanggan nagih pelanggan customer credit customer owes me sell on credit collect from customers unpaid customers">
-        <h3>Catat bon pelanggan dan menagihnya <span class="tut-badge">Pro</span></h3>
+        <h3>Catat bon pelanggan dan menagihnya <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Di Jual, isi keranjangnya lalu ketuk Bayar dan pilih Bayar nanti. Isi nama pelanggan (wajib untuk yang belum bayar).</li>
           <li>Simpan. Penjualannya jadi piutang. Lihat semuanya di tab Penjualan › Belum lunas.</li>
@@ -1490,7 +1552,7 @@
         </ol>
       </article>
       <article class="tut-card" id="tutup_kasir_harian" data-title="Tutup kasir tiap hari" data-keywords="tutup kasir harian tutup kasir tiap hari tutup kasir tiap malam tutup toko hitung laci tiap hari cek laci kasir rekap harian close the till daily daily closing end of day closing count the drawer close the register">
-        <h3>Tutup kasir tiap hari <span class="tut-badge">Pro</span></h3>
+        <h3>Tutup kasir tiap hari <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Rekap kasir, lalu ketuk Tutup kasir di bawah rekap.</li>
           <li>Lihat Seharusnya di laci (penjualan tunai hari ini), lalu hitung uang di laci (boleh per pecahan).</li>
@@ -1499,7 +1561,7 @@
         </ol>
       </article>
       <article class="tut-card" id="gaji_karyawan" data-title="Catat gaji karyawan" data-keywords="gaji karyawan bayar karyawan bayar gaji karyawan gaji pegawai upah karyawan catat gaji karyawan gajian karyawan employee pay pay my employees employee salary payroll staff salary pay staff">
-        <h3>Catat gaji karyawan <span class="tut-badge">Pro</span></h3>
+        <h3>Catat gaji karyawan <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Biaya tetap tiap bulan: Lainnya › Transaksi Berulang › tambah, Pengeluaran, Jumlah gaji, wallet usaha, Kategori Gaji Karyawan, Frekuensi Bulanan, Mulai dari tanggal gajian.</li>
           <li>Atau catat sekali saja: Beranda Bisnis › Belanja, pilih Biaya, isi gajinya, lalu Bayar.</li>
@@ -1508,7 +1570,7 @@
         </ol>
       </article>
       <article class="tut-card" id="ambil_uang_usaha" data-title="Ambil uang usaha untuk pribadi" data-keywords="ambil uang usaha ambil uang usaha buat pribadi ambil uang toko tarik uang usaha prive uang usaha ke pribadi ambil laba owner draw take money out of the business withdraw from business take money from my business">
-        <h3>Ambil uang usaha untuk pribadi <span class="tut-badge">Pro</span></h3>
+        <h3>Ambil uang usaha untuk pribadi <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Buka Lainnya › Uang Pemilik.</li>
           <li>Pilih Ke pribadi, lalu wallet usaha asalnya dan wallet pribadi tujuannya.</li>
@@ -1517,7 +1579,7 @@
         </ol>
       </article>
       <article class="tut-card" id="untung_bulan_ini" data-title="Cek untung bulan ini" data-keywords="untung bulan ini laba bulan ini cek untung cek laba untung usaha bulan ini berapa untung bulan ini laba rugi bulan ini profit this month this month&#x27;s profit how much profit check my profit profit and loss this month">
-        <h3>Cek untung bulan ini <span class="tut-badge">Pro</span></h3>
+        <h3>Cek untung bulan ini <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Buka tab Laporan di Mode Bisnis.</li>
           <li>Pilih tab laba rugi dan periodenya (bulan ini).</li>
@@ -1526,7 +1588,7 @@
         </ol>
       </article>
       <article class="tut-card" id="kirim_nota_qris" data-title="Kirim nota yang ada QRIS-nya" data-keywords="kirim nota pakai qris nota ada qris nota dengan qris pasang qris di nota qris di nota nota ada kode qr send receipt with qris receipt with qris qris on the receipt put qris on the receipt">
-        <h3>Kirim nota yang ada QRIS-nya <span class="tut-badge">Pro</span></h3>
+        <h3>Kirim nota yang ada QRIS-nya <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Buka Lainnya › Pengaturan Bisnis › Nota &amp; cara bayar. Di Cara bayar ketuk Tambah, pilih QRIS, lalu Pilih gambar QRIS dari galeri. Ketuk Simpan.</li>
           <li>Buat penjualannya dari Beranda Bisnis › Jual.</li>
@@ -1535,7 +1597,7 @@
         </ol>
       </article>
       <article class="tut-card" id="belanja_bahan_hpp" data-title="Catat belanja bahan dan lihat HPP" data-keywords="catat belanja bahan dan lihat hpp lihat hpp hitung hpp hpp bulan ini harga pokok bulan ini berapa hpp cek hpp see the cogs cost of goods this month work out cogs check cogs">
-        <h3>Catat belanja bahan dan lihat HPP <span class="tut-badge">Pro</span></h3>
+        <h3>Catat belanja bahan dan lihat HPP <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Di Beranda Bisnis buka Belanja, pilih Bahan atau Stok jual, tambah barang dan harganya, lalu Bayar dan Simpan.</li>
           <li>Belanja bahan dan stok masuk laporan sebagai Harga pokok (HPP). Kategori yang dihitung HPP diatur di Lainnya › Pengaturan Bisnis › Kategori &amp; bahan (ketuk label kategori untuk memindahkan antara pokok dan operasional).</li>
@@ -1543,16 +1605,16 @@
         </ol>
       </article>
       <article class="tut-card" id="terima_pesanan_dp" data-title="Terima pesanan untuk tanggal tertentu dengan DP" data-keywords="terima pesanan kue terima pesanan dengan dp pesanan kue ulang tahun pesanan untuk tanggal pesanan katering pesanan hampers pre order kue catat dp pesanan terima dp take an order with a deposit order for a date cake order catering order take a pre-order">
-        <h3>Terima pesanan untuk tanggal tertentu dengan DP <span class="tut-badge">Pro</span></h3>
+        <h3>Terima pesanan untuk tanggal tertentu dengan DP <span class="tut-badge">Max</span></h3>
         <ol>
-          <li>Di Beranda Bisnis ketuk Jual, pilih produknya, ketuk Bayar, lalu Pesanan diambil nanti (pre-order).</li>
+          <li>Di Beranda Bisnis ketuk Jual, pilih produknya, ketuk Diskon atau Ongkir di keranjang kalau perlu, ketuk Bayar, lalu Pesanan diambil nanti (pre-order).</li>
           <li>Isi tanggal dan jam ambil, Diambil atau Dikirim, DP (mis. 50%), Nama pembeli, dan Catatan pesanan (mis. tulisan di kue). Ketuk Simpan pesanan · DP.</li>
           <li>Lihat tanggalnya di Lainnya › Pre-order › Kalender; Rekap buat menunjukkan yang harus dibuat.</li>
           <li>Saat diambil, buka pesanannya dan ketuk Selesai · terima sisa. Nota dibuat di tanggal ambil dan DP ikut jadi bagiannya.</li>
         </ol>
       </article>
       <article class="tut-card" id="catat_biaya_usaha" data-title="Catat biaya usaha dan lihat masuk ke mana" data-keywords="catat biaya usaha catat biaya operasional catat pengeluaran usaha catat listrik usaha bayar biaya usaha catat gaji karyawan usaha record a business cost record an operating cost record business expense">
-        <h3>Catat biaya usaha dan lihat masuk ke mana <span class="tut-badge">Pro</span></h3>
+        <h3>Catat biaya usaha dan lihat masuk ke mana <span class="tut-badge">Max</span></h3>
         <ol>
           <li>Ketuk tombol Catat di bawah tombol + (atau + › Bayar biaya), pilih Pengeluaran, isi jumlah dan kategori, lalu simpan.</li>
           <li>Di bawah kategori ada keterangan &quot;Masuk laporan sebagai ...&quot; (HPP, Biaya operasional, atau Tidak dihitung dalam laba).</li>
@@ -1566,19 +1628,16 @@
     <section class="tut-cta">
       <h2>Siap mencoba?</h2>
       <p>Gratis di Google Play.</p>
-      <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download di Play Store</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener">Download di Play Store</a>
     </section>
 
   </div>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="../" class="brand brand--footer">
-      <img src="../assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo brand__logo--light" />
-      <img src="../assets/artosku-logo-dark.svg" alt="" width="102" height="42" class="brand__logo brand__logo--dark" aria-hidden="true" />
-    </a>
-    <nav class="footer__links" aria-label="Navigasi footer">
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>&copy; Artosku. Dibuat oleh Andi Pramana.</span>
+    <nav aria-label="Navigasi footer">
       <a href="../#fitur">Fitur</a>
       <a href="../#paket">Paket</a>
       <a href="./">Panduan</a>
@@ -1588,10 +1647,8 @@
       <a href="../terms.html">Syarat dan Ketentuan</a>
       <a href="../en/tutorial/" hreflang="en" lang="en">English</a>
     </nav>
-    <p class="footer__copy">&copy; <span id="year"></span> Artosku. Dibuat oleh Andi Pramana.</p>
   </div>
 </footer>
-<script src="../js/main.js"></script>
 <script src="../js/tutorial.js"></script>
 </body>
 </html>

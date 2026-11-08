@@ -104,7 +104,7 @@ def check_tutorial(app_dir):
     for lang, content in [("ID", id_html), ("EN", en_html)]:
         for m in pro_badge_pattern.finditer(content):
             badge_text = m.group(1).strip()
-            if badge_text != "Pro":
+            if badge_text not in ("Pro", "Max"):
                 errors.append(f"Badge Pro di {lang} memuat teks tidak diizinkan: {badge_text}")
 
         for pat, desc in SUBSCRIPTION_PATTERNS:
@@ -112,7 +112,7 @@ def check_tutorial(app_dir):
             if hits:
                 errors.append(f"Ditemukan pola {desc} di {lang}: {hits}")
 
-    print("  [OK] Semua badge bertanda 'Pro' tanpa harga/kuota")
+    print("  [OK] Semua badge bertanda Pro atau Max tanpa harga/kuota")
     print("  [OK] Tidak ada pola harga langganan (/bulan) atau kuota angka promosi")
 
     # Audit kemunculan Rp / ribu / rb
