@@ -3,517 +3,312 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Artosku — Catat Keuangan, Tetap Jalan Saat Offline</title>
-<meta name="description" content="Artosku membantu mencatat keuangan dengan data utama tersimpan di perangkat. Unduh gratis sekarang di Google Play." />
-<meta name="theme-color" content="#538248" />
-
+<title>Artosku | Catat keuangan, datanya di HP-mu</title>
+<meta name="description" content="Catat pengeluaran dengan mengetik, bicara, atau foto struk. Catatan tersimpan di HP-mu. Ada Minyam yang menemani. Gratis di Google Play." />
+<meta name="theme-color" content="#F6FAF3" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Artosku — Catat Keuangan Lebih Mudah, Hidup Lebih Terarah" />
-<meta property="og:description" content="Catat keuangan dengan mudah. Data disimpan di HP kamu, tetap privat, dan bisa dibackup ke Google Drive milikmu." />
-<meta property="og:image" content="assets/artosku-app-icon.png" />
+<meta property="og:title" content="Artosku: catat keuangan semudah bercerita" />
+<meta property="og:description" content="Catatan keuangan tersimpan di HP-mu. Catat dengan AI semudah bercerita, ditemani Minyam." />
+<meta property="og:image" content="https://artosku.my.id/assets/og-cover.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Artosku — Catat Keuangan Lebih Mudah, Hidup Lebih Terarah" />
-<meta name="twitter:description" content="Catat keuangan dengan mudah. Data disimpan di HP kamu, tetap privat, dan bisa dibackup ke Google Drive milikmu." />
-<meta name="twitter:image" content="assets/artosku-app-icon.png" />
-
+<meta name="twitter:title" content="Artosku: catat keuangan semudah bercerita" />
+<meta name="twitter:description" content="Catatan keuangan tersimpan di HP-mu. Catat dengan AI semudah bercerita, ditemani Minyam." />
+<meta name="twitter:image" content="https://artosku.my.id/assets/og-cover.png" />
 <link rel="icon" href="assets/artosku-app-icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/artosku-app-icon.png" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
-
-<link rel="stylesheet" href="css/styles.css" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "Artosku",
-  "operatingSystem": "ANDROID",
-  "applicationCategory": "FinanceApplication",
-  "description": "Aplikasi pencatatan keuangan pribadi — pemasukan, pengeluaran, anggaran, dan laporan.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" }
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="preload" as="image" href="assets/minyam/idle.webp" type="image/webp" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Artosku","operatingSystem":"ANDROID","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"}}</script>
 <link rel="alternate" hreflang="id" href="https://artosku.my.id/" />
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/" />
 </head>
-<body>
+<body data-lang="id" data-asset="" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Ketuk produk, pilih cara bayar, lalu buat nota.", "biz_cart_empty": "Belum ada yang dipilih.", "biz_thanks": "Terima kasih", "biz_paid": "Bayar", "biz_new": "Transaksi baru", "biz_make": "Buat nota", "biz_pays": ["Tunai", "QRIS", "Transfer"], "biz_products": [["Ayam geprek", 18000], ["Es teh", 5000], ["Nasi", 5000], ["Tahu goreng", 3000], ["Sambal ekstra", 2000]], "biz_date_label": "Hari ini"}'>
+<a class="skip" href="#main">Langsung ke konten</a>
 
-<a class="skip-link" href="#main">Langsung ke konten</a>
-
-<div class="cursor-glow" aria-hidden="true"></div>
-
-<header class="navbar" id="navbar">
-  <div class="container navbar__inner">
-    <a href="#top" class="brand">
-      <img src="assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo" />
-    </a>
-
-    <nav class="nav-links" aria-label="Navigasi utama">
-      <a href="#fitur">Fitur</a>
-      <a href="#paket">Paket</a>
-      <a href="tutorial/">Panduan</a>
-      <a href="#kenapa">Kenapa Artosku</a>
-      <a href="#unduh">Download</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontak">Kontak</a>
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__brand" href="#top" aria-label="Artosku"><img src="assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
+    <nav class="nav__links" aria-label="Menu">
+      <a href="#coba">Satu kalimat</a><a href="#cara">Cara mencatat</a><a href="#data">Datamu</a><a href="#fitur">Fitur</a><a href="#bisnis">Bisnis</a><a href="#minyam">Minyam</a><a href="#paket">Paket</a><a href="#faq">FAQ</a>
     </nav>
-
-    <div class="navbar__actions">
-      <a href="#unduh" class="btn btn--primary btn--sm">
-        <span>Download Artosku</span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="nav__end">
+      <a class="nav__lang" href="en/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--small" href="#unduh">Unduh</a>
     </div>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <nav aria-label="Navigasi mobile">
-    <a href="#fitur">Fitur</a>
-    <a href="#paket">Paket</a>
-    <a href="tutorial/">Panduan</a>
-    <a href="#kenapa">Kenapa Artosku</a>
-    <a href="#unduh">Download</a>
-    <a href="#faq">FAQ</a>
-    <a href="#kontak">Kontak</a>
-    <a href="#unduh" class="btn btn--primary">Download Artosku</a>
-  </nav>
-</div>
-
 <main id="main">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__sky"></div>
-      <div class="hero__glow hero__glow--1"></div>
-      <div class="hero__glow hero__glow--2"></div>
-      <img class="parallax-layer" data-speed="0.06" src="assets/layer-4-back.png" alt="" />
-      <img class="parallax-layer" data-speed="0.12" src="assets/layer-3.png" alt="" />
-      <img class="parallax-layer" data-speed="0.20" src="assets/layer-2.png" alt="" />
-      <img class="parallax-layer parallax-layer--front" data-speed="0.32" src="assets/layer-1-front.png" alt="" />
+<section class="hero" id="top">
+  <div class="wrap hero__in">
+    <div class="hero__copy">
+      <h1>Catatanmu di <span class="nw">HP-mu</span>. Mencatat semudah bercerita.</h1>
+      <p class="hero__sub">Ketik, bicara, atau foto struk. AI menyiapkan catatannya, kamu yang memutuskan.</p>
+      <div class="hero__cta">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="assets/google-play-badge.svg" alt="Dapatkan di Google Play" width="160" height="48" /></a>
+        <a class="btn btn--ghost" href="#coba">Lihat cara kerjanya</a>
+      </div>
     </div>
+    <div class="hero__stage">
+      <div class="bubble" id="heroBubble" aria-live="polite">Hai, aku Minyam. Ketuk aku.</div>
+      <button class="mascot mascot--hero" id="heroMascot" type="button" aria-label="Minyam, maskot Artosku. Ketuk untuk menyapa.">
+        <img id="heroMascotImg" src="assets/minyam/idle.webp" alt="" width="400" height="400" fetchpriority="high" />
+      </button>
+    </div>
+  </div>
+</section>
 
-    <div class="container hero__grid">
-      <div class="hero__copy" data-reveal>
-        <p class="eyebrow" data-reveal-child>
-          <span class="eyebrow__dot"></span> Sudah tersedia di Google Play
-        </p>
-        <h1 class="hero__title" data-reveal-child>
-          Catat keuangan,<br />
-          <span class="text-accent">tetap jalan saat offline.</span>
-        </h1>
-        <p class="hero__desc" data-reveal-child>
-          Catatan keuangan utama tersimpan di perangkatmu. Saat butuh, buat backup terenkripsi ke Google Drive milikmu sendiri.
-        </p>
-
-        <div class="hero__cta" data-reveal-child>
-          <a href="#unduh" class="btn btn--primary btn--lg btn--shimmer">
-            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0-5-5m5 5 5-5M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Download Artosku Gratis</span>
-          </a>
-          <a href="#fitur" class="btn btn--ghost btn--lg">
-            <span>Lihat Fitur</span>
-            <svg class="icon icon--arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+<section class="sec sec--tint" id="coba">
+  <div class="wrap">
+    <h2>Satu kalimat, banyak catatan</h2>
+    <p class="lead">Satu kalimat cerita bisa berisi banyak transaksi sekaligus.</p>
+    <div class="try">
+      <div class="try__in">
+        <div class="try__form">
+          <p class="try__label" id="tryLabel">Ceritakan keuanganmu</p>
+          <div class="try__box">
+            <div class="try__mic" id="tryMic" aria-hidden="true"><i class="ph ph-microphone"></i><span class="wave"><b></b><b></b><b></b><b></b></span></div>
+            <textarea id="tryInput" rows="4" readonly tabindex="-1" aria-labelledby="tryLabel" placeholder="gaji masuk 5jt ke rekening BCA, transfer 1jt dari BCA ke pocket dana darurat, makan siang 25rb pakai GoPay, parkir 2rb cash"></textarea>
+          </div>
+          <div class="try__btns">
+            <button class="btn btn--ghost" id="tryReplay" type="button"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i>Ulangi</button>
+          </div>
         </div>
-
-        <div class="hero__trust" data-reveal-child>
-          <div class="hero__trust-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.6 3.2 8.3 8 9 4.8-.7 8-4.4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <strong>Data keuangan tetap di HP kamu.</strong>
-            <span>Gunakan aplikasi tanpa internet untuk mencatat. Kalau ingin, backup terenkripsi bisa disimpan ke Google Drive milikmu sendiri.</span>
-          </div>
+        <div class="chips" id="tryChips" role="group" aria-label="Satu kalimat, banyak catatan"></div>
+        <p class="note"><i class="ph ph-info" aria-hidden="true"></i> Contoh. Di aplikasi, AI membaca kalimatmu sendiri.</p>
+      </div>
+      <div class="try__out">
+        <div class="try__mascot"><img id="tryMascotImg" src="assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" /></div>
+        <div class="txs" aria-live="polite">
+          <p class="tx__empty" id="tryEmpty">Hasilnya muncul di sini.</p>
+          <p class="reading" id="tryReading" hidden>AI membaca<span class="dots"><b></b><b></b><b></b></span></p>
+          <ul class="txlist" id="txList"></ul>
+          <p class="txsum" id="txSum" hidden></p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="hero__visual" id="heroVisual" data-reveal>
-        <div class="phone-stage" id="phoneStage">
-          <div class="floating-card floating-card--chart" data-speed="0.45">
-            <div class="floating-tilt">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V9m6 10V4m6 15v-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-            </div>
+<section class="sec" id="cara">
+  <div class="wrap">
+    <h2>Cara mencatat</h2>
+    <p class="lead">Pilih yang paling cepat untukmu hari ini.</p>
+    <div class="how">
+      <div class="tabs" role="tablist" aria-label="Cara mencatat">
+        <button role="tab" id="tab-type" aria-controls="pan-type" aria-selected="true"><i class="ph ph-keyboard" aria-hidden="true"></i>Ketik</button>
+        <button role="tab" id="tab-voice" aria-controls="pan-voice" aria-selected="false" tabindex="-1"><i class="ph ph-microphone" aria-hidden="true"></i>Suara</button>
+        <button role="tab" id="tab-photo" aria-controls="pan-photo" aria-selected="false" tabindex="-1"><i class="ph ph-receipt" aria-hidden="true"></i>Foto struk</button>
+        <button role="tab" id="tab-bank" aria-controls="pan-bank" aria-selected="false" tabindex="-1"><i class="ph ph-bank" aria-hidden="true"></i>Mutasi bank</button>
+        <button role="tab" id="tab-notif" aria-controls="pan-notif" aria-selected="false" tabindex="-1"><i class="ph ph-bell-ringing" aria-hidden="true"></i>Notifikasi</button>
+      </div>
+      <div class="how__panels">
+        <div role="tabpanel" id="pan-type" aria-labelledby="tab-type" class="pan">
+          <div class="pan__copy"><h3>Tulis seperti chat.</h3><p>Satu kalimat bisa berisi beberapa transaksi. AI memecahnya dan mengisi nominal, kategori, dan wallet. Kamu cek, lalu simpan.</p></div>
+          <div class="phone">
+            <div class="ui-input"><span>gaji 5jt ke BCA, transfer 1jt ke dana darurat, makan siang 25rb pakai GoPay</span><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
+            <ul class="ui-rows">
+              <li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>Gaji</span><b class="in">+Rp5.000.000</b></li>
+              <li><i class="ph ph-arrows-left-right" aria-hidden="true"></i><span>BCA &rarr; Pocket Dana Darurat</span><b>Rp1.000.000</b></li>
+              <li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Makan &middot; GoPay</span><b>-Rp25.000</b></li>
+            </ul>
+            <button class="btn btn--small" type="button" tabindex="-1">Simpan</button>
           </div>
-          <div class="floating-card floating-card--income" data-speed="0.4">
-            <div class="floating-tilt">
-              <span class="floating-card__label">Pemasukan</span>
-              <span class="floating-card__value">+Rp 8.200.000</span>
-            </div>
+        </div>
+        <div role="tabpanel" id="pan-voice" aria-labelledby="tab-voice" class="pan" hidden>
+          <div class="pan__copy"><h3>Ucapkan, jangan ketik.</h3><p>Tekan mikrofon dan sebut transaksinya. Cocok saat tangan penuh atau sedang di jalan.</p></div>
+          <div class="phone">
+            <div class="ui-mic"><i class="ph ph-microphone" aria-hidden="true"></i></div>
+            <p class="ui-say">Mendengarkan...</p>
+            <p class="ui-quote">"bensin lima puluh ribu"</p>
+            <div class="ui-tx"><b>Rp50.000</b><span>Transport &middot; Tunai</span><button class="btn btn--small" type="button" tabindex="-1">Simpan</button></div>
           </div>
-          <div class="floating-dot floating-dot--1" data-speed="0.5"><div class="floating-tilt"></div></div>
-          <div class="floating-dot floating-dot--2" data-speed="0.55"><div class="floating-tilt"></div></div>
-          <div class="floating-spark" data-speed="0.5">
-            <div class="floating-tilt">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 3.6 2.4 5.4 6 6-3.6.6-5.4 2.4-6 6-.6-3.6-2.4-5.4-6-6 3.6-.6 5.4-2.4 6-6Z"/></svg>
-            </div>
+        </div>
+        <div role="tabpanel" id="pan-photo" aria-labelledby="tab-photo" class="pan" hidden>
+          <div class="pan__copy"><h3>Foto struknya.</h3><p>Nama toko dan total dibaca dari foto. Fotonya tetap tersimpan di HP-mu sebagai lampiran.</p></div>
+          <div class="phone">
+            <div class="ui-receipt"><b>Toko Sejahtera</b><i></i><i></i><i></i><i class="short"></i><div><span>Total</span><b>Rp84.500</b></div></div>
+            <div class="ui-tx"><b>Rp84.500</b><span>Toko Sejahtera &middot; 3 barang</span><button class="btn btn--small" type="button" tabindex="-1">Simpan</button></div>
           </div>
-
-          <div class="phone" id="phoneMock">
-            <div class="phone__notch"></div>
-            <div class="phone__screen">
-              <div class="mockscreen">
-                <div class="mockscreen__top">
-                  <span class="mockscreen__label">Ringkasan</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg>
-                </div>
-                <p class="mockscreen__sublabel">Saldo Bersih <span>&#9432;</span></p>
-                <p class="mockscreen__balance">Rp 5.450.000</p>
-                <p class="mockscreen__trend">&#8599; 12% dari bulan lalu</p>
-
-                <div class="mockscreen__chips">
-                  <div class="chip chip--in">
-                    <span>Total Pemasukan</span>
-                    <strong>Rp 8.200.000</strong>
-                  </div>
-                  <div class="chip chip--out">
-                    <span>Total Pengeluaran</span>
-                    <strong>Rp 2.750.000</strong>
-                  </div>
-                </div>
-
-                <p class="mockscreen__section-title">Pengeluaran Bulan Ini</p>
-                <div class="mockscreen__donut-row">
-                  <div class="donut" role="img" aria-label="Diagram pengeluaran per kategori"></div>
-                  <ul class="donut-legend">
-                    <li><i style="background:#538248"></i>Makanan <b>40%</b></li>
-                    <li><i style="background:#6B9B5F"></i>Transportasi <b>25%</b></li>
-                    <li><i style="background:#DFB449"></i>Belanja <b>20%</b></li>
-                    <li><i style="background:#4C7F96"></i>Hiburan <b>15%</b></li>
-                  </ul>
-                </div>
-
-                <div class="mockscreen__tx-head">
-                  <span>Transaksi Terbaru</span>
-                  <span class="mockscreen__link">Lihat semua</span>
-                </div>
-                <ul class="tx-list">
-                  <li>
-                    <span class="tx-icon">&#127860;</span>
-                    <span class="tx-name">Makan Siang</span>
-                    <span class="tx-amount tx-amount--out">-Rp 45.000</span>
-                  </li>
-                  <li>
-                    <span class="tx-icon">&#128188;</span>
-                    <span class="tx-name">Gaji</span>
-                    <span class="tx-amount tx-amount--in">+Rp 8.000.000</span>
-                  </li>
-                  <li>
-                    <span class="tx-icon">&#128663;</span>
-                    <span class="tx-name">Transportasi</span>
-                    <span class="tx-amount tx-amount--out">-Rp 20.000</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        </div>
+        <div role="tabpanel" id="pan-bank" aria-labelledby="tab-bank" class="pan" hidden>
+          <div class="pan__copy"><h3>Tangkapan layar mutasi.</h3><p>Unggah mutasi dari aplikasi bank. Kamu pilih baris mana yang mau dicatat.</p></div>
+          <div class="phone">
+            <p class="ui-say">Pilih yang dicatat</p>
+            <ul class="ui-rows">
+              <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Kedai Kopi</span><b>-Rp32.000</b></li>
+              <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Minimarket</span><b>-Rp18.500</b></li>
+              <li class="off"><i class="ph ph-square" aria-hidden="true"></i><span>Top up</span><b>-Rp100.000</b></li>
+              <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Gaji</span><b class="in">+Rp6.500.000</b></li>
+            </ul>
+          </div>
+        </div>
+        <div role="tabpanel" id="pan-notif" aria-labelledby="tab-notif" class="pan" hidden>
+          <div class="pan__copy"><h3>Dari notifikasi.</h3><p>Notifikasi bank dan e-wallet menjadi draf transaksi. Draf menunggu persetujuanmu, tidak disimpan sendiri.</p></div>
+          <div class="phone">
+            <div class="ui-notif"><i class="ph ph-wallet" aria-hidden="true"></i><div><b>GoPay</b><span>Pembayaran Rp32.000 ke Kedai Kopi berhasil</span></div></div>
+            <div class="ui-tx"><b>Rp32.000</b><span>Draf siap dicek</span><button class="btn btn--small" type="button" tabindex="-1">Simpan</button></div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="scroll-cue" aria-hidden="true"><span></span></div>
-  </section>
-
-  <!-- ============ KENAPA ARTOSKU ============ -->
-  <section class="section" id="kenapa">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Kenapa Artosku</p>
-        <h2 class="section__title">Dibuat supaya kamu betah mencatat, bukan malas mencatat.</h2>
+<section class="sec sec--tint" id="data">
+  <div class="wrap">
+    <h2>Datamu ada di mana?</h2>
+    <p class="lead">Jawaban jujur, tanpa tanda bintang.</p>
+    <div class="data">
+      <div class="data__col data__col--phone">
+        <div class="data__head"><img src="assets/minyam/item_dasi_kupu.webp" alt="" width="72" height="72" loading="lazy" /><h3>Di HP-mu</h3></div>
+        <ul>
+          <li><i class="ph ph-device-mobile" aria-hidden="true"></i>Catatan dan foto struk tersimpan di HP-mu.</li>
+          <li><i class="ph ph-wifi-slash" aria-hidden="true"></i>Catat manual dan notifikasi jalan tanpa internet.</li>
+          <li><i class="ph ph-google-drive-logo" aria-hidden="true"></i>Backup ke Google Drive milikmu sendiri, saat kamu mau.</li>
+        </ul>
       </div>
-
-      <div class="cards-3" data-reveal>
-        <article class="feature-card" data-reveal-child>
-          <div class="feature-card__icon feature-card__icon--a">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 6.5 17.5 11" stroke="currentColor" stroke-width="1.8"/></svg>
-          </div>
-          <h3>Mudah Digunakan</h3>
-          <p>Antarmuka simpel dan intuitif. Catat transaksi cuma butuh beberapa detik, cocok buat kamu yang baru mulai mencatat keuangan.</p>
-        </article>
-
-        <article class="feature-card" data-reveal-child>
-          <div class="feature-card__icon feature-card__icon--b">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.6 3.2 8.3 8 9 4.8-.7 8-4.4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Privasi Lebih Terjaga</h3>
-          <p>Data keuanganmu disimpan di perangkatmu, bukan dikumpulkan untuk dibaca orang lain. Kamu yang memilih kapan ingin membuat backup ke Google Drive sendiri.</p>
-        </article>
-
-        <article class="feature-card" data-reveal-child>
-          <div class="feature-card__icon feature-card__icon--c">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 12V4a8 8 0 1 1-8 8h8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 12 5.6 15.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Laporan Lengkap</h3>
-          <p>Grafik pengeluaran per kategori, tren bulanan, dan perbandingan antar periode &mdash; semuanya jelas dan mudah dipahami.</p>
-        </article>
+      <div class="data__col">
+        <h3>Keluar dari HP, hanya kalau kamu pakai</h3>
+        <ul>
+          <li><i class="ph ph-sparkle" aria-hidden="true"></i>AI dan scan mutasi mengirim teks ke penyedia AI, setelah kamu setuju.</li>
+          <li><i class="ph ph-users-three" aria-hidden="true"></i>Wallet bersama disimpan di server supaya bisa dibuka bersama.</li>
+          <li><i class="ph ph-currency-circle-dollar" aria-hidden="true"></i>Kurs mata uang butuh internet.</li>
+        </ul>
       </div>
     </div>
-  </section>
+    <p class="data__bottom"><b>Tanpa iklan. Datamu tidak dijual.</b> <a href="privacy.html">Baca Kebijakan Privasi</a></p>
+  </div>
+</section>
 
-  <!-- ============ FEATURES ============ -->
-  <section class="section section--soft" id="fitur">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Fitur</p>
-        <h2 class="section__title">Semua yang kamu butuhkan untuk mengelola keuangan.</h2>
+<section class="sec" id="fitur">
+  <div class="wrap">
+    <h2>Yang ada di dalamnya</h2>
+    <div class="bento">
+      <article class="cell cell--wallet"><i class="ph ph-wallet" aria-hidden="true"></i><h3>Wallet dan wallet bersama</h3><p>Pisahkan uang tunai, bank, dan e-wallet. Undang pasangan atau keluarga ke wallet bersama.</p>
+        <div class="mini-wallets"><span>Tunai</span><span>BCA</span><span>GoPay</span><span class="on"><i class="ph ph-users" aria-hidden="true"></i>Bersama</span></div></article>
+      <article class="cell cell--budget"><i class="ph ph-chart-pie-slice" aria-hidden="true"></i><h3>Anggaran</h3><p>Batasi tiap kategori dan lihat sisanya sebelum bulan habis.</p>
+        <div class="mini-budget"><div><span>Makan</span><span>sisa Rp420.000</span></div><meter min="0" max="100" value="58" aria-label="Makan"></meter></div></article>
+      <article class="cell cell--bill"><i class="ph ph-bell-ringing" aria-hidden="true"></i><h3>Tagihan dan pengingat</h3><p>Cicilan dan tagihan rutin diingatkan sebelum jatuh tempo.</p></article>
+      <article class="cell cell--report"><i class="ph ph-chart-line-up" aria-hidden="true"></i><h3>Laporan</h3><p>Ke mana uangmu pergi, per kategori dan per periode yang kamu pilih.</p></article>
+      <article class="cell cell--asset"><i class="ph ph-target" aria-hidden="true"></i><h3>Aset dan target</h3><p>Catat aset, lalu sisihkan uang untuk target tabunganmu.</p></article>
+      <article class="cell cell--biz"><i class="ph ph-storefront" aria-hidden="true"></i><h3>Mode Bisnis <span class="badge">Paket Max</span></h3><p>Kasir, stok, nota, dan pre-order untuk usahamu, terpisah dari catatan pribadi.</p></article>
+    </div>
+    <p class="more"><a class="btn btn--ghost" href="#semua">Lihat semua fitur (108)</a></p>
+  </div>
+</section>
+
+<section class="sec sec--deep" id="bisnis">
+  <div class="wrap">
+    <h2>Mode Bisnis <span class="badge">Paket Max</span></h2>
+    <p class="lead">Catatan usaha terpisah dari catatan pribadi, dalam satu aplikasi.</p>
+    <div class="pos">
+      <div class="pos__menu card">
+        <h3>Proud Chicken</h3>
+        <ul class="pos__items" id="posItems"></ul>
+        <div class="chips" id="posPay" role="group" aria-label="Cara bayar"></div>
+        <p class="pos__total"><span>Total</span><b id="posTotal">Rp0</b></p>
+        <button class="btn" id="posMake" type="button">Buat nota</button>
+        <p class="note">Contoh di browser. Di aplikasi, stok ikut berkurang dan nota bisa dikirim.</p>
       </div>
-
-      <div class="feature-rows">
-        <div class="feature-row" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--a">
-              <div class="mini-line mini-line--head"></div>
-              <div class="mini-pill mini-pill--income">+Rp 8.000.000 &middot; Gaji</div>
-              <div class="mini-pill mini-pill--expense">-Rp 150.000 &middot; Belanja</div>
-              <div class="mini-pill mini-pill--transfer">&#8644; Rp 500.000 &middot; Transfer</div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Catat Cepat, Termasuk dengan AI</span>
-            <h3>Catat pemasukan, pengeluaran, dan transfer tanpa ribet.</h3>
-            <p>Tulis seperti biasa, misalnya “makan siang 25 ribu”. Bantuan AI dapat menyiapkan catatannya untuk kamu cek sebelum disimpan. Bisa juga catat beberapa transaksi sekaligus dan lampirkan foto struk bila perlu.</p>
-          </div>
-        </div>
-
-        <div class="feature-row feature-row--reverse" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--b">
-              <div class="mini-donut"></div>
-              <div class="mini-bars">
-                <span style="--h:40%"></span><span style="--h:70%"></span><span style="--h:55%"></span><span style="--h:85%"></span><span style="--h:60%"></span>
-              </div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Anggaran &amp; Laporan</span>
-            <h3>Pantau anggaran, lihat trennya dari waktu ke waktu.</h3>
-            <p>Atur batas anggaran per kategori, lihat grafik pengeluaran interaktif, dan bandingkan periode mana saja dengan rentang tanggal bebas &mdash; bukan cuma mingguan atau bulanan.</p>
-          </div>
-        </div>
-
-        <div class="feature-row" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--c">
-              <div class="mini-wallet">Dompet Utama <b>Rp 4.200.000</b></div>
-              <div class="mini-wallet">Tabungan Darurat <b>Rp 12.000.000</b></div>
-              <div class="mini-wallet mini-wallet--debt">Piutang &middot; Budi <b>Rp 500.000</b></div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Wallet, Aset &amp; Utang-Piutang</span>
-            <h3>Semua akun dan catatanmu dalam satu tempat.</h3>
-            <p>Kelola banyak wallet dan pocket tabungan, pantau nilai aset (emas, kendaraan, investasi), dan catat utang-piutang lengkap dengan pengingat jatuh tempo.</p>
-          </div>
-        </div>
-
-        <div class="feature-row feature-row--reverse" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--d">
-              <div class="mini-goal">
-                <div class="mini-goal__bar"><span style="width:64%"></span></div>
-                <span class="mini-goal__label">Dana Darurat &middot; 64%</span>
-              </div>
-              <div class="mini-toggle"><span></span> Kunci PIN &amp; Biometrik</div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Data di HP Kamu</span>
-            <h3>Tetap bisa mencatat walau tidak ada internet.</h3>
-            <p>Semua catatan keuangan utama disimpan di perangkatmu. Kunci aplikasi dengan PIN atau sidik jari, lalu buat backup terenkripsi ke Google Drive milikmu saat dibutuhkan.</p>
-          </div>
-        </div>
+      <div class="pos__out">
+        <img id="posMascot" src="assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+        <div class="receipt" id="posReceipt" aria-live="polite"><p class="receipt__empty">Ketuk produk, pilih cara bayar, lalu buat nota.</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- ============ PAKET ============ -->
-  <section class="section" id="paket">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Paket</p>
-        <h2 class="section__title">Mulai gratis. Naik paket kalau butuh lebih banyak AI.</h2>
-      </div>
-
-      <div class="cards-3 plans" data-reveal>
-        <div class="plan-card" data-reveal-child>
-          <h3>Free</h3>
-          <p class="plan-card__note">Untuk mulai mencatat.</p>
-          <ul>
-            <li>Semua fitur pencatatan, anggaran, dan laporan</li>
-            <li>Pencatatan AI dan scan struk dengan kuota harian</li>
-            <li>Data tetap di HP kamu</li>
-          </ul>
-        </div>
-
-        <div class="plan-card" data-reveal-child>
-          <h3>Pro</h3>
-          <p class="plan-card__note">Untuk yang rajin mencatat dengan AI.</p>
-          <ul>
-            <li>Kuota harian AI dan scan lebih besar dari Free</li>
-            <li>Ikat Kepala Ninja untuk maskot</li>
-          </ul>
-        </div>
-
-        <div class="plan-card plan-card--best" data-reveal-child>
-          <span class="plan-card__badge">Paling hemat</span>
-          <h3>Max</h3>
-          <p class="plan-card__note">Untuk yang mencatat semuanya dengan AI.</p>
-          <ul>
-            <li>Kuota harian AI dan scan terbesar</li>
-            <li>Aura Kilat dan Ikat Kepala Ninja untuk maskot</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="plans__foot" data-reveal>Pro dan Max dibeli lewat Google Play di dalam aplikasi, diperpanjang otomatis, dan bisa dihentikan kapan saja. Harganya tampil di aplikasi.</p>
+    <div class="how how--biz">
+      <div class="tabs" role="tablist" aria-label="Mode Bisnis"><button role="tab" id="btab-kasir" aria-controls="bpan-kasir" aria-selected="true"><i class="ph ph-receipt" aria-hidden="true"></i>Kasir dan nota</button><button role="tab" id="btab-stok" aria-controls="bpan-stok" aria-selected="false" tabindex="-1"><i class="ph ph-package" aria-hidden="true"></i>Stok dan bahan</button><button role="tab" id="btab-po" aria-controls="bpan-po" aria-selected="false" tabindex="-1"><i class="ph ph-calendar-check" aria-hidden="true"></i>Pre-order</button><button role="tab" id="btab-piutang" aria-controls="bpan-piutang" aria-selected="false" tabindex="-1"><i class="ph ph-handshake" aria-hidden="true"></i>Pembeli dan piutang</button><button role="tab" id="btab-laporan" aria-controls="bpan-laporan" aria-selected="false" tabindex="-1"><i class="ph ph-chart-line-up" aria-hidden="true"></i>Laba rugi</button><button role="tab" id="btab-tutup" aria-controls="bpan-tutup" aria-selected="false" tabindex="-1"><i class="ph ph-vault" aria-hidden="true"></i>Tutup kas</button></div>
+      <div class="how__panels"><div role="tabpanel" id="bpan-kasir" aria-labelledby="btab-kasir" class="pan"><div class="pan__copy"><h3>Jual, lalu kirim notanya.</h3><p>Nota dikirim lewat WhatsApp atau jadi PDF, lengkap dengan nama usaha dan cara bayar.</p></div><div class="phone"><div class="ui-receipt"><b>Proud Chicken</b><i></i><i></i><i class="short"></i><div><span>Total</span><b>Rp23.000</b></div></div><div class="ui-actions"><span class="btn btn--small">WhatsApp</span><span class="btn btn--small btn--ghost">PDF</span></div></div></div><div role="tabpanel" id="bpan-stok" aria-labelledby="btab-stok" class="pan" hidden><div class="pan__copy"><h3>Stok dan bahan ikut berkurang.</h3><p>Stok turun saat kamu jual. Ada peringatan sebelum stok habis.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-package" aria-hidden="true"></i><span>Ayam geprek</span><b>Stok 24</b></li><li><i class="ph ph-package" aria-hidden="true"></i><span>Es teh</span><b>Stok 60</b></li><li class="warn"><i class="ph ph-warning" aria-hidden="true"></i><span>Nasi</span><b>Stok tipis</b></li></ul></div></div><div role="tabpanel" id="bpan-po" aria-labelledby="btab-po" class="pan" hidden><div class="pan__copy"><h3>Pesanan untuk tanggal tertentu.</h3><p>Terima pre-order dengan DP, lihat di kalender apa yang harus dibuat.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-calendar" aria-hidden="true"></i><span>14 Nov, Ayam geprek x 20</span><b>DP</b></li><li><i class="ph ph-calendar" aria-hidden="true"></i><span>16 Nov, Ayam geprek x 12</span><b>DP</b></li></ul></div></div><div role="tabpanel" id="bpan-piutang" aria-labelledby="btab-piutang" class="pan" hidden><div class="pan__copy"><h3>Siapa yang belum bayar.</h3><p>Catat pembeli dan pemasok, dan lihat piutang yang masih terbuka.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-user" aria-hidden="true"></i><span>Warung Bu Sari</span><b>Rp240.000</b></li><li><i class="ph ph-user" aria-hidden="true"></i><span>Kantor Pak Dedi</span><b>Rp180.000</b></li><li class="off"><i class="ph ph-info" aria-hidden="true"></i><span>Belum lunas</span><b>2</b></li></ul></div></div><div role="tabpanel" id="bpan-laporan" aria-labelledby="btab-laporan" class="pan" hidden><div class="pan__copy"><h3>Untung atau rugi, jelas.</h3><p>Laba rugi dan arus kas usahamu, terpisah dari uang pribadi.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>Pendapatan</span><b class="in">Rp3.420.000</b></li><li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Biaya</span><b>Rp2.150.000</b></li><li><i class="ph ph-equals" aria-hidden="true"></i><span>Laba</span><b class="in">Rp1.270.000</b></li></ul></div></div><div role="tabpanel" id="bpan-tutup" aria-labelledby="btab-tutup" class="pan" hidden><div class="pan__copy"><h3>Tutup kas tiap hari.</h3><p>Cocokkan uang di laci dengan catatan penjualan sebelum pulang.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-vault" aria-hidden="true"></i><span>Kas awal</span><b>Rp200.000</b></li><li><i class="ph ph-cash" aria-hidden="true"></i><span>Penjualan tunai</span><b>Rp1.180.000</b></li><li><i class="ph ph-check-square" aria-hidden="true"></i><span>Kas akhir</span><b class="in">Rp1.380.000 Cocok</b></li></ul></div></div></div>
     </div>
-  </section>
-
-  <!-- ============ FOUNDER NOTE ============ -->
-  <section class="section" id="cerita">
-    <div class="container">
-      <div class="founder-note" data-reveal>
-        <div class="founder-note__mark" data-reveal-child>
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M7 8h4v4c0 2.2-1.8 4-4 4H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h4v4c0 2.2-1.8 4-4 4h-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <blockquote data-reveal-child>
-          Saya membuat Artosku karena banyak aplikasi keuangan yang terlalu ramai atau
-          menyimpan data penggunanya entah di mana. Prinsip Artosku sejak awal: sederhana,
-          dan datamu tetap punyamu.
-        </blockquote>
-        <p class="founder-note__by" data-reveal-child>&mdash; Andi Pramana, founder &amp; developer Artosku<br /><a href="mailto:andi.pramana@artosku.my.id">andi.pramana@artosku.my.id</a></p>
+    <div class="biz-cta">
+      <p>Coba demo Proud Chicken di aplikasi, gratis tanpa langganan.</p>
+      <div class="biz-cta__row">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="assets/google-play-badge.svg" alt="Dapatkan di Google Play" width="160" height="48" loading="lazy" /></a>
+        <button class="btn btn--ghost" id="bizAll" type="button">Lihat semua fitur bisnis</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ DOWNLOAD ============ -->
-  <section class="section download" id="unduh">
-    <div class="download__bg" aria-hidden="true"></div>
-    <div class="container download__inner" data-reveal>
-      <div class="download__copy" data-reveal-child>
-        <h2>Unduh Artosku Sekarang.</h2>
-        <p>Gratis dan sudah tersedia untuk diunduh di Google Play.</p>
-
-        <div class="download__actions">
-          <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="download__badge">
-            <img src="assets/google-play-badge.svg" alt="Buka Artosku di Google Play" width="200" height="60" />
-          </a>
-        </div>
-      </div>
-      </div>
+<section class="sec" id="semua">
+  <div class="wrap">
+    <h2>Semua fitur</h2>
+    <p class="lead">Semua yang ada di aplikasi, per kategori. Ketuk satu untuk membaca caranya.</p>
+    <div class="finder">
+      <label for="allSearch">Cari fitur</label>
+      <input id="allSearch" type="search" placeholder="mis. anggaran, struk, backup" autocomplete="off" />
+      <div class="chips" id="allChips" role="group" aria-label="Semua fitur"><button type="button" class="chip" data-g="all" aria-pressed="true">Semua</button><button type="button" class="chip" data-g="catat" aria-pressed="false">Mencatat uang</button><button type="button" class="chip" data-g="wallet" aria-pressed="false">Wallet, kategori &amp; merchant</button><button type="button" class="chip" data-g="anggaran" aria-pressed="false">Anggaran &amp; jatah</button><button type="button" class="chip" data-g="utang" aria-pressed="false">Utang &amp; cicilan</button><button type="button" class="chip" data-g="tabungan" aria-pressed="false">Tabungan, aset &amp; belanja</button><button type="button" class="chip" data-g="laporan" aria-pressed="false">Laporan</button><button type="button" class="chip" data-g="bersama" aria-pressed="false">Berbagi dengan orang lain</button><button type="button" class="chip" data-g="backup" aria-pressed="false">Backup &amp; pulihkan</button><button type="button" class="chip" data-g="ai" aria-pressed="false">AI Chat &amp; AI</button><button type="button" class="chip" data-g="maskot" aria-pressed="false">Streak &amp; maskot</button><button type="button" class="chip" data-g="pengaturan" aria-pressed="false">Pengaturan &amp; akun</button><button type="button" class="chip" data-g="bisnis" aria-pressed="false">Mode Bisnis</button></div>
+      <p class="note" id="allCount" aria-live="polite">108 fitur</p>
     </div>
-  </section>
+    <div id="allList"><section class="grp" data-g="catat"><h3>Mencatat uang</h3><ul><li data-top="1" data-s="catat transaksi catat uang masuk dan keluar dengan tombol + di tengah. bisa pilih wallet, kategori, dan merchant. catat transaksi pemasukan pengeluaran tambah input record add expense income jajan"><a href="tutorial/#catat_transaksi"><b>Catat transaksi</b><span>Catat uang masuk dan keluar dengan tombol + di tengah. Bisa pilih wallet, kategori, dan merchant.</span></a></li><li data-s="catat pakai ai ucapkan atau ketik "makan siang 25 ribu", ai menyiapkan transaksinya untuk kamu cek dulu. suara ucap bicara ketik bebas ai catat voice speak quick add otomatis ucapkan"><a href="tutorial/#catat_ai_suara"><b>Catat pakai AI</b><span>Ucapkan atau ketik "makan siang 25 ribu", AI menyiapkan transaksinya untuk kamu cek dulu.</span></a></li><li data-s="scan struk foto struk belanja, barang dan totalnya terisi sendiri. ongkir, biaya layanan, dan diskon ikut dibaca. struk scan foto nota kuitansi receipt photo ocr belanja online shopee"><a href="tutorial/#scan_struk"><b>Scan struk</b><span>Foto struk belanja, barang dan totalnya terisi sendiri. Ongkir, biaya layanan, dan diskon ikut dibaca.</span></a></li><li data-s="tambah banyak transaksi sekaligus masukkan beberapa transaksi dalam satu layar, atau pecah satu struk ke beberapa kategori. banyak sekaligus beberapa multi batch many bulk pecah struk banyak sekaligus input massal tambah banyak multi add"><a href="tutorial/#tambah_banyak"><b>Tambah banyak transaksi sekaligus</b><span>Masukkan beberapa transaksi dalam satu layar, atau pecah satu struk ke beberapa kategori.</span></a></li><li data-s="impor mutasi dari pdf baca pdf rekening koran bank jadi daftar transaksi yang bisa dicek lalu disimpan. mutasi pdf rekening koran bank impor import statement rekening csv impor mutasi upload mutasi import statement mutasi bank mutasi pdf"><a href="tutorial/#impor_mutasi"><b>Impor mutasi dari PDF</b><span>Baca PDF rekening koran bank jadi daftar transaksi yang bisa dicek lalu disimpan.</span></a></li><li data-s="catat dari notifikasi notifikasi bank dan dompet digital di hp jadi draf transaksi, kamu tinggal setujui. khusus android. notif notifikasi otomatis bank dompet digital gopay ovo dana notification capture notif bank catat otomatis dari notifikasi baca notifikasi bank notification auto record aplikasi dipantau watched apps pilih aplikasi hubungkan wallet izin notifikasi draf notifikasi"><a href="tutorial/#catat_notif"><b>Catat dari notifikasi</b><span>Notifikasi bank dan dompet digital di HP jadi draf transaksi, kamu tinggal setujui. Khusus Android.</span></a></li><li data-s="aplikasi dipantau dan hapus draf notifikasi bank atur aplikasi bank yang dipantau, hubungkan wallet, nyalakan pemberitahuan draf baru, dan hapus draf atau data notifikasi. aplikasi dipantau pilih aplikasi hapus draf hapus data notifikasi izin notifikasi akses notifikasi tidak masuk draf tidak muncul watched apps clear drafts notification access"><a href="tutorial/#catat_notif_setelan"><b>Aplikasi dipantau dan hapus draf notifikasi bank</b><span>Atur aplikasi bank yang dipantau, hubungkan wallet, nyalakan pemberitahuan draf baru, dan hapus draf atau data notifikasi.</span></a></li><li data-s="biaya transfer catat biaya admin bank bersama transfernya, jadi satu kartu dan saldo wallet asal pas. biaya admin biaya admin fee transfer fee antar bank bi-fast biaya transfer admin transfer fee transfer biaya antar bank admin bank"><a href="tutorial/#biaya_transfer"><b>Biaya transfer</b><span>Catat biaya admin bank bersama transfernya, jadi satu kartu dan saldo wallet asal pas.</span></a></li><li data-s="salin transaksi lama catat ulang transaksi yang mirip dengan sekali ketuk, tanpa mengetik dari awal. salin copy duplikat ulang sama seperti kemarin duplicate kopi copy transaksi transaksi berulang manual kopi transaksi ulang transaksi"><a href="tutorial/#salin_transaksi"><b>Salin transaksi lama</b><span>Catat ulang transaksi yang mirip dengan sekali ketuk, tanpa mengetik dari awal.</span></a></li><li data-s="struk gabungan (banyak kategori) satu struk belanja jadi satu transaksi dengan rincian item dan kategori masing-masing. struk gabungan digabung banyak kategori beberapa kategori rincian item combined split digabung jadi 1 struk bagi kategori split kategori rincian item combined receipt satu struk banyak kategori"><a href="tutorial/#struk_gabungan"><b>Struk gabungan (banyak kategori)</b><span>Satu struk belanja jadi satu transaksi dengan rincian item dan kategori masing-masing.</span></a></li></ul></section><section class="grp" data-g="wallet"><h3>Wallet, kategori &amp; merchant</h3><ul><li data-top="1" data-s="wallet kelola kas, rekening bank, dan e-wallet beserta saldonya. bisa pindah uang antar wallet. wallet dompet saldo rekening bank ewallet e-wallet kas transfer balance account akun bank tambah rekening limit kurs saldo awal arsip urutkan kartu kredit"><a href="tutorial/#wallet"><b>Wallet</b><span>Kelola kas, rekening bank, dan e-wallet beserta saldonya. Bisa pindah uang antar wallet.</span></a></li><li data-s="pocket bagi saldo satu wallet jadi beberapa kantong, mis. dana darurat atau liburan. pocket kantong amplop sub wallet dana darurat liburan alokasi envelope bagi saldo alokasi dana target pocket alokasi awal atur dana tambah dana kurangi dana"><a href="tutorial/#pocket"><b>Pocket</b><span>Bagi saldo satu wallet jadi beberapa kantong, mis. Dana Darurat atau Liburan.</span></a></li><li data-s="pindah dana antar pocket pindahkan dana dari satu pocket ke pocket atau wallet lain, tercatat rapi. pindah transfer pocket antar pocket pindah dana geser dana move pindah pocket pindah antar pocket move between pockets"><a href="tutorial/#pindah_pocket"><b>Pindah dana antar pocket</b><span>Pindahkan dana dari satu pocket ke pocket atau wallet lain, tercatat rapi.</span></a></li><li data-s="mata uang pilih mata uang utama dan catat wallet atau transaksi dalam mata uang lain, kursnya diperbarui tiap hari. mata uang kurs dolar usd euro currency exchange rupiah valas ganti mata uang mata uang utama exchange rate"><a href="tutorial/#mata_uang"><b>Mata uang</b><span>Pilih mata uang utama dan catat wallet atau transaksi dalam mata uang lain, kursnya diperbarui tiap hari.</span></a></li><li data-s="kategori atur kategori pemasukan dan pengeluaran, bertingkat sampai subkategori. kategori subkategori kelompok category categories label"><a href="tutorial/#kategori"><b>Kategori</b><span>Atur kategori pemasukan dan pengeluaran, bertingkat sampai subkategori.</span></a></li><li data-s="pembelajaran kategori artosku mengingat kategori yang kamu pilih untuk deskripsi tertentu, dan kamu bisa mengubahnya. belajar pembelajaran ingat otomatis kategori learning remember mapping pemetaan"><a href="tutorial/#belajar_kategori"><b>Pembelajaran kategori</b><span>Artosku mengingat kategori yang kamu pilih untuk deskripsi tertentu, dan kamu bisa mengubahnya.</span></a></li><li data-s="merchant lihat ke mana uang paling banyak keluar dan dari mana masuk, dengan kategori bawaan tiap tempat. merchant toko tempat warung langganan store shop vendor"><a href="tutorial/#merchant"><b>Merchant</b><span>Lihat ke mana uang paling banyak keluar dan dari mana masuk, dengan kategori bawaan tiap tempat.</span></a></li></ul></section><section class="grp" data-g="anggaran"><h3>Anggaran &amp; jatah</h3><ul><li data-top="1" data-s="anggaran pasang batas pengeluaran per kategori tiap bulan dan lihat sisanya. anggaran budget batas limit jatah hemat boros sisa periode peringatan batas bulanan limit bulanan warning bandingkan anggaran budget bulanan monthly budget"><a href="tutorial/#anggaran"><b>Anggaran</b><span>Pasang batas pengeluaran per kategori tiap bulan dan lihat sisanya.</span></a></li><li data-s="anggaran harian (batas per kategori tiap hari) batas pengeluaran per kategori untuk tiap hari, dengan aturan khusus untuk hari tertentu (mis. jumat atau akhir pekan) atau satu tanggal. beda dengan jatah harian yang dihitung otomatis dari semua uangmu. anggaran harian batas harian batas per hari batas pengeluaran harian budget harian limit harian batas jajan harian batas jajan per hari aturan khusus per hari hari jumat akhir pekan tanggal khusus per tanggal tanpa batas daily budget daily limit limit per day spending limit per day weekend limit special date no limit"><a href="tutorial/#anggaran_harian"><b>Anggaran harian (batas per kategori tiap hari)</b><span>Batas pengeluaran per kategori untuk tiap hari, dengan aturan khusus untuk hari tertentu (mis. Jumat atau akhir pekan) atau satu tanggal. Beda dengan Jatah Harian yang dihitung otomatis dari semua uangmu.</span></a></li><li data-s="jatah harian hitung boleh jajan berapa per hari sampai gajian, ditemani maskot. jatah harian per hari jajan uang saku daily allowance uang harian boleh jajan sisa uang sampai gajian daily budget jatah jajan perhitungan atur perhitungan uang yang dihitung tagihan sebelum gajian"><a href="tutorial/#jatah_harian"><b>Jatah harian</b><span>Hitung boleh jajan berapa per hari sampai gajian, ditemani maskot.</span></a></li><li data-s="kecualikan transaksi dari jatah belanja besar atau uang titipan tidak ikut menghabiskan jatah harian dan mingguan. pilih per transaksi: dibagi rata ke sisa hari, atau diabaikan sepenuhnya. bisa dibatalkan kapan saja. kecualikan transaksi dikecualikan dari jatah kecualikan dari jatah jangan dihitung jatah tidak dihitung jatah jangan dihitung di jatah abaikan transaksi abaikan dari jatah transaksi dikecualikan belanja besar jatah dibagi rata diabaikan lepaskan pengecualian batalkan pengecualian exclude transaction exclude from allowance leave out of allowance do not count in allowance ignore transaction allowance excluded transactions spread evenly"><a href="tutorial/#jatah_dikecualikan"><b>Kecualikan transaksi dari jatah</b><span>Belanja besar atau uang titipan tidak ikut menghabiskan jatah harian dan mingguan. Pilih per transaksi: dibagi rata ke sisa hari, atau diabaikan sepenuhnya. Bisa dibatalkan kapan saja.</span></a></li><li data-s="transaksi berulang tagihan dan langganan rutin dicatat otomatis di tanggalnya, dengan pengingat. berulang rutin tagihan langganan bulanan otomatis recurring subscription bill sewa harian mingguan tahunan weekly monthly yearly daily frekuensi tiap minggu tiap bulan tiap tahun setiap bulan tagihan rutin bayar rutin pengingat tagihan"><a href="tutorial/#berulang"><b>Transaksi berulang</b><span>Tagihan dan langganan rutin dicatat otomatis di tanggalnya, dengan pengingat.</span></a></li><li data-s="periode laporan (tanggal gajian) atur kapan "bulan ini" dimulai, misalnya tiap tanggal gajian. periode gajian tanggal cutoff awal bulan payday period bulan ini tanggal gajian report period"><a href="tutorial/#periode_laporan"><b>Periode laporan (tanggal gajian)</b><span>Atur kapan "bulan ini" dimulai, misalnya tiap tanggal gajian.</span></a></li></ul></section><section class="grp" data-g="utang"><h3>Utang &amp; cicilan</h3><ul><li data-top="1" data-s="utang &amp; piutang catat siapa yang pinjam, jumlahnya, dan kapan harus balik. ada pengingat jatuh tempo dan bisa dicicil. utang hutang piutang pinjam pinjaman tagih cicil debt loan lend borrow owe kasbon"><a href="tutorial/#utang_piutang"><b>Utang &amp; Piutang</b><span>Catat siapa yang pinjam, jumlahnya, dan kapan harus balik. Ada pengingat jatuh tempo dan bisa dicicil.</span></a></li><li data-s="cicilan &amp; paylater catat cicilan, kredit, dan tagihan paylater supaya tahu sisa dan jatuh temponya. cicilan kredit paylater kartu kredit angsuran installment credit credit card kredivo bayar bulanan kredit motor cicil bunga denda denda telat interest late fee tenor"><a href="tutorial/#cicilan"><b>Cicilan &amp; Paylater</b><span>Catat cicilan, kredit, dan tagihan paylater supaya tahu sisa dan jatuh temponya.</span></a></li><li data-s="arisan catat arisanmu: setoran tiap periode jalan otomatis dan pot yang kamu terima tercatat di giliranmu. arisan kocokan giliran setoran pot iuran rotating savings club setoran arisan pot arisan iuran arisan arisan rt rotating savings ngocok"><a href="tutorial/#arisan"><b>Arisan</b><span>Catat arisanmu: setoran tiap periode jalan otomatis dan pot yang kamu terima tercatat di giliranmu.</span></a></li><li data-s="paylater belanja pakai wallet paylater jadi cicilan otomatis, dan tagihannya tinggal dibayar dari wallet lain. paylater bayar nanti kredit belanja kartu kredit limit tagihan pay later credit card bnpl spaylater cicilan belanja buy now pay later limit paylater tagihan paylater kredivo"><a href="tutorial/#paylater"><b>Paylater</b><span>Belanja pakai wallet paylater jadi cicilan otomatis, dan tagihannya tinggal dibayar dari wallet lain.</span></a></li></ul></section><section class="grp" data-g="tabungan"><h3>Tabungan, aset &amp; belanja</h3><ul><li data-top="1" data-s="tujuan menabung tentukan target tabungan, sisihkan sedikit demi sedikit, dan lihat progresnya. nabung tabungan target tujuan impian saving savings goal pocket kantong target menabung tujuan nabung celengan savings goal target tanggal sisihkan tabung di jalur on track"><a href="tutorial/#tabungan"><b>Tujuan menabung</b><span>Tentukan target tabungan, sisihkan sedikit demi sedikit, dan lihat progresnya.</span></a></li><li data-s="aset catat barang atau investasi berharga dan pantau nilainya dari waktu ke waktu. aset investasi emas saham properti kendaraan harta asset investment gold stock"><a href="tutorial/#aset"><b>Aset</b><span>Catat barang atau investasi berharga dan pantau nilainya dari waktu ke waktu.</span></a></li><li data-s="daftar belanja tulis daftar belanja, centang yang sudah dibeli, lalu catat jadi transaksi. daftar belanja belanja shopping list grocery catatan belanja beli shopping list groceries list belanja belanjaan"><a href="tutorial/#daftar_belanja"><b>Daftar belanja</b><span>Tulis daftar belanja, centang yang sudah dibeli, lalu catat jadi transaksi.</span></a></li><li data-s="pemakaian barang catat barang yang habis atau terbuang supaya tahu seberapa cepat belanjaanmu terpakai. pemakaian habis terbuang stok rumah usage used up waste pantry barang habis item usage dibuang mubazir habis dipakai"><a href="tutorial/#pemakaian_barang"><b>Pemakaian barang</b><span>Catat barang yang habis atau terbuang supaya tahu seberapa cepat belanjaanmu terpakai.</span></a></li></ul></section><section class="grp" data-g="laporan"><h3>Laporan</h3><ul><li data-top="1" data-s="laporan lihat uang masuk dan keluar per kategori, per bulan, dengan grafik dan perbandingan. laporan grafik ringkasan statistik bulanan report chart summary analisis"><a href="tutorial/#laporan"><b>Laporan</b><span>Lihat uang masuk dan keluar per kategori, per bulan, dengan grafik dan perbandingan.</span></a></li></ul></section><section class="grp" data-g="bersama"><h3>Berbagi dengan orang lain</h3><ul><li data-top="1" data-s="bagi tagihan bagi tagihan makan bareng ke teman, hitung masing-masing, lalu catat bagianmu. bagi patungan split bill bareng teman tagihan makan bareng urunan split bill bagi tagihan iuran bareng bayar bareng bagi rata bill split share bill with friends sama teman"><a href="tutorial/#split"><b>Bagi tagihan</b><span>Bagi tagihan makan bareng ke teman, hitung masing-masing, lalu catat bagianmu.</span></a></li><li data-s="wallet bersama satu wallet dipakai berdua atau bersama keluarga, semua anggota bisa mencatat. bersama berdua keluarga pasangan shared together family couple patungan wallet wallet bersama dompet bersama shared wallet keuangan keluarga family wallet undang anggota"><a href="tutorial/#wallet_bersama"><b>Wallet bersama</b><span>Satu wallet dipakai berdua atau bersama keluarga, semua anggota bisa mencatat.</span></a></li><li data-s="undang anggota wallet bersama ajak teman atau keluarga memakai satu wallet bersama lewat undangan. undang ajak anggota gabung invite member join keluarga undang anggota undang teman gabung wallet bersama ajak anggota"><a href="tutorial/#undang_anggota"><b>Undang anggota Wallet Bersama</b><span>Ajak teman atau keluarga memakai satu wallet bersama lewat undangan.</span></a></li><li data-s="kontak simpan teman yang sering kamu kirimi atau tagih, supaya cepat dipilih. kontak teman orang contact friend people"><a href="tutorial/#kontak"><b>Kontak</b><span>Simpan teman yang sering kamu kirimi atau tagih, supaya cepat dipilih.</span></a></li><li data-s="saling kirim transaksi kirim catatan transaksi ke temanmu yang juga pakai artosku, dan terima dari mereka. kirim saling kirim teman terima transfer share send friend bagikan kirim uang minta uang transfer ke teman send money request money kirim ke teman"><a href="tutorial/#saling_kirim"><b>Saling kirim transaksi</b><span>Kirim catatan transaksi ke temanmu yang juga pakai Artosku, dan terima dari mereka.</span></a></li></ul></section><section class="grp" data-g="backup"><h3>Backup &amp; pulihkan</h3><ul><li data-top="1" data-s="backup google drive data tersimpan di hp-mu, dan bisa dicadangkan ke google drive supaya aman saat ganti hp. backup cadangan google drive drive pulihkan restore ganti hp data aman sync simpan data pindah hp"><a href="tutorial/#backup_drive"><b>Backup Google Drive</b><span>Data tersimpan di HP-mu, dan bisa dicadangkan ke Google Drive supaya aman saat ganti HP.</span></a></li><li data-s="backup otomatis ke google drive nyalakan backup otomatis, hubungkan atau putuskan akun google drive, dan pulihkan dari backup lama. backup otomatis auto backup automatic backup hubungkan drive putuskan drive ganti akun drive akun google drive restore pulihkan data batalkan pemulihan kembalikan data lama undo restore slot backup backup sekarang ganti hp pindah hp hp baru new phone restore backup restore my backup restore on a new phone disconnect drive connect drive"><a href="tutorial/#backup_otomatis"><b>Backup otomatis ke Google Drive</b><span>Nyalakan Backup otomatis, hubungkan atau putuskan akun Google Drive, dan pulihkan dari backup lama.</span></a></li><li data-s="ekspor &amp; impor excel simpan transaksi ke file excel, atau masukkan dari excel. excel xlsx ekspor export impor import csv file unduh download backup excel spreadsheet"><a href="tutorial/#excel"><b>Ekspor &amp; impor Excel</b><span>Simpan transaksi ke file Excel, atau masukkan dari Excel.</span></a></li><li data-s="backup excel otomatis ke folder download simpan backup excel sendiri ke folder download hp, harian, mingguan, atau bulanan. backup excel otomatis excel otomatis folder download simpan excel excel harian excel mingguan excel bulanan auto excel excel backup schedule download folder backup excel otomatis ke folder download excel ke folder download simpan excel ke folder download otomatis ke folder download"><a href="tutorial/#backup_excel_otomatis"><b>Backup Excel otomatis ke folder Download</b><span>Simpan backup Excel sendiri ke folder Download HP, harian, mingguan, atau bulanan.</span></a></li><li data-s="impor excel versi lama atau pulihkan dari excel pulihkan semua data dari file backup excel, atau tambahkan data dari file excel versi lama. impor excel import excel excel lama excel versi lama pulihkan dari excel restore excel tambahkan data masukkan excel upload excel restore from excel"><a href="tutorial/#impor_excel_lama"><b>Impor Excel versi lama atau pulihkan dari Excel</b><span>Pulihkan semua data dari file backup Excel, atau tambahkan data dari file Excel versi lama.</span></a></li></ul></section><section class="grp" data-g="ai"><h3>AI Chat &amp; AI</h3><ul><li data-top="1" data-s="tanya artosku ai tanya soal uangmu atau cara pakai artosku. ai bisa juga menyiapkan transaksi untuk kamu setujui. ai chat tanya asisten bot kuai assistant ask"><a href="tutorial/#ai_chat"><b>Tanya Artosku AI</b><span>Tanya soal uangmu atau cara pakai Artosku. AI bisa juga menyiapkan transaksi untuk kamu setujui.</span></a></li><li data-s="pemakaian ai &amp; voucher lihat sisa kuota ai hari ini dan voucher tambahan. kuota voucher sisa limit ai pemakaian ai quota usage tambahan"><a href="tutorial/#pemakaian_ai"><b>Pemakaian AI &amp; voucher</b><span>Lihat sisa kuota AI hari ini dan voucher tambahan.</span></a></li><li data-s="persetujuan fitur ai (izinkan atau cabut) izinkan atau cabut izin fitur ai. kalau dicabut, fitur ai berhenti sampai kamu mengizinkannya lagi; fitur lain tidak terpengaruh. persetujuan ai izin ai izinkan fitur ai cabut izin matikan ai nonaktifkan ai ai consent turn off ai disable ai withdraw consent data ke deepseek privasi ai"><a href="tutorial/#persetujuan_ai"><b>Persetujuan fitur AI (izinkan atau cabut)</b><span>Izinkan atau cabut izin fitur AI. Kalau dicabut, fitur AI berhenti sampai kamu mengizinkannya lagi; fitur lain tidak terpengaruh.</span></a></li></ul></section><section class="grp" data-g="maskot"><h3>Streak &amp; maskot</h3><ul><li data-s="streak &amp; maskotmu catat tiap hari untuk menjaga streak, buka kotak hadiah, dan rawat rumah maskotmu. streak maskot minyam ayam hadiah koin rumah mascot chicken game gift coin hadiah harian gamifikasi api streak kotak hadiah freeze streak freeze beku bolos melewatkan hari streak putus freeze kedaluwarsa freeze hilang skip a day missed a day"><a href="tutorial/#streak_maskot"><b>Streak &amp; maskotmu</b><span>Catat tiap hari untuk menjaga streak, buka kotak hadiah, dan rawat rumah maskotmu.</span></a></li><li data-s="toko item maskot tukar koin streak dengan topi, aksesori, dan dekorasi untuk maskotmu. toko item koin topi aksesori dekorasi beli shop coins hat accessory beli item topi maskot"><a href="tutorial/#toko_maskot"><b>Toko item maskot</b><span>Tukar koin streak dengan topi, aksesori, dan dekorasi untuk maskotmu.</span></a></li><li data-s="koleksi maskot lihat semua item yang sudah kamu punya dan pakaikan ke maskot. koleksi punya pakai item collection wear dress inventory"><a href="tutorial/#koleksi_maskot"><b>Koleksi maskot</b><span>Lihat semua item yang sudah kamu punya dan pakaikan ke maskot.</span></a></li></ul></section><section class="grp" data-g="pengaturan"><h3>Pengaturan &amp; akun</h3><ul><li data-s="kunci aplikasi (pin &amp; biometrik) kunci artosku dengan pin, sidik jari, atau wajah supaya catatanmu tidak dibuka orang lain. pin kunci biometrik sidik jari wajah aman privasi lock fingerprint face security password kunci aplikasi app lock keamanan ubah pin ganti pin lupa pin"><a href="tutorial/#kunci_pin"><b>Kunci aplikasi (PIN &amp; biometrik)</b><span>Kunci Artosku dengan PIN, sidik jari, atau wajah supaya catatanmu tidak dibuka orang lain.</span></a></li><li data-s="tampilan, bahasa &amp; tema ganti bahasa indonesia atau inggris, ukuran teks, dan mode gelap atau terang. tampilan bahasa tema gelap terang dark light english inggris ukuran teks font language theme dark mode mode gelap warna mode terang light mode tema warna ganti warna warna aplikasi ukuran huruf tulisan kecil tulisan besar text size font size bigger text ganti bahasa change language ikut sistem"><a href="tutorial/#tampilan"><b>Tampilan, bahasa &amp; tema</b><span>Ganti bahasa Indonesia atau Inggris, ukuran teks, dan mode gelap atau terang.</span></a></li><li data-s="atur beranda pilih bagian beranda yang tampil dan atur urutannya. beranda atur urutan tampil sembunyikan home dashboard arrange layout"><a href="tutorial/#atur_beranda"><b>Atur Beranda</b><span>Pilih bagian Beranda yang tampil dan atur urutannya.</span></a></li><li data-s="widget layar utama hp pasang widget artosku di layar hp untuk lihat ringkasan dan catat cepat. widget layar utama home screen pintasan shortcut"><a href="tutorial/#widget_hp"><b>Widget layar utama HP</b><span>Pasang widget Artosku di layar HP untuk lihat ringkasan dan catat cepat.</span></a></li><li data-s="paket pro &amp; max kuota ai lebih besar dan mode bisnis. pilih paket yang cocok untukmu. langganan paket pro max premium berlangganan bayar subscription plan upgrade harga price"><a href="tutorial/#langganan"><b>Paket Pro &amp; Max</b><span>Kuota AI lebih besar dan Mode Bisnis. Pilih paket yang cocok untukmu.</span></a></li><li data-s="pengumuman info dan kabar gangguan dari tim artosku. pengumuman info kabar gangguan berita announcement news update"><a href="tutorial/#pengumuman"><b>Pengumuman</b><span>Info dan kabar gangguan dari tim Artosku.</span></a></li><li data-s="pusat panduan panduan singkat tiap menu yang bisa diputar kapan saja. panduan cara pakai bantuan petunjuk guide help how to tour"><a href="tutorial/#panduan"><b>Pusat panduan</b><span>Panduan singkat tiap menu yang bisa diputar kapan saja.</span></a></li><li data-s="traktir matcha kalau artosku berguna, kamu bisa mentraktir tim dengan segelas matcha. traktir matcha donasi dukung tip donate support"><a href="tutorial/#dukung"><b>Traktir Matcha</b><span>Kalau Artosku berguna, kamu bisa mentraktir tim dengan segelas matcha.</span></a></li><li data-s="ganti akun pindah antar akun yang tersimpan di hp ini tanpa masuk ulang. ganti akun pindah akun tambah akun akun lain banyak akun switch account multi account another account multi akun"><a href="tutorial/#ganti_akun"><b>Ganti akun</b><span>Pindah antar akun yang tersimpan di HP ini tanpa masuk ulang.</span></a></li><li data-s="ganti nama anggaran beri anggaran namamu sendiri (mis. "makan sebulan"). kartu, ringkasan di beranda, peringatan, tabel bandingkan, dan ai chat memakai nama itu. dikosongkan, kembali ke nama kategorinya. ganti nama anggaran rename anggaran ubah nama anggaran nama anggaran nama sendiri anggaran kasih nama anggaran beri nama anggaran anggaran tanpa nama kategori nama kartu anggaran rename budget rename a budget budget name name a budget change budget name custom budget name"><a href="tutorial/#anggaran_ganti_nama"><b>Ganti nama anggaran</b><span>Beri anggaran namamu sendiri (mis. "Makan sebulan"). Kartu, ringkasan di Beranda, peringatan, tabel Bandingkan, dan AI Chat memakai nama itu. Dikosongkan, kembali ke nama kategorinya.</span></a></li><li data-s="satu anggaran untuk beberapa kategori gabungkan beberapa kategori (mis. makan di luar dan belanja dapur) dalam satu anggaran dengan satu batas dan satu nama. satu kategori hanya boleh ada di satu anggaran per periode, jadi tidak pernah terhitung dua kali. gabung anggaran gabungkan anggaran anggaran grup anggaran gabungan gabung kategori anggaran beberapa kategori satu anggaran satu anggaran banyak kategori banyak kategori satu anggaran anggaran beberapa kategori kategori mana saja anggaran ubah kategori anggaran combine budgets group budget merge budgets several categories one budget multiple categories budget one budget for many categories change budget categories"><a href="tutorial/#anggaran_banyak_kategori"><b>Satu anggaran untuk beberapa kategori</b><span>Gabungkan beberapa kategori (mis. Makan di luar dan Belanja dapur) dalam satu anggaran dengan satu batas dan satu nama. Satu kategori hanya boleh ada di satu anggaran per periode, jadi tidak pernah terhitung dua kali.</span></a></li><li data-s="hitung subkategori di anggaran untuk kategori induk (yang punya subkategori), nyalakan "hitung juga subkategorinya" supaya pengeluaran semua subkategori ikut masuk anggaran. awalnya mati. subkategori yang punya anggaran sendiri tidak dihitung di anggaran induk. subkategori anggaran hitung subkategori hitung juga subkategori kategori anak anggaran kategori anak anggaran kategori induk anggaran induk semua turunan kategori turunan kategori anggaran subkategori ikut anggaran subkategori tidak terhitung count subcategories include subcategories subcategory budget child categories budget parent category budget subcategories not counted"><a href="tutorial/#anggaran_subkategori"><b>Hitung subkategori di anggaran</b><span>Untuk kategori induk (yang punya subkategori), nyalakan "Hitung juga subkategorinya" supaya pengeluaran semua subkategori ikut masuk anggaran. Awalnya mati. Subkategori yang punya anggaran sendiri tidak dihitung di anggaran induk.</span></a></li><li data-s="sidik jari atau wajah sebagai kunci setelah pin dibuat, buka artosku cukup dengan sidik jari atau wajah. biometrik sidik jari fingerprint wajah face id face unlock kunci sidik jari biometric unlock"><a href="tutorial/#biometrik"><b>Sidik jari atau wajah sebagai kunci</b><span>Setelah PIN dibuat, buka Artosku cukup dengan sidik jari atau wajah.</span></a></li><li data-s="atur urutan wallet pilih urutan wallet di semua pilihan: yang paling sering dipakai di depan, atau sama dengan urutan di beranda. urutan wallet susun wallet wallet paling sering wallet paling sering dipakai urutan dompet urutan sendiri wallet order sort wallets most used wallet"><a href="tutorial/#urutan_wallet"><b>Atur urutan wallet</b><span>Pilih urutan wallet di semua pilihan: yang paling sering dipakai di depan, atau sama dengan urutan di Beranda.</span></a></li><li data-s="kelola, batalkan, atau pulihkan langganan lihat paketmu, ganti bulanan atau tahunan, kelola di play store, dan pulihkan pembelian. kelola langganan batalkan langganan berhenti langganan cancel subscription pulihkan pembelian restore purchase langganan di play store bulanan tahunan paket saat ini naik paket manage subscription monthly yearly"><a href="tutorial/#kelola_langganan"><b>Kelola, batalkan, atau pulihkan langganan</b><span>Lihat paketmu, ganti bulanan atau tahunan, kelola di Play Store, dan pulihkan pembelian.</span></a></li><li data-s="buku panduan (tutorial lengkap) tutorial lengkap tiap fitur di website, dengan kolom pencarian. dibuka di browser. buku panduan tutorial panduan lengkap handbook manual user guide full guide tutorial lengkap dokumentasi website panduan cari tutorial"><a href="tutorial/#buku_panduan"><b>Buku Panduan (tutorial lengkap)</b><span>Tutorial lengkap tiap fitur di website, dengan kolom pencarian. Dibuka di browser.</span></a></li><li data-s="lihat demo mode bisnis (proud chicken) bisnis contoh "proud chicken" dengan data 2 bulan di semua fitur mode bisnis (penjualan, nota, stok, pre-order, laporan). cuma untuk dilihat: tidak bisa mencatat. bisa dibuka tanpa max, untuk melihat dulu sebelum berlangganan. demo bisnis demo mode bisnis coba mode bisnis contoh bisnis lihat fitur bisnis lihat fitur bisnis sebelum langganan proud chicken mode bisnis isinya apa isi mode bisnis lihat dulu mode bisnis beli kucing dalam karung business demo business mode demo try business mode sample business see business features before subscribing what is in business mode preview business mode"><a href="tutorial/#demo_mode_bisnis"><b>Lihat demo Mode Bisnis (Proud Chicken)</b><span>Bisnis contoh "Proud Chicken" dengan data 2 bulan di semua fitur Mode Bisnis (penjualan, nota, stok, pre-order, laporan). Cuma untuk dilihat: tidak bisa mencatat. Bisa dibuka tanpa Max, untuk melihat dulu sebelum berlangganan.</span></a></li><li data-s="video: cara mulai mode pribadi dan demo mode bisnis dua video singkat di youtube: cara mulai memakai artosku di mode pribadi, dan demo fitur-fitur mode bisnis. tombolnya hanya tampil kalau videonya sudah ada. video video tutorial tutorial youtube cara pakai cara mulai video cara mulai video demo video demo mode bisnis demo bisnis video bisnis contoh mode bisnis tonton video tutorial video how to start watch video demo video business demo video getting started video"><a href="tutorial/#video_tutorial"><b>Video: cara mulai Mode Pribadi dan demo Mode Bisnis</b><span>Dua video singkat di YouTube: cara mulai memakai Artosku di Mode Pribadi, dan demo fitur-fitur Mode Bisnis. Tombolnya hanya tampil kalau videonya sudah ada.</span></a></li></ul></section><section class="grp" data-g="bisnis"><h3>Mode Bisnis</h3><ul><li data-s="mode bisnis kasir, catat belanja bahan, nota lewat wa, pembeli yang belum bayar, dan laporan laba rugi. uang usaha terpisah dari uang pribadi. bisnis usaha jualan toko warung umkm kasir dagang business shop sell store cashier kecil-kecilan ganti profil"><a href="tutorial/#mode_bisnis"><b>Mode Bisnis</b> <span class="badge">Max</span><span>Kasir, catat belanja bahan, nota lewat WA, pembeli yang belum bayar, dan laporan laba rugi. Uang usaha terpisah dari uang pribadi.</span></a></li><li data-s="kasir (jual) pilih produk, bayar tunai, qris, transfer, atau bayar nanti, lalu kirim nota. bisa scan barcode. kasir jual penjualan jualan barcode pos sell sale cashier checkout catat penjualan bikin nota"><a href="tutorial/#kasir"><b>Kasir (Jual)</b> <span class="badge">Max</span><span>Pilih produk, bayar tunai, QRIS, transfer, atau bayar nanti, lalu kirim nota. Bisa scan barcode.</span></a></li><li data-s="nota &amp; kirim lewat wa buat nota rapi dengan data usahamu dan kirim ke pembeli lewat whatsapp atau pdf. nota invoice kwitansi wa whatsapp kirim nota pdf receipt faktur struk pembeli kirim wa"><a href="tutorial/#nota_wa"><b>Nota &amp; kirim lewat WA</b> <span class="badge">Max</span><span>Buat nota rapi dengan data usahamu dan kirim ke pembeli lewat WhatsApp atau PDF.</span></a></li><li data-s="belanja bahan, stok &amp; biaya catat belanja bahan, stok jual, dan biaya usaha. scan struk belanja online sampai ongkir dan diskon. belanja bahan stok pemasok supplier biaya beli purchase ingredient cost ongkir modal belanja bahan belanja stok beli bahan biaya usaha bon pemasok beli stok"><a href="tutorial/#belanja_bisnis"><b>Belanja bahan, stok &amp; biaya</b> <span class="badge">Max</span><span>Catat belanja bahan, stok jual, dan biaya usaha. Scan struk belanja online sampai ongkir dan diskon.</span></a></li><li data-s="produk &amp; stok daftar produk dengan harga, stok, dan nilai persediaan. ada peringatan stok tipis. produk barang stok harga persediaan inventori product inventory stock item"><a href="tutorial/#produk_stok"><b>Produk &amp; stok</b> <span class="badge">Max</span><span>Daftar produk dengan harga, stok, dan nilai persediaan. Ada peringatan stok tipis.</span></a></li><li data-s="pembeli, pemasok &amp; tagihan usaha simpan pembeli, pemasok, dan karyawan, lihat siapa yang belum bayar, dan tagih lewat whatsapp. pembeli pelanggan pemasok karyawan bon piutang usaha customer supplier employee tagih"><a href="tutorial/#kontak_usaha"><b>Pembeli, pemasok &amp; tagihan usaha</b> <span class="badge">Max</span><span>Simpan pembeli, pemasok, dan karyawan, lihat siapa yang belum bayar, dan tagih lewat WhatsApp.</span></a></li><li data-s="laba rugi &amp; laporan usaha lihat untung rugi, arus kas, neraca, produk terlaris, dan jam ramai. laba rugi untung arus kas neraca terlaris jam ramai profit loss cash flow balance sheet omzet laporan usaha kas usaha"><a href="tutorial/#laba_rugi"><b>Laba rugi &amp; laporan usaha</b> <span class="badge">Max</span><span>Lihat untung rugi, arus kas, neraca, produk terlaris, dan jam ramai.</span></a></li><li data-s="uang pemilik (prive &amp; modal) catat ambil uang usaha untuk pribadi, setor modal, atau pindah uang ke bisnis lain. prive modal setor ambil uang pemilik owner capital draw withdraw ambil uang usaha setor modal modal sendiri uang pribadi usaha owner draw ambil uang buat pribadi tarik uang usaha"><a href="tutorial/#uang_pemilik"><b>Uang pemilik (prive &amp; modal)</b> <span class="badge">Max</span><span>Catat ambil uang usaha untuk pribadi, setor modal, atau pindah uang ke bisnis lain.</span></a></li><li data-s="pinjamkan uang catat uang usaha yang dipinjamkan ke orang lain dan kapan dikembalikan. pinjamkan pinjam kasih pinjam piutang keluar lend loan out pinjam karyawan kasbon karyawan pinjaman karyawan"><a href="tutorial/#pinjamkan_uang"><b>Pinjamkan uang</b> <span class="badge">Max</span><span>Catat uang usaha yang dipinjamkan ke orang lain dan kapan dikembalikan.</span></a></li><li data-s="tutup kas &amp; rekap kasir hitung uang di laci, cocokkan dengan catatan, dan lihat rekap penjualan hari itu. tutup kas laci rekap selisih tutup toko drawer close recap cash count selisih kas hitung laci cash drawer close till"><a href="tutorial/#tutup_kas"><b>Tutup kas &amp; rekap kasir</b> <span class="badge">Max</span><span>Hitung uang di laci, cocokkan dengan catatan, dan lihat rekap penjualan hari itu.</span></a></li><li data-s="bantu hitung pajak usaha perkiraan pajak dari omzetmu supaya tidak kaget saat melapor. pajak pph omzet lapor pajak tax turnover umkm pajak final peredaran bruto"><a href="tutorial/#pajak_usaha"><b>Bantu hitung pajak usaha</b> <span class="badge">Max</span><span>Perkiraan pajak dari omzetmu supaya tidak kaget saat melapor.</span></a></li><li data-s="pengaturan bisnis data nota, target bulanan, wallet, kategori, kasir, dan pengingat usaha. pengaturan target data nota logo pengingat settings setup kasir"><a href="tutorial/#pengaturan_bisnis"><b>Pengaturan bisnis</b> <span class="badge">Max</span><span>Data nota, target bulanan, wallet, kategori, kasir, dan pengingat usaha.</span></a></li><li data-s="tagih yang belum bayar lihat nota yang belum lunas, tagih lewat whatsapp, dan catat pembayarannya saat uang masuk. tagih belum bayar belum lunas piutang nagih utang pelanggan collect unpaid receivable tagihan pelanggan piutang usaha yang belum bayar"><a href="tutorial/#tagih_piutang_usaha"><b>Tagih yang belum bayar</b> <span class="badge">Max</span><span>Lihat nota yang belum lunas, tagih lewat WhatsApp, dan catat pembayarannya saat uang masuk.</span></a></li><li data-s="bon pemasok (belanja bayar nanti) belanja bahan atau stok sekarang, bayar nanti: utangnya tercatat lengkap dengan jatuh tempo. bon utang pemasok bayar nanti kredit pemasok supplier credit tempo bon pemasok bayar nanti pemasok supplier credit utang usaha"><a href="tutorial/#bon_pemasok"><b>Bon pemasok (belanja bayar nanti)</b> <span class="badge">Max</span><span>Belanja bahan atau stok sekarang, bayar nanti: utangnya tercatat lengkap dengan jatuh tempo.</span></a></li><li data-s="nota &amp; data bisnis di nota lihat semua nota penjualan dan atur data usaha yang tercetak di nota. nota invoice struk cetak daftar nota"><a href="tutorial/#nota_usaha"><b>Nota &amp; data bisnis di nota</b> <span class="badge">Max</span><span>Lihat semua nota penjualan dan atur data usaha yang tercetak di nota.</span></a></li><li data-s="rekap penjualan dari karyawan kasir mengirim penjualan di hp-nya ke pemilik lewat file, tanpa server. rekap karyawan banyak orang kirim penjualan recap employee tim"><a href="tutorial/#rekap_kasir"><b>Rekap penjualan dari karyawan</b> <span class="badge">Max</span><span>Kasir mengirim penjualan di HP-nya ke pemilik lewat file, tanpa server.</span></a></li><li data-s="target omzet bulanan tetapkan target omzet per bulan dan lihat kemajuannya tiap hari di beranda bisnis. target omzet target bulanan target jualan goal turnover target omzet target usaha monthly target turnover target"><a href="tutorial/#target_bisnis"><b>Target omzet bulanan</b> <span class="badge">Max</span><span>Tetapkan target omzet per bulan dan lihat kemajuannya tiap hari di Beranda Bisnis.</span></a></li><li data-s="profil usaha (nama, logo, alamat, nomor) nama usaha, logo, nomor whatsapp, alamat, jenis usaha dan warna. dipakai di nota dan laporan. profil usaha nama usaha nama toko logo logo nota alamat alamat toko nomor wa nomor telepon no hp usaha jenis usaha warna usaha business profile address phone number"><a href="tutorial/#bisnis_profil"><b>Profil usaha (nama, logo, alamat, nomor)</b> <span class="badge">Max</span><span>Nama usaha, logo, nomor WhatsApp, alamat, jenis usaha dan warna. Dipakai di nota dan laporan.</span></a></li><li data-s="nota &amp; cara bayar atur cara bayar di nota (bank, e-wallet, qris), catatan di bawah nota, slogan, tanda tangan dan ukuran nota. data nota atur nota pengaturan nota cara bayar info rekening nota invoice settings receipt settings payment details"><a href="tutorial/#nota_data"><b>Nota &amp; cara bayar</b> <span class="badge">Max</span><span>Atur cara bayar di nota (bank, e-wallet, QRIS), catatan di bawah nota, slogan, tanda tangan dan ukuran nota.</span></a></li><li data-s="rekening bank dan e-wallet di nota tampilkan nomor rekening atau e-wallet di nota supaya pembeli tahu ke mana transfer. rekening no rek nomor rekening bank bca bri mandiri bni bsi gopay ovo dana shopeepay linkaja e-wallet transfer ke mana atas nama bank account account number ewallet"><a href="tutorial/#cara_bayar_nota"><b>Rekening bank dan e-wallet di nota</b> <span class="badge">Max</span><span>Tampilkan nomor rekening atau e-wallet di nota supaya pembeli tahu ke mana transfer.</span></a></li><li data-s="qris di nota (pasang, ganti, hapus gambar) pasang gambar kode qris tokomu di nota. bisa diganti atau dihapus kapan saja. qris kode qr qr qr code gambar qris ganti qris hapus qris tambah qris qris nota barcode bayar change qris add qris remove qris"><a href="tutorial/#qris_nota"><b>QRIS di nota (pasang, ganti, hapus gambar)</b> <span class="badge">Max</span><span>Pasang gambar kode QRIS tokomu di nota. Bisa diganti atau dihapus kapan saja.</span></a></li><li data-s="tanda tangan di nota pasang tanda tangan di nota: gambar dengan jari atau pilih fotonya. tanda tangan ttd tandatangan paraf gambar tanda tangan signature sign draw signature"><a href="tutorial/#ttd_nota"><b>Tanda tangan di nota</b> <span class="badge">Max</span><span>Pasang tanda tangan di nota: gambar dengan jari atau pilih fotonya.</span></a></li><li data-s="slogan dan catatan di bawah nota tulis slogan usaha dan kalimat penutup, mis. "terima kasih sudah order". slogan tagline catatan nota catatan di bawah nota terima kasih nota kalimat penutup footer nota receipt note footer"><a href="tutorial/#slogan_catatan_nota"><b>Slogan dan catatan di bawah nota</b> <span class="badge">Max</span><span>Tulis slogan usaha dan kalimat penutup, mis. "Terima kasih sudah order".</span></a></li><li data-s="ukuran nota (a5 atau struk 58 mm) pilih nota kertas a5 atau struk kecil 58 mm untuk printer thermal. ukuran nota a5 kertas a5 struk kecil struk 58 58 mm printer printer thermal thermal cetak struk receipt size thermal printer paper size"><a href="tutorial/#ukuran_nota"><b>Ukuran nota (A5 atau struk 58 mm)</b> <span class="badge">Max</span><span>Pilih nota kertas A5 atau struk kecil 58 mm untuk printer thermal.</span></a></li><li data-s="cetak, pdf, foto atau wa untuk nota nota bisa dicetak, dikirim sebagai pdf, sebagai foto (gambar), atau teks ke whatsapp pembeli. kirim nota jadi foto nota jadi foto nota jadi gambar kirim foto nota cetak nota print nota pdf nota foto nota gambar nota share nota bagikan nota print receipt receipt photo receipt pdf"><a href="tutorial/#kirim_nota_foto_pdf"><b>Cetak, PDF, Foto atau WA untuk nota</b> <span class="badge">Max</span><span>Nota bisa dicetak, dikirim sebagai PDF, sebagai foto (gambar), atau teks ke WhatsApp pembeli.</span></a></li><li data-s="wallet usaha kas, rekening, dan e-wallet khusus usaha, terpisah dari wallet pribadi. wallet usaha wallet bisnis kas usaha rekening usaha laci saldo usaha business wallet"><a href="tutorial/#wallet_usaha"><b>Wallet usaha</b> <span class="badge">Max</span><span>Kas, rekening, dan e-wallet khusus usaha, terpisah dari wallet pribadi.</span></a></li><li data-s="kanal jual dan potongan platform catat jualan lewat shopee, gofood, dan lainnya, lengkap dengan potongan platform dan wallet tujuannya. kanal kanal jual channel shopee gofood grabfood tokopedia marketplace potongan potongan platform fee platform komisi online sales channel platform fee"><a href="tutorial/#kanal_jual"><b>Kanal jual dan potongan platform</b> <span class="badge">Max</span><span>Catat jualan lewat Shopee, GoFood, dan lainnya, lengkap dengan potongan platform dan wallet tujuannya.</span></a></li><li data-s="kategori usaha, harga pokok (hpp) dan bahan atur kategori pendapatan, harga pokok dan biaya operasional, dan daftar bahan yang kamu beli. kategori usaha kategori bisnis hpp harga pokok cogs paket kategori bahan bahan saya daftar bahan bahan baku operasional jenis usaha business category materials ingredients"><a href="tutorial/#kategori_bahan"><b>Kategori usaha, harga pokok (HPP) dan bahan</b> <span class="badge">Max</span><span>Atur kategori pendapatan, harga pokok dan biaya operasional, dan daftar bahan yang kamu beli.</span></a></li><li data-s="pengingat bisnis dan jamnya pengingat piutang jatuh tempo, bon pemasok, stok tipis, tagihan rutin dan ringkasan mingguan, dengan satu jam untuk semua. pengingat pengingat bisnis notifikasi bisnis reminder jam pengingat ingatkan piutang jatuh tempo stok tipis ringkasan mingguan ringkasan senin business reminders notification time"><a href="tutorial/#pengingat_bisnis"><b>Pengingat bisnis dan jamnya</b> <span class="badge">Max</span><span>Pengingat piutang jatuh tempo, bon pemasok, stok tipis, tagihan rutin dan ringkasan mingguan, dengan satu jam untuk semua.</span></a></li><li data-s="widget bisnis di layar utama pasang widget usaha di layar utama hp. widget bisnis widget usaha widget layar utama widget toko business widget home screen widget"><a href="tutorial/#widget_bisnis"><b>Widget bisnis di layar utama</b> <span class="badge">Max</span><span>Pasang widget usaha di layar utama HP.</span></a></li><li data-s="pre-order (pesanan diambil nanti, dp, kalender) terima pesanan untuk tanggal tertentu dengan dp, lihat kalendernya, rekap yang harus dibuat, lalu selesaikan jadi nota. ubah pre-order revisi pesanan tambah barang pesanan ganti jumlah pesanan ubah pesanan edit pre-order change pre-order change order items pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup"><a href="tutorial/#preorder"><b>Pre-order (pesanan diambil nanti, DP, kalender)</b> <span class="badge">Max</span><span>Terima pesanan untuk tanggal tertentu dengan DP, lihat kalendernya, rekap yang harus dibuat, lalu selesaikan jadi nota.</span></a></li><li data-s="atur pre-order (batas per hari, dp bawaan, notifikasi) notifikasi pesanan (sehari sebelumnya, 2 jam sebelum diambil, dp belum dibayar), batas pesanan per hari, dp bawaan, dan tambah otomatis ke google kalender. atur pre-order ingatkan dp dp belum dibayar batas pesanan per hari pesanan penuh dp bawaan otomatis google kalender tombol di notifikasi pre-order settings pre-order reminders daily order limit default deposit"><a href="tutorial/#atur_preorder"><b>Atur pre-order (batas per hari, DP bawaan, notifikasi)</b> <span class="badge">Max</span><span>Notifikasi pesanan (sehari sebelumnya, 2 jam sebelum diambil, DP belum dibayar), batas pesanan per hari, DP bawaan, dan tambah otomatis ke Google Kalender.</span></a></li><li data-s="catatan (uang masuk atau keluar yang dicatat sendiri) uang masuk atau keluar yang kamu catat dengan tombol catat tampil di penjualan › catatan, dengan label masuk ke laporan sebagai apa. catatan catat tombol catat catatan bisnis lihat catatan catatan pengeluaran catatan pemasukan di mana catatan masuk laporan sebagai tidak dihitung laba non-laba business notes recorded notes where did my note go"><a href="tutorial/#catatan_bisnis"><b>Catatan (uang masuk atau keluar yang dicatat sendiri)</b> <span class="badge">Max</span><span>Uang masuk atau keluar yang kamu catat dengan tombol Catat tampil di Penjualan › Catatan, dengan label masuk ke laporan sebagai apa.</span></a></li><li data-s="laporan bisnis (tab-tabnya) ringkasan, keuangan, laba rugi, arus kas, neraca, modal &amp; prive, produk, pembeli, jam ramai, bahan &amp; belanja, piutang, kanal, setahun dan pajak. laporan bisnis laporan usaha tab laporan ringkasan arus kas neraca modal prive produk terlaris pembeli jam ramai setahun kanal business report cash flow balance sheet best seller"><a href="tutorial/#laporan_bisnis"><b>Laporan bisnis (tab-tabnya)</b> <span class="badge">Max</span><span>Ringkasan, Keuangan, Laba rugi, Arus kas, Neraca, Modal &amp; prive, Produk, Pembeli, Jam ramai, Bahan &amp; belanja, Piutang, Kanal, Setahun dan Pajak.</span></a></li><li data-s="arti kartu di tab keuangan (margin, titik impas, kas cukup untuk) penjelasan uang usaha sekarang, kas cukup untuk, margin kotor, margin bersih, titik impas dan biaya / omzet. margin margin kotor margin bersih titik impas impas kas cukup untuk uang usaha sekarang biaya omzet kesehatan keuangan apa artinya artinya break even gross margin net margin runway what does it mean"><a href="tutorial/#arti_kartu_keuangan"><b>Arti kartu di tab Keuangan (margin, titik impas, kas cukup untuk)</b> <span class="badge">Max</span><span>Penjelasan Uang usaha sekarang, Kas cukup untuk, Margin kotor, Margin bersih, Titik impas dan Biaya / omzet.</span></a></li><li data-s="kenapa omzet beda dengan uang masuk laporan dihitung dari uang yang benar-benar masuk dan keluar. nota yang belum lunas, prive dan setoran modal tidak ikut. kenapa omzet beda omzet beda omzet tidak sama uang masuk beda laba tidak cocok selisih laporan kenapa laba beda dengan saldo cash basis why sales differ profit does not match mismatch"><a href="tutorial/#omzet_beda_uang_masuk"><b>Kenapa omzet beda dengan uang masuk</b> <span class="badge">Max</span><span>Laporan dihitung dari uang yang benar-benar masuk dan keluar. Nota yang belum lunas, prive dan setoran modal tidak ikut.</span></a></li><li data-s="scan barcode saat jual dan bunyinya scan barcode produk untuk menambah ke keranjang. ada bunyi "tit" saat berhasil dan bunyi lain bila belum terdaftar, bisa dimatikan. scan scan barcode barcode bunyi scan suara scan bunyi tit matikan suara scan scanner barcode sound beep scan sound"><a href="tutorial/#scan_barcode_kasir"><b>Scan barcode saat jual dan bunyinya</b> <span class="badge">Max</span><span>Scan barcode produk untuk menambah ke keranjang. Ada bunyi "tit" saat berhasil dan bunyi lain bila belum terdaftar, bisa dimatikan.</span></a></li><li data-s="jual pakai suara atau ketik sebut atau ketik "2 kopi 1 roti" dan keranjang terisi sendiri. jual suara jual pakai suara jual ketik catat jualan cepat quick sale ucapkan voice sale sell by voice dictate"><a href="tutorial/#jual_suara_ketik"><b>Jual pakai suara atau ketik</b> <span class="badge">Max</span><span>Sebut atau ketik "2 kopi 1 roti" dan keranjang terisi sendiri.</span></a></li><li data-s="lacak stok produk (dan stok minus) nyalakan lacak stok di produk agar stok berkurang tiap jual. matikan untuk jasa atau titipan. lacak stok stok stok minus stok negatif stok habis stok tidak berkurang jasa titipan track stock negative stock out of stock"><a href="tutorial/#lacak_stok"><b>Lacak stok produk (dan stok minus)</b> <span class="badge">Max</span><span>Nyalakan Lacak stok di produk agar stok berkurang tiap jual. Matikan untuk jasa atau titipan.</span></a></li><li data-s="pindah uang antar wallet usaha atau ke bisnis lain pindahkan uang antar wallet usaha (mis. tarik saldo shopee) atau ke bisnismu yang lain. tidak dihitung sebagai omzet. pindah uang usaha transfer antar bisnis tarik saldo shopee pindah wallet usaha ke bisnis lain antar bisnis pindah saldo tarik saldo marketplace transfer antar wallet usaha move business money transfer between businesses withdraw marketplace balance"><a href="tutorial/#transfer_antar_bisnis"><b>Pindah uang antar wallet usaha atau ke bisnis lain</b> <span class="badge">Max</span><span>Pindahkan uang antar wallet usaha (mis. tarik saldo Shopee) atau ke bisnismu yang lain. Tidak dihitung sebagai omzet.</span></a></li><li data-s="ringkasan gabungan (pribadi + semua bisnis) lihat uang pribadi dan semua bisnismu berdampingan. ringkasan gabungan gabungan semua bisnis pribadi dan bisnis total semua combined summary all businesses"><a href="tutorial/#ringkasan_gabungan"><b>Ringkasan Gabungan (Pribadi + semua bisnis)</b> <span class="badge">Max</span><span>Lihat uang pribadi dan semua bisnismu berdampingan.</span></a></li><li data-s="buat bisnis baru dan ganti profil punya lebih dari satu usaha? buat bisnis baru dan pindah antara pribadi dan bisnis-bisnismu. bisnis baru buat bisnis tambah usaha usaha kedua ganti profil ganti bisnis hapus bisnis ubah nama bisnis multi bisnis new business switch profile second business"><a href="tutorial/#bisnis_baru_ganti"><b>Buat bisnis baru dan ganti profil</b> <span class="badge">Max</span><span>Punya lebih dari satu usaha? Buat bisnis baru dan pindah antara Pribadi dan bisnis-bisnismu.</span></a></li></ul></section></div>
+    <p class="note" id="allNone" hidden>Tidak ada fitur yang cocok.</p>
+    <p class="more"><button class="btn btn--ghost" id="allMore" type="button">Tampilkan semua (108)</button></p>
+  </div>
+</section>
 
-  <!-- ============ FAQ ============ -->
-  <section class="section" id="faq">
-    <div class="container container--narrow">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> FAQ</p>
-        <h2 class="section__title">Pertanyaan yang sering ditanyakan.</h2>
-      </div>
-
-      <div class="faq-list" data-reveal>
-        <details class="faq-item" data-reveal-child open>
-          <summary>Apakah Artosku gratis?</summary>
-          <div class="faq-item__body">Ya, sepenuhnya gratis. Tidak ada biaya langganan.</div>
-        </details>
-        <details class="faq-item" data-reveal-child>
-          <summary>Apakah data keuangan saya aman?</summary>
-          <div class="faq-item__body">Data keuangan utama disimpan di HP kamu. Kamu bisa mengunci aplikasi dengan PIN atau sidik jari, dan membuat backup terenkripsi ke Google Drive milikmu sendiri.</div>
-        </details>
-        <details class="faq-item" data-reveal-child>
-          <summary>Bagaimana cara memasang Artosku?</summary>
-          <div class="faq-item__body">Artosku sudah tersedia langsung di Google Play. Cukup buka tautan unduh di halaman ini atau cari "Artosku" di Google Play, lalu pasang seperti aplikasi lainnya.</div>
-        </details>
-        <details class="faq-item" data-reveal-child>
-          <summary>Bisa dipakai di iPhone?</summary>
-          <div class="faq-item__body">Untuk saat ini Artosku baru tersedia untuk Android. Dukungan iOS masih dalam pertimbangan.</div>
-        </details>
-      </div>
+<section class="sec sec--tint" id="minyam">
+  <div class="wrap minyam">
+    <div class="minyam__stage" aria-label="Minyam yang sedang dipakaikan item">
+      <img id="wearImg" src="assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
     </div>
-  </section>
-
-  <!-- ============ KONTAK ============ -->
-  <section class="section section--soft" id="kontak">
-    <div class="container container--narrow">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Kontak</p>
-        <h2 class="section__title">Ada kritik &amp; saran, request fitur, atau mau kerja sama?</h2>
-        <p class="section__desc">Semua masukan langsung masuk ke email pembuat Artosku &mdash; beneran dibaca, bukan cuma formalitas.</p>
+    <div class="minyam__copy">
+      <h2>Minyam ikut mencatat</h2>
+      <p class="lead">Catat tiap hari, streak-mu naik, dan Minyam bisa dapat item baru. Coba pakaikan sesuatu.</p>
+      <div class="streak">
+        <div class="streak__num"><i class="ph ph-fire" aria-hidden="true"></i><b id="streakNum">6</b> <span>hari</span></div>
+        <button class="btn btn--small" id="streakBtn" type="button">Catat hari ini</button>
       </div>
-
-      <div class="contact-card" data-reveal>
-        <form class="contact-form" id="contactForm">
-          <div class="contact-form__row" data-reveal-child>
-            <div class="form-field">
-              <label for="contactName">Nama</label>
-              <input type="text" id="contactName" name="name" autocomplete="name" placeholder="Nama kamu" required />
-            </div>
-            <div class="form-field">
-              <label for="contactType">Jenis pesan</label>
-              <select id="contactType" name="type" required>
-                <option value="Kritik &amp; Saran">Kritik &amp; Saran</option>
-                <option value="Request Fitur">Request Fitur</option>
-                <option value="Kerja Sama / Kolaborasi">Kerja Sama / Kolaborasi</option>
-                <option value="Lainnya">Lainnya</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-field" data-reveal-child>
-            <label for="contactMessage">Pesan</label>
-            <textarea id="contactMessage" name="message" rows="5" placeholder="Ceritain kritik, saran, fitur yang kamu mau, atau ide kolaborasinya di sini..." required></textarea>
-          </div>
-
-          <div class="contact-form__actions" data-reveal-child>
-            <button type="submit" class="btn btn--primary btn--lg btn--shimmer">
-              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12 20 4l-6 16-3-7-8-1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              <span>Kirim lewat Email</span>
-            </button>
-            <p class="contact-form__note">Tombol ini bakal membuka aplikasi email kamu dengan pesan yang sudah terisi otomatis, tinggal dicek lalu kirim.</p>
-          </div>
-        </form>
-
-        <p class="contact-fallback" data-reveal-child>
-          Atau email langsung ke
-          <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a>
-        </p>
-        <p class="contact-fallback contact-fallback--founder" data-reveal-child>
-          Founder &amp; developer:
-          <a href="mailto:andi.pramana@artosku.my.id">andi.pramana@artosku.my.id</a>
-        </p>
-      </div>
+      <p class="pick">Pilih item</p>
+      <div class="items" id="items" role="group" aria-label="Pilih item"></div>
     </div>
-  </section>
+  </div>
+</section>
 
+<section class="sec" id="paket">
+  <div class="wrap">
+    <h2>Paket</h2>
+    <p class="lead">Mulai gratis. Naik paket kalau butuh jatah AI lebih besar.</p>
+    <div class="plans">
+      <article class="plan"><h3>Free</h3><p>Catat manual, notifikasi, laporan, anggaran, wallet, dan backup ke Drive. AI dengan jatah harian.</p></article>
+      <article class="plan"><h3>Pro</h3><p>Jatah AI lebih besar untuk yang rutin mencatat dengan AI.</p></article>
+      <article class="plan plan--max"><h3>Max</h3><p>Jatah AI paling besar, ditambah Mode Bisnis: kasir, stok, nota, dan pre-order.</p></article>
+    </div>
+    <p class="note">Harga tampil di aplikasi lewat Google Play.</p>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="faq">
+  <div class="wrap faq">
+    <h2>Pertanyaan umum</h2>
+    <div class="faq__list"><details><summary>Apakah Artosku gratis?</summary><p>Bisa dipakai gratis. Ada paket Pro dan Max untuk jatah AI yang lebih besar, dan Mode Bisnis ada di paket Max.</p></details><details><summary>Apakah bisa tanpa internet?</summary><p>Catat manual, notifikasi, dan melihat laporan jalan tanpa internet. AI, scan mutasi, wallet bersama, dan kurs mata uang butuh internet.</p></details><details><summary>Data apa yang dikirim ke luar HP?</summary><p>Catatan dan foto struk tetap di HP. Teks yang kamu minta dibaca AI dikirim ke penyedia AI setelah kamu setuju. Wallet bersama disimpan di server. Backup ke Google Drive masuk ke akun Drive-mu sendiri.</p></details><details><summary>Apakah ada iklan?</summary><p>Tidak ada iklan, dan datamu tidak dijual.</p></details><details><summary>Bagaimana cara memasangnya?</summary><p>Cari Artosku di Google Play, atau pakai tombol unduh di halaman ini.</p></details><details><summary>Bisa dipakai di iPhone?</summary><p>Untuk saat ini baru Android.</p></details></div>
+  </div>
+</section>
+
+<section class="dl" id="unduh">
+  <div class="wrap dl__in">
+    <img class="dl__mascot" src="assets/minyam/joy.webp" alt="" width="200" height="200" loading="lazy" />
+    <div>
+      <h2>Mulai dari catatan pertama.</h2>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="assets/google-play-badge.svg" alt="Dapatkan di Google Play" width="160" height="48" loading="lazy" /></a>
+      <p class="dl__mail">Pertanyaan atau masukan? Kirim ke <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a></p>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="#top" class="brand brand--footer">
-      <img src="assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo" />
-    </a>
-    <nav class="footer__links" aria-label="Navigasi footer">
-      <a href="#fitur">Fitur</a>
-      <a href="tutorial/">Panduan</a>
-      <a href="#kenapa">Kenapa Artosku</a>
-      <a href="#unduh">Download</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontak">Kontak</a>
-      <a href="privacy.html">Kebijakan Privasi</a>
-      <a href="terms.html">Syarat dan Ketentuan</a><a href="en/" hreflang="en" lang="en">English</a>
-    </nav>
-    <p class="footer__copy">&copy; <span id="year"></span> Artosku. Dibuat oleh Andi Pramana.</p>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>&copy; Artosku. Dibuat oleh Andi Pramana.</span>
+    <nav aria-label="Footer"><a href="tutorial/">Panduan</a><a href="privacy.html">Kebijakan Privasi</a><a href="terms.html">Syarat dan Ketentuan</a><a href="en/" hreflang="en" lang="en">English</a></nav>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/home.js" defer></script>
 </body>
 </html>

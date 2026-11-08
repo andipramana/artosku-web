@@ -3,518 +3,312 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Artosku — Track Your Money, Even Offline</title>
-<meta name="description" content="Artosku helps you track your finances, with your main data stored on your own device. Download it free on Google Play." />
-<meta name="theme-color" content="#538248" />
-<link rel="canonical" href="https://artosku.my.id/en/" />
-
+<title>Artosku | Track your money, data stays on your phone</title>
+<meta name="description" content="Log spending by typing, talking, or snapping a receipt. Your records stay on your phone. Minyam keeps you company. Free on Google Play." />
+<meta name="theme-color" content="#F6FAF3" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Artosku — Track Your Money Easily, Live With More Clarity" />
-<meta property="og:description" content="Track your finances with ease. Your data stays on your phone, stays private, and can be backed up to your own Google Drive." />
-<meta property="og:image" content="../assets/artosku-app-icon.png" />
+<meta property="og:title" content="Artosku: money tracking as easy as telling a story" />
+<meta property="og:description" content="Your finance records stay on your phone. Log with AI as easily as telling a story, with Minyam beside you." />
+<meta property="og:image" content="https://artosku.my.id/assets/og-cover.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Artosku — Track Your Money Easily, Live With More Clarity" />
-<meta name="twitter:description" content="Track your finances with ease. Your data stays on your phone, stays private, and can be backed up to your own Google Drive." />
-<meta name="twitter:image" content="../assets/artosku-app-icon.png" />
-
+<meta name="twitter:title" content="Artosku: money tracking as easy as telling a story" />
+<meta name="twitter:description" content="Your finance records stay on your phone. Log with AI as easily as telling a story, with Minyam beside you." />
+<meta name="twitter:image" content="https://artosku.my.id/assets/og-cover.png" />
 <link rel="icon" href="../assets/artosku-app-icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="../assets/artosku-app-icon.png" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
-
-<link rel="stylesheet" href="../css/styles.css" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "Artosku",
-  "operatingSystem": "ANDROID",
-  "applicationCategory": "FinanceApplication",
-  "description": "A personal finance app for tracking income, expenses, budgets, and reports.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" }
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="../css/home.css" />
+<link rel="preload" as="image" href="../assets/minyam/idle.webp" type="image/webp" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Artosku","operatingSystem":"ANDROID","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"}}</script>
 <link rel="alternate" hreflang="id" href="https://artosku.my.id/" />
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/" />
 </head>
-<body>
+<body data-lang="en" data-asset="../" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Tap a product, pick a payment, then make the receipt.", "biz_cart_empty": "Nothing picked yet.", "biz_thanks": "Thank you", "biz_paid": "Paid by", "biz_new": "New sale", "biz_make": "Make receipt", "biz_pays": ["Cash", "QRIS", "Transfer"], "biz_products": [["Smashed chicken", 18000], ["Iced tea", 5000], ["Rice", 5000], ["Fried tofu", 3000], ["Extra sambal", 2000]], "biz_date_label": "Today"}'>
+<a class="skip" href="#main">Skip to content</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
-<div class="cursor-glow" aria-hidden="true"></div>
-
-<header class="navbar" id="navbar">
-  <div class="container navbar__inner">
-    <a href="#top" class="brand">
-      <img src="../assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo" />
-    </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#fitur">Features</a>
-      <a href="#paket">Plans</a>
-      <a href="tutorial/">Guide</a>
-      <a href="#kenapa">Why Artosku</a>
-      <a href="#unduh">Download</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontak">Contact</a>
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__brand" href="#top" aria-label="Artosku"><img src="../assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
+    <nav class="nav__links" aria-label="Menu">
+      <a href="#coba">One sentence</a><a href="#cara">How to log</a><a href="#data">Your data</a><a href="#fitur">Features</a><a href="#bisnis">Business</a><a href="#minyam">Minyam</a><a href="#paket">Plans</a><a href="#faq">FAQ</a>
     </nav>
-
-    <div class="navbar__actions">
-      <a href="#unduh" class="btn btn--primary btn--sm">
-        <span>Download Artosku</span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="nav__end">
+      <a class="nav__lang" href="../" hreflang="id" lang="id">Bahasa Indonesia</a>
+      <a class="btn btn--small" href="#unduh">Get it</a>
     </div>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <nav aria-label="Mobile navigation">
-    <a href="#fitur">Features</a>
-    <a href="#paket">Plans</a>
-    <a href="tutorial/">Guide</a>
-    <a href="#kenapa">Why Artosku</a>
-    <a href="#unduh">Download</a>
-    <a href="#faq">FAQ</a>
-    <a href="#kontak">Contact</a>
-    <a href="#unduh" class="btn btn--primary">Download Artosku</a>
-  </nav>
-</div>
-
 <main id="main">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__sky"></div>
-      <div class="hero__glow hero__glow--1"></div>
-      <div class="hero__glow hero__glow--2"></div>
-      <img class="parallax-layer" data-speed="0.06" src="../assets/layer-4-back.png" alt="" />
-      <img class="parallax-layer" data-speed="0.12" src="../assets/layer-3.png" alt="" />
-      <img class="parallax-layer" data-speed="0.20" src="../assets/layer-2.png" alt="" />
-      <img class="parallax-layer parallax-layer--front" data-speed="0.32" src="../assets/layer-1-front.png" alt="" />
+<section class="hero" id="top">
+  <div class="wrap hero__in">
+    <div class="hero__copy">
+      <h1>Your records on your phone. Logging as easy as telling a story.</h1>
+      <p class="hero__sub">Type, talk, or snap a receipt. AI prepares the entry, you decide.</p>
+      <div class="hero__cta">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="../assets/google-play-badge.svg" alt="Get it on Google Play" width="160" height="48" /></a>
+        <a class="btn btn--ghost" href="#coba">See how it works</a>
+      </div>
     </div>
+    <div class="hero__stage">
+      <div class="bubble" id="heroBubble" aria-live="polite">Hi, I am Minyam. Tap me.</div>
+      <button class="mascot mascot--hero" id="heroMascot" type="button" aria-label="Minyam, the Artosku mascot. Tap to say hi.">
+        <img id="heroMascotImg" src="../assets/minyam/idle.webp" alt="" width="400" height="400" fetchpriority="high" />
+      </button>
+    </div>
+  </div>
+</section>
 
-    <div class="container hero__grid">
-      <div class="hero__copy" data-reveal>
-        <p class="eyebrow" data-reveal-child>
-          <span class="eyebrow__dot"></span> Now available on Google Play
-        </p>
-        <h1 class="hero__title" data-reveal-child>
-          Track your money,<br />
-          <span class="text-accent">even when you're offline.</span>
-        </h1>
-        <p class="hero__desc" data-reveal-child>
-          Your main financial records stay on your device. When you need it, make an encrypted backup to your own Google Drive.
-        </p>
-
-        <div class="hero__cta" data-reveal-child>
-          <a href="#unduh" class="btn btn--primary btn--lg btn--shimmer">
-            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0-5-5m5 5 5-5M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Download Artosku Free</span>
-          </a>
-          <a href="#fitur" class="btn btn--ghost btn--lg">
-            <span>See Features</span>
-            <svg class="icon icon--arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+<section class="sec sec--tint" id="coba">
+  <div class="wrap">
+    <h2>One sentence, many entries</h2>
+    <p class="lead">One sentence of story can hold many transactions at once.</p>
+    <div class="try">
+      <div class="try__in">
+        <div class="try__form">
+          <p class="try__label" id="tryLabel">Tell your money story</p>
+          <div class="try__box">
+            <div class="try__mic" id="tryMic" aria-hidden="true"><i class="ph ph-microphone"></i><span class="wave"><b></b><b></b><b></b><b></b></span></div>
+            <textarea id="tryInput" rows="4" readonly tabindex="-1" aria-labelledby="tryLabel" placeholder="salary 5m into BCA, moved 1m from BCA to emergency fund pocket, lunch 25k with GoPay, parking 2k cash"></textarea>
+          </div>
+          <div class="try__btns">
+            <button class="btn btn--ghost" id="tryReplay" type="button"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i>Replay</button>
+          </div>
         </div>
-
-        <div class="hero__trust" data-reveal-child>
-          <div class="hero__trust-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.6 3.2 8.3 8 9 4.8-.7 8-4.4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <strong>Your financial data stays on your phone.</strong>
-            <span>Use the app without internet to record anything. If you want, an encrypted backup can be saved to your own Google Drive.</span>
-          </div>
+        <div class="chips" id="tryChips" role="group" aria-label="One sentence, many entries"></div>
+        <p class="note"><i class="ph ph-info" aria-hidden="true"></i> A sample. In the app, AI reads your own sentence.</p>
+      </div>
+      <div class="try__out">
+        <div class="try__mascot"><img id="tryMascotImg" src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" /></div>
+        <div class="txs" aria-live="polite">
+          <p class="tx__empty" id="tryEmpty">The result shows up here.</p>
+          <p class="reading" id="tryReading" hidden>AI is reading<span class="dots"><b></b><b></b><b></b></span></p>
+          <ul class="txlist" id="txList"></ul>
+          <p class="txsum" id="txSum" hidden></p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="hero__visual" id="heroVisual" data-reveal>
-        <div class="phone-stage" id="phoneStage">
-          <div class="floating-card floating-card--chart" data-speed="0.45">
-            <div class="floating-tilt">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V9m6 10V4m6 15v-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-            </div>
+<section class="sec" id="cara">
+  <div class="wrap">
+    <h2>Ways to log</h2>
+    <p class="lead">Pick whichever is fastest for you today.</p>
+    <div class="how">
+      <div class="tabs" role="tablist" aria-label="Ways to log">
+        <button role="tab" id="tab-type" aria-controls="pan-type" aria-selected="true"><i class="ph ph-keyboard" aria-hidden="true"></i>Type</button>
+        <button role="tab" id="tab-voice" aria-controls="pan-voice" aria-selected="false" tabindex="-1"><i class="ph ph-microphone" aria-hidden="true"></i>Voice</button>
+        <button role="tab" id="tab-photo" aria-controls="pan-photo" aria-selected="false" tabindex="-1"><i class="ph ph-receipt" aria-hidden="true"></i>Receipt photo</button>
+        <button role="tab" id="tab-bank" aria-controls="pan-bank" aria-selected="false" tabindex="-1"><i class="ph ph-bank" aria-hidden="true"></i>Bank statement</button>
+        <button role="tab" id="tab-notif" aria-controls="pan-notif" aria-selected="false" tabindex="-1"><i class="ph ph-bell-ringing" aria-hidden="true"></i>Notifications</button>
+      </div>
+      <div class="how__panels">
+        <div role="tabpanel" id="pan-type" aria-labelledby="tab-type" class="pan">
+          <div class="pan__copy"><h3>Write it like a chat.</h3><p>One sentence, or several transactions at once. AI fills in the amount, category, and wallet. You check, then save.</p></div>
+          <div class="phone">
+            <div class="ui-input"><span>salary 5m into BCA, 1m to emergency fund, lunch 25k with GoPay</span><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
+            <ul class="ui-rows">
+              <li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>Salary</span><b class="in">+Rp5.000.000</b></li>
+              <li><i class="ph ph-arrows-left-right" aria-hidden="true"></i><span>BCA &rarr; Emergency Fund Pocket</span><b>Rp1.000.000</b></li>
+              <li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Food &middot; GoPay</span><b>-Rp25.000</b></li>
+            </ul>
+            <button class="btn btn--small" type="button" tabindex="-1">Save</button>
           </div>
-          <div class="floating-card floating-card--income" data-speed="0.4">
-            <div class="floating-tilt">
-              <span class="floating-card__label">Income</span>
-              <span class="floating-card__value">+Rp 8.200.000</span>
-            </div>
+        </div>
+        <div role="tabpanel" id="pan-voice" aria-labelledby="tab-voice" class="pan" hidden>
+          <div class="pan__copy"><h3>Say it, do not type it.</h3><p>Tap the microphone and say the transaction. Handy when your hands are full or you are on the go.</p></div>
+          <div class="phone">
+            <div class="ui-mic"><i class="ph ph-microphone" aria-hidden="true"></i></div>
+            <p class="ui-say">Listening...</p>
+            <p class="ui-quote">"fuel fifty thousand"</p>
+            <div class="ui-tx"><b>Rp50.000</b><span>Transport &middot; Cash</span><button class="btn btn--small" type="button" tabindex="-1">Save</button></div>
           </div>
-          <div class="floating-dot floating-dot--1" data-speed="0.5"><div class="floating-tilt"></div></div>
-          <div class="floating-dot floating-dot--2" data-speed="0.55"><div class="floating-tilt"></div></div>
-          <div class="floating-spark" data-speed="0.5">
-            <div class="floating-tilt">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 3.6 2.4 5.4 6 6-3.6.6-5.4 2.4-6 6-.6-3.6-2.4-5.4-6-6 3.6-.6 5.4-2.4 6-6Z"/></svg>
-            </div>
+        </div>
+        <div role="tabpanel" id="pan-photo" aria-labelledby="tab-photo" class="pan" hidden>
+          <div class="pan__copy"><h3>Snap the receipt.</h3><p>The shop and total are read from the photo. The photo stays on your phone as an attachment.</p></div>
+          <div class="phone">
+            <div class="ui-receipt"><b>Toko Sejahtera</b><i></i><i></i><i></i><i class="short"></i><div><span>Total</span><b>Rp84.500</b></div></div>
+            <div class="ui-tx"><b>Rp84.500</b><span>Toko Sejahtera &middot; 3 items</span><button class="btn btn--small" type="button" tabindex="-1">Save</button></div>
           </div>
-
-          <div class="phone" id="phoneMock">
-            <div class="phone__notch"></div>
-            <div class="phone__screen">
-              <div class="mockscreen">
-                <div class="mockscreen__top">
-                  <span class="mockscreen__label">Summary</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg>
-                </div>
-                <p class="mockscreen__sublabel">Net Balance <span>&#9432;</span></p>
-                <p class="mockscreen__balance">Rp 5.450.000</p>
-                <p class="mockscreen__trend">&#8599; 12% from last month</p>
-
-                <div class="mockscreen__chips">
-                  <div class="chip chip--in">
-                    <span>Total Income</span>
-                    <strong>Rp 8.200.000</strong>
-                  </div>
-                  <div class="chip chip--out">
-                    <span>Total Expenses</span>
-                    <strong>Rp 2.750.000</strong>
-                  </div>
-                </div>
-
-                <p class="mockscreen__section-title">This Month's Spending</p>
-                <div class="mockscreen__donut-row">
-                  <div class="donut" role="img" aria-label="Spending chart by category"></div>
-                  <ul class="donut-legend">
-                    <li><i style="background:#538248"></i>Food <b>40%</b></li>
-                    <li><i style="background:#6B9B5F"></i>Transport <b>25%</b></li>
-                    <li><i style="background:#DFB449"></i>Shopping <b>20%</b></li>
-                    <li><i style="background:#4C7F96"></i>Entertainment <b>15%</b></li>
-                  </ul>
-                </div>
-
-                <div class="mockscreen__tx-head">
-                  <span>Recent Transactions</span>
-                  <span class="mockscreen__link">See all</span>
-                </div>
-                <ul class="tx-list">
-                  <li>
-                    <span class="tx-icon">&#127860;</span>
-                    <span class="tx-name">Lunch</span>
-                    <span class="tx-amount tx-amount--out">-Rp 45.000</span>
-                  </li>
-                  <li>
-                    <span class="tx-icon">&#128188;</span>
-                    <span class="tx-name">Salary</span>
-                    <span class="tx-amount tx-amount--in">+Rp 8.000.000</span>
-                  </li>
-                  <li>
-                    <span class="tx-icon">&#128663;</span>
-                    <span class="tx-name">Transport</span>
-                    <span class="tx-amount tx-amount--out">-Rp 20.000</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        </div>
+        <div role="tabpanel" id="pan-bank" aria-labelledby="tab-bank" class="pan" hidden>
+          <div class="pan__copy"><h3>A screenshot of the statement.</h3><p>Upload a statement from your bank app. You choose which rows to log.</p></div>
+          <div class="phone">
+            <p class="ui-say">Choose what to log</p>
+            <ul class="ui-rows">
+              <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Kedai Kopi</span><b>-Rp32.000</b></li>
+              <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Minimarket</span><b>-Rp18.500</b></li>
+              <li class="off"><i class="ph ph-square" aria-hidden="true"></i><span>Top up</span><b>-Rp100.000</b></li>
+              <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Gaji</span><b class="in">+Rp6.500.000</b></li>
+            </ul>
+          </div>
+        </div>
+        <div role="tabpanel" id="pan-notif" aria-labelledby="tab-notif" class="pan" hidden>
+          <div class="pan__copy"><h3>From notifications.</h3><p>Bank and e-wallet notifications become draft transactions. Drafts wait for your approval, nothing saves by itself.</p></div>
+          <div class="phone">
+            <div class="ui-notif"><i class="ph ph-wallet" aria-hidden="true"></i><div><b>GoPay</b><span>Payment of Rp32,000 to Kedai Kopi succeeded</span></div></div>
+            <div class="ui-tx"><b>Rp32.000</b><span>Draft ready to check</span><button class="btn btn--small" type="button" tabindex="-1">Save</button></div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="scroll-cue" aria-hidden="true"><span></span></div>
-  </section>
-
-  <!-- ============ WHY ARTOSKU ============ -->
-  <section class="section" id="kenapa">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Why Artosku</p>
-        <h2 class="section__title">Built so you enjoy tracking, not dread it.</h2>
+<section class="sec sec--tint" id="data">
+  <div class="wrap">
+    <h2>Where is your data?</h2>
+    <p class="lead">An honest answer, no asterisks.</p>
+    <div class="data">
+      <div class="data__col data__col--phone">
+        <div class="data__head"><img src="../assets/minyam/item_dasi_kupu.webp" alt="" width="72" height="72" loading="lazy" /><h3>On your phone</h3></div>
+        <ul>
+          <li><i class="ph ph-device-mobile" aria-hidden="true"></i>Records and receipt photos are stored on your phone.</li>
+          <li><i class="ph ph-wifi-slash" aria-hidden="true"></i>Manual logging and notifications work without internet.</li>
+          <li><i class="ph ph-google-drive-logo" aria-hidden="true"></i>Backup to your own Google Drive, whenever you want.</li>
+        </ul>
       </div>
-
-      <div class="cards-3" data-reveal>
-        <article class="feature-card" data-reveal-child>
-          <div class="feature-card__icon feature-card__icon--a">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 6.5 17.5 11" stroke="currentColor" stroke-width="1.8"/></svg>
-          </div>
-          <h3>Easy to Use</h3>
-          <p>A simple, intuitive interface. Logging a transaction takes just a few seconds, perfect if you're new to tracking your money.</p>
-        </article>
-
-        <article class="feature-card" data-reveal-child>
-          <div class="feature-card__icon feature-card__icon--b">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.6 3.2 8.3 8 9 4.8-.7 8-4.4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Better Privacy</h3>
-          <p>Your financial data is kept on your device, not collected for others to read. You decide when to back up to your own Google Drive.</p>
-        </article>
-
-        <article class="feature-card" data-reveal-child>
-          <div class="feature-card__icon feature-card__icon--c">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 12V4a8 8 0 1 1-8 8h8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 12 5.6 15.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Complete Reports</h3>
-          <p>Spending charts by category, monthly trends, and comparisons between periods &mdash; all clear and easy to understand.</p>
-        </article>
+      <div class="data__col">
+        <h3>Leaves the phone, only if you use it</h3>
+        <ul>
+          <li><i class="ph ph-sparkle" aria-hidden="true"></i>AI and statement scan send text to an AI provider, after you agree.</li>
+          <li><i class="ph ph-users-three" aria-hidden="true"></i>Shared wallets live on a server so you can open them together.</li>
+          <li><i class="ph ph-currency-circle-dollar" aria-hidden="true"></i>Currency rates need internet.</li>
+        </ul>
       </div>
     </div>
-  </section>
+    <p class="data__bottom"><b>No ads. Your data is not sold.</b> <a href="privacy.html">Read the Privacy Policy</a></p>
+  </div>
+</section>
 
-  <!-- ============ FEATURES ============ -->
-  <section class="section section--soft" id="fitur">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Features</p>
-        <h2 class="section__title">Everything you need to manage your money.</h2>
+<section class="sec" id="fitur">
+  <div class="wrap">
+    <h2>What is inside</h2>
+    <div class="bento">
+      <article class="cell cell--wallet"><i class="ph ph-wallet" aria-hidden="true"></i><h3>Wallets and shared wallets</h3><p>Keep cash, bank, and e-wallets apart. Invite a partner or family to a shared wallet.</p>
+        <div class="mini-wallets"><span>Tunai</span><span>BCA</span><span>GoPay</span><span class="on"><i class="ph ph-users" aria-hidden="true"></i>Shared</span></div></article>
+      <article class="cell cell--budget"><i class="ph ph-chart-pie-slice" aria-hidden="true"></i><h3>Budgets</h3><p>Cap each category and see what is left before the month ends.</p>
+        <div class="mini-budget"><div><span>Food</span><span>Rp420,000 left</span></div><meter min="0" max="100" value="58" aria-label="Food"></meter></div></article>
+      <article class="cell cell--bill"><i class="ph ph-bell-ringing" aria-hidden="true"></i><h3>Bills and reminders</h3><p>Installments and recurring bills are reminded before they are due.</p></article>
+      <article class="cell cell--report"><i class="ph ph-chart-line-up" aria-hidden="true"></i><h3>Reports</h3><p>Where your money goes, by category and by the period you choose.</p></article>
+      <article class="cell cell--asset"><i class="ph ph-target" aria-hidden="true"></i><h3>Assets and goals</h3><p>Record assets, then set money aside for your savings goals.</p></article>
+      <article class="cell cell--biz"><i class="ph ph-storefront" aria-hidden="true"></i><h3>Business Mode <span class="badge">Max plan</span></h3><p>Cashier, stock, receipts, and pre-orders for your business, kept apart from personal records.</p></article>
+    </div>
+    <p class="more"><a class="btn btn--ghost" href="#semua">See all features (108)</a></p>
+  </div>
+</section>
+
+<section class="sec sec--deep" id="bisnis">
+  <div class="wrap">
+    <h2>Business Mode <span class="badge">Max plan</span></h2>
+    <p class="lead">Your business records, kept apart from your personal ones, in one app.</p>
+    <div class="pos">
+      <div class="pos__menu card">
+        <h3>Proud Chicken</h3>
+        <ul class="pos__items" id="posItems"></ul>
+        <div class="chips" id="posPay" role="group" aria-label="Payment"></div>
+        <p class="pos__total"><span>Total</span><b id="posTotal">Rp0</b></p>
+        <button class="btn" id="posMake" type="button">Make receipt</button>
+        <p class="note">A sample in your browser. In the app, stock goes down too and the receipt can be sent.</p>
       </div>
-
-      <div class="feature-rows">
-        <div class="feature-row" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--a">
-              <div class="mini-line mini-line--head"></div>
-              <div class="mini-pill mini-pill--income">+Rp 8.000.000 &middot; Salary</div>
-              <div class="mini-pill mini-pill--expense">-Rp 150.000 &middot; Shopping</div>
-              <div class="mini-pill mini-pill--transfer">&#8644; Rp 500.000 &middot; Transfer</div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Quick Logging, Including With AI</span>
-            <h3>Log income, expenses, and transfers without the hassle.</h3>
-            <p>Just write it the way you'd say it, like “lunch 25k”. AI can prepare the entry for you to check before it's saved. You can also log several transactions at once and attach a photo of a receipt when needed.</p>
-          </div>
-        </div>
-
-        <div class="feature-row feature-row--reverse" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--b">
-              <div class="mini-donut"></div>
-              <div class="mini-bars">
-                <span style="--h:40%"></span><span style="--h:70%"></span><span style="--h:55%"></span><span style="--h:85%"></span><span style="--h:60%"></span>
-              </div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Budgets &amp; Reports</span>
-            <h3>Keep an eye on your budget and see trends over time.</h3>
-            <p>Set spending limits per category, explore interactive spending charts, and compare any periods with a custom date range &mdash; not just weekly or monthly.</p>
-          </div>
-        </div>
-
-        <div class="feature-row" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--c">
-              <div class="mini-wallet">Main Wallet <b>Rp 4.200.000</b></div>
-              <div class="mini-wallet">Emergency Savings <b>Rp 12.000.000</b></div>
-              <div class="mini-wallet mini-wallet--debt">Receivable &middot; Budi <b>Rp 500.000</b></div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Wallets, Assets &amp; Debts</span>
-            <h3>All your accounts and records in one place.</h3>
-            <p>Manage multiple wallets and savings pockets, keep track of your assets' value (gold, vehicles, investments), and record debts and receivables with due-date reminders.</p>
-          </div>
-        </div>
-
-        <div class="feature-row feature-row--reverse" data-reveal>
-          <div class="feature-row__visual" data-reveal-child>
-            <div class="mini-frame mini-frame--d">
-              <div class="mini-goal">
-                <div class="mini-goal__bar"><span style="width:64%"></span></div>
-                <span class="mini-goal__label">Emergency Fund &middot; 64%</span>
-              </div>
-              <div class="mini-toggle"><span></span> PIN &amp; Biometric Lock</div>
-            </div>
-          </div>
-          <div class="feature-row__copy" data-reveal-child>
-            <span class="feature-row__index">Data on Your Phone</span>
-            <h3>Keep tracking even without internet.</h3>
-            <p>Your main financial records are stored on your device. Lock the app with a PIN or fingerprint, then make an encrypted backup to your own Google Drive whenever you need it.</p>
-          </div>
-        </div>
+      <div class="pos__out">
+        <img id="posMascot" src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+        <div class="receipt" id="posReceipt" aria-live="polite"><p class="receipt__empty">Tap a product, pick a payment, then make the receipt.</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- ============ PLANS ============ -->
-  <section class="section" id="paket">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Plans</p>
-        <h2 class="section__title">Start free. Upgrade when you want more AI.</h2>
-      </div>
-
-      <div class="cards-3 plans" data-reveal>
-        <div class="plan-card" data-reveal-child>
-          <h3>Free</h3>
-          <p class="plan-card__note">To start tracking.</p>
-          <ul>
-            <li>All tracking, budget, and report features</li>
-            <li>AI logging and receipt scanning with a daily quota</li>
-            <li>Your data stays on your phone</li>
-          </ul>
-        </div>
-
-        <div class="plan-card" data-reveal-child>
-          <h3>Pro</h3>
-          <p class="plan-card__note">For those who log a lot with AI.</p>
-          <ul>
-            <li>A bigger daily AI and scan quota than Free</li>
-            <li>Ninja Headband for the mascot</li>
-          </ul>
-        </div>
-
-        <div class="plan-card plan-card--best" data-reveal-child>
-          <span class="plan-card__badge">Best value</span>
-          <h3>Max</h3>
-          <p class="plan-card__note">For those who log everything with AI.</p>
-          <ul>
-            <li>The biggest daily AI and scan quota</li>
-            <li>Lightning Aura and Ninja Headband for the mascot</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="plans__foot" data-reveal>Pro and Max are bought through Google Play inside the app, renew automatically, and can be cancelled at any time. Prices are shown in the app.</p>
+    <div class="how how--biz">
+      <div class="tabs" role="tablist" aria-label="Business Mode"><button role="tab" id="btab-kasir" aria-controls="bpan-kasir" aria-selected="true"><i class="ph ph-receipt" aria-hidden="true"></i>Cashier and receipts</button><button role="tab" id="btab-stok" aria-controls="bpan-stok" aria-selected="false" tabindex="-1"><i class="ph ph-package" aria-hidden="true"></i>Stock and supplies</button><button role="tab" id="btab-po" aria-controls="bpan-po" aria-selected="false" tabindex="-1"><i class="ph ph-calendar-check" aria-hidden="true"></i>Pre-orders</button><button role="tab" id="btab-piutang" aria-controls="bpan-piutang" aria-selected="false" tabindex="-1"><i class="ph ph-handshake" aria-hidden="true"></i>Customers and debts</button><button role="tab" id="btab-laporan" aria-controls="bpan-laporan" aria-selected="false" tabindex="-1"><i class="ph ph-chart-line-up" aria-hidden="true"></i>Profit and loss</button><button role="tab" id="btab-tutup" aria-controls="bpan-tutup" aria-selected="false" tabindex="-1"><i class="ph ph-vault" aria-hidden="true"></i>Close the till</button></div>
+      <div class="how__panels"><div role="tabpanel" id="bpan-kasir" aria-labelledby="btab-kasir" class="pan"><div class="pan__copy"><h3>Sell, then send the receipt.</h3><p>Receipts go out over WhatsApp or become a PDF, with your business name and payment method.</p></div><div class="phone"><div class="ui-receipt"><b>Proud Chicken</b><i></i><i></i><i class="short"></i><div><span>Total</span><b>Rp23.000</b></div></div><div class="ui-actions"><span class="btn btn--small">WhatsApp</span><span class="btn btn--small btn--ghost">PDF</span></div></div></div><div role="tabpanel" id="bpan-stok" aria-labelledby="btab-stok" class="pan" hidden><div class="pan__copy"><h3>Stock and supplies go down too.</h3><p>Stock drops as you sell. You get a warning before it runs out.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-package" aria-hidden="true"></i><span>Smashed chicken</span><b>Stock 24</b></li><li><i class="ph ph-package" aria-hidden="true"></i><span>Iced tea</span><b>Stock 60</b></li><li class="warn"><i class="ph ph-warning" aria-hidden="true"></i><span>Rice</span><b>Low stock</b></li></ul></div></div><div role="tabpanel" id="bpan-po" aria-labelledby="btab-po" class="pan" hidden><div class="pan__copy"><h3>Orders for a set date.</h3><p>Take pre-orders with a deposit, and see on the calendar what to make.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-calendar" aria-hidden="true"></i><span>14 Nov, Smashed chicken x 20</span><b>Deposit</b></li><li><i class="ph ph-calendar" aria-hidden="true"></i><span>16 Nov, Smashed chicken x 12</span><b>Deposit</b></li></ul></div></div><div role="tabpanel" id="bpan-piutang" aria-labelledby="btab-piutang" class="pan" hidden><div class="pan__copy"><h3>Who has not paid yet.</h3><p>Keep customers and suppliers, and see the debts still open.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-user" aria-hidden="true"></i><span>Warung Bu Sari</span><b>Rp240.000</b></li><li><i class="ph ph-user" aria-hidden="true"></i><span>Kantor Pak Dedi</span><b>Rp180.000</b></li><li class="off"><i class="ph ph-info" aria-hidden="true"></i><span>Unpaid</span><b>2</b></li></ul></div></div><div role="tabpanel" id="bpan-laporan" aria-labelledby="btab-laporan" class="pan" hidden><div class="pan__copy"><h3>Profit or loss, clearly.</h3><p>Profit and loss and cash flow for your business, apart from personal money.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>Revenue</span><b class="in">Rp3.420.000</b></li><li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Costs</span><b>Rp2.150.000</b></li><li><i class="ph ph-equals" aria-hidden="true"></i><span>Profit</span><b class="in">Rp1.270.000</b></li></ul></div></div><div role="tabpanel" id="bpan-tutup" aria-labelledby="btab-tutup" class="pan" hidden><div class="pan__copy"><h3>Close the till every day.</h3><p>Match the cash in the drawer with the sales record before you go home.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-vault" aria-hidden="true"></i><span>Opening cash</span><b>Rp200.000</b></li><li><i class="ph ph-cash" aria-hidden="true"></i><span>Cash sales</span><b>Rp1.180.000</b></li><li><i class="ph ph-check-square" aria-hidden="true"></i><span>Closing cash</span><b class="in">Rp1.380.000 Matches</b></li></ul></div></div></div>
     </div>
-  </section>
-
-  <!-- ============ FOUNDER NOTE ============ -->
-  <section class="section" id="cerita">
-    <div class="container">
-      <div class="founder-note" data-reveal>
-        <div class="founder-note__mark" data-reveal-child>
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M7 8h4v4c0 2.2-1.8 4-4 4H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h4v4c0 2.2-1.8 4-4 4h-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <blockquote data-reveal-child>
-          I built Artosku because so many finance apps are either too busy or keep
-          their users' data somewhere unknown. Artosku's principle from day one:
-          keep it simple, and keep your data yours.
-        </blockquote>
-        <p class="founder-note__by" data-reveal-child>&mdash; Andi Pramana, founder &amp; developer of Artosku<br /><a href="mailto:andi.pramana@artosku.my.id">andi.pramana@artosku.my.id</a></p>
+    <div class="biz-cta">
+      <p>Try the Proud Chicken demo in the app, free with no subscription.</p>
+      <div class="biz-cta__row">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="../assets/google-play-badge.svg" alt="Get it on Google Play" width="160" height="48" loading="lazy" /></a>
+        <button class="btn btn--ghost" id="bizAll" type="button">See all business features</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ DOWNLOAD ============ -->
-  <section class="section download" id="unduh">
-    <div class="download__bg" aria-hidden="true"></div>
-    <div class="container download__inner" data-reveal>
-      <div class="download__copy" data-reveal-child>
-        <h2>Download Artosku Now.</h2>
-        <p>Free and available to download on Google Play.</p>
-
-        <div class="download__actions">
-          <a href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener" class="download__badge">
-            <img src="../assets/google-play-badge.svg" alt="Get Artosku on Google Play" width="200" height="60" />
-          </a>
-        </div>
-      </div>
+<section class="sec" id="semua">
+  <div class="wrap">
+    <h2>All features</h2>
+    <p class="lead">Everything in the app, by category. Tap one to read how it works.</p>
+    <div class="finder">
+      <label for="allSearch">Search features</label>
+      <input id="allSearch" type="search" placeholder="e.g. budget, receipt, backup" autocomplete="off" />
+      <div class="chips" id="allChips" role="group" aria-label="All features"><button type="button" class="chip" data-g="all" aria-pressed="true">All</button><button type="button" class="chip" data-g="catat" aria-pressed="false">Recording money</button><button type="button" class="chip" data-g="wallet" aria-pressed="false">Wallets, categories &amp; merchants</button><button type="button" class="chip" data-g="anggaran" aria-pressed="false">Budgets &amp; allowance</button><button type="button" class="chip" data-g="utang" aria-pressed="false">Debts &amp; installments</button><button type="button" class="chip" data-g="tabungan" aria-pressed="false">Savings, assets &amp; shopping</button><button type="button" class="chip" data-g="laporan" aria-pressed="false">Reports</button><button type="button" class="chip" data-g="bersama" aria-pressed="false">Sharing with others</button><button type="button" class="chip" data-g="backup" aria-pressed="false">Backup &amp; restore</button><button type="button" class="chip" data-g="ai" aria-pressed="false">AI Chat &amp; AI</button><button type="button" class="chip" data-g="maskot" aria-pressed="false">Streak &amp; mascot</button><button type="button" class="chip" data-g="pengaturan" aria-pressed="false">Settings &amp; account</button><button type="button" class="chip" data-g="bisnis" aria-pressed="false">Business Mode</button></div>
+      <p class="note" id="allCount" aria-live="polite">108 features</p>
     </div>
-  </section>
+    <div id="allList"><section class="grp" data-g="catat"><h3>Recording money</h3><ul><li data-top="1" data-s="record transactions record money in and out with the + button in the middle. pick the wallet, category and merchant. catat transaksi pemasukan pengeluaran tambah input record add expense income jajan"><a href="tutorial/#catat_transaksi"><b>Record transactions</b><span>Record money in and out with the + button in the middle. Pick the wallet, category and merchant.</span></a></li><li data-s="record with ai say or type "lunch 25k" and the ai prepares the transaction for you to check first. suara ucap bicara ketik bebas ai catat voice speak quick add otomatis ucapkan"><a href="tutorial/#catat_ai_suara"><b>Record with AI</b><span>Say or type "lunch 25k" and the AI prepares the transaction for you to check first.</span></a></li><li data-s="scan receipts photograph a receipt and the items and total fill in. shipping, fees and discounts are read too. struk scan foto nota kuitansi receipt photo ocr belanja online shopee"><a href="tutorial/#scan_struk"><b>Scan receipts</b><span>Photograph a receipt and the items and total fill in. Shipping, fees and discounts are read too.</span></a></li><li data-s="add many transactions at once enter several transactions on one screen, or split one receipt over several categories. banyak sekaligus beberapa multi batch many bulk pecah struk banyak sekaligus input massal tambah banyak multi add"><a href="tutorial/#tambah_banyak"><b>Add many transactions at once</b><span>Enter several transactions on one screen, or split one receipt over several categories.</span></a></li><li data-s="import a statement from pdf read a bank statement pdf into a list of transactions you can check and save. mutasi pdf rekening koran bank impor import statement rekening csv impor mutasi upload mutasi import statement mutasi bank mutasi pdf"><a href="tutorial/#impor_mutasi"><b>Import a statement from PDF</b><span>Read a bank statement PDF into a list of transactions you can check and save.</span></a></li><li data-s="capture from notifications bank and e-wallet notifications on your phone become draft transactions to approve. android only. notif notifikasi otomatis bank dompet digital gopay ovo dana notification capture notif bank catat otomatis dari notifikasi baca notifikasi bank notification auto record aplikasi dipantau watched apps pilih aplikasi hubungkan wallet izin notifikasi draf notifikasi"><a href="tutorial/#catat_notif"><b>Capture from notifications</b><span>Bank and e-wallet notifications on your phone become draft transactions to approve. Android only.</span></a></li><li data-s="watched bank apps and clearing notification drafts choose the bank apps that are watched, connect wallets, turn on new draft alerts, and delete drafts or notification data. aplikasi dipantau pilih aplikasi hapus draf hapus data notifikasi izin notifikasi akses notifikasi tidak masuk draf tidak muncul watched apps clear drafts notification access"><a href="tutorial/#catat_notif_setelan"><b>Watched bank apps and clearing notification drafts</b><span>Choose the bank apps that are watched, connect wallets, turn on new draft alerts, and delete drafts or notification data.</span></a></li><li data-s="transfer fee record the bank admin fee together with the transfer: one card, and the source wallet balance is right. biaya admin biaya admin fee transfer fee antar bank bi-fast biaya transfer admin transfer fee transfer biaya antar bank admin bank"><a href="tutorial/#biaya_transfer"><b>Transfer fee</b><span>Record the bank admin fee together with the transfer: one card, and the source wallet balance is right.</span></a></li><li data-s="copy an old transaction record a similar transaction again in one tap, without typing it from scratch. salin copy duplikat ulang sama seperti kemarin duplicate kopi copy transaksi transaksi berulang manual kopi transaksi ulang transaksi"><a href="tutorial/#salin_transaksi"><b>Copy an old transaction</b><span>Record a similar transaction again in one tap, without typing it from scratch.</span></a></li><li data-s="combined receipt (many categories) one shopping receipt becomes one transaction with its items and each item's category. struk gabungan digabung banyak kategori beberapa kategori rincian item combined split digabung jadi 1 struk bagi kategori split kategori rincian item combined receipt satu struk banyak kategori"><a href="tutorial/#struk_gabungan"><b>Combined receipt (many categories)</b><span>One shopping receipt becomes one transaction with its items and each item's category.</span></a></li></ul></section><section class="grp" data-g="wallet"><h3>Wallets, categories &amp; merchants</h3><ul><li data-top="1" data-s="wallets manage cash, bank accounts and e-wallets and their balances. move money between wallets. wallet dompet saldo rekening bank ewallet e-wallet kas transfer balance account akun bank tambah rekening limit kurs saldo awal arsip urutkan kartu kredit"><a href="tutorial/#wallet"><b>Wallets</b><span>Manage cash, bank accounts and e-wallets and their balances. Move money between wallets.</span></a></li><li data-s="pockets split the balance of one wallet into several pockets, e.g. emergency fund or holiday. pocket kantong amplop sub wallet dana darurat liburan alokasi envelope bagi saldo alokasi dana target pocket alokasi awal atur dana tambah dana kurangi dana"><a href="tutorial/#pocket"><b>Pockets</b><span>Split the balance of one wallet into several pockets, e.g. Emergency fund or Holiday.</span></a></li><li data-s="move money between pockets move money from one pocket to another pocket or wallet, recorded neatly. pindah transfer pocket antar pocket pindah dana geser dana move pindah pocket pindah antar pocket move between pockets"><a href="tutorial/#pindah_pocket"><b>Move money between pockets</b><span>Move money from one pocket to another pocket or wallet, recorded neatly.</span></a></li><li data-s="currency pick your main currency and record wallets or transactions in another one, rates update daily. mata uang kurs dolar usd euro currency exchange rupiah valas ganti mata uang mata uang utama exchange rate"><a href="tutorial/#mata_uang"><b>Currency</b><span>Pick your main currency and record wallets or transactions in another one, rates update daily.</span></a></li><li data-s="categories organise income and expense categories, down to subcategories. kategori subkategori kelompok category categories label"><a href="tutorial/#kategori"><b>Categories</b><span>Organise income and expense categories, down to subcategories.</span></a></li><li data-s="category learning artosku remembers the category you chose for a description, and you can change it. belajar pembelajaran ingat otomatis kategori learning remember mapping pemetaan"><a href="tutorial/#belajar_kategori"><b>Category learning</b><span>Artosku remembers the category you chose for a description, and you can change it.</span></a></li><li data-s="merchants see where money goes and comes from, with a default category for each place. merchant toko tempat warung langganan store shop vendor"><a href="tutorial/#merchant"><b>Merchants</b><span>See where money goes and comes from, with a default category for each place.</span></a></li></ul></section><section class="grp" data-g="anggaran"><h3>Budgets &amp; allowance</h3><ul><li data-top="1" data-s="budgets set a spending limit per category each month and see what is left. anggaran budget batas limit jatah hemat boros sisa periode peringatan batas bulanan limit bulanan warning bandingkan anggaran budget bulanan monthly budget"><a href="tutorial/#anggaran"><b>Budgets</b><span>Set a spending limit per category each month and see what is left.</span></a></li><li data-s="daily budget (a limit per category each day) a spending limit per category for each day, with special rules for certain days (e.g. friday or the weekend) or one date. different from the daily allowance, which is worked out for you from all your money. anggaran harian batas harian batas per hari batas pengeluaran harian budget harian limit harian batas jajan harian batas jajan per hari aturan khusus per hari hari jumat akhir pekan tanggal khusus per tanggal tanpa batas daily budget daily limit limit per day spending limit per day weekend limit special date no limit"><a href="tutorial/#anggaran_harian"><b>Daily budget (a limit per category each day)</b><span>A spending limit per category for each day, with special rules for certain days (e.g. Friday or the weekend) or one date. Different from the Daily allowance, which is worked out for you from all your money.</span></a></li><li data-s="daily allowance work out how much you can spend per day until payday, with your mascot. jatah harian per hari jajan uang saku daily allowance uang harian boleh jajan sisa uang sampai gajian daily budget jatah jajan perhitungan atur perhitungan uang yang dihitung tagihan sebelum gajian"><a href="tutorial/#jatah_harian"><b>Daily allowance</b><span>Work out how much you can spend per day until payday, with your mascot.</span></a></li><li data-s="leave a transaction out of the allowance a big purchase or money held for someone else does not use up the daily and weekly allowance. choose per transaction: spread over the days that are left, or ignored completely. it can be undone at any time. kecualikan transaksi dikecualikan dari jatah kecualikan dari jatah jangan dihitung jatah tidak dihitung jatah jangan dihitung di jatah abaikan transaksi abaikan dari jatah transaksi dikecualikan belanja besar jatah dibagi rata diabaikan lepaskan pengecualian batalkan pengecualian exclude transaction exclude from allowance leave out of allowance do not count in allowance ignore transaction allowance excluded transactions spread evenly"><a href="tutorial/#jatah_dikecualikan"><b>Leave a transaction out of the allowance</b><span>A big purchase or money held for someone else does not use up the daily and weekly allowance. Choose per transaction: spread over the days that are left, or ignored completely. It can be undone at any time.</span></a></li><li data-s="recurring transactions regular bills and subscriptions are recorded on their date, with reminders. berulang rutin tagihan langganan bulanan otomatis recurring subscription bill sewa harian mingguan tahunan weekly monthly yearly daily frekuensi tiap minggu tiap bulan tiap tahun setiap bulan tagihan rutin bayar rutin pengingat tagihan"><a href="tutorial/#berulang"><b>Recurring transactions</b><span>Regular bills and subscriptions are recorded on their date, with reminders.</span></a></li><li data-s="report period (payday) choose when "this month" starts, for example on payday. periode gajian tanggal cutoff awal bulan payday period bulan ini tanggal gajian report period"><a href="tutorial/#periode_laporan"><b>Report period (payday)</b><span>Choose when "this month" starts, for example on payday.</span></a></li></ul></section><section class="grp" data-g="utang"><h3>Debts &amp; installments</h3><ul><li data-top="1" data-s="debts &amp; receivables record who borrowed, how much and when it is due. due-date reminders, and it can be paid in parts. utang hutang piutang pinjam pinjaman tagih cicil debt loan lend borrow owe kasbon"><a href="tutorial/#utang_piutang"><b>Debts &amp; receivables</b><span>Record who borrowed, how much and when it is due. Due-date reminders, and it can be paid in parts.</span></a></li><li data-s="installments &amp; paylater record installments, credit and paylater bills so you know what is left and when it is due. cicilan kredit paylater kartu kredit angsuran installment credit credit card kredivo bayar bulanan kredit motor cicil bunga denda denda telat interest late fee tenor"><a href="tutorial/#cicilan"><b>Installments &amp; Paylater</b><span>Record installments, credit and paylater bills so you know what is left and when it is due.</span></a></li><li data-s="arisan (rotating savings) record your arisan: dues run automatically each period and the pot you receive is recorded on your turn. arisan kocokan giliran setoran pot iuran rotating savings club setoran arisan pot arisan iuran arisan arisan rt rotating savings ngocok"><a href="tutorial/#arisan"><b>Arisan (rotating savings)</b><span>Record your arisan: dues run automatically each period and the pot you receive is recorded on your turn.</span></a></li><li data-s="paylater (buy now, pay later) a purchase on a paylater wallet becomes an installment automatically, and the bill is paid from another wallet. paylater bayar nanti kredit belanja kartu kredit limit tagihan pay later credit card bnpl spaylater cicilan belanja buy now pay later limit paylater tagihan paylater kredivo"><a href="tutorial/#paylater"><b>Paylater (buy now, pay later)</b><span>A purchase on a paylater wallet becomes an installment automatically, and the bill is paid from another wallet.</span></a></li></ul></section><section class="grp" data-g="tabungan"><h3>Savings, assets &amp; shopping</h3><ul><li data-top="1" data-s="savings goals set a savings target, put money aside bit by bit and watch the progress. nabung tabungan target tujuan impian saving savings goal pocket kantong target menabung tujuan nabung celengan savings goal target tanggal sisihkan tabung di jalur on track"><a href="tutorial/#tabungan"><b>Savings goals</b><span>Set a savings target, put money aside bit by bit and watch the progress.</span></a></li><li data-s="assets record valuables or investments and follow their value over time. aset investasi emas saham properti kendaraan harta asset investment gold stock"><a href="tutorial/#aset"><b>Assets</b><span>Record valuables or investments and follow their value over time.</span></a></li><li data-s="shopping list write a shopping list, tick what you bought, then record it as a transaction. daftar belanja belanja shopping list grocery catatan belanja beli shopping list groceries list belanja belanjaan"><a href="tutorial/#daftar_belanja"><b>Shopping list</b><span>Write a shopping list, tick what you bought, then record it as a transaction.</span></a></li><li data-s="item usage record items used up or thrown away to see how fast your shopping is used. pemakaian habis terbuang stok rumah usage used up waste pantry barang habis item usage dibuang mubazir habis dipakai"><a href="tutorial/#pemakaian_barang"><b>Item usage</b><span>Record items used up or thrown away to see how fast your shopping is used.</span></a></li></ul></section><section class="grp" data-g="laporan"><h3>Reports</h3><ul><li data-top="1" data-s="reports see money in and out by category and month, with charts and comparisons. laporan grafik ringkasan statistik bulanan report chart summary analisis"><a href="tutorial/#laporan"><b>Reports</b><span>See money in and out by category and month, with charts and comparisons.</span></a></li></ul></section><section class="grp" data-g="bersama"><h3>Sharing with others</h3><ul><li data-top="1" data-s="split a bill split a shared bill between friends, work out each share and record yours. bagi patungan split bill bareng teman tagihan makan bareng urunan split bill bagi tagihan iuran bareng bayar bareng bagi rata bill split share bill with friends sama teman"><a href="tutorial/#split"><b>Split a bill</b><span>Split a shared bill between friends, work out each share and record yours.</span></a></li><li data-s="shared wallets one wallet shared by two people or a family, every member can record. bersama berdua keluarga pasangan shared together family couple patungan wallet wallet bersama dompet bersama shared wallet keuangan keluarga family wallet undang anggota"><a href="tutorial/#wallet_bersama"><b>Shared wallets</b><span>One wallet shared by two people or a family, every member can record.</span></a></li><li data-s="invite people to a shared wallet bring friends or family into one shared wallet with an invitation. undang ajak anggota gabung invite member join keluarga undang anggota undang teman gabung wallet bersama ajak anggota"><a href="tutorial/#undang_anggota"><b>Invite people to a Shared Wallet</b><span>Bring friends or family into one shared wallet with an invitation.</span></a></li><li data-s="contacts keep friends you often send to or bill, so they are quick to pick. kontak teman orang contact friend people"><a href="tutorial/#kontak"><b>Contacts</b><span>Keep friends you often send to or bill, so they are quick to pick.</span></a></li><li data-s="send transactions to each other send transaction records to a friend who also uses artosku, and receive theirs. kirim saling kirim teman terima transfer share send friend bagikan kirim uang minta uang transfer ke teman send money request money kirim ke teman"><a href="tutorial/#saling_kirim"><b>Send transactions to each other</b><span>Send transaction records to a friend who also uses Artosku, and receive theirs.</span></a></li></ul></section><section class="grp" data-g="backup"><h3>Backup &amp; restore</h3><ul><li data-top="1" data-s="google drive backup your data stays on your phone and can be backed up to google drive for a new phone. backup cadangan google drive drive pulihkan restore ganti hp data aman sync simpan data pindah hp"><a href="tutorial/#backup_drive"><b>Google Drive backup</b><span>Your data stays on your phone and can be backed up to Google Drive for a new phone.</span></a></li><li data-s="automatic backup to google drive turn on automatic backup, connect or disconnect the google drive account, and restore from an old backup. backup otomatis auto backup automatic backup hubungkan drive putuskan drive ganti akun drive akun google drive restore pulihkan data batalkan pemulihan kembalikan data lama undo restore slot backup backup sekarang ganti hp pindah hp hp baru new phone restore backup restore my backup restore on a new phone disconnect drive connect drive"><a href="tutorial/#backup_otomatis"><b>Automatic backup to Google Drive</b><span>Turn on Automatic backup, connect or disconnect the Google Drive account, and restore from an old backup.</span></a></li><li data-s="excel export &amp; import save transactions to an excel file, or bring them in from excel. excel xlsx ekspor export impor import csv file unduh download backup excel spreadsheet"><a href="tutorial/#excel"><b>Excel export &amp; import</b><span>Save transactions to an Excel file, or bring them in from Excel.</span></a></li><li data-s="automatic excel backup to the download folder save an excel backup by itself to the phone download folder, daily, weekly or monthly. backup excel otomatis excel otomatis folder download simpan excel excel harian excel mingguan excel bulanan auto excel excel backup schedule download folder backup excel otomatis ke folder download excel ke folder download simpan excel ke folder download otomatis ke folder download"><a href="tutorial/#backup_excel_otomatis"><b>Automatic Excel backup to the Download folder</b><span>Save an Excel backup by itself to the phone Download folder, daily, weekly or monthly.</span></a></li><li data-s="import an older excel file or restore from excel restore everything from an excel backup file, or add data from an older excel file. impor excel import excel excel lama excel versi lama pulihkan dari excel restore excel tambahkan data masukkan excel upload excel restore from excel"><a href="tutorial/#impor_excel_lama"><b>Import an older Excel file or restore from Excel</b><span>Restore everything from an Excel backup file, or add data from an older Excel file.</span></a></li></ul></section><section class="grp" data-g="ai"><h3>AI Chat &amp; AI</h3><ul><li data-top="1" data-s="ask artosku ai ask about your money or how to use artosku. the ai can also prepare transactions for you to approve. ai chat tanya asisten bot kuai assistant ask"><a href="tutorial/#ai_chat"><b>Ask Artosku AI</b><span>Ask about your money or how to use Artosku. The AI can also prepare transactions for you to approve.</span></a></li><li data-s="ai usage &amp; vouchers see how much ai quota is left today and your extra vouchers. kuota voucher sisa limit ai pemakaian ai quota usage tambahan"><a href="tutorial/#pemakaian_ai"><b>AI usage &amp; vouchers</b><span>See how much AI quota is left today and your extra vouchers.</span></a></li><li data-s="ai consent (allow or withdraw) allow or withdraw the ai features. when withdrawn, the ai features stop until you allow them again; the rest is not affected. persetujuan ai izin ai izinkan fitur ai cabut izin matikan ai nonaktifkan ai ai consent turn off ai disable ai withdraw consent data ke deepseek privasi ai"><a href="tutorial/#persetujuan_ai"><b>AI consent (allow or withdraw)</b><span>Allow or withdraw the AI features. When withdrawn, the AI features stop until you allow them again; the rest is not affected.</span></a></li></ul></section><section class="grp" data-g="maskot"><h3>Streak &amp; mascot</h3><ul><li data-s="streak &amp; your mascot record every day to keep your streak, open gift boxes and look after your mascot's home. streak maskot minyam ayam hadiah koin rumah mascot chicken game gift coin hadiah harian gamifikasi api streak kotak hadiah freeze streak freeze beku bolos melewatkan hari streak putus freeze kedaluwarsa freeze hilang skip a day missed a day"><a href="tutorial/#streak_maskot"><b>Streak &amp; your mascot</b><span>Record every day to keep your streak, open gift boxes and look after your mascot's home.</span></a></li><li data-s="mascot item shop trade streak coins for hats, accessories and decorations for your mascot. toko item koin topi aksesori dekorasi beli shop coins hat accessory beli item topi maskot"><a href="tutorial/#toko_maskot"><b>Mascot item shop</b><span>Trade streak coins for hats, accessories and decorations for your mascot.</span></a></li><li data-s="mascot collection see every item you own and dress your mascot with it. koleksi punya pakai item collection wear dress inventory"><a href="tutorial/#koleksi_maskot"><b>Mascot collection</b><span>See every item you own and dress your mascot with it.</span></a></li></ul></section><section class="grp" data-g="pengaturan"><h3>Settings &amp; account</h3><ul><li data-s="app lock (pin &amp; biometrics) lock artosku with a pin, fingerprint or face so nobody else opens your records. pin kunci biometrik sidik jari wajah aman privasi lock fingerprint face security password kunci aplikasi app lock keamanan ubah pin ganti pin lupa pin"><a href="tutorial/#kunci_pin"><b>App lock (PIN &amp; biometrics)</b><span>Lock Artosku with a PIN, fingerprint or face so nobody else opens your records.</span></a></li><li data-s="appearance, language &amp; theme switch between indonesian and english, text size, and dark or light mode. tampilan bahasa tema gelap terang dark light english inggris ukuran teks font language theme dark mode mode gelap warna mode terang light mode tema warna ganti warna warna aplikasi ukuran huruf tulisan kecil tulisan besar text size font size bigger text ganti bahasa change language ikut sistem"><a href="tutorial/#tampilan"><b>Appearance, language &amp; theme</b><span>Switch between Indonesian and English, text size, and dark or light mode.</span></a></li><li data-s="arrange home choose which parts of home show and put them in your order. beranda atur urutan tampil sembunyikan home dashboard arrange layout"><a href="tutorial/#atur_beranda"><b>Arrange Home</b><span>Choose which parts of Home show and put them in your order.</span></a></li><li data-s="phone home-screen widget put an artosku widget on your phone screen to see a summary and record fast. widget layar utama home screen pintasan shortcut"><a href="tutorial/#widget_hp"><b>Phone home-screen widget</b><span>Put an Artosku widget on your phone screen to see a summary and record fast.</span></a></li><li data-s="pro &amp; max plans a bigger ai quota and business mode. pick the plan that suits you. langganan paket pro max premium berlangganan bayar subscription plan upgrade harga price"><a href="tutorial/#langganan"><b>Pro &amp; Max plans</b><span>A bigger AI quota and Business Mode. Pick the plan that suits you.</span></a></li><li data-s="announcements news and outage notices from the artosku team. pengumuman info kabar gangguan berita announcement news update"><a href="tutorial/#pengumuman"><b>Announcements</b><span>News and outage notices from the Artosku team.</span></a></li><li data-s="guide center short guides for each menu that you can replay any time. panduan cara pakai bantuan petunjuk guide help how to tour"><a href="tutorial/#panduan"><b>Guide center</b><span>Short guides for each menu that you can replay any time.</span></a></li><li data-s="treat us a matcha if artosku is useful, you can treat the team to a matcha. traktir matcha donasi dukung tip donate support"><a href="tutorial/#dukung"><b>Treat us a matcha</b><span>If Artosku is useful, you can treat the team to a matcha.</span></a></li><li data-s="switch account switch between the accounts saved on this phone without signing in again. ganti akun pindah akun tambah akun akun lain banyak akun switch account multi account another account multi akun"><a href="tutorial/#ganti_akun"><b>Switch account</b><span>Switch between the accounts saved on this phone without signing in again.</span></a></li><li data-s="rename a budget give a budget a name of your own (e.g. "food for the month"). the card, the summary on home, the warnings, the compare table and the ai chat use that name. left empty, it goes back to the name of its category. ganti nama anggaran rename anggaran ubah nama anggaran nama anggaran nama sendiri anggaran kasih nama anggaran beri nama anggaran anggaran tanpa nama kategori nama kartu anggaran rename budget rename a budget budget name name a budget change budget name custom budget name"><a href="tutorial/#anggaran_ganti_nama"><b>Rename a budget</b><span>Give a budget a name of your own (e.g. "Food for the month"). The card, the summary on Home, the warnings, the Compare table and the AI chat use that name. Left empty, it goes back to the name of its category.</span></a></li><li data-s="one budget for several categories put several categories (e.g. eating out and groceries) in one budget with one limit and one name. a category can be in only one budget per period, so nothing is ever counted twice. gabung anggaran gabungkan anggaran anggaran grup anggaran gabungan gabung kategori anggaran beberapa kategori satu anggaran satu anggaran banyak kategori banyak kategori satu anggaran anggaran beberapa kategori kategori mana saja anggaran ubah kategori anggaran combine budgets group budget merge budgets several categories one budget multiple categories budget one budget for many categories change budget categories"><a href="tutorial/#anggaran_banyak_kategori"><b>One budget for several categories</b><span>Put several categories (e.g. Eating out and Groceries) in one budget with one limit and one name. A category can be in only one budget per period, so nothing is ever counted twice.</span></a></li><li data-s="count subcategories in a budget for a parent category (one with subcategories), turn on "also count its subcategories" so spending in all its subcategories counts toward the budget. it starts off. a subcategory that has a budget of its own is not counted in the parent budget. subkategori anggaran hitung subkategori hitung juga subkategori kategori anak anggaran kategori anak anggaran kategori induk anggaran induk semua turunan kategori turunan kategori anggaran subkategori ikut anggaran subkategori tidak terhitung count subcategories include subcategories subcategory budget child categories budget parent category budget subcategories not counted"><a href="tutorial/#anggaran_subkategori"><b>Count subcategories in a budget</b><span>For a parent category (one with subcategories), turn on "Also count its subcategories" so spending in all its subcategories counts toward the budget. It starts off. A subcategory that has a budget of its own is not counted in the parent budget.</span></a></li><li data-s="unlock with fingerprint or face once a pin is set, open artosku with just your fingerprint or face. biometrik sidik jari fingerprint wajah face id face unlock kunci sidik jari biometric unlock"><a href="tutorial/#biometrik"><b>Unlock with fingerprint or face</b><span>Once a PIN is set, open Artosku with just your fingerprint or face.</span></a></li><li data-s="set the wallet order choose the wallet order in every picker: most used first, or the same as on home. urutan wallet susun wallet wallet paling sering wallet paling sering dipakai urutan dompet urutan sendiri wallet order sort wallets most used wallet"><a href="tutorial/#urutan_wallet"><b>Set the wallet order</b><span>Choose the wallet order in every picker: most used first, or the same as on Home.</span></a></li><li data-s="manage, cancel or restore a subscription see your plan, switch between monthly and yearly, manage it in the play store, and restore purchases. kelola langganan batalkan langganan berhenti langganan cancel subscription pulihkan pembelian restore purchase langganan di play store bulanan tahunan paket saat ini naik paket manage subscription monthly yearly"><a href="tutorial/#kelola_langganan"><b>Manage, cancel or restore a subscription</b><span>See your plan, switch between monthly and yearly, manage it in the Play Store, and restore purchases.</span></a></li><li data-s="handbook (full tutorials) full tutorials for every feature on the website, with a search box. opens in the browser. buku panduan tutorial panduan lengkap handbook manual user guide full guide tutorial lengkap dokumentasi website panduan cari tutorial"><a href="tutorial/#buku_panduan"><b>Handbook (full tutorials)</b><span>Full tutorials for every feature on the website, with a search box. Opens in the browser.</span></a></li><li data-s="see the business mode demo (proud chicken) a sample business, "proud chicken", with 2 months of data in every business mode feature (sales, receipts, stock, pre-orders, reports). for looking only: nothing can be recorded. it opens without max, to look before subscribing. demo bisnis demo mode bisnis coba mode bisnis contoh bisnis lihat fitur bisnis lihat fitur bisnis sebelum langganan proud chicken mode bisnis isinya apa isi mode bisnis lihat dulu mode bisnis beli kucing dalam karung business demo business mode demo try business mode sample business see business features before subscribing what is in business mode preview business mode"><a href="tutorial/#demo_mode_bisnis"><b>See the Business Mode demo (Proud Chicken)</b><span>A sample business, "Proud Chicken", with 2 months of data in every Business Mode feature (sales, receipts, stock, pre-orders, reports). For looking only: nothing can be recorded. It opens without Max, to look before subscribing.</span></a></li><li data-s="videos: how to start in personal mode and the business mode demo two short youtube videos: how to start with artosku in personal mode, and a demo of the business mode features. the buttons only show when the videos are available. video video tutorial tutorial youtube cara pakai cara mulai video cara mulai video demo video demo mode bisnis demo bisnis video bisnis contoh mode bisnis tonton video tutorial video how to start watch video demo video business demo video getting started video"><a href="tutorial/#video_tutorial"><b>Videos: how to start in Personal Mode and the Business Mode demo</b><span>Two short YouTube videos: how to start with Artosku in Personal Mode, and a demo of the Business Mode features. The buttons only show when the videos are available.</span></a></li></ul></section><section class="grp" data-g="bisnis"><h3>Business Mode</h3><ul><li data-s="business mode a cashier, ingredient purchases, receipts over whatsapp, buyers who have not paid and profit-and-loss reports. business money stays apart from personal money. bisnis usaha jualan toko warung umkm kasir dagang business shop sell store cashier kecil-kecilan ganti profil"><a href="tutorial/#mode_bisnis"><b>Business Mode</b> <span class="badge">Max</span><span>A cashier, ingredient purchases, receipts over WhatsApp, buyers who have not paid and profit-and-loss reports. Business money stays apart from personal money.</span></a></li><li data-s="cashier (sell) pick products, take cash, qris, transfer or pay later, then send a receipt. barcode scanning works. kasir jual penjualan jualan barcode pos sell sale cashier checkout catat penjualan bikin nota"><a href="tutorial/#kasir"><b>Cashier (Sell)</b> <span class="badge">Max</span><span>Pick products, take cash, QRIS, transfer or pay later, then send a receipt. Barcode scanning works.</span></a></li><li data-s="receipts &amp; whatsapp sending make a neat receipt with your business details and send it to the buyer over whatsapp or as a pdf. nota invoice kwitansi wa whatsapp kirim nota pdf receipt faktur struk pembeli kirim wa"><a href="tutorial/#nota_wa"><b>Receipts &amp; WhatsApp sending</b> <span class="badge">Max</span><span>Make a neat receipt with your business details and send it to the buyer over WhatsApp or as a PDF.</span></a></li><li data-s="purchases: ingredients, stock &amp; costs record ingredient purchases, stock for sale and business costs. scan online-shop receipts including shipping and discounts. belanja bahan stok pemasok supplier biaya beli purchase ingredient cost ongkir modal belanja bahan belanja stok beli bahan biaya usaha bon pemasok beli stok"><a href="tutorial/#belanja_bisnis"><b>Purchases: ingredients, stock &amp; costs</b> <span class="badge">Max</span><span>Record ingredient purchases, stock for sale and business costs. Scan online-shop receipts including shipping and discounts.</span></a></li><li data-s="products &amp; stock a product list with prices, stock and stock value. low-stock warnings included. produk barang stok harga persediaan inventori product inventory stock item"><a href="tutorial/#produk_stok"><b>Products &amp; stock</b> <span class="badge">Max</span><span>A product list with prices, stock and stock value. Low-stock warnings included.</span></a></li><li data-s="buyers, suppliers &amp; business bills keep buyers, suppliers and staff, see who has not paid, and remind them over whatsapp. pembeli pelanggan pemasok karyawan bon piutang usaha customer supplier employee tagih"><a href="tutorial/#kontak_usaha"><b>Buyers, suppliers &amp; business bills</b> <span class="badge">Max</span><span>Keep buyers, suppliers and staff, see who has not paid, and remind them over WhatsApp.</span></a></li><li data-s="profit &amp; loss and business reports see profit and loss, cash flow, the balance sheet, best sellers and busy hours. laba rugi untung arus kas neraca terlaris jam ramai profit loss cash flow balance sheet omzet laporan usaha kas usaha"><a href="tutorial/#laba_rugi"><b>Profit &amp; loss and business reports</b> <span class="badge">Max</span><span>See profit and loss, cash flow, the balance sheet, best sellers and busy hours.</span></a></li><li data-s="owner money (draws &amp; capital) record taking money out for yourself, putting capital in, or moving money to another business. prive modal setor ambil uang pemilik owner capital draw withdraw ambil uang usaha setor modal modal sendiri uang pribadi usaha owner draw ambil uang buat pribadi tarik uang usaha"><a href="tutorial/#uang_pemilik"><b>Owner money (draws &amp; capital)</b> <span class="badge">Max</span><span>Record taking money out for yourself, putting capital in, or moving money to another business.</span></a></li><li data-s="lend money record business money you lend out and when it comes back. pinjamkan pinjam kasih pinjam piutang keluar lend loan out pinjam karyawan kasbon karyawan pinjaman karyawan"><a href="tutorial/#pinjamkan_uang"><b>Lend money</b> <span class="badge">Max</span><span>Record business money you lend out and when it comes back.</span></a></li><li data-s="close the drawer &amp; cashier recap count the cash in the drawer, match it to your records and see the day's sales recap. tutup kas laci rekap selisih tutup toko drawer close recap cash count selisih kas hitung laci cash drawer close till"><a href="tutorial/#tutup_kas"><b>Close the drawer &amp; cashier recap</b> <span class="badge">Max</span><span>Count the cash in the drawer, match it to your records and see the day's sales recap.</span></a></li><li data-s="business tax helper an estimate of the tax on your turnover so reporting holds no surprise. pajak pph omzet lapor pajak tax turnover umkm pajak final peredaran bruto"><a href="tutorial/#pajak_usaha"><b>Business tax helper</b> <span class="badge">Max</span><span>An estimate of the tax on your turnover so reporting holds no surprise.</span></a></li><li data-s="business settings receipt details, monthly target, wallets, categories, cashier and business reminders. pengaturan target data nota logo pengingat settings setup kasir"><a href="tutorial/#pengaturan_bisnis"><b>Business settings</b> <span class="badge">Max</span><span>Receipt details, monthly target, wallets, categories, cashier and business reminders.</span></a></li><li data-s="collect what is not paid yet see the unpaid invoices, collect through whatsapp, and record the payment when the money comes in. tagih belum bayar belum lunas piutang nagih utang pelanggan collect unpaid receivable tagihan pelanggan piutang usaha yang belum bayar"><a href="tutorial/#tagih_piutang_usaha"><b>Collect what is not paid yet</b> <span class="badge">Max</span><span>See the unpaid invoices, collect through WhatsApp, and record the payment when the money comes in.</span></a></li><li data-s="supplier credit (buy now, pay later) buy ingredients or stock now and pay later: the debt is recorded with its due date. bon utang pemasok bayar nanti kredit pemasok supplier credit tempo bon pemasok bayar nanti pemasok supplier credit utang usaha"><a href="tutorial/#bon_pemasok"><b>Supplier credit (buy now, pay later)</b> <span class="badge">Max</span><span>Buy ingredients or stock now and pay later: the debt is recorded with its due date.</span></a></li><li data-s="invoices &amp; business details on them see every sales invoice and set the business details printed on them. nota invoice struk cetak daftar nota"><a href="tutorial/#nota_usaha"><b>Invoices &amp; business details on them</b> <span class="badge">Max</span><span>See every sales invoice and set the business details printed on them.</span></a></li><li data-s="sales recap from employees a cashier sends the sales on their phone to the owner as a file, with no server. rekap karyawan banyak orang kirim penjualan recap employee tim"><a href="tutorial/#rekap_kasir"><b>Sales recap from employees</b> <span class="badge">Max</span><span>A cashier sends the sales on their phone to the owner as a file, with no server.</span></a></li><li data-s="monthly turnover target set a turnover target per month and follow its progress each day on the business home. target omzet target bulanan target jualan goal turnover target omzet target usaha monthly target turnover target"><a href="tutorial/#target_bisnis"><b>Monthly turnover target</b> <span class="badge">Max</span><span>Set a turnover target per month and follow its progress each day on the Business Home.</span></a></li><li data-s="business profile (name, logo, address, number) business name, logo, whatsapp number, address, kind of business and colour. used on the receipt and reports. profil usaha nama usaha nama toko logo logo nota alamat alamat toko nomor wa nomor telepon no hp usaha jenis usaha warna usaha business profile address phone number"><a href="tutorial/#bisnis_profil"><b>Business profile (name, logo, address, number)</b> <span class="badge">Max</span><span>Business name, logo, WhatsApp number, address, kind of business and colour. Used on the receipt and reports.</span></a></li><li data-s="receipt &amp; ways to pay set the ways to pay on the receipt (bank, e-wallet, qris), the note under the receipt, slogan, signature and receipt size. data nota atur nota pengaturan nota cara bayar info rekening nota invoice settings receipt settings payment details"><a href="tutorial/#nota_data"><b>Receipt &amp; ways to pay</b> <span class="badge">Max</span><span>Set the ways to pay on the receipt (bank, e-wallet, QRIS), the note under the receipt, slogan, signature and receipt size.</span></a></li><li data-s="bank account and e-wallet on the receipt show your account or e-wallet number on the receipt so buyers know where to transfer. rekening no rek nomor rekening bank bca bri mandiri bni bsi gopay ovo dana shopeepay linkaja e-wallet transfer ke mana atas nama bank account account number ewallet"><a href="tutorial/#cara_bayar_nota"><b>Bank account and e-wallet on the receipt</b> <span class="badge">Max</span><span>Show your account or e-wallet number on the receipt so buyers know where to transfer.</span></a></li><li data-s="qris on the receipt (set, change, remove the picture) put the picture of your shop qris on the receipt. you can change or remove it any time. qris kode qr qr qr code gambar qris ganti qris hapus qris tambah qris qris nota barcode bayar change qris add qris remove qris"><a href="tutorial/#qris_nota"><b>QRIS on the receipt (set, change, remove the picture)</b> <span class="badge">Max</span><span>Put the picture of your shop QRIS on the receipt. You can change or remove it any time.</span></a></li><li data-s="signature on the receipt put a signature on the receipt: draw it with your finger or pick its photo. tanda tangan ttd tandatangan paraf gambar tanda tangan signature sign draw signature"><a href="tutorial/#ttd_nota"><b>Signature on the receipt</b> <span class="badge">Max</span><span>Put a signature on the receipt: draw it with your finger or pick its photo.</span></a></li><li data-s="slogan and the note under the receipt write your slogan and a closing line, e.g. "thanks for your order". slogan tagline catatan nota catatan di bawah nota terima kasih nota kalimat penutup footer nota receipt note footer"><a href="tutorial/#slogan_catatan_nota"><b>Slogan and the note under the receipt</b> <span class="badge">Max</span><span>Write your slogan and a closing line, e.g. "Thanks for your order".</span></a></li><li data-s="receipt size (a5 or 58 mm roll) pick an a5 paper receipt or a small 58 mm roll receipt for a thermal printer. ukuran nota a5 kertas a5 struk kecil struk 58 58 mm printer printer thermal thermal cetak struk receipt size thermal printer paper size"><a href="tutorial/#ukuran_nota"><b>Receipt size (A5 or 58 mm roll)</b> <span class="badge">Max</span><span>Pick an A5 paper receipt or a small 58 mm roll receipt for a thermal printer.</span></a></li><li data-s="print, pdf, photo or wa for a receipt a receipt can be printed, sent as a pdf, as a photo (image), or as text to the buyer on whatsapp. kirim nota jadi foto nota jadi foto nota jadi gambar kirim foto nota cetak nota print nota pdf nota foto nota gambar nota share nota bagikan nota print receipt receipt photo receipt pdf"><a href="tutorial/#kirim_nota_foto_pdf"><b>Print, PDF, Photo or WA for a receipt</b> <span class="badge">Max</span><span>A receipt can be printed, sent as a PDF, as a photo (image), or as text to the buyer on WhatsApp.</span></a></li><li data-s="business wallets cash, bank and e-wallet accounts just for the business, apart from your personal wallets. wallet usaha wallet bisnis kas usaha rekening usaha laci saldo usaha business wallet"><a href="tutorial/#wallet_usaha"><b>Business wallets</b> <span class="badge">Max</span><span>Cash, bank and e-wallet accounts just for the business, apart from your personal wallets.</span></a></li><li data-s="sales channels and platform fees record sales through shopee, gofood and others, with the platform fee and the wallet the money goes to. kanal kanal jual channel shopee gofood grabfood tokopedia marketplace potongan potongan platform fee platform komisi online sales channel platform fee"><a href="tutorial/#kanal_jual"><b>Sales channels and platform fees</b> <span class="badge">Max</span><span>Record sales through Shopee, GoFood and others, with the platform fee and the wallet the money goes to.</span></a></li><li data-s="business categories, cost of goods (cogs) and materials set income, cost-of-goods and operating categories, and the list of materials you buy. kategori usaha kategori bisnis hpp harga pokok cogs paket kategori bahan bahan saya daftar bahan bahan baku operasional jenis usaha business category materials ingredients"><a href="tutorial/#kategori_bahan"><b>Business categories, cost of goods (COGS) and materials</b> <span class="badge">Max</span><span>Set income, cost-of-goods and operating categories, and the list of materials you buy.</span></a></li><li data-s="business reminders and their time reminders for due receivables, supplier bills, low stock, regular bills and the weekly summary, with one time for all. pengingat pengingat bisnis notifikasi bisnis reminder jam pengingat ingatkan piutang jatuh tempo stok tipis ringkasan mingguan ringkasan senin business reminders notification time"><a href="tutorial/#pengingat_bisnis"><b>Business reminders and their time</b> <span class="badge">Max</span><span>Reminders for due receivables, supplier bills, low stock, regular bills and the weekly summary, with one time for all.</span></a></li><li data-s="business widget on the home screen put a business widget on your phone home screen. widget bisnis widget usaha widget layar utama widget toko business widget home screen widget"><a href="tutorial/#widget_bisnis"><b>Business widget on the home screen</b> <span class="badge">Max</span><span>Put a business widget on your phone home screen.</span></a></li><li data-s="pre-order (orders picked up later, deposit, calendar) take orders for a certain date with a deposit, see them on a calendar, see what has to be made, then finish them into a receipt. ubah pre-order revisi pesanan tambah barang pesanan ganti jumlah pesanan ubah pesanan edit pre-order change pre-order change order items pre-order preorder po pesanan pesan dulu dp uang muka booking tempahan kue ulang tahun katering hampers diambil nanti kalender pesanan yang harus dibuat rekap produksi order for later deposit down payment pickup"><a href="tutorial/#preorder"><b>Pre-order (orders picked up later, deposit, calendar)</b> <span class="badge">Max</span><span>Take orders for a certain date with a deposit, see them on a calendar, see what has to be made, then finish them into a receipt.</span></a></li><li data-s="pre-order settings (reminders, daily limit, default deposit) order reminders (the day before, 2 hours before pickup, deposit not paid), a daily order limit, a default deposit and adding to google calendar automatically. atur pre-order ingatkan dp dp belum dibayar batas pesanan per hari pesanan penuh dp bawaan otomatis google kalender tombol di notifikasi pre-order settings pre-order reminders daily order limit default deposit"><a href="tutorial/#atur_preorder"><b>Pre-order settings (reminders, daily limit, default deposit)</b> <span class="badge">Max</span><span>Order reminders (the day before, 2 hours before pickup, deposit not paid), a daily order limit, a default deposit and adding to Google Calendar automatically.</span></a></li><li data-s="notes (money in or out you record yourself) money in or out recorded with the catat button shows under sales › notes, with a label for where it goes in the report. catatan catat tombol catat catatan bisnis lihat catatan catatan pengeluaran catatan pemasukan di mana catatan masuk laporan sebagai tidak dihitung laba non-laba business notes recorded notes where did my note go"><a href="tutorial/#catatan_bisnis"><b>Notes (money in or out you record yourself)</b> <span class="badge">Max</span><span>Money in or out recorded with the Catat button shows under Sales › Notes, with a label for where it goes in the report.</span></a></li><li data-s="business reports (their tabs) summary, finance, profit &amp; loss, cash flow, balance sheet, capital &amp; draw, products, buyers, busy hours, materials &amp; purchases, receivables, channels, year and tax. laporan bisnis laporan usaha tab laporan ringkasan arus kas neraca modal prive produk terlaris pembeli jam ramai setahun kanal business report cash flow balance sheet best seller"><a href="tutorial/#laporan_bisnis"><b>Business reports (their tabs)</b> <span class="badge">Max</span><span>Summary, Finance, Profit &amp; loss, Cash flow, Balance sheet, Capital &amp; draw, Products, Buyers, Busy hours, Materials &amp; purchases, Receivables, Channels, Year and Tax.</span></a></li><li data-s="what the finance cards mean (margin, break-even, cash lasts for) what business cash now, cash lasts for, gross margin, net margin, break-even and cost / sales mean. margin margin kotor margin bersih titik impas impas kas cukup untuk uang usaha sekarang biaya omzet kesehatan keuangan apa artinya artinya break even gross margin net margin runway what does it mean"><a href="tutorial/#arti_kartu_keuangan"><b>What the Finance cards mean (margin, break-even, cash lasts for)</b> <span class="badge">Max</span><span>What Business cash now, Cash lasts for, Gross margin, Net margin, Break-even and Cost / sales mean.</span></a></li><li data-s="why sales differ from money received reports count money that really came in and went out. unpaid receipts, owner draws and capital deposits are left out. kenapa omzet beda omzet beda omzet tidak sama uang masuk beda laba tidak cocok selisih laporan kenapa laba beda dengan saldo cash basis why sales differ profit does not match mismatch"><a href="tutorial/#omzet_beda_uang_masuk"><b>Why sales differ from money received</b> <span class="badge">Max</span><span>Reports count money that really came in and went out. Unpaid receipts, owner draws and capital deposits are left out.</span></a></li><li data-s="barcode scan at the till and its sound scan a product barcode to add it to the basket. a "tit" sounds on success and another when it is not registered; you can turn it off. scan scan barcode barcode bunyi scan suara scan bunyi tit matikan suara scan scanner barcode sound beep scan sound"><a href="tutorial/#scan_barcode_kasir"><b>Barcode scan at the till and its sound</b> <span class="badge">Max</span><span>Scan a product barcode to add it to the basket. A "tit" sounds on success and another when it is not registered; you can turn it off.</span></a></li><li data-s="sell by voice or typing say or type "2 coffee 1 bread" and the basket fills itself. jual suara jual pakai suara jual ketik catat jualan cepat quick sale ucapkan voice sale sell by voice dictate"><a href="tutorial/#jual_suara_ketik"><b>Sell by voice or typing</b> <span class="badge">Max</span><span>Say or type "2 coffee 1 bread" and the basket fills itself.</span></a></li><li data-s="track product stock (and negative stock) turn on track stock on a product so stock drops on each sale. turn it off for services or consignment. lacak stok stok stok minus stok negatif stok habis stok tidak berkurang jasa titipan track stock negative stock out of stock"><a href="tutorial/#lacak_stok"><b>Track product stock (and negative stock)</b> <span class="badge">Max</span><span>Turn on Track stock on a product so stock drops on each sale. Turn it off for services or consignment.</span></a></li><li data-s="move money between business wallets or to another business move money between business wallets (e.g. withdraw shopee balance) or to your other business. it is not counted as sales. pindah uang usaha transfer antar bisnis tarik saldo shopee pindah wallet usaha ke bisnis lain antar bisnis pindah saldo tarik saldo marketplace transfer antar wallet usaha move business money transfer between businesses withdraw marketplace balance"><a href="tutorial/#transfer_antar_bisnis"><b>Move money between business wallets or to another business</b> <span class="badge">Max</span><span>Move money between business wallets (e.g. withdraw Shopee balance) or to your other business. It is not counted as sales.</span></a></li><li data-s="combined summary (personal + all businesses) see your personal money and all your businesses side by side. ringkasan gabungan gabungan semua bisnis pribadi dan bisnis total semua combined summary all businesses"><a href="tutorial/#ringkasan_gabungan"><b>Combined summary (Personal + all businesses)</b> <span class="badge">Max</span><span>See your personal money and all your businesses side by side.</span></a></li><li data-s="create a new business and switch profile more than one business? create a new one and switch between personal and your businesses. bisnis baru buat bisnis tambah usaha usaha kedua ganti profil ganti bisnis hapus bisnis ubah nama bisnis multi bisnis new business switch profile second business"><a href="tutorial/#bisnis_baru_ganti"><b>Create a new business and switch profile</b> <span class="badge">Max</span><span>More than one business? Create a new one and switch between Personal and your businesses.</span></a></li></ul></section></div>
+    <p class="note" id="allNone" hidden>No feature matches.</p>
+    <p class="more"><button class="btn btn--ghost" id="allMore" type="button">Show all (108)</button></p>
+  </div>
+</section>
 
-  <!-- ============ FAQ ============ -->
-  <section class="section" id="faq">
-    <div class="container container--narrow">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> FAQ</p>
-        <h2 class="section__title">Frequently asked questions.</h2>
-      </div>
-
-      <div class="faq-list" data-reveal>
-        <details class="faq-item" data-reveal-child open>
-          <summary>Is Artosku free?</summary>
-          <div class="faq-item__body">Yes, completely free. There's no subscription fee.</div>
-        </details>
-        <details class="faq-item" data-reveal-child>
-          <summary>Is my financial data safe?</summary>
-          <div class="faq-item__body">Your main financial data is stored on your phone. You can lock the app with a PIN or fingerprint, and make an encrypted backup to your own Google Drive.</div>
-        </details>
-        <details class="faq-item" data-reveal-child>
-          <summary>How do I install Artosku?</summary>
-          <div class="faq-item__body">Artosku is available directly on Google Play. Just open the download link on this page or search for "Artosku" on Google Play, then install it like any other app.</div>
-        </details>
-        <details class="faq-item" data-reveal-child>
-          <summary>Can I use it on an iPhone?</summary>
-          <div class="faq-item__body">For now, Artosku is only available for Android. iOS support is still being considered.</div>
-        </details>
-      </div>
+<section class="sec sec--tint" id="minyam">
+  <div class="wrap minyam">
+    <div class="minyam__stage" aria-label="Minyam wearing an item">
+      <img id="wearImg" src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
     </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="section section--soft" id="kontak">
-    <div class="container container--narrow">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span> Contact</p>
-        <h2 class="section__title">Got feedback, a feature request, or want to collaborate?</h2>
-        <p class="section__desc">Every message goes straight to the email of Artosku's creator &mdash; and it really gets read, it's not just a formality.</p>
+    <div class="minyam__copy">
+      <h2>Minyam logs along</h2>
+      <p class="lead">Log every day, your streak grows, and Minyam can get new items. Try dressing it up.</p>
+      <div class="streak">
+        <div class="streak__num"><i class="ph ph-fire" aria-hidden="true"></i><b id="streakNum">6</b> <span>days</span></div>
+        <button class="btn btn--small" id="streakBtn" type="button">Log today</button>
       </div>
-
-      <div class="contact-card" data-reveal>
-        <form class="contact-form" id="contactForm">
-          <div class="contact-form__row" data-reveal-child>
-            <div class="form-field">
-              <label for="contactName">Name</label>
-              <input type="text" id="contactName" name="name" autocomplete="name" placeholder="Your name" required />
-            </div>
-            <div class="form-field">
-              <label for="contactType">Message type</label>
-              <select id="contactType" name="type" required>
-                <option value="Feedback &amp; Suggestions">Feedback &amp; Suggestions</option>
-                <option value="Feature Request">Feature Request</option>
-                <option value="Partnership / Collaboration">Partnership / Collaboration</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-field" data-reveal-child>
-            <label for="contactMessage">Message</label>
-            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us your feedback, the feature you'd like, or your collaboration idea here..." required></textarea>
-          </div>
-
-          <div class="contact-form__actions" data-reveal-child>
-            <button type="submit" class="btn btn--primary btn--lg btn--shimmer">
-              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12 20 4l-6 16-3-7-8-1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-              <span>Send by Email</span>
-            </button>
-            <p class="contact-form__note">This button opens your email app with the message already filled in. Just check it and hit send.</p>
-          </div>
-        </form>
-
-        <p class="contact-fallback" data-reveal-child>
-          Or email us directly at
-          <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a>
-        </p>
-        <p class="contact-fallback contact-fallback--founder" data-reveal-child>
-          Founder &amp; developer:
-          <a href="mailto:andi.pramana@artosku.my.id">andi.pramana@artosku.my.id</a>
-        </p>
-      </div>
+      <p class="pick">Pick an item</p>
+      <div class="items" id="items" role="group" aria-label="Pick an item"></div>
     </div>
-  </section>
+  </div>
+</section>
 
+<section class="sec" id="paket">
+  <div class="wrap">
+    <h2>Plans</h2>
+    <p class="lead">Start free. Move up when you need a bigger AI allowance.</p>
+    <div class="plans">
+      <article class="plan"><h3>Free</h3><p>Manual logging, notifications, reports, budgets, wallets, and Drive backup. AI with a daily allowance.</p></article>
+      <article class="plan"><h3>Pro</h3><p>A bigger AI allowance for those who log with AI regularly.</p></article>
+      <article class="plan plan--max"><h3>Max</h3><p>The biggest AI allowance, plus Business Mode: cashier, stock, receipts, and pre-orders.</p></article>
+    </div>
+    <p class="note">Prices show in the app through Google Play.</p>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="faq">
+  <div class="wrap faq">
+    <h2>Common questions</h2>
+    <div class="faq__list"><details><summary>Is Artosku free?</summary><p>You can use it for free. Pro and Max plans give a bigger AI allowance, and Business Mode is in Max.</p></details><details><summary>Does it work without internet?</summary><p>Manual logging, notifications, and reports work offline. AI, statement scan, shared wallets, and currency rates need internet.</p></details><details><summary>What leaves my phone?</summary><p>Records and receipt photos stay on the phone. Text you ask AI to read goes to an AI provider after you agree. Shared wallets are stored on a server. A Google Drive backup goes into your own Drive account.</p></details><details><summary>Are there ads?</summary><p>No ads, and your data is not sold.</p></details><details><summary>How do I install it?</summary><p>Search for Artosku on Google Play, or use the download button on this page.</p></details><details><summary>Is there an iPhone version?</summary><p>Android only for now.</p></details></div>
+  </div>
+</section>
+
+<section class="dl" id="unduh">
+  <div class="wrap dl__in">
+    <img class="dl__mascot" src="../assets/minyam/joy.webp" alt="" width="200" height="200" loading="lazy" />
+    <div>
+      <h2>Start with your first entry.</h2>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="../assets/google-play-badge.svg" alt="Get it on Google Play" width="160" height="48" loading="lazy" /></a>
+      <p class="dl__mail">Questions or feedback? Write to <a href="mailto:contact.artosku@gmail.com">contact.artosku@gmail.com</a></p>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="#top" class="brand brand--footer">
-      <img src="../assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo" />
-    </a>
-    <nav class="footer__links" aria-label="Footer navigation">
-      <a href="#fitur">Features</a>
-      <a href="tutorial/">Guide</a>
-      <a href="#kenapa">Why Artosku</a>
-      <a href="#unduh">Download</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontak">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms and Conditions</a>
-      <a href="../index.html" hreflang="id" lang="id">Bahasa Indonesia</a>
-    </nav>
-    <p class="footer__copy">&copy; <span id="year"></span> Artosku. Made by Andi Pramana.</p>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>&copy; Artosku. Made by Andi Pramana.</span>
+    <nav aria-label="Footer"><a href="tutorial/">Guide</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="../" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script src="../js/home.js" defer></script>
 </body>
 </html>
