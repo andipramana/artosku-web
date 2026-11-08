@@ -27,14 +27,14 @@
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/" />
 </head>
-<body data-lang="en" data-asset="../">
+<body data-lang="en" data-asset="../" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Tap a product, pick a payment, then make the receipt.", "biz_cart_empty": "Nothing picked yet.", "biz_thanks": "Thank you", "biz_paid": "Paid by", "biz_new": "New sale", "biz_make": "Make receipt", "biz_pays": ["Cash", "QRIS", "Transfer"], "biz_products": [["Smashed chicken", 18000], ["Iced tea", 5000], ["Rice", 5000], ["Fried tofu", 3000], ["Extra sambal", 2000]], "biz_date_label": "Today"}'>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap nav__in">
     <a class="nav__brand" href="#top" aria-label="Artosku"><img src="../assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
     <nav class="nav__links" aria-label="Menu">
-      <a href="#coba">Try it</a><a href="#cara">How to log</a><a href="#data">Your data</a><a href="#fitur">Features</a><a href="#minyam">Minyam</a><a href="#paket">Plans</a><a href="#faq">FAQ</a>
+      <a href="#coba">One sentence</a><a href="#cara">How to log</a><a href="#data">Your data</a><a href="#fitur">Features</a><a href="#bisnis">Business</a><a href="#minyam">Minyam</a><a href="#paket">Plans</a><a href="#faq">FAQ</a>
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="../" hreflang="id" lang="id">Bahasa Indonesia</a>
@@ -66,34 +66,30 @@
 
 <section class="sec sec--tint" id="coba">
   <div class="wrap">
-    <h2>Try it yourself</h2>
-    <p class="lead">Write one transaction the way you would tell it.</p>
+    <h2>One sentence, many entries</h2>
+    <p class="lead">One sentence of story can hold many transactions at once.</p>
     <div class="try">
       <div class="try__in">
-        <form id="tryForm" autocomplete="off">
-          <label for="tryInput">Tell the transaction</label>
-          <div class="try__row">
-            <input id="tryInput" type="text" inputmode="text" placeholder="lunch 25k with gopay" maxlength="120" />
-            <button class="btn" type="submit">Log it</button>
+        <div class="try__form">
+          <p class="try__label" id="tryLabel">Tell your money story</p>
+          <div class="try__box">
+            <div class="try__mic" id="tryMic" aria-hidden="true"><i class="ph ph-microphone"></i><span class="wave"><b></b><b></b><b></b><b></b></span></div>
+            <textarea id="tryInput" rows="4" readonly tabindex="-1" aria-labelledby="tryLabel" placeholder="salary 5m into BCA, moved 1m from BCA to emergency fund pocket, lunch 25k with GoPay, parking 2k cash"></textarea>
           </div>
-        </form>
-        <div class="chips" id="tryChips" role="group" aria-label="Try it yourself"></div>
-        <p class="note"><i class="ph ph-info" aria-hidden="true"></i> A sample in your browser. In the app, AI reads your story.</p>
+          <div class="try__btns">
+            <button class="btn btn--ghost" id="tryReplay" type="button"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i>Replay</button>
+          </div>
+        </div>
+        <div class="chips" id="tryChips" role="group" aria-label="One sentence, many entries"></div>
+        <p class="note"><i class="ph ph-info" aria-hidden="true"></i> A sample. In the app, AI reads your own sentence.</p>
       </div>
       <div class="try__out">
         <div class="try__mascot"><img id="tryMascotImg" src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" /></div>
-        <div class="card tx" id="tryResult" aria-live="polite">
-          <p class="tx__empty" id="tryEmpty">Write something or pick a sample above, the result shows up here.</p>
-          <div class="tx__body" id="tryBody" hidden>
-            <p class="tx__title" id="trName"></p>
-            <dl>
-              <div><dt>Amount</dt><dd id="trAmount"></dd></div>
-              <div><dt>Type</dt><dd id="trType"></dd></div>
-              <div><dt>Category</dt><dd id="trCat"></dd></div>
-              <div><dt>Wallet</dt><dd id="trWallet"></dd></div>
-              <div><dt>Date</dt><dd id="trDate"></dd></div>
-            </dl>
-          </div>
+        <div class="txs" aria-live="polite">
+          <p class="tx__empty" id="tryEmpty">The result shows up here.</p>
+          <p class="reading" id="tryReading" hidden>AI is reading<span class="dots"><b></b><b></b><b></b></span></p>
+          <ul class="txlist" id="txList"></ul>
+          <p class="txsum" id="txSum" hidden></p>
         </div>
       </div>
     </div>
@@ -116,8 +112,13 @@
         <div role="tabpanel" id="pan-type" aria-labelledby="tab-type" class="pan">
           <div class="pan__copy"><h3>Write it like a chat.</h3><p>One sentence, or several transactions at once. AI fills in the amount, category, and wallet. You check, then save.</p></div>
           <div class="phone">
-            <div class="ui-input"><span>lunch 25k with gopay</span><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
-            <div class="ui-tx"><b>Rp25.000</b><span>Food &middot; GoPay</span><button class="btn btn--small" type="button" tabindex="-1">Save</button></div>
+            <div class="ui-input"><span>salary 5m into BCA, 1m to emergency fund, lunch 25k with GoPay</span><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
+            <ul class="ui-rows">
+              <li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>Salary</span><b class="in">+Rp5.000.000</b></li>
+              <li><i class="ph ph-arrows-left-right" aria-hidden="true"></i><span>BCA &rarr; Emergency Fund Pocket</span><b>Rp1.000.000</b></li>
+              <li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Food &middot; GoPay</span><b>-Rp25.000</b></li>
+            </ul>
+            <button class="btn btn--small" type="button" tabindex="-1">Save</button>
           </div>
         </div>
         <div role="tabpanel" id="pan-voice" aria-labelledby="tab-voice" class="pan" hidden>
@@ -200,6 +201,38 @@
       <article class="cell cell--biz"><i class="ph ph-storefront" aria-hidden="true"></i><h3>Business Mode <span class="badge">Max plan</span></h3><p>Cashier, stock, receipts, and pre-orders for your business, kept apart from personal records.</p></article>
     </div>
     <p class="more"><a class="btn btn--ghost" href="#semua">See all features (108)</a></p>
+  </div>
+</section>
+
+<section class="sec sec--deep" id="bisnis">
+  <div class="wrap">
+    <h2>Business Mode <span class="badge">Max plan</span></h2>
+    <p class="lead">Your business records, kept apart from your personal ones, in one app.</p>
+    <div class="pos">
+      <div class="pos__menu card">
+        <h3>Proud Chicken</h3>
+        <ul class="pos__items" id="posItems"></ul>
+        <div class="chips" id="posPay" role="group" aria-label="Payment"></div>
+        <p class="pos__total"><span>Total</span><b id="posTotal">Rp0</b></p>
+        <button class="btn" id="posMake" type="button">Make receipt</button>
+        <p class="note">A sample in your browser. In the app, stock goes down too and the receipt can be sent.</p>
+      </div>
+      <div class="pos__out">
+        <img id="posMascot" src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+        <div class="receipt" id="posReceipt" aria-live="polite"><p class="receipt__empty">Tap a product, pick a payment, then make the receipt.</p></div>
+      </div>
+    </div>
+    <div class="how how--biz">
+      <div class="tabs" role="tablist" aria-label="Business Mode"><button role="tab" id="btab-kasir" aria-controls="bpan-kasir" aria-selected="true"><i class="ph ph-receipt" aria-hidden="true"></i>Cashier and receipts</button><button role="tab" id="btab-stok" aria-controls="bpan-stok" aria-selected="false" tabindex="-1"><i class="ph ph-package" aria-hidden="true"></i>Stock and supplies</button><button role="tab" id="btab-po" aria-controls="bpan-po" aria-selected="false" tabindex="-1"><i class="ph ph-calendar-check" aria-hidden="true"></i>Pre-orders</button><button role="tab" id="btab-piutang" aria-controls="bpan-piutang" aria-selected="false" tabindex="-1"><i class="ph ph-handshake" aria-hidden="true"></i>Customers and debts</button><button role="tab" id="btab-laporan" aria-controls="bpan-laporan" aria-selected="false" tabindex="-1"><i class="ph ph-chart-line-up" aria-hidden="true"></i>Profit and loss</button><button role="tab" id="btab-tutup" aria-controls="bpan-tutup" aria-selected="false" tabindex="-1"><i class="ph ph-vault" aria-hidden="true"></i>Close the till</button></div>
+      <div class="how__panels"><div role="tabpanel" id="bpan-kasir" aria-labelledby="btab-kasir" class="pan"><div class="pan__copy"><h3>Sell, then send the receipt.</h3><p>Receipts go out over WhatsApp or become a PDF, with your business name and payment method.</p></div><div class="phone"><div class="ui-receipt"><b>Proud Chicken</b><i></i><i></i><i class="short"></i><div><span>Total</span><b>Rp23.000</b></div></div><div class="ui-actions"><span class="btn btn--small">WhatsApp</span><span class="btn btn--small btn--ghost">PDF</span></div></div></div><div role="tabpanel" id="bpan-stok" aria-labelledby="btab-stok" class="pan" hidden><div class="pan__copy"><h3>Stock and supplies go down too.</h3><p>Stock drops as you sell. You get a warning before it runs out.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-package" aria-hidden="true"></i><span>Smashed chicken</span><b>Stock 24</b></li><li><i class="ph ph-package" aria-hidden="true"></i><span>Iced tea</span><b>Stock 60</b></li><li class="warn"><i class="ph ph-warning" aria-hidden="true"></i><span>Rice</span><b>Low stock</b></li></ul></div></div><div role="tabpanel" id="bpan-po" aria-labelledby="btab-po" class="pan" hidden><div class="pan__copy"><h3>Orders for a set date.</h3><p>Take pre-orders with a deposit, and see on the calendar what to make.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-calendar" aria-hidden="true"></i><span>14 Nov, Smashed chicken x 20</span><b>Deposit</b></li><li><i class="ph ph-calendar" aria-hidden="true"></i><span>16 Nov, Smashed chicken x 12</span><b>Deposit</b></li></ul></div></div><div role="tabpanel" id="bpan-piutang" aria-labelledby="btab-piutang" class="pan" hidden><div class="pan__copy"><h3>Who has not paid yet.</h3><p>Keep customers and suppliers, and see the debts still open.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-user" aria-hidden="true"></i><span>Warung Bu Sari</span><b>Rp240.000</b></li><li><i class="ph ph-user" aria-hidden="true"></i><span>Kantor Pak Dedi</span><b>Rp180.000</b></li><li class="off"><i class="ph ph-info" aria-hidden="true"></i><span>Unpaid</span><b>2</b></li></ul></div></div><div role="tabpanel" id="bpan-laporan" aria-labelledby="btab-laporan" class="pan" hidden><div class="pan__copy"><h3>Profit or loss, clearly.</h3><p>Profit and loss and cash flow for your business, apart from personal money.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>Revenue</span><b class="in">Rp3.420.000</b></li><li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Costs</span><b>Rp2.150.000</b></li><li><i class="ph ph-equals" aria-hidden="true"></i><span>Profit</span><b class="in">Rp1.270.000</b></li></ul></div></div><div role="tabpanel" id="bpan-tutup" aria-labelledby="btab-tutup" class="pan" hidden><div class="pan__copy"><h3>Close the till every day.</h3><p>Match the cash in the drawer with the sales record before you go home.</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-vault" aria-hidden="true"></i><span>Opening cash</span><b>Rp200.000</b></li><li><i class="ph ph-cash" aria-hidden="true"></i><span>Cash sales</span><b>Rp1.180.000</b></li><li><i class="ph ph-check-square" aria-hidden="true"></i><span>Closing cash</span><b class="in">Rp1.380.000 Matches</b></li></ul></div></div></div>
+    </div>
+    <div class="biz-cta">
+      <p>Try the Proud Chicken demo in the app, free with no subscription.</p>
+      <div class="biz-cta__row">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="../assets/google-play-badge.svg" alt="Get it on Google Play" width="160" height="48" loading="lazy" /></a>
+        <button class="btn btn--ghost" id="bizAll" type="button">See all business features</button>
+      </div>
+    </div>
   </div>
 </section>
 

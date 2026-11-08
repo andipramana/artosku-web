@@ -12,29 +12,17 @@
   var T = {
     id: {
       bubbles: ['Hai, aku Minyam. Ketuk aku.', 'Aku ikut mencatat uangmu.', 'Coba kolom "Coba sendiri" di bawah.', 'Catat tiap hari, ya.', 'Aku suka matcha. Kamu?'],
-      samples: ['makan siang 25 ribu pakai gopay', 'gaji masuk 6,5 jt ke bca', 'bensin 50rb tunai', 'kopi 18k ovo'],
+      stories: [{"label": "Gaji, transfer, makan, parkir", "text": "gaji masuk 5jt ke rekening BCA, transfer 1jt dari BCA ke pocket dana darurat, makan siang 25rb pakai GoPay, parkir 2rb cash", "items": [{"kind": "income", "amount": 5000000, "cat": "Gaji", "wallet": "BCA"}, {"kind": "transfer", "amount": 1000000, "from": "BCA", "to": "Pocket Dana Darurat"}, {"kind": "expense", "amount": 25000, "cat": "Makan", "wallet": "GoPay"}, {"kind": "expense", "amount": 2000, "cat": "Parkir", "wallet": "Tunai"}]}, {"label": "Belanja, bensin, arisan", "text": "belanja sayur 45rb dan bensin 30rb pakai OVO, terima transferan arisan 200rb", "items": [{"kind": "expense", "amount": 45000, "cat": "Belanja", "wallet": "OVO"}, {"kind": "expense", "amount": 30000, "cat": "Transport", "wallet": "OVO"}, {"kind": "income", "amount": 200000, "cat": "Arisan", "wallet": "Tunai"}]}, {"label": "Listrik dan kopi", "text": "bayar listrik 350rb dari BCA, kopi 18rb cash", "items": [{"kind": "expense", "amount": 350000, "cat": "Tagihan", "wallet": "BCA"}, {"kind": "expense", "amount": 18000, "cat": "Makan", "wallet": "Tunai"}]}],
       income: 'Pemasukan', expense: 'Pengeluaran', today: 'Hari ini', cash: 'Tunai', other: 'Lainnya', saved: 'Sudah dicatat hari ini',
       noAmount: 'Belum ada nominalnya. Tulis jumlahnya, misalnya 25 ribu.', count: '{n} fitur'
     },
     en: {
       bubbles: ['Hi, I am Minyam. Tap me.', 'I help you log your money.', 'Try the "Try it yourself" box below.', 'Log a little every day.', 'I like matcha. Do you?'],
-      samples: ['lunch 25k with gopay', 'salary 6.5m into bca', 'fuel 50k cash', 'coffee 18k ovo'],
+      stories: [{"label": "Salary, transfer, lunch, parking", "text": "salary 5m into BCA, moved 1m from BCA to emergency fund pocket, lunch 25k with GoPay, parking 2k cash", "items": [{"kind": "income", "amount": 5000000, "cat": "Salary", "wallet": "BCA"}, {"kind": "transfer", "amount": 1000000, "from": "BCA", "to": "Emergency Fund Pocket"}, {"kind": "expense", "amount": 25000, "cat": "Food", "wallet": "GoPay"}, {"kind": "expense", "amount": 2000, "cat": "Parking", "wallet": "Cash"}]}, {"label": "Groceries, fuel, savings club", "text": "groceries 45k and fuel 30k with OVO, received 200k savings club transfer", "items": [{"kind": "expense", "amount": 45000, "cat": "Shopping", "wallet": "OVO"}, {"kind": "expense", "amount": 30000, "cat": "Transport", "wallet": "OVO"}, {"kind": "income", "amount": 200000, "cat": "Savings club", "wallet": "Cash"}]}, {"label": "Electricity and coffee", "text": "electricity 350k from BCA, coffee 18k cash", "items": [{"kind": "expense", "amount": 350000, "cat": "Bills", "wallet": "BCA"}, {"kind": "expense", "amount": 18000, "cat": "Food", "wallet": "Cash"}]}],
       income: 'Income', expense: 'Expense', today: 'Today', cash: 'Cash', other: 'Other', saved: 'Logged today',
       noAmount: 'No amount yet. Write one, for example 25k.', count: '{n} features'
     }
   }[LANG];
-
-  var CATS = {
-    id: [['Gaji', /gaji|bonus|thr/], ['Makan', /makan|kopi|jajan|sarapan|minum|resto|nasi|bakso|warung|snack/], ['Transport', /bensin|ojek|grab|gojek|parkir|tol|bus|kereta|angkot|taksi/],
-      ['Belanja', /belanja|beli|baju|minimarket|sepatu|skincare/], ['Tagihan', /listrik|pulsa|internet|wifi|tagihan|cicilan|kos|sewa|air pdam/],
-      ['Hiburan', /nonton|film|game|bioskop|netflix|spotify|konser/], ['Kesehatan', /obat|dokter|apotek|klinik|vitamin/]],
-    en: [['Salary', /salary|bonus|payday/], ['Food', /lunch|dinner|breakfast|coffee|food|snack|eat|meal|restaurant|drink/], ['Transport', /fuel|gas|taxi|grab|gojek|parking|toll|bus|train|ride/],
-      ['Shopping', /shop|buy|groceries|clothes|shoes|skincare/], ['Bills', /electric|bill|internet|wifi|rent|installment|phone credit/],
-      ['Entertainment', /movie|film|game|cinema|netflix|spotify|concert/], ['Health', /medicine|doctor|pharmacy|clinic|vitamin/]]
-  }[LANG];
-  var INCOME = /gaji|bonus|terima|dapat|masuk|thr|refund|salary|received|got paid|income|payday/;
-  var WALLETS = [['GoPay', /gopay/], ['OVO', /\bovo\b/], ['DANA', /\bdana\b/], ['ShopeePay', /shopee ?pay/], ['BCA', /\bbca\b/], ['BNI', /\bbni\b/], ['BRI', /\bbri\b/],
-    ['Mandiri', /mandiri/], ['Jago', /\bjago\b/], [T.cash, /tunai|cash/]];
 
   /* ---------- mascot (blink by swapping real renders) ---------- */
   ['blink', 'joy', 'wait', 'squash'].forEach(function (n) { var i = new Image(); i.src = src(n); });
@@ -68,88 +56,92 @@
     react(heroImg, bi % 2 ? 'joy' : 'squash', 900);
   });
 
-  /* ---------- try it ---------- */
-  var form = $('#tryForm'), input = $('#tryInput'), chipBox = $('#tryChips'), tryImg = $('#tryMascotImg');
-  var box = $('#tryResult'), empty = $('#tryEmpty'), tbody = $('#tryBody');
+  /* ---------- one sentence, many entries: a scripted demo (fixed results, no parsing of visitor text) ---------- */
+  var input = $('#tryInput'), chipBox = $('#tryChips'), tryImg = $('#tryMascotImg'), mic = $('#tryMic');
+  var empty = $('#tryEmpty'), reading = $('#tryReading'), list = $('#txList'), sum = $('#txSum'), replayBtn = $('#tryReplay');
   blinker(tryImg);
   var money = function (n) { return 'Rp' + Math.round(n).toLocaleString(LANG === 'id' ? 'id-ID' : 'en-US'); };
-
-  function parseAmount(s) {
-    var re = /(\d+(?:[.,]\d+)*)\s*(juta|jt|million|mil|m|ribu|rb|thousand|k)?(?![a-z])/gi, m, first = null, withUnit = null;
-    while ((m = re.exec(s))) {
-      var raw = m[1], v;
-      if (/^\d{1,3}([.,]\d{3})+$/.test(raw)) v = parseFloat(raw.replace(/[.,]/g, ''));
-      else v = parseFloat(raw.replace(',', '.'));
-      if (isNaN(v)) continue;
-      var u = (m[2] || '').toLowerCase(), mult = 1;
-      if (/^(juta|jt|million|mil|m)$/.test(u)) mult = 1e6; else if (u) mult = 1e3;
-      var hit = { value: v * mult, text: m[0] };
-      if (!first) first = hit;
-      if (u && !withUnit) withUnit = hit;
+  var STR = LANG === 'id'
+    ? { income: 'PEMASUKAN', expense: 'PENGELUARAN', transfer: 'TRANSFER', sum: '{n} transaksi dari 1 kalimat', inn: 'Masuk', out: 'Keluar' }
+    : { income: 'INCOME', expense: 'EXPENSE', transfer: 'TRANSFER', sum: '{n} transactions from 1 sentence', inn: 'In', out: 'Out' };
+  function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function card(it) {
+    var cls = it.kind === 'income' ? 'in' : it.kind === 'transfer' ? 'xfer' : 'out';
+    var icon = it.kind === 'income' ? 'ph-arrow-down-left' : it.kind === 'transfer' ? 'ph-arrows-left-right' : 'ph-arrow-up-right';
+    var label = it.kind === 'income' ? STR.income : it.kind === 'transfer' ? STR.transfer : STR.expense;
+    var sub = it.kind === 'transfer' ? esc(it.from) + ' &rarr; ' + esc(it.to) : esc(it.cat) + ' &middot; ' + esc(it.wallet);
+    var sign = it.kind === 'income' ? '+' : it.kind === 'expense' ? '-' : '';
+    return '<li class="txc txc--' + cls + '"><i class="ph ' + icon + '" aria-hidden="true"></i><strong>' + label + '</strong><b>' + sign + money(it.amount) + '</b><span>' + sub + '</span></li>';
+  }
+  var runId = 0, lastIdx = 0;
+  function wait(ms, id) { return new Promise(function (res) { setTimeout(function () { res(id === runId); }, ms); }); }
+  async function play(idx, typed) {
+    var id = ++runId, story = T.stories[idx];
+    lastIdx = idx;
+    $$('.chip', chipBox).forEach(function (c, k) { c.setAttribute('aria-pressed', k === idx ? 'true' : 'false'); });
+    list.innerHTML = ''; sum.hidden = true; reading.hidden = true; empty.hidden = true;
+    var text = story.text;
+    if (typed && !REDUCED) {
+      input.value = ''; mic.classList.add('on');
+      var per = Math.max(1, Math.ceil(text.length / 120)), n = 0;   // about 2.2 s for the long sample
+      while (n < text.length) {
+        n = Math.min(text.length, n + per); input.value = text.slice(0, n);
+        if (!(await wait(18, id))) return;
+      }
+      mic.classList.remove('on');
+    } else { input.value = text; }
+    if (!REDUCED) {
+      reading.hidden = false;
+      if (!(await wait(400, id))) return;
+      reading.hidden = true;
     }
-    return withUnit || first;
-  }
-  function analyse(text) {
-    var low = text.toLowerCase(), amt = parseAmount(low);
-    if (!amt) return null;
-    var wallet = T.cash, wtext = '';
-    for (var i = 0; i < WALLETS.length; i++) { var wm = low.match(WALLETS[i][1]); if (wm) { wallet = WALLETS[i][0]; wtext = wm[0]; break; } }
-    var cat = T.other;
-    for (var j = 0; j < CATS.length; j++) if (CATS[j][1].test(low)) { cat = CATS[j][0]; break; }
-    var income = INCOME.test(low);
-    if (income && cat === T.other) cat = LANG === 'id' ? 'Gaji' : 'Salary';
-    var name = low.replace(amt.text, ' ');
-    if (wtext) name = name.replace(new RegExp('\\b(pakai|via|dengan|with|using|into|from|ke|dari)?\\s*' + wtext.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), ' ');
-    name = name.replace(/\b(masuk|received|rp|idr)\b/g, ' ').replace(/\s+/g, ' ').trim();
-    if (!name) name = cat;
-    name = name.charAt(0).toUpperCase() + name.slice(1);
-    return { name: name, amount: amt.value, cat: cat, wallet: wallet, income: income };
-  }
-  function show(text) {
-    var r = analyse(text);
-    if (!r) {
-      box.classList.remove('run'); tbody.hidden = true; empty.hidden = false; empty.textContent = T.noAmount;
-      react(tryImg, 'wait', 1600); return;
+    for (var i = 0; i < story.items.length; i++) {
+      list.insertAdjacentHTML('beforeend', card(story.items[i]));
+      if (!REDUCED && !(await wait(120, id))) return;
     }
-    empty.hidden = true; tbody.hidden = false;
-    $('#trName').textContent = r.name;
-    $('#trAmount').textContent = (r.income ? '+' : '-') + money(r.amount);
-    $('#trAmount').className = r.income ? 'in' : '';
-    $('#trType').textContent = r.income ? T.income : T.expense;
-    $('#trCat').textContent = r.cat;
-    $('#trWallet').textContent = r.wallet;
-    $('#trDate').textContent = T.today;
-    box.classList.remove('run'); void box.offsetWidth; box.classList.add('run');
-    react(tryImg, 'joy', 1100);
+    var inn = 0, outc = 0;
+    story.items.forEach(function (it) { if (it.kind === 'income') inn += it.amount; else if (it.kind === 'expense') outc += it.amount; });
+    sum.innerHTML = STR.sum.replace('{n}', story.items.length) + ' <span>' + STR.inn + ' ' + money(inn) + '</span><span>' + STR.out + ' ' + money(outc) + '</span>';
+    sum.hidden = false;
+    react(tryImg, 'joy', 1300);
   }
-  T.samples.forEach(function (s) {
+  T.stories.forEach(function (st, k) {
     var b = document.createElement('button');
-    b.type = 'button'; b.className = 'chip'; b.textContent = s;
-    b.addEventListener('click', function () { input.value = s; show(s); });
+    b.type = 'button'; b.className = 'chip'; b.textContent = st.label; b.setAttribute('aria-pressed', k === 0 ? 'true' : 'false');
+    b.addEventListener('click', function () { play(k, true); });
     chipBox.appendChild(b);
   });
-  if (input && T.samples.length) { input.value = T.samples[0]; show(T.samples[0]); }
-  if (form) form.addEventListener('submit', function (e) { e.preventDefault(); if (input.value.trim()) show(input.value.trim()); });
+  if (replayBtn) replayBtn.addEventListener('click', function () { play(lastIdx, true); });
+  input.value = T.stories[0].text;
+  var coba = $('#coba');
+  if ('IntersectionObserver' in window && coba) {
+    var seen = false, io = new IntersectionObserver(function (ents) {
+      if (!seen && ents[0].isIntersecting) { seen = true; io.disconnect(); play(0, true); }
+    }, { threshold: 0.3 });
+    io.observe(coba);
+  } else { play(0, false); }
 
-  /* ---------- ways to log (tabs) ---------- */
-  var tabs = $$('.tabs [role="tab"]');
-  function pick(tab, focus) {
-    tabs.forEach(function (t) {
-      var on = t === tab;
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      t.tabIndex = on ? 0 : -1;
-      $('#' + t.getAttribute('aria-controls')).hidden = !on;
-    });
-    if (focus) tab.focus();
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { pick(t); });
-    t.addEventListener('keydown', function (e) {
-      var k = e.key, n = null;
-      if (k === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
-      else if (k === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
-      else if (k === 'Home') n = tabs[0]; else if (k === 'End') n = tabs[tabs.length - 1];
-      if (n) { e.preventDefault(); pick(n, true); }
+  /* ---------- tabs (ways to log, business features) ---------- */
+  $$('.how').forEach(function (box) {
+    var tabs = $$('[role="tab"]', box);
+    function pick(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        $('#' + t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { pick(t); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key, n = null;
+        if (k === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+        else if (k === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (k === 'Home') n = tabs[0]; else if (k === 'End') n = tabs[tabs.length - 1];
+        if (n) { e.preventDefault(); pick(n, true); }
+      });
     });
   });
 
@@ -187,6 +179,67 @@
     stage.classList.remove('swap'); void stage.offsetWidth; stage.classList.add('swap');
   });
   blinker(wear);
+
+
+  /* ---------- Mode Bisnis: mini cashier ---------- */
+  var B = null;
+  try { B = JSON.parse(body.getAttribute('data-biz')); } catch (e) { B = null; }
+  var posItems = $('#posItems');
+  if (B && posItems) {
+    var qty = B.biz_products.map(function () { return 0; }), payIdx = 0;
+    var posImg = $('#posMascot'), rcpt = $('#posReceipt'), totEl = $('#posTotal'), makeBtn = $('#posMake'), payBox = $('#posPay');
+    var rp = function (n) { return 'Rp' + n.toLocaleString(LANG === 'id' ? 'id-ID' : 'en-US'); };
+    blinker(posImg);
+    var outs = [], quiet = false;
+    B.biz_products.forEach(function (p, i) {
+      var li = document.createElement('li');
+      var name = document.createElement('button');
+      name.type = 'button'; name.className = 'name';
+      name.innerHTML = '<span></span><small></small>';
+      name.firstChild.textContent = p[0]; name.lastChild.textContent = rp(p[1]);
+      var step = document.createElement('span'); step.className = 'step';
+      var minus = document.createElement('button'), plus = document.createElement('button'), out = document.createElement('output');
+      minus.type = plus.type = 'button'; minus.textContent = '-'; plus.textContent = '+'; out.textContent = '0';
+      minus.setAttribute('aria-label', '- ' + p[0]); plus.setAttribute('aria-label', '+ ' + p[0]);
+      function set(n) { qty[i] = Math.max(0, n); out.textContent = String(qty[i]); total(); }
+      name.addEventListener('click', function () { set(qty[i] + 1); });
+      plus.addEventListener('click', function () { set(qty[i] + 1); });
+      minus.addEventListener('click', function () { set(qty[i] - 1); });
+      step.appendChild(minus); step.appendChild(out); step.appendChild(plus);
+      li.appendChild(name); li.appendChild(step); posItems.appendChild(li);
+      outs.push(set);
+    });
+    B.biz_pays.forEach(function (name, i) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.textContent = name; b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        payIdx = i; $$('.chip', payBox).forEach(function (c, k) { c.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+      });
+      payBox.appendChild(b);
+    });
+    function total() {
+      var t = 0; B.biz_products.forEach(function (p, i) { t += p[1] * qty[i]; });
+      totEl.textContent = rp(t); return t;
+    }
+    function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+    makeBtn.addEventListener('click', function () {
+      var t = total();
+      if (!t) { rcpt.innerHTML = '<p class="receipt__empty">' + esc(B.biz_cart_empty) + '</p>'; if (!quiet) react(posImg, 'wait', 1400); return; }
+      var lines = '';
+      B.biz_products.forEach(function (p, i) { if (qty[i]) lines += '<div class="ln"><span>' + qty[i] + ' x ' + esc(p[0]) + '</span><span>' + rp(p[1] * qty[i]) + '</span></div>'; });
+      rcpt.innerHTML = '<h4>' + esc(B.biz_shop) + '</h4><div>' + esc(B.biz_date_label) + '</div><hr>' + lines + '<hr><div class="ln tot"><span>' + esc(B.biz_total) + '</span><span>' + rp(t) + '</span></div><div class="ln"><span>' + esc(B.biz_paid) + '</span><span>' + esc(B.biz_pays[payIdx]) + '</span></div><div class="ty">' + esc(B.biz_thanks) + '</div>';
+      rcpt.classList.remove('fresh'); void rcpt.offsetWidth; rcpt.classList.add('fresh');
+      if (!quiet) react(posImg, payIdx === 0 ? 'coin' : 'joy', 1500);
+    });
+    outs[0](1); outs[1](1);
+    quiet = true; makeBtn.click(); quiet = false;
+  }
+  var bizAll = $('#bizAll');
+  if (bizAll) bizAll.addEventListener('click', function () {
+    var chip = $('#allChips .chip[data-g="bisnis"]');
+    if (chip) chip.click();
+    var tgt = $('#semua'); if (tgt) tgt.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+  });
 
   /* ---------- all features: search + category chips ---------- */
   var q = $('#allSearch'), gchips = $$('#allChips .chip'), groups = $$('#allList .grp'), none2 = $('#allNone'), cnt = $('#allCount');

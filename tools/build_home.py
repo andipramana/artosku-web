@@ -6,6 +6,7 @@ Texts live in the T dictionaries below; markup in TEMPLATE. css/home.css and js/
 No em-dash anywhere on the page (house rule for the landing page).
 """
 import argparse
+import json
 import os
 import re
 import sys
@@ -19,7 +20,7 @@ ID = dict(
     og_title='Artosku: catat keuangan semudah bercerita',
     og_desc='Catatan keuangan tersimpan di HP-mu. Catat dengan AI semudah bercerita, ditemani Minyam.',
     skip='Langsung ke konten',
-    nav_try='Coba sendiri', nav_how='Cara mencatat', nav_data='Datamu', nav_features='Fitur', nav_minyam='Minyam', nav_plans='Paket', nav_faq='FAQ',
+    nav_how='Cara mencatat', nav_data='Datamu', nav_features='Fitur', nav_minyam='Minyam', nav_plans='Paket', nav_faq='FAQ',
     nav_dl='Unduh',
     h1='Catatanmu di <span class="nw">HP-mu</span>. Mencatat semudah bercerita.',
     hero_sub='Ketik, bicara, atau foto struk. AI menyiapkan catatannya, kamu yang memutuskan.',
@@ -27,19 +28,19 @@ ID = dict(
     play_alt='Dapatkan di Google Play',
     hero_stage_label='Minyam, maskot Artosku. Ketuk untuk menyapa.',
     bubble_start='Hai, aku Minyam. Ketuk aku.',
-    try_h='Coba sendiri',
-    try_sub='Tulis satu transaksi seperti kamu bercerita.',
-    try_label='Ceritakan transaksinya',
-    try_ph='makan siang 25 ribu pakai gopay',
+    try_sub='Satu kalimat cerita bisa berisi banyak transaksi sekaligus.',
+    try_label='Ceritakan keuanganmu',
+    try_ph='gaji masuk 5jt ke rekening BCA, transfer 1jt dari BCA ke pocket dana darurat, makan siang 25rb pakai GoPay, parkir 2rb cash',
+    try_h='Satu kalimat, banyak catatan', nav_try='Satu kalimat', try_note='Contoh. Di aplikasi, AI membaca kalimatmu sendiri.',
+    try_replay='Ulangi', try_reading='AI membaca', try_voice='Diucapkan atau diketik',
     try_btn='Catat',
-    try_note='Contoh di browser. Di aplikasi, AI yang membaca ceritamu.',
     try_r_title='Hasilnya', try_r_amount='Nominal', try_r_cat='Kategori', try_r_wallet='Wallet', try_r_type='Jenis', try_r_date='Tanggal',
-    try_empty='Tulis atau pilih contoh di atas, hasilnya muncul di sini.',
+    try_empty='Hasilnya muncul di sini.',
     how_h='Cara mencatat',
     how_sub='Pilih yang paling cepat untukmu hari ini.',
     tab_type='Ketik', tab_voice='Suara', tab_photo='Foto struk', tab_bank='Mutasi bank', tab_notif='Notifikasi',
     how_type_t='Tulis seperti chat.',
-    how_type_p='Satu kalimat, bisa beberapa transaksi sekaligus. AI mengisi nominal, kategori, dan wallet. Kamu cek, lalu simpan.',
+    how_type_p='Satu kalimat bisa berisi beberapa transaksi. AI memecahnya dan mengisi nominal, kategori, dan wallet. Kamu cek, lalu simpan.',
     how_voice_t='Ucapkan, jangan ketik.',
     how_voice_p='Tekan mikrofon dan sebut transaksinya. Cocok saat tangan penuh atau sedang di jalan.',
     how_photo_t='Foto struknya.',
@@ -98,6 +99,23 @@ ID = dict(
     ],
     dl_h='Mulai dari catatan pertama.',
     dl_p='Pertanyaan atau masukan? Kirim ke',
+    biz_h='Mode Bisnis', biz_p='Catatan usaha terpisah dari catatan pribadi, dalam satu aplikasi.',
+    biz_shop='Proud Chicken', biz_pay='Cara bayar', biz_total='Total', biz_make='Buat nota', biz_new='Transaksi baru',
+    biz_note='Contoh di browser. Di aplikasi, stok ikut berkurang dan nota bisa dikirim.',
+    biz_empty='Ketuk produk, pilih cara bayar, lalu buat nota.', biz_cart_empty='Belum ada yang dipilih.',
+    biz_thanks='Terima kasih', biz_paid='Bayar', biz_date_label='Hari ini',
+    biz_pays=['Tunai', 'QRIS', 'Transfer'],
+    biz_products=[('Ayam geprek', 18000), ('Es teh', 5000), ('Nasi', 5000), ('Tahu goreng', 3000), ('Sambal ekstra', 2000)],
+    bt_kasir='Kasir dan nota', bt_stok='Stok dan bahan', bt_po='Pre-order', bt_piutang='Pembeli dan piutang', bt_laporan='Laba rugi', bt_tutup='Tutup kas',
+    bp_kasir_t='Jual, lalu kirim notanya.', bp_kasir_p='Nota dikirim lewat WhatsApp atau jadi PDF, lengkap dengan nama usaha dan cara bayar.',
+    bp_stok_t='Stok dan bahan ikut berkurang.', bp_stok_p='Stok turun saat kamu jual. Ada peringatan sebelum stok habis.',
+    bp_po_t='Pesanan untuk tanggal tertentu.', bp_po_p='Terima pre-order dengan DP, lihat di kalender apa yang harus dibuat.',
+    bp_piutang_t='Siapa yang belum bayar.', bp_piutang_p='Catat pembeli dan pemasok, dan lihat piutang yang masih terbuka.',
+    bp_laporan_t='Untung atau rugi, jelas.', bp_laporan_p='Laba rugi dan arus kas usahamu, terpisah dari uang pribadi.',
+    bp_tutup_t='Tutup kas tiap hari.', bp_tutup_p='Cocokkan uang di laci dengan catatan penjualan sebelum pulang.',
+    bu_wa='WhatsApp', bu_pdf='PDF', bu_low='Stok tipis', bu_stock='Stok', bu_dp='DP', bu_open='Belum lunas', bu_income='Pendapatan', bu_cost='Biaya', bu_profit='Laba',
+    bu_open_cash='Kas awal', bu_cash_sales='Penjualan tunai', bu_close_cash='Kas akhir', bu_match='Cocok',
+    biz_cta='Coba demo Proud Chicken di aplikasi, gratis tanpa langganan.', biz_all='Lihat semua fitur bisnis', nav_biz='Bisnis',
     all_h='Semua fitur', all_sub='Semua yang ada di aplikasi, per kategori. Ketuk satu untuk membaca caranya.',
     all_btn='Lihat semua fitur ({n})', show_all='Tampilkan semua ({n})', all_count='{n} fitur', search_label='Cari fitur', search_ph='mis. anggaran, struk, backup',
     chip_all='Semua', no_result='Tidak ada fitur yang cocok.', badge_pro='Pro', badge_max='Max',
@@ -113,7 +131,7 @@ EN = dict(
     og_title='Artosku: money tracking as easy as telling a story',
     og_desc='Your finance records stay on your phone. Log with AI as easily as telling a story, with Minyam beside you.',
     skip='Skip to content',
-    nav_try='Try it', nav_how='How to log', nav_data='Your data', nav_features='Features', nav_minyam='Minyam', nav_plans='Plans', nav_faq='FAQ',
+    nav_how='How to log', nav_data='Your data', nav_features='Features', nav_minyam='Minyam', nav_plans='Plans', nav_faq='FAQ',
     nav_dl='Get it',
     h1='Your records on your phone. Logging as easy as telling a story.',
     hero_sub='Type, talk, or snap a receipt. AI prepares the entry, you decide.',
@@ -121,14 +139,14 @@ EN = dict(
     play_alt='Get it on Google Play',
     hero_stage_label='Minyam, the Artosku mascot. Tap to say hi.',
     bubble_start='Hi, I am Minyam. Tap me.',
-    try_h='Try it yourself',
-    try_sub='Write one transaction the way you would tell it.',
-    try_label='Tell the transaction',
-    try_ph='lunch 25k with gopay',
+    try_sub='One sentence of story can hold many transactions at once.',
+    try_label='Tell your money story',
+    try_ph='salary 5m into BCA, moved 1m from BCA to emergency fund pocket, lunch 25k with GoPay, parking 2k cash',
+    try_h='One sentence, many entries', nav_try='One sentence', try_note='A sample. In the app, AI reads your own sentence.',
+    try_replay='Replay', try_reading='AI is reading', try_voice='Spoken or typed',
     try_btn='Log it',
-    try_note='A sample in your browser. In the app, AI reads your story.',
     try_r_title='Result', try_r_amount='Amount', try_r_cat='Category', try_r_wallet='Wallet', try_r_type='Type', try_r_date='Date',
-    try_empty='Write something or pick a sample above, the result shows up here.',
+    try_empty='The result shows up here.',
     how_h='Ways to log',
     how_sub='Pick whichever is fastest for you today.',
     tab_type='Type', tab_voice='Voice', tab_photo='Receipt photo', tab_bank='Bank statement', tab_notif='Notifications',
@@ -192,6 +210,23 @@ EN = dict(
     ],
     dl_h='Start with your first entry.',
     dl_p='Questions or feedback? Write to',
+    biz_h='Business Mode', biz_p='Your business records, kept apart from your personal ones, in one app.',
+    biz_shop='Proud Chicken', biz_pay='Payment', biz_total='Total', biz_make='Make receipt', biz_new='New sale',
+    biz_note='A sample in your browser. In the app, stock goes down too and the receipt can be sent.',
+    biz_empty='Tap a product, pick a payment, then make the receipt.', biz_cart_empty='Nothing picked yet.',
+    biz_thanks='Thank you', biz_paid='Paid by', biz_date_label='Today',
+    biz_pays=['Cash', 'QRIS', 'Transfer'],
+    biz_products=[('Smashed chicken', 18000), ('Iced tea', 5000), ('Rice', 5000), ('Fried tofu', 3000), ('Extra sambal', 2000)],
+    bt_kasir='Cashier and receipts', bt_stok='Stock and supplies', bt_po='Pre-orders', bt_piutang='Customers and debts', bt_laporan='Profit and loss', bt_tutup='Close the till',
+    bp_kasir_t='Sell, then send the receipt.', bp_kasir_p='Receipts go out over WhatsApp or become a PDF, with your business name and payment method.',
+    bp_stok_t='Stock and supplies go down too.', bp_stok_p='Stock drops as you sell. You get a warning before it runs out.',
+    bp_po_t='Orders for a set date.', bp_po_p='Take pre-orders with a deposit, and see on the calendar what to make.',
+    bp_piutang_t='Who has not paid yet.', bp_piutang_p='Keep customers and suppliers, and see the debts still open.',
+    bp_laporan_t='Profit or loss, clearly.', bp_laporan_p='Profit and loss and cash flow for your business, apart from personal money.',
+    bp_tutup_t='Close the till every day.', bp_tutup_p='Match the cash in the drawer with the sales record before you go home.',
+    bu_wa='WhatsApp', bu_pdf='PDF', bu_low='Low stock', bu_stock='Stock', bu_dp='Deposit', bu_open='Unpaid', bu_income='Revenue', bu_cost='Costs', bu_profit='Profit',
+    bu_open_cash='Opening cash', bu_cash_sales='Cash sales', bu_close_cash='Closing cash', bu_match='Matches',
+    biz_cta='Try the Proud Chicken demo in the app, free with no subscription.', biz_all='See all business features', nav_biz='Business',
     all_h='All features', all_sub='Everything in the app, by category. Tap one to read how it works.',
     all_btn='See all features ({n})', show_all='Show all ({n})', all_count='{n} features', search_label='Search features', search_ph='e.g. budget, receipt, backup',
     chip_all='All', no_result='No feature matches.', badge_pro='Pro', badge_max='Max',
@@ -229,14 +264,14 @@ TEMPLATE = r'''<!doctype html>
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/" />
 </head>
-<body data-lang="{{lang}}" data-asset="{{asset}}">
+<body data-lang="{{lang}}" data-asset="{{asset}}" data-biz='{{biz_json}}'>
 <a class="skip" href="#main">{{skip}}</a>
 
 <header class="nav">
   <div class="wrap nav__in">
     <a class="nav__brand" href="#top" aria-label="Artosku"><img src="{{asset}}assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
     <nav class="nav__links" aria-label="Menu">
-      <a href="#coba">{{nav_try}}</a><a href="#cara">{{nav_how}}</a><a href="#data">{{nav_data}}</a><a href="#fitur">{{nav_features}}</a><a href="#minyam">{{nav_minyam}}</a><a href="#paket">{{nav_plans}}</a><a href="#faq">{{nav_faq}}</a>
+      <a href="#coba">{{nav_try}}</a><a href="#cara">{{nav_how}}</a><a href="#data">{{nav_data}}</a><a href="#fitur">{{nav_features}}</a><a href="#bisnis">{{nav_biz}}</a><a href="#minyam">{{nav_minyam}}</a><a href="#paket">{{nav_plans}}</a><a href="#faq">{{nav_faq}}</a>
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="{{other_href}}" hreflang="{{other_lang}}" lang="{{other_lang}}">{{other_label}}</a>
@@ -272,30 +307,26 @@ TEMPLATE = r'''<!doctype html>
     <p class="lead">{{try_sub}}</p>
     <div class="try">
       <div class="try__in">
-        <form id="tryForm" autocomplete="off">
-          <label for="tryInput">{{try_label}}</label>
-          <div class="try__row">
-            <input id="tryInput" type="text" inputmode="text" placeholder="{{try_ph}}" maxlength="120" />
-            <button class="btn" type="submit">{{try_btn}}</button>
+        <div class="try__form">
+          <p class="try__label" id="tryLabel">{{try_label}}</p>
+          <div class="try__box">
+            <div class="try__mic" id="tryMic" aria-hidden="true"><i class="ph ph-microphone"></i><span class="wave"><b></b><b></b><b></b><b></b></span></div>
+            <textarea id="tryInput" rows="4" readonly tabindex="-1" aria-labelledby="tryLabel" placeholder="{{try_ph}}"></textarea>
           </div>
-        </form>
+          <div class="try__btns">
+            <button class="btn btn--ghost" id="tryReplay" type="button"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i>{{try_replay}}</button>
+          </div>
+        </div>
         <div class="chips" id="tryChips" role="group" aria-label="{{try_h}}"></div>
         <p class="note"><i class="ph ph-info" aria-hidden="true"></i> {{try_note}}</p>
       </div>
       <div class="try__out">
         <div class="try__mascot"><img id="tryMascotImg" src="{{asset}}assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" /></div>
-        <div class="card tx" id="tryResult" aria-live="polite">
+        <div class="txs" aria-live="polite">
           <p class="tx__empty" id="tryEmpty">{{try_empty}}</p>
-          <div class="tx__body" id="tryBody" hidden>
-            <p class="tx__title" id="trName"></p>
-            <dl>
-              <div><dt>{{try_r_amount}}</dt><dd id="trAmount"></dd></div>
-              <div><dt>{{try_r_type}}</dt><dd id="trType"></dd></div>
-              <div><dt>{{try_r_cat}}</dt><dd id="trCat"></dd></div>
-              <div><dt>{{try_r_wallet}}</dt><dd id="trWallet"></dd></div>
-              <div><dt>{{try_r_date}}</dt><dd id="trDate"></dd></div>
-            </dl>
-          </div>
+          <p class="reading" id="tryReading" hidden>{{try_reading}}<span class="dots"><b></b><b></b><b></b></span></p>
+          <ul class="txlist" id="txList"></ul>
+          <p class="txsum" id="txSum" hidden></p>
         </div>
       </div>
     </div>
@@ -318,8 +349,13 @@ TEMPLATE = r'''<!doctype html>
         <div role="tabpanel" id="pan-type" aria-labelledby="tab-type" class="pan">
           <div class="pan__copy"><h3>{{how_type_t}}</h3><p>{{how_type_p}}</p></div>
           <div class="phone">
-            <div class="ui-input"><span>{{try_ph}}</span><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
-            <div class="ui-tx"><b>Rp25.000</b><span>{{trcat_food}} &middot; GoPay</span><button class="btn btn--small" type="button" tabindex="-1">{{ui_save}}</button></div>
+            <div class="ui-input"><span>{{how_type_ex}}</span><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
+            <ul class="ui-rows">
+              <li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>{{trcat_salary}}</span><b class="in">+Rp5.000.000</b></li>
+              <li><i class="ph ph-arrows-left-right" aria-hidden="true"></i><span>BCA &rarr; {{trcat_pocket}}</span><b>Rp1.000.000</b></li>
+              <li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>{{trcat_food}} &middot; GoPay</span><b>-Rp25.000</b></li>
+            </ul>
+            <button class="btn btn--small" type="button" tabindex="-1">{{ui_save}}</button>
           </div>
         </div>
         <div role="tabpanel" id="pan-voice" aria-labelledby="tab-voice" class="pan" hidden>
@@ -405,6 +441,38 @@ TEMPLATE = r'''<!doctype html>
   </div>
 </section>
 
+<section class="sec sec--deep" id="bisnis">
+  <div class="wrap">
+    <h2>{{biz_h}} <span class="badge">{{f_biz_badge}}</span></h2>
+    <p class="lead">{{biz_p}}</p>
+    <div class="pos">
+      <div class="pos__menu card">
+        <h3>{{biz_shop}}</h3>
+        <ul class="pos__items" id="posItems"></ul>
+        <div class="chips" id="posPay" role="group" aria-label="{{biz_pay}}"></div>
+        <p class="pos__total"><span>{{biz_total}}</span><b id="posTotal">Rp0</b></p>
+        <button class="btn" id="posMake" type="button">{{biz_make}}</button>
+        <p class="note">{{biz_note}}</p>
+      </div>
+      <div class="pos__out">
+        <img id="posMascot" src="{{asset}}assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+        <div class="receipt" id="posReceipt" aria-live="polite"><p class="receipt__empty">{{biz_empty}}</p></div>
+      </div>
+    </div>
+    <div class="how how--biz">
+      <div class="tabs" role="tablist" aria-label="{{biz_h}}"><button role="tab" id="btab-kasir" aria-controls="bpan-kasir" aria-selected="true"><i class="ph ph-receipt" aria-hidden="true"></i>{{bt_kasir}}</button><button role="tab" id="btab-stok" aria-controls="bpan-stok" aria-selected="false" tabindex="-1"><i class="ph ph-package" aria-hidden="true"></i>{{bt_stok}}</button><button role="tab" id="btab-po" aria-controls="bpan-po" aria-selected="false" tabindex="-1"><i class="ph ph-calendar-check" aria-hidden="true"></i>{{bt_po}}</button><button role="tab" id="btab-piutang" aria-controls="bpan-piutang" aria-selected="false" tabindex="-1"><i class="ph ph-handshake" aria-hidden="true"></i>{{bt_piutang}}</button><button role="tab" id="btab-laporan" aria-controls="bpan-laporan" aria-selected="false" tabindex="-1"><i class="ph ph-chart-line-up" aria-hidden="true"></i>{{bt_laporan}}</button><button role="tab" id="btab-tutup" aria-controls="bpan-tutup" aria-selected="false" tabindex="-1"><i class="ph ph-vault" aria-hidden="true"></i>{{bt_tutup}}</button></div>
+      <div class="how__panels"><div role="tabpanel" id="bpan-kasir" aria-labelledby="btab-kasir" class="pan"><div class="pan__copy"><h3>{{bp_kasir_t}}</h3><p>{{bp_kasir_p}}</p></div><div class="phone"><div class="ui-receipt"><b>{{biz_shop}}</b><i></i><i></i><i class="short"></i><div><span>{{biz_total}}</span><b>Rp23.000</b></div></div><div class="ui-actions"><span class="btn btn--small">{{bu_wa}}</span><span class="btn btn--small btn--ghost">{{bu_pdf}}</span></div></div></div><div role="tabpanel" id="bpan-stok" aria-labelledby="btab-stok" class="pan" hidden><div class="pan__copy"><h3>{{bp_stok_t}}</h3><p>{{bp_stok_p}}</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-package" aria-hidden="true"></i><span>{{bm1}}</span><b>{{bu_stock}} 24</b></li><li><i class="ph ph-package" aria-hidden="true"></i><span>{{bm2}}</span><b>{{bu_stock}} 60</b></li><li class="warn"><i class="ph ph-warning" aria-hidden="true"></i><span>{{bm3}}</span><b>{{bu_low}}</b></li></ul></div></div><div role="tabpanel" id="bpan-po" aria-labelledby="btab-po" class="pan" hidden><div class="pan__copy"><h3>{{bp_po_t}}</h3><p>{{bp_po_p}}</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-calendar" aria-hidden="true"></i><span>14 Nov, {{bm1}} x 20</span><b>{{bu_dp}}</b></li><li><i class="ph ph-calendar" aria-hidden="true"></i><span>16 Nov, {{bm1}} x 12</span><b>{{bu_dp}}</b></li></ul></div></div><div role="tabpanel" id="bpan-piutang" aria-labelledby="btab-piutang" class="pan" hidden><div class="pan__copy"><h3>{{bp_piutang_t}}</h3><p>{{bp_piutang_p}}</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-user" aria-hidden="true"></i><span>Warung Bu Sari</span><b>Rp240.000</b></li><li><i class="ph ph-user" aria-hidden="true"></i><span>Kantor Pak Dedi</span><b>Rp180.000</b></li><li class="off"><i class="ph ph-info" aria-hidden="true"></i><span>{{bu_open}}</span><b>2</b></li></ul></div></div><div role="tabpanel" id="bpan-laporan" aria-labelledby="btab-laporan" class="pan" hidden><div class="pan__copy"><h3>{{bp_laporan_t}}</h3><p>{{bp_laporan_p}}</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-arrow-down-left" aria-hidden="true"></i><span>{{bu_income}}</span><b class="in">Rp3.420.000</b></li><li><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>{{bu_cost}}</span><b>Rp2.150.000</b></li><li><i class="ph ph-equals" aria-hidden="true"></i><span>{{bu_profit}}</span><b class="in">Rp1.270.000</b></li></ul></div></div><div role="tabpanel" id="bpan-tutup" aria-labelledby="btab-tutup" class="pan" hidden><div class="pan__copy"><h3>{{bp_tutup_t}}</h3><p>{{bp_tutup_p}}</p></div><div class="phone"><ul class="ui-rows"><li><i class="ph ph-vault" aria-hidden="true"></i><span>{{bu_open_cash}}</span><b>Rp200.000</b></li><li><i class="ph ph-cash" aria-hidden="true"></i><span>{{bu_cash_sales}}</span><b>Rp1.180.000</b></li><li><i class="ph ph-check-square" aria-hidden="true"></i><span>{{bu_close_cash}}</span><b class="in">Rp1.380.000 {{bu_match}}</b></li></ul></div></div></div>
+    </div>
+    <div class="biz-cta">
+      <p>{{biz_cta}}</p>
+      <div class="biz-cta__row">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.artosku" target="_blank" rel="noopener"><img src="{{asset}}assets/google-play-badge.svg" alt="{{play_alt}}" width="160" height="48" loading="lazy" /></a>
+        <button class="btn btn--ghost" id="bizAll" type="button">{{biz_all}}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="semua">
   <div class="wrap">
     <h2>{{all_h}}</h2>
@@ -484,8 +552,8 @@ TEMPLATE = r'''<!doctype html>
 '''
 
 EXTRA = {
-    'id': dict(trcat_food='Makan', trcat_transport='Transport', trwallet_cash='Tunai', f_wallet_t_short='Bersama'),
-    'en': dict(trcat_food='Food', trcat_transport='Transport', trwallet_cash='Cash', f_wallet_t_short='Shared'),
+    'id': dict(how_type_ex='gaji 5jt ke BCA, transfer 1jt ke dana darurat, makan siang 25rb pakai GoPay', trcat_salary='Gaji', trcat_pocket='Pocket Dana Darurat', bm1='Ayam geprek', bm2='Es teh', bm3='Nasi', trcat_food='Makan', trcat_transport='Transport', trwallet_cash='Tunai', f_wallet_t_short='Bersama'),
+    'en': dict(how_type_ex='salary 5m into BCA, 1m to emergency fund, lunch 25k with GoPay', trcat_salary='Salary', trcat_pocket='Emergency Fund Pocket', bm1='Smashed chicken', bm2='Iced tea', bm3='Rice', trcat_food='Food', trcat_transport='Transport', trwallet_cash='Cash', f_wallet_t_short='Shared'),
 }
 
 
@@ -557,6 +625,7 @@ def build(t):
         f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t['faqs'])
 
     fill_all(t)
+    t['biz_json'] = json.dumps({k: t[k] for k in ('biz_shop', 'biz_total', 'biz_empty', 'biz_cart_empty', 'biz_thanks', 'biz_paid', 'biz_new', 'biz_make', 'biz_pays', 'biz_products', 'biz_date_label')}, ensure_ascii=False).replace("'", '&#39;')
 
     def sub(m):
         return t[m.group(1)]
