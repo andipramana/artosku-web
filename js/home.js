@@ -128,6 +128,7 @@
     b.addEventListener('click', function () { input.value = s; show(s); });
     chipBox.appendChild(b);
   });
+  if (input && T.samples.length) { input.value = T.samples[0]; show(T.samples[0]); }
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); if (input.value.trim()) show(input.value.trim()); });
 
   /* ---------- ways to log (tabs) ---------- */
@@ -189,22 +190,28 @@
 
   /* ---------- all features: search + category chips ---------- */
   var q = $('#allSearch'), gchips = $$('#allChips .chip'), groups = $$('#allList .grp'), none2 = $('#allNone'), cnt = $('#allCount');
-  var cur = 'all';
+  var cur = 'all', expanded = false, more = $('#allMore');
   function filter() {
     var term = (q.value || '').toLowerCase().trim(), total = 0;
+    var collapsed = !expanded && !term && cur === 'all';
     groups.forEach(function (g) {
       var inGroup = cur === 'all' || g.getAttribute('data-g') === cur, any = false;
       $$('li', g).forEach(function (li) {
         var ok = inGroup && (!term || li.getAttribute('data-s').indexOf(term) !== -1);
-        li.hidden = !ok; if (ok) { any = true; total++; }
+        if (ok) total++;
+        var vis = ok && (!collapsed || li.hasAttribute('data-top'));
+        li.hidden = !vis; if (vis) any = true;
       });
       g.hidden = !any;
     });
     cnt.textContent = T.count.replace('{n}', total);
     none2.hidden = total !== 0;
+    more.hidden = !collapsed;
   }
+  if (more) more.addEventListener('click', function () { expanded = true; filter(); });
   if (q) {
     q.addEventListener('input', filter);
+    filter();
     gchips.forEach(function (c) {
       c.addEventListener('click', function () {
         cur = c.getAttribute('data-g');

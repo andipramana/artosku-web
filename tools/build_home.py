@@ -99,7 +99,7 @@ ID = dict(
     dl_h='Mulai dari catatan pertama.',
     dl_p='Pertanyaan atau masukan? Kirim ke',
     all_h='Semua fitur', all_sub='Semua yang ada di aplikasi, per kategori. Ketuk satu untuk membaca caranya.',
-    all_btn='Lihat semua fitur ({n})', all_count='{n} fitur', search_label='Cari fitur', search_ph='mis. anggaran, struk, backup',
+    all_btn='Lihat semua fitur ({n})', show_all='Tampilkan semua ({n})', all_count='{n} fitur', search_label='Cari fitur', search_ph='mis. anggaran, struk, backup',
     chip_all='Semua', no_result='Tidak ada fitur yang cocok.', badge_pro='Pro', badge_max='Max',
     foot_guide='Panduan', foot_privacy='Kebijakan Privasi', foot_terms='Syarat dan Ketentuan',
     foot_made='Dibuat oleh Andi Pramana.',
@@ -193,7 +193,7 @@ EN = dict(
     dl_h='Start with your first entry.',
     dl_p='Questions or feedback? Write to',
     all_h='All features', all_sub='Everything in the app, by category. Tap one to read how it works.',
-    all_btn='See all features ({n})', all_count='{n} features', search_label='Search features', search_ph='e.g. budget, receipt, backup',
+    all_btn='See all features ({n})', show_all='Show all ({n})', all_count='{n} features', search_label='Search features', search_ph='e.g. budget, receipt, backup',
     chip_all='All', no_result='No feature matches.', badge_pro='Pro', badge_max='Max',
     foot_guide='Guide', foot_privacy='Privacy Policy', foot_terms='Terms of Service',
     foot_made='Made by Andi Pramana.',
@@ -417,6 +417,7 @@ TEMPLATE = r'''<!doctype html>
     </div>
     <div id="allList">{{all_groups}}</div>
     <p class="note" id="allNone" hidden>{{no_result}}</p>
+    <p class="more"><button class="btn btn--ghost" id="allMore" type="button">{{show_all_n}}</button></p>
   </div>
 </section>
 
@@ -492,11 +493,28 @@ def esc(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
+# Entries of the app catalog that are account chores, legal pages or app-store housekeeping, not things the
+# app offers: kept out of "all features" (they stay in the tutorial). Applies on every re-run.
+EXCLUDE = {
+    'kata_sandi', 'keluar_akun', 'hapus_akun', 'reset_akun', 'syarat_ketentuan', 'privasi_syarat', 'cek_pembaruan',
+    'kritik_saran', 'ikuti_artosku', 'beri_ulasan', 'catatan_pembaruan', 'ulangi_panduan', 'cari_menu', 'ubah_nama',
+    'nonaktifkan_pin',
+}
+# How many groups show their first feature while the list is collapsed.
+COLLAPSED_GROUPS = 9
+
+
 def load_features(app_dir):
     sys.path.insert(0, os.path.join(ROOT, 'tools'))
     from build_tutorial import load_catalog, group_items
     features, recipes = load_catalog(app_dir)
-    groups = [g for g in group_items(features, []) if g['id'] != 'tujuan']
+    groups = []
+    for g in group_items(features, []):
+        if g['id'] == 'tujuan':
+            continue
+        g['items'] = [f for f in g['items'] if f['id'] not in EXCLUDE]
+        if g['items']:
+            groups.append(g)
     return groups
 
 
@@ -509,11 +527,11 @@ def fill_all(t):
     t['all_count_tpl'] = t['all_count']
     chips = [f'<button type="button" class="chip" data-g="all" aria-pressed="true">{esc(t["chip_all"])}</button>']
     out = []
-    for g in groups:
+    for gi, g in enumerate(groups):
         name = g['nameId'] if lang == 'id' else g['nameEn']
         chips.append(f'<button type="button" class="chip" data-g="{g["id"]}" aria-pressed="false">{esc(name)}</button>')
         rows = []
-        for f in g['items']:
+        for fi, f in enumerate(g['items']):
             title = f['nameId'] if lang == 'id' else f['nameEn']
             text = f['benefitId'] if lang == 'id' else f['benefitEn']
             plan = 'max' if f['mode'] == 'business' else f['plan']
@@ -522,11 +540,13 @@ def fill_all(t):
                 badge = f' <span class="badge">{esc(t["badge_" + plan])}</span>'
             kw = esc(' '.join(f['allKeywords']))
             hay = esc((title + ' ' + text).lower())
+            top = ' data-top="1"' if (fi == 0 and gi < COLLAPSED_GROUPS) else ''
             rows.append(
-                f'<li data-s="{hay} {kw.lower()}"><a href="{t["path_tutorial"]}#{f["id"]}"><b>{esc(title)}</b>{badge}'
+                f'<li{top} data-s="{hay} {kw.lower()}"><a href="{t["path_tutorial"]}#{f["id"]}"><b>{esc(title)}</b>{badge}'
                 f'<span>{esc(text)}</span></a></li>')
         out.append(f'<section class="grp" data-g="{g["id"]}"><h3>{esc(name)}</h3><ul>{"".join(rows)}</ul></section>')
     t['all_chips'] = ''.join(chips)
+    t['show_all_n'] = t['show_all'].format(n=n)
     t['all_groups'] = ''.join(out)
 
 
