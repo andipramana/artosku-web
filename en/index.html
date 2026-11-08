@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){var t="light";try{var s=localStorage.getItem("artosku-theme");if(s==="dark"||s==="light")t=s}catch(e){}document.documentElement.setAttribute("data-theme",t);if(t==="dark"){document.addEventListener("DOMContentLoaded",function(){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#131B11")})}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Artosku | Track your money, data stays on your phone</title>
 <meta name="description" content="Log spending by typing, talking, or snapping a receipt. Your records stay on your phone. Minyam keeps you company. Free on Google Play." />
@@ -27,17 +28,18 @@
 <link rel="alternate" hreflang="en" href="https://artosku.my.id/en/" />
 <link rel="alternate" hreflang="x-default" href="https://artosku.my.id/" />
 </head>
-<body data-lang="en" data-asset="../" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Tap a product, pick a payment, then make the receipt.", "biz_cart_empty": "Nothing picked yet.", "biz_thanks": "Thank you", "biz_paid": "Paid by", "biz_new": "New sale", "biz_make": "Make receipt", "biz_pays": ["Cash", "QRIS", "Transfer"], "biz_products": [["Smashed chicken", 18000], ["Iced tea", 5000], ["Rice", 5000], ["Fried tofu", 3000], ["Extra sambal", 2000]], "biz_date_label": "Today"}'>
+<body data-lang="en" data-asset="../" data-biz='{"biz_shop": "Proud Chicken", "biz_total": "Total", "biz_empty": "Tap a product, pick a payment, then make the receipt.", "biz_cart_empty": "Nothing picked yet.", "biz_thanks": "Thank you", "biz_qr_label": "Scan to get Artosku", "biz_paid": "Paid by", "biz_new": "New sale", "biz_make": "Make receipt", "biz_pays": ["Cash", "QRIS", "Transfer"], "biz_products": [["Smashed chicken", 18000], ["Iced tea", 5000], ["Rice", 5000], ["Fried tofu", 3000], ["Extra sambal", 2000]], "biz_date_label": "Today"}'>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap nav__in">
-    <a class="nav__brand" href="#top" aria-label="Artosku"><img src="../assets/logo-mark.png" alt="" width="34" height="34" /><span>Artosku</span></a>
+    <a class="nav__brand" href="#top" aria-label="Artosku"><img class="logo--light" src="../assets/logo-primer.svg" alt="Artosku" width="110" height="30" /><img class="logo--dark" src="../assets/logo-primer-inverted.svg" alt="" width="110" height="30" aria-hidden="true" /></a>
     <nav class="nav__links" aria-label="Menu">
       <a href="#coba">One sentence</a><a href="#cara">How to log</a><a href="#data">Your data</a><a href="#fitur">Features</a><a href="#bisnis">Business</a><a href="#minyam">Minyam</a><a href="#paket">Plans</a><a href="#faq">FAQ</a>
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="../" hreflang="id" lang="id">Bahasa Indonesia</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Theme" aria-pressed="false"><i class="ph ph-moon" aria-hidden="true"></i><i class="ph ph-sun" aria-hidden="true"></i></button>
       <a class="btn btn--small" href="#unduh">Get it</a>
     </div>
   </div>
@@ -57,9 +59,10 @@
     </div>
     <div class="hero__stage">
       <div class="bubble" id="heroBubble" aria-live="polite">Hi, Minyam's here. Tap Minyam.</div>
-      <button class="mascot mascot--hero" id="heroMascot" type="button" aria-label="Minyam, the Artosku mascot. Tap to say hi.">
+      <button class="mascot mascot--hero" id="heroMascot" type="button" data-minyam-tap aria-label="Minyam, the Artosku mascot. Tap to say hi.">
         <img id="heroMascotImg" src="../assets/minyam/idle.webp" alt="" width="400" height="400" fetchpriority="high" />
       </button>
+      <button class="sound-toggle" type="button" data-minyam-mute aria-pressed="false" aria-label="Sound"><i class="ph ph-speaker-high" aria-hidden="true"></i><i class="ph ph-speaker-slash" aria-hidden="true"></i></button>
     </div>
   </div>
 </section>
@@ -255,7 +258,7 @@
 <section class="sec sec--tint" id="minyam">
   <div class="wrap minyam">
     <div class="minyam__stage" aria-label="Minyam wearing an item">
-      <img id="wearImg" src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
+      <img id="wearImg" data-minyam-tap src="../assets/minyam/idle.webp" alt="" width="400" height="400" loading="lazy" />
     </div>
     <div class="minyam__copy">
       <h2>Minyam logs along</h2>
@@ -309,6 +312,8 @@
   </div>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/minyam-sound.js" defer></script>
 <script src="../js/home.js" defer></script>
 </body>
 </html>

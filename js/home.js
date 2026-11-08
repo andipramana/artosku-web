@@ -179,6 +179,7 @@
     stage.classList.remove('swap'); void stage.offsetWidth; stage.classList.add('swap');
   });
   blinker(wear);
+  if (wear) wear.addEventListener('click', function () { if (wear.dataset.worn !== '1') react(wear, 'squash', 900); });
 
 
   /* ---------- Mode Bisnis: mini cashier ---------- */
@@ -227,7 +228,7 @@
       if (!t) { rcpt.innerHTML = '<p class="receipt__empty">' + esc(B.biz_cart_empty) + '</p>'; if (!quiet) react(posImg, 'wait', 1400); return; }
       var lines = '';
       B.biz_products.forEach(function (p, i) { if (qty[i]) lines += '<div class="ln"><span>' + qty[i] + ' x ' + esc(p[0]) + '</span><span>' + rp(p[1] * qty[i]) + '</span></div>'; });
-      rcpt.innerHTML = '<h4>' + esc(B.biz_shop) + '</h4><div>' + esc(B.biz_date_label) + '</div><hr>' + lines + '<hr><div class="ln tot"><span>' + esc(B.biz_total) + '</span><span>' + rp(t) + '</span></div><div class="ln"><span>' + esc(B.biz_paid) + '</span><span>' + esc(B.biz_pays[payIdx]) + '</span></div><div class="ty">' + esc(B.biz_thanks) + '</div>';
+      rcpt.innerHTML = '<h4>' + esc(B.biz_shop) + '</h4><div>' + esc(B.biz_date_label) + '</div><hr>' + lines + '<hr><div class="ln tot"><span>' + esc(B.biz_total) + '</span><span>' + rp(t) + '</span></div><div class="ln"><span>' + esc(B.biz_paid) + '</span><span>' + esc(B.biz_pays[payIdx]) + '</span></div>' + (payIdx === 1 ? '<div class="qr"><img src="' + ASSET + 'assets/qr-play.svg" alt="QR" width="120" height="120" /><small>' + esc(B.biz_qr_label) + '</small></div>' : '') + '<div class="ty">' + esc(B.biz_thanks) + '</div>';
       rcpt.classList.remove('fresh'); void rcpt.offsetWidth; rcpt.classList.add('fresh');
       if (!quiet) react(posImg, payIdx === 0 ? 'coin' : 'joy', 1500);
     });

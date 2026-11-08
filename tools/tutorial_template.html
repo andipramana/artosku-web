@@ -6,8 +6,8 @@
 <script>
 (function () {
   var t = null;
-  try { t = localStorage.getItem("tut-theme"); } catch (e) {}
-  if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  try { t = localStorage.getItem("artosku-theme"); } catch (e) {}
+  if (t !== "dark" && t !== "light") t = "light";
   document.documentElement.setAttribute("data-theme", t);
 })();
 </script>
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{TITLE}}" />
 <meta property="og:description" content="{{OG_DESC}}" />
-<meta property="og:image" content="https://artosku.my.id/assets/artosku-app-icon.png" />
+<meta property="og:image" content="https://artosku.my.id/assets/og-cover.png" />
 <link rel="icon" href="{{ROOT}}assets/artosku-app-icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="{{ROOT}}assets/artosku-app-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,8 +36,8 @@
 <header class="navbar is-scrolled" id="navbar">
   <div class="container navbar__inner">
     <a href="{{ROOT}}" class="brand">
-      <img src="{{ROOT}}assets/artosku-logo.svg" alt="Artosku" width="118" height="49" class="brand__logo brand__logo--light" />
-      <img src="{{ROOT}}assets/artosku-logo-dark.svg" alt="" width="118" height="49" class="brand__logo brand__logo--dark" aria-hidden="true" />
+      <img src="{{ROOT}}assets/logo-primer.svg" alt="Artosku" width="118" height="32" class="brand__logo brand__logo--light" />
+      <img src="{{ROOT}}assets/logo-primer-inverted.svg" alt="" width="118" height="32" class="brand__logo brand__logo--dark" aria-hidden="true" />
     </a>
     <nav class="nav-links" aria-label="{{NAV_MAIN_LABEL}}">
 {{NAV_LINKS_HTML}}
@@ -96,8 +96,8 @@
 <footer class="footer">
   <div class="container footer__inner">
     <a href="{{ROOT}}" class="brand brand--footer">
-      <img src="{{ROOT}}assets/artosku-logo.svg" alt="Artosku" width="102" height="42" class="brand__logo brand__logo--light" />
-      <img src="{{ROOT}}assets/artosku-logo-dark.svg" alt="" width="102" height="42" class="brand__logo brand__logo--dark" aria-hidden="true" />
+      <img src="{{ROOT}}assets/logo-primer.svg" alt="Artosku" width="102" height="28" class="brand__logo brand__logo--light" />
+      <img src="{{ROOT}}assets/logo-primer-inverted.svg" alt="" width="102" height="28" class="brand__logo brand__logo--dark" aria-hidden="true" />
     </a>
     <nav class="footer__links" aria-label="{{NAV_FOOTER_LABEL}}">
 {{FOOTER_LINKS_HTML}}

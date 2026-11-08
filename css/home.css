@@ -1,7 +1,8 @@
-/* Landing page artosku.my.id. One theme family (light, with a dark twin under prefers-color-scheme).
+/* Landing page artosku.my.id. One theme family (light by default, dark twin under [data-theme=dark], chosen by the visitor).
    Shape rule: 16px for cards, inputs and buttons; pills only for chips and badges. One accent: matcha green.
    Coral is used only for the streak flame. */
 :root {
+  color-scheme: light;
   --bg: #f6faf3;
   --surface: #ffffff;
   --tint: #eaf3e7;
@@ -18,8 +19,9 @@
   --r: 16px;
   --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
+@media all {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
     --bg: #131b11;
     --surface: #1b2718;
     --tint: #182415;
@@ -63,7 +65,19 @@ p { margin: 0; }
 .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .nav__in { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
 .nav__brand { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; }
-.nav__brand img { display: block; height: 34px; width: 34px; }
+.nav__brand img { display: block; height: 30px; width: auto; }
+.nav__brand .logo--dark, :root[data-theme="dark"] .nav__brand .logo--light { display: none; }
+:root[data-theme="dark"] .nav__brand .logo--dark { display: block; }
+.theme-toggle { display: inline-grid; place-items: center; width: 40px; height: 40px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+.theme-toggle:hover { border-color: var(--brand); }
+.theme-toggle .ph-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .ph-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .ph-moon { display: none; }
+.sound-toggle { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--muted); font-size: 1.1rem; cursor: pointer; }
+.sound-toggle:hover { border-color: var(--brand); color: var(--ink); }
+.sound-toggle .ph-speaker-slash { display: none; }
+.sound-toggle[aria-pressed="true"] .ph-speaker-high { display: none; }
+.sound-toggle[aria-pressed="true"] .ph-speaker-slash { display: block; }
 .nw { white-space: nowrap; }
 .nav__links { display: none; gap: 20px; }
 .nav__links a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .94rem; white-space: nowrap; }
@@ -145,7 +159,7 @@ input::placeholder { color: var(--muted); opacity: .85; }
 .txc span { color: var(--muted); font-size: .88rem; }
 .txc strong { font-size: .8rem; letter-spacing: .02em; color: var(--kind); font-weight: 800; }
 .txc--in { --kind: var(--brand); } .txc--out { --kind: #b8443a; } .txc--xfer { --kind: #3c6ea6; }
-@media (prefers-color-scheme: dark) { .txc--out { --kind: #f0907f; } .txc--xfer { --kind: #8db5e6; } }
+:root[data-theme="dark"] .txc--out { --kind: #f0907f; } :root[data-theme="dark"] .txc--xfer { --kind: #8db5e6; }
 .txsum { margin-top: 12px; font-weight: 700; display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .txsum span { font-weight: 600; color: var(--muted); }
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -332,3 +346,8 @@ details p { padding: 0 0 16px; color: var(--muted); }
 .biz-cta__row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 @media (min-width: 880px) { .pos { grid-template-columns: 1fr 1fr; gap: 40px; } .pos__out { grid-template-columns: 120px 1fr; } }
 .sec--deep .phone .btn--ghost { color: var(--brand); box-shadow: inset 0 0 0 2px var(--brand); }
+
+.hero__stage .sound-toggle { position: absolute; right: 8px; bottom: 8px; }
+.receipt .qr { display: grid; justify-items: center; gap: 4px; margin: 12px 0 4px; }
+.receipt .qr img { width: 120px; height: 120px; background: #fff; image-rendering: pixelated; border-radius: 4px; }
+.receipt .qr small { font: 600 .74rem var(--font); color: #5a6654; }
